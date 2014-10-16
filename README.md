@@ -1,7 +1,9 @@
 manual-livre-blender
 ====================
 
-Blender html manual (portuguese language only)
+Manual Livre de Blender (Blender Libre Manual) - portuguese language only
+
+> Online version (hosted by GitHub Pages) here: http://nafergo.github.io/manual-livre-blender/
 
 #Manual Livre de Blender
 Manual Livre de Blender (Blender Libre Manual) is html manual for Blender (http://www.blender.org) learning. For now, it's in portuguese only.
