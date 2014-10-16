@@ -1,0 +1,78 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	}
+
+footer {
+	margin-top: 100px;
+	}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-thumbnail {
+	margin-bottom: 20px;
+	}
+	
+	.capa {
+	margin-top: 100px;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titulohomepage {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.titulopagina {
+	margin-top: 100px;
+	margin-bottom: 50px;
+}
+
+.link-img {
+	width: 64px;
+	height: 64px;
+}
+
+// fix horizontal scroll
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+
+// dopdown submenus :)
+.dropdown-submenu{
+	position: relative;
+	}
+.dropdown-submenu>.dropdown-menu{
+	top:0;
+	right:100%;
+	margin-top:-6px;
+	margin-left:-1px;
+	-webkit-border-radius:6px 0 6px 6px;
+	-moz-border-radius:6px 0 6px 6px;
+	border-radius:6px 0 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu{display:block;}
+.dropdown-submenu>a:before{
+	display:block;
+	content:" ";
+	float:left;
+	width:0;
+	height:0;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent; 
+	border-right:5px solid grey; 
+	border-left-color:#cccccc;
+	margin-top:5px;
+	margin-left:-10px;
+	}
