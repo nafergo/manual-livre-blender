@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+<h1 class="titulopagina">Volumetrics no Cycles</h1>
+
+
+<p>O suporte de Volumetrics ainda é inicial e experimental mas está previsto o seu rápido desenvolvimento nos próximos meses. Volumetrics é essencial para simulação realista de vidro colorido, fumo, fogo, nuvens, etc. Algumas destas opções já são possíveis mas é provável que diversos procedimentos ainda venham a ser alterados (e melhorados) em futuras versões do Blender.</p>
+
+<h2>Emission</h2>
+
+<p>Se o encaixe Surface do nó Material Output permite configurar a superfície de um modelo, o encaixe Volume permite configurar o seu volume. Nas imagens abaixo é possível ver a diferença entre ter um shader Emission conectado ao encaixe Volume (esquerda) ou conectado ao encaixe Surface (centro). À direita, para comparação, temos um Diffuse conectado ao encaixe Surface. Se na imagem do centro a luz vem dos planos que constituem a superfície do modelo, na imagem da esquerda a luz está esculpida...</p>
+
+<img src="img/img40/55cycles16086578.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/56cycles2cb86184.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/57cycles4789c3c8.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/58cycles3bb9adfb.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h2>Volume Absorption</h2>
+
+<p>Este nó permite que o volume de uma malha possa absorver parte da luz que atravessa o volume. Especialmente útil para configuração de vidros, especialmente os coloridos, efeitos fantasmagóricos e fumo escuro.</p>
+
+<img src="img/img40/59cycles482b82d5.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/60cycles7506e9c5.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/61cycles47a4297c.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/62cycles3f24e1ba.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Este nó permite ainda criar um efeito de nevoeiro (mist) quando conectado ao Volume do Background. Controla a intensidade 
+com o valor Density e tem 
+de ter uma fonte de luz (mesh com emission, lamps) para além do Background/World.</p>
+
+<img src="img/img40/63cycles8d499.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/64cycles33b3de02.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/65cycles780c89b2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>É possível criar o efeito com uma malha. Por exemplo, pode inserir a sua cena dentro de um cubo e depois configurar o material 
+do cubo conectando o Volume Absorption ao Volume do Material Outoput.</p>
+
+<img src="img/img40/volumetrics11.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<h2>Volume Scatter</h2>
+
+<p>Este nó permite configurar a dispersão da luz. Pode ser conectado nos encaixes Volume do Material Output ou do World Output. É especialmente útil para criar “luzes volumétricas” (cones de luz), fumo branco ou nuvens.</p>
+
+
+
+
+<h3>No Material Output</h3>
+
+
+<p>
+Criámos uma cena com um plano (utilizámos o Proportional Edit para criar as "montanhas"), um cubo, câmara e luz Spot.
+</p>
+<img src="img/img40/volumetrics1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<p>A câmara tem de ficar no exterior do cubo. O cubo vai servir para delimitar a área com densidade, a área onde o Volume 
+Scatter irá ser utilizado. Na imagem é visível que a lâmpada Spot também está localizada fora do cubo mas não é obrigatório,
+ foi apenas a nossa opção.
+
+</p>
+<img src="img/img40/volumetrics2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/volumetrics3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<p>A Spot está configurada de forma simples. Destaca-se apenas a Strength.</p>
+<img src="img/img40/volumetrics8.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>O cubo tem um material simples configurado como na imagem abaixo. Repare que reduzimos a Density.</p>
+<img src="img/img40/volumetrics4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+Exemplos de render (Preview) com e sem o cubo. A única diferença entre as duas imagens é que na segunda a layer onde está o cubo
+ foi desativada. Na primeira imagem, é visível o "cone de luz" da lâmpada Spot e que este apenas é visível dentro do cubo. 
+<img src="img/img40/volumetrics5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/volumetrics6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<h3>No World Output</h3>
+<p>Na cena abaixo, utilizámos a mesma cena mas apagámos o cubo e introduzimos o Volume Scatter no nó World Output.</p>
+<p>Repare que também utilizámos um valor menos elevado para a Density.</p>
+<img src="img/img40/volumetrics9.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/volumetrics10.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+Como o Volume Scatter está a ser utilizado em todo o World, poderá ser útil ativar a opção Homogeneous para acelerar a renderização.
+</p>
+<p>
+Homogeneous significa que o Blender vai tratar o World como tendo a mesma densidade (densidade constante).  
+ </p>
+
+<img src="img/img40/volumetrics7.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+Se está interessado neste efeito, recomenda-se a consulta do texto <a href="godrays_no_cycles.html">God rays</a>. 
+</p>
+
+
+		</div>
+		
+		</div>
+		
+
+ </div>
+
+     <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

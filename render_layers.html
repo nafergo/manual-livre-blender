@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nelson gonçalves" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Render Layers</h1>
+
+
+
+
+<p>1- Utilize a cena pré-definida para criar a seguinte configuração: </p>
+
+<img src="img/img11/10introducao_compositor4e2d0804.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Um cubo verde na layer 1</p>
+
+<p>Um plano vermelho na layer 2</p>
+
+<p>Uma lâmpada Sun na layer 3</p>
+
+<img src="img/img11/14introducao_compositor7920c74b.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2- No painel Render, crie duas Render Layers, uma com o nome verde e outra com o nome vermelho. </p>
+
+<p>Na Render Layer “verde”, coloque visíveis as 3 Layers em que tem objectos (primeiro conjunto de 20 caixas, lado esquedo) mas só active a primeira, onde está o cubo, e a terceira, onde está a luz (segundo conjunto de 20 caixas, lado direito).</p>
+
+<p>Na Render Layer “vermelha”, coloque visíveis as 3 Layers em que tem objectos (primeiro conjunto de 20 caixas, lado esquedo) mas só active a segunda, onde está o plano, e a terceira, onde está a luz (segundo conjunto de 20 caixas, lado direito).</p>
+
+<p>Ou seja, estamos a criar 2 Render Layers. Numa vai surgir o cubo iluminado, na outra surge o plano iluminado e com a sombra do cubo.</p>
+
+<img src="img/img11/15introducao_compositor13398496.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Active a janela Node Editor. Clique para activar os Compositing Nodes, Use Nodes e Backdrop. Clique em F12 para criar um render. Depois faça ESC para voltar à janela Node Editor.</p>
+
+<p>4- Na sua janela deverá ter 2 nós: Render Layers (input) e o Composite (output). </p>
+
+<p>Aceda ao menu “Add”, escolha a opção “Input” e adicione um nó “Render Layers”. Num “Render Layers” escolha a layer “verde” e na outra “vermelho”.</p>
+
+<p>Aceda ao menu “Add”, escolha a opção “Color” e adicione um nó “AlphaOver”. </p>
+
+<p>Aceda ao menu “Add”, escolha a opção “Output” e adicione um nó “Viewer”. Na imagem abaixo estamos a utilizar 3 nós de tipo “Viewer”, pode repetir o processo ou seleccionar o “Viewer” adicionado e duplicar (SHIFT+D). </p>
+
+<p>Configure a ligações entre os nós de acordo com o layout abaixo.</p>
+
+<img src="img/img11/16introducao_compositor 6f107400.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5- Pode introduzir outros nós, experimentando novos efeitos.</p>
+
+
+		</div>
+		
+		
+		
+		
+		 </div>
+
+ </div>
+
+   <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

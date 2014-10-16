@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nelson gonçalves" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina"><small>Dinâmica de </small>Soft Bodies <small>(corpos moles)</small></h1>
+
+
+      	<div class="page-header">
+				<h2>Introdução</h2>
+      	</div>
+
+
+<p>Soft Body é uma das ferramentas de simulação do Blender. Em síntese, os vértices de um objeto são alvo de forças internas (que unem) e externas (i.e. gravidade, etc.) provocando deformações. </p>
+
+<p>Esta simulação funciona com objetos que têm vértices ou pontos de controlo (i.e. Meshes, Curves, Surfaces, Lattices). Este tipo de simulação funciona particularmente bem com objetos que têm uma distribuição equilibrada de vértices, estes são utilizados para calcular as colisões. Ou seja, o número de vértices ou pontos de controlo do objeto afeta bastante o resultado da simulação.</p>
+
+<p>Os Soft Bodies podem interagir com outros objetos (Collision) e com eles próprios (Self Collision). O resultado de uma simulação Soft Body pode ser convertido para um objeto estático.</p>
+
+<p>Geralmente, são utilizados para simular objetos elásticos (com e sem colisão), roupa ou partes de roupa (complementando outro simulador do Blender, o Cloth), modelação de tecidos ou corpos moles (i.e. almofadas, toalha de mesa, etc.), animação de cordas/correntes a balançar, etc.</p>
+
+      	<div class="page-header">
+				<h2>Simulação</h2>
+      	</div>
+
+
+<p>1- Crie uma cena semelhante à da imagem abaixo: 2 planos e 2 cubos. Os cubos foram redimensionados (S > 0.2), assim como cada um dos planos (S > 2). Atribua um material diferente e posicione os cubos seguindo a imagem abaixo.</p>
+
+<img src="img/img25/1softbodies282698a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>O objetivo é criar um espaço para experimentar diferentes configurações de softbodies (os cubos) e sua colisão com os planos.</p>
+
+<p>2- Selecione cada um dos planos e, no painel Physics, adicione propriedades de colisão (Collision) para estes poderem colidir com os cubos. </p>
+
+<img src="img/img25/2softbodies930b95d.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Faça o mesmo para os softbodies. Apesar de não ser preciso para colidirem com os planos, é necessário caso os softbodies colidam entre si.</p>
+
+<p>3- Selecione cada um dos cubos e, no painel Physics, adicione uma simulação Soft Body. Desative a caixa Soft Body Goal.</p>
+
+<img src="img/img25/3softbodies738ebd43.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Pode animar (ALT+A) para começar a ver o efeito de Soft Body.</p>
+
+<p>4- A maior dificuldade da configuração de Soft Bodies reside na manipulação das várias propriedades relacionadas com o mundo da física (i.e. inércia, fricção, velocidade, massa, gravidade, etc.). Neste momento, os seus cubos devem parecer demasiado “moles”... Vamos resolver isso da forma mais simples, ativando a opção Stiff Quads existente no painel Soft Body Edges. Depois de ativar essa opção, o seu cubo já deverá parecer mais “rijo” (stiff).</p>
+
+<p>5- Para melhorar o cálculo da simulação, pode subdividir os cubos, criando mais vértices. As principais configurações relativas à moleza/dureza dos softbodies estão disponíveis no painel Soft Body Edges. Experimente alterar alguns parâmetros num dos cubos e vá comparando os resultados.</p>
+
+
+
+      	<div class="page-header">
+				<h2>Em modelação</h2>
+      	</div>
+
+
+
+
+<p>1-  Inicie uma nova cena. Adicione um plano e posicione o mesmo acima do cubo. Aumente ligeiramente o plano e rode-o cerca de 45º em torno do eixo Z. Este plano vai ser uma “toalha de mesa” e o cubo será a mesa.</p>
+
+<img src="img/img25/4softbodies6eca9034.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2- Selecione o cubo e , no painel Physics, adicione propriedades de colisão (Collision) para este poder colidir com o plano/tolha.</p>
+
+<p>3- Selecione o plano e, no painel Physics, adicione uma simulação Soft Body. Desative a caixa Soft Body Goal e ative a opção Stiff Quads existente no painel Soft Body Edges.</p>
+
+<p>4- Se animar (ALT+A) irá ver o plano a atravessar o cubo porque o plano não tempo vértices suficientes para calcular a colisão. A imagem abaixo resulta após subdividir 5 vezes o plano e corresponde à frame 51. Como pode ver, existem alguns problemas mas o resultado já é interessante.</p>
+
+<img src="img/img25/5softbodies748b953c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5- Escolha uma frame onde a disposição da “toalha” seja interessante. Nós optámos pela frame 51. Existem várias formas de melhorar o resultado e eliminar as falhas visíveis na imagem acima. Em vez de alterar as configurações da simulação e voltar a calcular vá ao painel Modifiers e clique em Apply para tornar definitiva a forma da toalha.</p>
+
+<img src="img/img25/6softbodies2cdf0d75.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>6- Em baixo tem a mesma toalha, na mesma frame, mas com um modifier Subdivision Surface. O cubo foi ligeiramente redimensionado (em X e Y) mas mantida a sua altura.</p>
+
+<img src="img/img25/7softbodies3ccf7824.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+      	<div class="page-header">
+				<h2>Soft bodies parcial</h2>
+      	</div>
+
+
+<p>1- Crie um objecto semelhante ao apresentado abaixo: uma esfera com Extrudes em forma de antenas. Foram utilizados 6 Extrudes para cada antena.</p>
+
+<p>Aplique um Subdivision Surface (faça Apply ao modifier) e um Smooth ao objecto.</p>
+
+<img src="img/img25/8softbodies55ec045f.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img25/9softbodies3493d1ac.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2- Em Edit Mode, seleccione todos os vértices (no exemplo abaixo, optámos por seleccionar faces) que não fazem parte das “antenas” e a primeira linha de faces das “antenas”.</p>
+
+<p>No painel Object Data, crie um novo grupo de vértices (clique no sinal +). Atribua um nome e clique em Assign para associar os vértices seleccionados ao grupo.</p>
+
+<img src="img/img25/10softbodies350da97.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Crie uma animação com keyframes de Location para fazer a cabeça avançar e recuar.</p>
+
+<img src="img/img25/11softbodies788e8351.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img25/12softbodies590fa608.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img25/13softbodies1168a4bb.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- Crie uma simulação de Soft Body para o objecto mas associe o grupo de vértices que criou como pontos de controle.</p>
+
+<img src="img/img25/14softbodies6fe59a81.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5- Anime (ALT+A) para ver o resultado...</p>
+
+<p>Deverá ter umas antenas muito elásticas e um corpo totalmente rígido. </p>
+
+<p>O corpo está rígido porque quando criou o grupo de vértices atribuiu um Weight de 1.0 (não são afectados pela simulação). Se quiser que o corpo tenha alguma elasticidade, diminua o Weight no Vertex Group. Provavelmente, também será útil activar o Soft Body Self Collision.</p>
+
+<p>Se quiser diminuir a elasticidade das antenas, reveja as configurações do Soft Body (consulte o tutorial de Soft Bodies) mas pode começar por activar o Stiff Quads.</p>
+
+<img src="img/img25/15softbodies1921cc68.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+      	<div class="page-header">
+				<h2>Alguns parâmetros de configuração</h2>
+      	</div>
+
+<h3>Soft Body</h3>
+
+<img src="img/img25/16softbodies3f0d05b3.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Friction: fricção do objeto, maior fricção cria maior resistência ao movimento.</p>
+
+<img src="img/img25/17softbodies465c869b.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Mass: massa do objeto, maior massa significa maior inércia.</p>
+
+<p>Simulation Speed: velocidade de simulação do objeto, permite (des)acelerar simulação no objeto.</p>
+
+<h3>Soft Body Cache</h3>
+
+<p>Cache Step: Para uma simulação de maior qualidade e exatidão, antes de iniciar, é recomendável definir a Cache Step para 1. Define o número de frames da simulação que são cached (gravadas).</p>
+
+<p>Algumas da imagens foram retiradas de "Blender SoftBody Tutorial - Introduction" de Daniel Kreuter, disponível em http://www.youtube.com/watch?v=ofIi4ddHGW0</p>
+
+<img src="img/img25/18softbodies1713fe60.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h3>Soft Body Goal</h3>>
+
+<p>Ativa forças que obrigam os vértices a permanecer ou regressar à sua posição original. Valor 1 significa que o objeto (ou grupo de vértices de um objeto...) não é afetado pela simulação e permanece na posição original, valor 0 significa que só é afetado pelas leis da física (pela simulação). </p>
+
+<p>Se tiver um objeto no ar, com os valores pré-configurados, este vai permanecer no ar, “aos pulinhos”, não vai cair... Experimente reduzir o Default para 0.400 para ver o resultado.</p>
+
+<h3>Soft Body Edges</h3>
+
+<img src="img/img25/19softbodies49912101.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>É um dos mais importantes parâmetros de configuração. Define a resistência dos limites da forma ao movimento.</p>
+
+<p>Pull: “esticar”, permite definir o grau de elasticidade das edges, valores mais baixos permitem material mais elástico. Latex é 0.5, cabedal  é 0.999.</p>
+
+<img src="img/img25/20softbodies43551d85.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Push: “encolher”, especifica a resistência do objeto, valores mais baixos para tecidos, valores mais altos para objetos rijos ou insuflados.</p>
+
+<img src="img/img25/21softbodiesl6f26d88f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Damp: fricção das edges</p>
+
+<p>Plastic: grau de deformação permanente do objeto</p>
+
+<img src="img/img25/22softbodies78ce4f1c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Bending: grau de rigidez das dobras, aumenta resistência da forma do objeto.</p>
+
+<img src="img/img25/23softbodies7aef1d93.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Length: valor percentual para encolher/insuflar as edges. 0 desativa função, 100% significa sem alteração, o corpo mantém 100% do seu tamanho.</p>
+
+<p>Stiff Quads: aumenta resistência da forma do objeto ao impedir que as Quads (faces com quatro lados) colapsem totalmente nas colisões.</p>
+
+<p>Collision Edge/Face: aumenta precisão e tempo de cálculo ao também utilizar as arestas e faces para cálculo da colisão</p>
+
+<h3>Soft Body Self Collision</h3>
+
+<img src="img/img25/24softbodies3211de34.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Só funciona se tiver ativado o Soft Body Edges.</p>
+
+<p>Ativa o cálculo de colisão com o próprio objeto. Imagine um pano a cair, no ar, que colide com si mesmo, por oposição a um pano que se atravessa a si mesmo.</p>
+
+<h3>Soft Body Solver</h3>
+
+<p>Painel com várias opções para melhorar a correção/exatidão da simulação.</p>		
+
+<p>Neste painel, uma das opções mais importantes é o Error Limit (margem global de erro da simulação). Valores mais elevados necessitam de menos tempo de cálculo, valores mais baixos (menor margem de erro) dão maior precisão e exatidão.</p>
+
+
+
+		</div>
+		 
+		
+		
+		
+		
+		
+		
+		
+
+ </div>
+
+    <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+
+</body>
+</html>

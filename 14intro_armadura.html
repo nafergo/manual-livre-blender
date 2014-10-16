@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="tic" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Blender – Introdução às armaduras: Rigging e Skinning</h1>
+
+
+<p>1- Partindo do cubo inicial, utilizando a Extrusão (E) e o valor 2, crie um pilar similar ao da imagem.</p>
+
+<img src="img/img14/1armadura3c9c0b1d.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2- Adicione um Bone (Shift + A) e utilizando a Extrusão construa uma armadura com 5 bones similar à da imagem abaixo.</p>
+
+<img src="img/img14/2armadura35f87ae7.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Para associar a mesh à armadura: seleccione primeiro a mesh, depois a armadura, clique em Ctrl + P e seleccione a opção “with Automatic Weights”.</p>
+
+<p>4- Em Object Mode, seleccione a armadura. No painel Object Data da armadura, active a opção X-Ray para a armadura ser sempre visível e nunca ficar escondida ou tapada pela mesh.</p>
+
+<p>Ainda neste painel, pode optar por activar outras formas de visualização dos Bones (Octahedral, Stick, B-Bone e Envelope), mostrar nomes dos Bones e respectivos eixos.</p>
+
+<p>É recomendável atribuir nomes aos bones substituindo as designações automáticas (i.e. Bone, Bone.001, Bone.002, etc.). Em Pose ou Edit Mode,seleccione o Bone e no painel Bone tem acesso a uma caixa de texto onde pode renomear o Bone seleccionado.</p>
+
+<img src="img/img14/3armadura5f04cf39.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5- Object Mode, seleccione a armadura. Active a Pose Mode. Clique na mesh e active o Weight Paint Mode. Verifique a influência de cada Bone e proceda a alterações ou correcções. No painel de ferramentas surgem diversas opções para ajudar a estar tarefa, onde pode escolher tipo de Brush, dimensão, intensidade/strength, etc.</p>
+
+<img src="img/img14/4armadura748d9597.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>6- Quando estiver satisfeito, seleccione a armadura e active a Pose Mode. A partir deste momento, pode animar a armadura e inserir keyframes (I) em cada Bone que pretende animar.</p>
+
+<h3>Hipótese 1 - Inserir Keyframes Manualmente</h3>
+
+<p>a) Coloque-se na frame 1</p>
+
+<p>b) Seleccione o Bone do topo e insira uma keyframe (I) de tipo LocRot.</p>
+		
+<p>c) Avance até à frame 11 e aplique uma rotação (R) ao Bone que tem seleccionado e uma keyframe LocRot. Seleccione o segundo Bone (a contar do topo) e insira uma keyframe LocRot.</p>
+
+<img src="img/img14/5armadura311e0fb1.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>	d) Avance até à frame 21 e aplique uma rotação (R) ao segundo Bone. Seleccione o terceiro Bone (a contar do topo) e insira uma keyframe LocRot. Repita o processo até ter uma forma semelhante à da imagem abaixo na frame 41.</p>
+
+<img src="img/img14/6armadura5660cf4.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>e) Se animar (Alt+A) irá ver uma animação entre a frame 1 e a frame 41.</p>
+
+<h3>Hipótese 2 - Inserir Keyframes Automaticamente</h3>
+
+<p>a) Coloque-se na frame 1. Active o botão de “Automatic Keyframes” para gravar automaticamente as keyframes necessárias sem ser necessário clicar no I.</p>
+
+<img src="img/img14/7armadura59afe4b2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>b) Mova o primeiro Bone e volte a colocá-lo na mesma posição (na vertical)) para gravar a keyframe.</p>
+
+<p>c) Avance até à frame 11 e mova o segundo Bone. Repita o processo até à keyframe 41.</p>
+
+<p>d) Desligue o botão de gravação de keyframes e veja como está animação (Alt+A).</p>
+
+<h3>Action Editor</h3>
+
+<p>O Action Editor permite criar uma biblioteca de animações que depois podem ser conjugadas ou até activadas em simultâneo.</p>
+
+<img src="img/img14/8armadura1d235b2c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Escolha a janela DopeSheet e active a opção Action Editor. Já deverá ter uma animação criada com o nome “ArmatureAction”. Mude o nome da acção para “descer”</p>
+
+<p>Na frame 41, clique no sinal + para criar uma nova acção com o nome “Subir”. Volte à frame 1 (utilize as setas do teclado), seleccione todos os Bones e insira uma keyframe (I) LocRot. Na janela Timeline, active o botão para gravar as keyframes automaticamente e comece a gravar keyframes de forma a que na frame 41 a suar armadura esteja na vertical.</p>
+
+<p>No final, deverá ter duas acções, “descer” e “Subir”, ambas têm 41 frames, ambas começam na frame 1 e terminam na 41. </p>
+		
+<h3>Inverse Kinematics</h3>	
+
+<p>Seleccione o Bone do topo e aplique-lhe um “Bone Constraint” do tipo “Inverse Kinematics”.</p>
+		
+<p>Clique em G para mover o Bone e veja a diferença</p>
+
+<p>Se quiser diminuir a influência do “constraint”, altere o valor da “Chain Length”. Experimente mover o Bone do topo com valor 3 para ver a diferença. Se tiver 0, a influência extende-se a todos os Bones que estejam directamente ligados, em cadeia.</p>
+
+<img src="img/img14/9armadura5c3b5fd6.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Tradicionalmente, a animação é feita em modo “Forward Kinematics”. Ou seja, move primeiro o Bone da base e depois anima até à extremidade, Bone a Bone. Por outras palavras, move primeiro o antebraço, depois o braço, depois a mão.</p>
+		
+<p>No modo “Inverse Kinematics” é possível animar a extremidade que os restantes Bones vão recolocar-se de acordo com a posição da extremidade.</p>
+		
+<p>Crie mais uma animação entre a frame 1 e 41 movendo apenas o Bone do topo. Este deverá ter um “Bone Constraint” do tipo “Inverse Kinematics” e uma “Chain Length” com valor 5.</p>
+
+
+		</div>
+		
+		
+		
+		
+		
+		
+
+ </div>
+
+      <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+
+</body>
+</html>

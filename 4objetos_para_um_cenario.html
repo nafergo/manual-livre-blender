@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="tic" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+<!-- fim do menu --> 
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Blender – Criar objectos para um cenário utilizando várias ferramentas de modelação</h1>
+
+
+<p>O objectivo deste tutorial é experimentar outras ferramentas de modelação para criar um conjunto de objectos que irão servir de cenário para uma animação com a nave (tutorial nº3).  </p>
+
+<h3>Objecto 1</h3>
+
+<p>1- Comece por criar uma cena limpa de objectos (no início, o Blender começa sempre com um cubo já inserido). Clique na tecla “Delete” ou X para apagar o cubo. </p>
+
+<p>2- Coloque-se em visão de topo (NUMPAD 7) e visão ortogonal (NUMPAD 5). Adicione um plano e aumente a escala do plano 5 vezes (prima S, depois 5). Em Edit Mode, prima 6 vezes o botão Subdivide.</p>
+
+<img src="img/img4/1objectos343c1387.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Seleccione um vértice central ou próximo do centro. Active o Proportional Editing Mode. Escolha a opção Random.</p>
+
+<img src="img/img4/2objectos7a5aedde.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- Se mover o vértice (G) para cima irá obter um efeito semelhante à imagem abaixo. Pode modificar a área afectada pelo movimento através da roda do rato. O círculo cinza que vê abaixo define a área afectada e pode ser aumentado/reduzido rodando a rota do rato.</p>
+
+<img src="img/img4/3objectos3594b97d.png" alt="..." class="img-responsive img-thumbnail center-block">		
+
+<p>5- Seleccionando um vértice de cada vez (ou vários, com o SHIFT), construa uma espécie de desfiladeiro como na imagem abaixo.</p>
+	
+<img src="img/img4/4objectos17a5c195.png" alt="..." class="img-responsive img-thumbnail center-block">	
+
+<p>6- Em Object Mode, com o plano seleccionado, vá ao painel de Modifiers (ícone semelhante a uma chave inglesa) e active o modifier Subdivision Surface.</p>	
+	
+<img src="img/img4/5objectos508a08e7.png" alt="..." class="img-responsive img-thumbnail center-block">		
+
+<p>7- No painel de ferramentas da janela 3D View (T), pressione o botão Smooth para obter algo similar à imagem abaixo. Finalmente, com o objecto seleccionado, prima M para enviar o objecto criado para a última layer (veja o cursor do rato na imagem).</p>
+	
+<img src="img/img4/6objectos54ed937d.png" alt="..." class="img-responsive img-thumbnail center-block">	
+
+<h3>Objecto 2</h3>
+
+<p>8- Em Object Mode, coloque-se em visão de topo (NUMPAD 7) e visão ortogonal (NUMPAD 5). Adicione um cubo e diminua a sua dimensão para 1/5  (prima S, depois 0.2).</p>
+
+<p>Posicione o 3D Cursor afastado do cubo. Siga a orientação da imagem. Mude o Pivot para 3D Cursor.</p>	
+	
+<img src="img/img4/7objectos6337ae1c.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img4/8objectos1cd57c01.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>9- Em Edit Mode, com o todo o cubo seleccionado, clique no botão Spin (painel de ferramentas). Introduza 360 graus para fazer um círculo e um número de steps que  permita construir uma forma semelhante à da imagem abaixo. Como escolhemos o 3D Cursor como Pivot, o Spin irá ser feito em torno desse cursor.</p>	
+	
+<img src="img/img4/9objectos2f4b168d.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>10- Em Object Mode, duplique o objecto criado (SHIFT+D) e active a ferramenta para redimensionar (S). Aumente ligeiramente de forma a obter um segundo círculo de “caixas”.</p>
+	
+<p>11- Coloque o Pivot novamente no Median Point.</p>
+
+<img src="img/img4/10objectos4aec379f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>12- Seleccione o círculo exterior de “caixas”, vá ao painel de Modifiers e aplique um modifier Array. </p>
+
+<img src="img/img4/11objectos8f01ebf.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>13- Aumente o Count para 10 e introduza os valores necessários no eixo Z para obter um efeito similar ao da imagem. Repita o processo para o círculo interior.</p>
+
+<img src="img/img4/12objectos113e47f1.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>14- Mova estes 2 objectos para outra layer à sua escolha.</p>
+
+<h3>Objecto 3</h3>
+
+<p>15- Em Object Mode, coloque-se em visão de topo (NUMPAD 7) e visão ortogonal (NUMPAD 5). Adicione um círculo.</p>
+
+<p>16- Em Edit Mode, apague vértices (no exemplo ficámos só com 11) e mova 3 vértices (G) para a esquerda de forma a criar um recorte semelhante ao da imagem à direita.</p>
+
+<img src="img/img4/13objectos2817e51b.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>17- Em Edit Mode, com todos os vértices seleccionados, clique no botão Screw para criar um objecto semelhante ao apresentado abaixo. Veja as configurações utilizadas no painel de ferramentas (lado esquerdo).</p>
+
+<img src="img/img4/14objectos4bc5a195.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>18- Aplique um modifier Subdivisin Surface e Smooth como fez nos passos 6 e 7.</p>
+
+<p>19- Mova este objecto para outra layer à sua escolha.</p> 
+
+<h3>Objecto 4</h3>
+
+<p>20- Em Object Mode, coloque-se em visão de topo (NUMPAD 7) e visão ortogonal (NUMPAD 5). Adicione um cubo, clique 2 vezes em Subdivide.</p>
+
+<img src="img/img4/15objectos5ec1cbfa.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Posicione o 3D Cursor afastado do cubo. Siga a orientação da imagem. Mude o Pivot para 3D Cursor.</p>
+
+<p>21- Em Edit Mode, com todos os vértices seleccionados, prima SHIFT+W para utilizar a ferramenta Warp. Crie uma forma similar à apresentada em baixo.</p>
+
+<img src="img/img4/16objectos9225897.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>22- Em Object Mode, clique no botão Origin do painel de ferramentas e escolha a terceira opção para o centro ou origem do objecto criado (ponto laranja) passar para a localização do 3D Cursor. Na imagem abaixo, o centro ou origem do objecto, o ponto laranja, já está na localização do 3D Cursor.</p>
+
+<img src="img/img4/17objectos56d81375.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img4/18objectos5225e96f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>23- Em Object Mode, adicione o modifier Mirror e configure de forma semelhante à imagem apresentada.</p>
+
+<img src="img/img4/19objectos3efcdb1b.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Vamos espelhar o objecto no eixo Y e activar a opção Clipping para evitar que os vértices possam ultrapassar o espelhamento.</p>
+	
+<p>24- Em Edit Mode, visão Wireframe (Z), selecção de vértices, seleccione com caixa (B) os vértices necessários e mova-os (G) de modo a criar uma forma similar à da imagem abaixo.</p>	
+
+<img src="img/img4/20objectos26a8d324.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img4/21objectos1cf3588b.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>25- Em Object Mode, com o objecto seleccionado, vá ao painel Object (ícone é um cubo) e atribua um nome fácil de recordar ao objecto. Faça o mesmo para os objectos que criou anteriormente. No exemplo, utilizámos os seguintes nomes: espigados, espiral, circulo_fora, circulo_dentro, desfiladeiro.</p>
+	
+<img src="img/img4/22objectos4ecf6cf6.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Faça o mesmo para o avião/nave do tutorial anterior.</p>
+		
+		</div>
+		
+		
+		
+		
+
+ </div>
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

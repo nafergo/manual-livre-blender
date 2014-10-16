@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina">Introdução ao rigging <small>no Blender</small></h1>
+      	
+      	
+      	<div class="page-header">
+				<h2>Definição</h2>
+      	</div>
+      	<p><strong>
+Rigging</strong> é o processo de construção de uma armadura (armature) para controlar/animar um objeto.
+ É uma especialidade importante, cria a ferramenta utilizada pelo animador.</p>
+
+ 		<p class="text-center"><img src="img/intros/rigging/riggers_animators.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Adaptado de um popular cartoon sobre como os programadores veem utilizadores e viceversa (autor desconhecido)</small>
+</p>
+
+      	<div class="page-header">
+				<h2>Alguns termos e conceitos importantes</h2>
+      	</div>
+      	<p><strong>      	
+      	Skeletal animation</strong> é uma técnica de animação
+por computador em que uma personagem é
+representada por duas partes: superfície que
+define aspeto da personagem (skin) e um conjunto
+hierárquico de ossos (bones) interligados (skeleton
+ou armature) utilizados para animar a malha.</p>
+
+      	<p><strong>
+Rig</strong> é o resultado do trabalho do rigger, é a
+armadura ou esqueleto que irá ser utilizado pelo
+animador para animar a personagem.</p>
+
+      	<p><strong>
+Skinning</strong> é o processo de associação da armadura
+(skeleton) à malha (skin).</p>
+
+      	<p><strong>
+Joint hierarchy</strong> é a estrutura da armadura, a
+hierarquia entre bones. Existem uns bones que são
+child (filho) e outros que são parent (pai), o
+movimento destes últimos afeta o dos primeiros.</p>
+
+ 		<p class="text-center"><img src="img/intros/rigging/armature0.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Estrutura de uma armadura de um humanóide. As linhas indicam parentesco entre bones que não fisicamente ligados entre si.</small>
+</p>
+
+
+      	<p><strong>
+Root bone</strong> é o nome do bone que está em
+primeiro lugar na hierarquia (não tem de ser o
+primeiro a ser cirado). Se mover o root bone, todos
+os outros bones também são afetados porque
+diretamente ou indiretamente são childs.</p>
+
+      	<p><strong>
+Tip, Body e Root</strong> são nomes dos elementos que
+constituem um bone.</p>
+
+ 		<p class="text-center"><img src="img/intros/rigging/bone.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Bastien Montagne, retirada da <a href="http://wiki.blender.org/index.php/Doc:2.6/Manual/Rigging/Armatures/Bones" target="_blank">Blender Wiki</a></small>
+</p>
+
+
+      	<div class="page-header">
+				<h2>FK (Forward Kinematics) e IK (Inverse Kinematics)</h2>
+      	</div>
+      	
+      	<p>
+Uma armadura é uma cadeia de bones (ossos)
+ligados entre si. A animação de uma cadeia de
+bones, os movimentos nas juntas dos bones de uma
+armadura, pode ser de dois tipos: FK (Forward
+Kinematics) e IK (Inverse Kinematics).</p>
+
+
+ 		<p class="text-center"><img src="img/intros/rigging/armature.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Armadura de um humanóide. São utilizados os sufixos _L e _R para identificar bones/ossos do lado esquerdo (left) e direito (right).</small>
+</p>
+
+
+<p>
+No <strong>FK</strong>, os child-bones seguem os parent-bones, a
+articulação das juntas faz-se de acordo com a
+hierarquia definida previamente (i.e. mover o ombro,
+depois o cotovelo, depois o pulso).</p>
+
+
+<p>
+No <strong>IK</strong>, a articulação faz-se na ordem inversa à
+hierarquia, um child-bone influencia o movimento dos
+parent-bones (i.e. se mover o pulso, o cotovelo e o
+ombro deslocam-se de acordo). O movimento do
+child-bone afeta a posição e orientação dos seus
+parent-bones.
+</p>
+
+      	<div class="page-header">
+				<h2>6 Graus de Liberdade e Constraints</h2>
+      	</div>
+<p>     
+Os 6 DoF (Degrees of Freedom) são os graus de liberdade de movimentos: Translação (em X, Y e Z) e Rotação (em X, Y e Z).
+</p>
+
+<p>
+Para limitar a liberdade de movimento dos bones, utilizam-se Constraints.
+Estas restrições podem ser utilizadas para definir onde é o chão (e os bones
+dos pés não podem ultrapassar o chão), evitar que os joelhos ou os
+cotovelos rodem num sentido não natural, etc.
+</p>
+
+
+     
+     
+  		<p class="text-center"><img src="img/intros/rigging/6dof.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Horia Ionescu, retirada da <a href="http://en.wikipedia.org/wiki/Six_degrees_of_freedom#mediaviewer/File:6DOF_en.jpg" target="_blank">Wikipedia</a></small>
+</p>    
+
+
+      	<div class="page-header">
+				<h2>Material adicional recomendado</h2>
+      	</div>
+<p>
+<a href="http://www.peachpit.com/articles/article.aspx?p=483793" target="_blank">How to Properly Rig Your Characters for Animation</a>
+</p>
+<p>
+<a href="http://ezinearticles.com/?Introduction-to-Character-Rigging---How-to-Prepare-Your-3D-Models-For-Animation!&id=2745330" target="_blank">Introduction to Character Rigging</a>
+</p>
+<p>
+<a href="http://www.peachpit.com/articles/article.aspx?p=22796" target="_blank">Rigging Characters | Grab Points and Handles</a>
+</p>
+<p>
+<a href="http://en.wikipedia.org/wiki/Skeletal_animation#cite_ref-0" target="_blank">Skeletal animation</a>
+</p>
+<p>
+<a href="http://3d.about.com/od/Creating-3D-The-CG-Pipeline/a/What-Is-Rigging.htm" target="_blank">What is Rigging?</a>
+</p>   
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

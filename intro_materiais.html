@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina">Introdução aos materiais <small>no Blender</small></h1>
+      	
+
+      	<div class="page-header">
+				<h2>Definição</h2>
+      	</div>
+      	<p>Se a modelação é o processo de definição da forma de um objeto através da 
+      	manipulação da sua geometria, os <strong>materiais</strong> são a componente que define o aspeto desse mesmo objeto. Um plano pode 
+      	assumir o aspeto de uma parede de cimento ou vidro e são os materiais que definem essa aparência.</p>
+      	
+
+
+
+      	<div class="page-header">
+				<h2>Alguns termos e conceitos importantes</h2>
+      	</div>
+
+      	<p><strong>
+Texturing</strong> (texturização) é o processo de criação das superfícies (surfaces) e cores dos modelos para definir a sua aparência, o seu aspeto visual. Se a 
+forma de um objeto resulta da sua geometria, material que define o seu aspeto resulta da utilização de shaders e texturas. Utilizamos texturas como inputs de shaders, definindo atributos como cor, reflexos, brilho, transparência, etc.</p>
+
+ 		<p class="text-center"><img src="img/intros/materiais/1421_tid_image_01.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Pedro Toledo publicada em <a href="http://www.3dtotal.com/index_tutorial_detailed.php?id=1421&catDisplay=1&roPos=1&page=3#.U-KCuD_S5hE" target="_blank">Brief Consideration About Materials</a>.</small>
+</p>
+
+ 		<p class="text-center"><img src="img/intros/materiais/1421_tid_image_13.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Pedro Toledo publicada em <a href="http://www.3dtotal.com/index_tutorial_detailed.php?id=1421&catDisplay=1&roPos=1&page=3#.U-KCuD_S5hE" target="_blank">Brief Consideration About Materials</a>.</small>
+</p>
+
+      	<p><strong>
+Texture mapping</strong> é um método inventado por Edwin Catmull na primeira metade da 
+década de 70. É um processo de adicionar cor ou textura (imagem bitmap ou raster) a um modelo 3D
+ através da projeção de imagens. Um <strong>texture map</strong> (mapa de textura) é aplicado (mapped, mapeado) à superfície de um modelo 3D. 
+ Estas projeções podem ser configuradas para afetar a cor e/ou especularidade (brilho gerado pela luz no material), reflexos, transparência, etc.
+As texturas necessitam de coordenadas (mapping coordinates) para determinar como irão ser aplicadas num objeto. O mapping especifica o modo como as texturas irão “embrulhar” o objeto.</p> 
+
+ 		<p class="text-center"><img src="img/intros/materiais/Manual-Textures-Layers.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Roger Wickes publicada na <a href="http://wiki.blender.org/index.php/File:Manual-Textures-Layers.jpg" target="_blank">Blender Wiki</a>.</small>
+</p>
+
+
+
+<p>
+Existem vários tipos de texture maps:</p>
+
+<ul>
+<li><strong>Color (ou Diffuse) Maps:</strong> informação sobre a cor.</li>
+
+<li><strong>Specular Map:</strong> Imagem que armazena informação sobre intensidade do brilho gerado pela luz no material (especularidade).</li>
+
+
+
+ 		<p class="text-center"><img src="img/intros/materiais/1421_tid_image_15.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Pedro Toledo publicada em <a href="http://www.3dtotal.com/index_tutorial_detailed.php?id=1421&catDisplay=1&roPos=1&page=3#.U-KCuD_S5hE" target="_blank">Brief Consideration About Materials</a>.</small>
+</p>
+
+<li><strong>Bump map:</strong> Imagem a preto-e-branco utilizada por um software 3D para simular pormenores tridimensionais na superfície de um objeto, afetam a superfície do objeto manipulando sombras e reflexos da luz. O efeito, a simulação de detalhes ou imperfeições na superfície, é só de renderização, não afeta a geometria do model (i.e. silhueta permanece igual).</li>
+
+
+ 		<p class="text-center"><img src="img/intros/materiais/400px-Bump-map-demo-full.png" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de GDallimore publicada na <a href="http://en.wikipedia.org/wiki/Bump_mapping#mediaviewer/File:Bump-map-demo-full.png" target="_blank">Wikipedia</a>.</small>
+</p>  
+
+ 		<p class="text-center"><img src="img/intros/materiais/Bump_map_vs_isosurface2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de GDallimore publicada na <a href="http://en.wikipedia.org/wiki/Bump_mapping#mediaviewer/File:Bump_map_vs_isosurface2.png" target="_blank">Wikipedia</a>.</small>
+</p>
+
+<li><strong>Displacement map:</strong> Similar ao Bump Map (imagem a preto-e-branco) mas afeta a geometria do objeto.</li>
+
+<li><strong>Normal Map:</strong> mesma função do bump map mas tem mais informação, utiliza imagem rgb.</li>
+
+
+ 		<p class="text-center"><img src="img/intros/materiais/Normal_map_example_with_scene_and_result.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Julian Herzog publicada na <a href="http://en.wikipedia.org/wiki/Normal_mapping#mediaviewer/File:Normal_map_example_with_scene_and_result.png" target="_blank">Wikipedia</a>.</small>
+</p>  
+
+
+<li>E ainda existem Reflection Maps, Transparency Map, etc.</li>
+
+</ul>
+
+      	<p><strong>
+Shader</strong> é um conjunto de instruções associado a um modelo 3D que informa o motor de renderização sobre o modo como a superfície do modelo 3D deve interagir com a iluminação (opacidade, brilho, etc.), a forma como a luz é dispersa por uma superfície. Se o modelo 3D é a geometria, o shader define a natureza da superfície (metal, cerâmica, madeira, plástico, etc.) e o seu aspecto visual. O Blender disponibiliza um variado conjunto de shaders pré-definidos que podem ser configurados e combinados entre si. Frequentemente, os Shaders são construídos com árvores de nós, com cada nó a controlar um aspecto específico do processo.</p>
+
+
+
+ 		<p class="text-center"><img src="img/intros/materiais/Toon-shader.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem publicada na <a href="http://en.wikipedia.org/wiki/Toon_shader#mediaviewer/File:Toon-shader.jpg" target="_blank">Wikipedia</a>.</small>
+</p>  
+
+      	<p><strong>
+UV Mapping</strong> é um processo de texture mapping, uma forma de atribuir pixels
+ de uma imagem 2D à superfície de um modelo 3D. As letras "U" e "V" representam os dois eixos da textura 2D e são utilizados
+  porque o "X", "Y" e "Z" já estão a ser utilizados para os eixos do modelo 3D.</p>
+
+
+ 		<p class="text-center"><img src="img/intros/materiais/UVMapping.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Tschmits publicada na <a href="http://en.wikipedia.org/wiki/UV_mapping#mediaviewer/File:UVMapping.png" target="_blank">Wikipedia</a>.</small>
+</p>  
+
+      	<p><strong>
+Unwrapping</strong> (desembrulhar) é o processo de criar uma imagem 2D que represente o modelo 3D.</p>
+
+      	<p><strong>
+UV Layout</strong> é a imagem 2D que represente o modelo 3D.</p>
+
+<p>Processo comum após o modelo 3D criado:</p>
+<ol>
+<li> Unwrapping criando o UV Layout;</li> 
+<li> criar textura a partir do UV Layout (muitas vezes, utilizando um editor de imagem);</li>
+<li> importar e aplicar a textura no modelo 3D utilizando as coordenadas UV criadas.</li>
+</ol>
+
+      	<p><strong>
+IOR</strong> (Index Of Refraction /  Índice de refração) é um conceito da ótica, é um valor que descreve
+ a relação entre a velocidade da luz no vácuo e a velocidade com que a luz se propaga através de um determinado meio. Materiais diferentes 
+ têm IORs diferentes. Vidro e/com líquidos são materiais onde este valor assume especial importância.</p>      	
+      	
+ 		<p class="text-center"><img src="img/intros/materiais/Dibujo1-Model1.png" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem retirada de <a href="http://www.yafaray.org/documentation/userguide/material#Glass" target="_blank">YafaRay Materials Introduction</a>.</small>
+</p>      	     	
+
+
+
+
+         	<div class="page-header">
+				<h2>Sugestões importantes</h2>
+      	</div> 
+
+<p><strong>Não utilizar apenas uma cor difusa e sólida: </strong>No Cycles (e não só!), não utilize apenas uma cor difusa (diffuse) sólida. No mundo real, não existem materiais completamente difusos (diffuse). 
+Quase todos os materiais refletem pelo menos alguma luz. Utilize sempre algum reflexo, mesmo que muito suave. É também comum haver alguma variação, mesmo na cor difusa. Misture duas cores difusas, podem ser muito aproximadas mas não exatamente os mesmos valores.
+</p>
+
+<p>
+<strong>Não usar cores com valores máximos: </strong> No Cycles (e não só!), não utilize cores com Value (formato HSV) superior a 0.8. Não usar cores com
+ Value (formato HSV) superior a 0.8 em shaders de tipo Diffuse, Glossy, Velvet e Anisotropic. Valores acima de 0.8 raramente existem no mundo real e aumenta a probabilidade de "fireflies" ("pirilampos", pixels brancos ou muito claros) nos renders. 
+</p>
+
+<p>
+<strong>Materiais condutores:</strong> materiais que conduzem eletricicidade (mais comuns os metais). Materiais condutores alteram cor especular (specular), tingindo. Utilize a mesma cor no Diffuse e Specular como ponto de partida (pode variar intensidade ou até a matiz, ligeiramente, mas mantenha matizes similares ou aproximadas). Ouro tem Diffuse e Specular com tons de amarelo, etc.
+</p>
+
+<p>
+<strong>Materiais dielétricos (isolantes):</strong> não conduzem eletricidade (madeira, vidro, louça, plástico, borracha, tecidos, etc.). Estes materiais são neutros à luz e não afetam a cor do dos reflexos (Specular). Se a luz é branca, os reflexos (Specular) são brancos. Se a luz é amarela, os reflexos são amarelos, etc.
+</p>
+
+
+         	<div class="page-header">
+				<h2>Material adicional recomendado</h2>
+      	</div> 
+
+
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?id=940#.Tw8KiatLs5Y" target="_blank">Combining Shaders and Maps</a>
+</p>
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?id=646#.Tw8LFKtLs5Y" target="_blank">Texturing Tips</a>
+</p>
+<p>
+<a href="http://www.creativebloq.com/3d/how-create-realistic-metallic-textures-51411511" target="_blank">How to create realistic metallic textures</a>
+</p>
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?id=751#.Tw8HY6tLs5Y" target="_blank">Color Theory</a>
+</p>
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?id=1167#.Tw8HQKtLs5Y" target="_blank">The Power of Diffuse</a>
+</p>
+<p>
+<a href="http://3d.about.com/od/3d-101-The-Basics/a/Surfacing-101-Creating-A-UV-Layout.htm" target="_blank">Surfacing 101 - Creating a UV Layout</a>
+</p>
+<p>
+<a href="http://3d.about.com/od/Creating-3D-The-CG-Pipeline/a/Surfacing-101-Shading-Networks-And-Surface-Materials.htm" target="_blank">Surfacing 101 - Shader Networks & Surface Materials</a>
+</p>
+<p>
+<a href="http://3d.about.com/od/3d-101-The-Basics/a/Surfacing-101-Texture-Mapping.htm" target="_blank">Surfacing 101 - Texture Mapping</a>
+</p>
+<p>
+<a href="http://www.fxguide.com/featured/the-art-of-digital-color/" target="_blank">The Art of Digital Color</a>
+</p>
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?catDisplay=1&id=1421" target="_blank">Brief Consideration About Materials</a>
+</p>
+<p>
+<a href="http://www.blenderguru.com/videos/understanding-colors/" target="_blank">Understanding Colors</a>
+</p>
+
+
+
+      	<div class="page-header">
+				<h2>Recursos adicionais</h2>
+      	</div>
+<p>
+<a href="http://registry.gimp.org/node/28638" target="_blank">InsaneBump (GIMP plugin)</a>
+</p>
+<p>
+<a href="https://sites.google.com/site/ccdsurgeon/download" target="_blank">InsaneBump</a>
+</p>
+
+
+
+
+
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+ 
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="tic" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Blender – Introdução às texturas e materiais</h1>
+
+
+<h4>APLICANDO TEXTURAS</h4>
+
+<p>Nos exemplos que se seguem iremos utilizar 2 imagens como texturas e uma (GNU) tem Alpha Channel.</p>
+
+<img src="img/img19/1Intro_texturas3f75134d.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img19/2Intro_texturas43b92467.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Iremos utilizar uma lâmpada Sun, na mesma posição da lâmpada original, sem alterar qualquer configuração. </p>
+
+<p>A cena utilizada é a da imagem abaixo...</p>
+
+<img src="img/img19/3Intro_texturas5662e1b0.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img19/4Intro_texturas1112c1e6.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>1- Seleccione o cubo. </p>
+
+<p>No painel Material poderá editar os materiais associados a este objecto. Um objecto pode ter vários materiais. </p>
+
+<p>Este cubo já tem um material, chamado Material, associado. Pode alterar o nome do material.</p>
+
+<p>Clique na cor Diffuse e utilize os valores RGB para introduzir um vermelho total (RGB 100, 0, 0).</p>
+
+<img src="img/img19/5Intro_texturas301d103.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2- Vamos atribuir um novo material verde (RGB 0, 100, 0) a apenas uma face do nosso cubo.</p>
+
+<p>Passe para Edit Mode. Seleccione a face do topo do cubo.</p>
+
+<p>No painel Material, clique no sinal + para adicionar uma nova slot de material neste objecto. O Blender vai duplicar o material já existente e indica que este mesmo material está a ser partilhado por 2 instâncias ao apresentar o número 2 ao lado do nome Material.</p>
+
+<p>Clique no número 2 (ao lado do nome Material) para tornar este material independente do anterior, para ter 2 materiais diferentes em 2 slots.</p>
+
+<img src="img/img19/6Intro_texturas335e5cc3.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Se não tiver alterado o nome do primeiro material, o novo material criado vai chamar-se Materia.001. </p>
+
+<p>Altere a cor de Diffuse para verde (RGB 0, 100, 0). </p>
+
+<p>Clique em Assign para atribuir o novo material verde à face do cubo que tem seleccionada.</p>
+
+<img src="img/img19/7Intro_texturas31374841.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- Vamos associar a imagem da cabeça do Gnu ao nosso cubo.</p>
+
+<p>Seleccione o material “Material”. Passe para o painel Texture. O cubo já tem uma slot de textura associada e activa. Escolha o type Image or Movie e carregue a imagem no painel Image.</p>
+
+<img src="img/img19/8Intro_texturasmdaa8a52.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Se renderizar, o resultado deverá ser semelhante a este.</p>
+
+<img src="img/img19/9Intro_texturas1e3c8092.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Como é fácil perceber, existem vários aspectos a corrigir. </p>
+
+<p>a) Corrigir os erros que rodeiam o elemento opaco da imagem, melhorar a utilização do Alpha: active a opção Premultiply. </p>
+
+<img src="img/img19/10Intro_texturas36fcbb9e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>b) Desactivar a textura de imagem na face verde: volte ao painel Material e seleccione o material verde (Material.001); vá ao painel Texture e desactive a textura. Se renderizar, a imagem já não aparece na face verde.</p>
+
+<img src="img/img19/11Intro_texturas61121f14.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img19/12Intro_texturas561d6ee3.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>c) Fazer com que a textura de imagem surja nas faces vermelhas: volte ao painel Material e seleccione o material vermelho. Vá ao painel Texture e, no painel Mapping, escolha uma Projection do tipo Cube.</p>
+
+<img src="img/img19/13Intro_texturas1486b446.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Ao inserirmos uma textura, esta vai ser automaticamente mapeada/aplicada com um a Projection do tipo  Flat: só surge projectada ao longo de um eixo e como se estivesse a ser inserida na visão de topo . Ou seja, a imagem vai surgir projectada ao longo do eixo Z, vai sugir no topo e na base da caixa. No nosso caso, como temos um material para o topo (verde) e outro diferente nas restantes faces (vemelho), a imagem só surgia no topo do cubo, no material verde.</p>
+
+<p>As Projections Flat, Cube, Tube e Sphere definem 4 modos de aplicação da textura. Devem ser utilizados dependendo da forma do objecto e do efeito pretendido. No exemplo, a imagem está a ser projectada individualmente em cada face (Cube) onde existe o material vermelho.</p>
+
+<p>Através dos valores de Size podemos controlar a dimensão da textura nos vários eixos. Através dos valores de Offset controlamos a posição/deslocação da imagem no objecto.</p>
+
+<p>Os menus X, Y e Z permitem contruir um “puzzle” de coordenadas  XYZ que serve para manipular a aplicação da textura. </p>
+
+<p>Os menus deverão ser interpretados da seguinte maneira: o primeira menu serve para definir o eixo que aponta da esquerda para a direita; o segundo menu define o eixo que aponta de baixo para cima; o terceiro indica o eixo da profundidade. </p>
+
+<p>Para perceber melhor, talvez seja melhor voltar a activar a imagem do material verde e manipular esta. Coloque-se em modo de visão de topo e olhe para o objecto, perceberá então as coordenadas: seta vermelha (eixo X) aponta para a direita; seta verde (eixo Y) aponta para cima. Experimente rodar a textura alterando os eixos nos menus. </p>
+
+<img src="img/img19/14Intro_texturas17864e13.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img19/15Intro_texturas1946888b.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5- Depois de experimentar, deverá ficar com a imagem da cabeça do Gnu a ser visível nas faces vermelhas e apenas a cor verde na face de topo.</p>
+
+<p>Seleccione o Material.001 (cor verde) no painel Material. Vá ao painel Texture, clique numa slot vazia e no botão New para criar uma nova slot de textura para o Material.001.</p>
+
+<img src="img/img19/16Intro_texturas6a52ca65.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img19/17Intro_texturas4c8b9f2a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Escolha o type Image or Movie.</p>
+
+<p>Adicione a segunda imagem fornecida através do painel Image.</p>
+
+<p>Como esta imagem não tem Alpha Channel, não necessita de activar o Premultiply.</p>
+
+<p>Se renderizar, deverá obter uma imagem similar a esta...</p>
+
+<img src="img/img19/18Intro_texturas48acc77e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>6- A nova imagem inserida está a ser utilizada para “influenciar” a cor do objecto. No entanto, existem muitas outras formas de utilizar uma textura. No exemplo abaixo, desactivámos a influência na cor e activámos a influência na geometria, no valor dos “normals”, criando um bump map.</p>
+
+<p>No primeiro exemplo, a imagem está a ser utilizada para definir a “altura”. Cor escura é mais fundo.</p>
+
+<p>São apresentadas outras possibilidades, combinando diferentes tipos de “influências”. </p>
+
+<img src="img/img19/19Intro_texturas3b61e3a2.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img19/20Intro_texturasca861c3.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img19/21Intro_texturas46c0ef29.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img19/22Intro_texturas3a6e09df.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>7- No exemplo abaixo, adicionámos um objecto de Texto. Adicionámos um material ao plano que está debaixo da caixa e do texto. No material do plano activámos a opção Shadow Only para que o plano surja como invisível e apenas mostre as sombras dos objectos.</p>
+
+<img src="img/img19/23Intro_texturas563e9506.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>O material do texto tem activada a opção Shadeless. Emite sombras mas é insensível à luz e sombras. Daí que seja bem visível na imagem...</p>
+
+<img src="img/img19/24Intro_texturas6ee3f845.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>8- No exemplo abaixo, desactivámos o Shadow Only do plano e activámos o Mirror. O texto tem as mesmas definições</p>
+
+<img src="img/img19/25Intro_texturasdf2858f.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img19/26Intro_texturas3fd59f3e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+
+
+
+
+		</div>
+		
+		
+		
+		
+		
+		 
+		
+		
+		
+		
+		
+		
+		
+
+ </div>
+
+
+
+    </div><!-- /.container -->
+  
+
+
+ <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+
+</body>
+</html>

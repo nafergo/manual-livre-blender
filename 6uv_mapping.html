@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">UV Mapping <small>de uma lata de sopa famosa</small></h1>
+
+<p>Descarregue aqui <a href="files/6.zip" target="_blank">ficheiros de apoio a este texto</a></p>
+
+
+<p>UV mapping é o nome atribuído à técnica de envolver um modelo 3D numa imagem 2D. Geralmente, o processo envolve gerar uma projeção 2D do modelo 3D (unwrap = desembrulhar), exportar a projecção como imagem para edição, importar a imagem e embrulhar o modelo 3D. </p>
+
+<p>Neste processo de “embrulhar” modelos 3D em imagens 2D, U e V são os nomes das 2 coordenadas utilizadas como eixos para a imagem 2D ( X, Y e Z já são utilizados no modelo).</p>
+
+<p>1- Comece por criar uma cena limpa de objectos. Clique em “Delete” (ou X) para apagar o cubo.</p>
+
+<p>2- Assegure-se que está no modo de visão de topo (NUMPAD 7). Adicione um cilindro.</p>
+
+<p>3- Em modo Object, seleccione o cilindro e clique na sequência seguinte: S (activar o Size para modificar o tamanho), em Z (bloquear o redimensionamento ao eixo Z) e digite 1.5 (valor que permite aumentar o modelo em 50%).</p>
+
+<img src="img/img6/1UVmapping68d75357.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- Passe para modo Edit (TAB). Assegure-se que não tem nenhuma vértice/aresta/face seleccionado (A). Active modo de selecção de arestas/linhas. Active a oclusão da geometria do fundo para apenas conseguir seleccionar as arestas visíveis (evitando seleccionar inadvertidamente arestas que estão atrás de arestas visíveis). Seleccione as arestas dos círculos que definem o topo e base da “lata”, seleccione uma aresta do lado. (Sugestão: para seleccionar um “loop”, clique com SHIFT+ALT+BDR numa das arestas pertencentes ao topo)</p>
+
+<img src="img/img6/2UVmapping43479adc.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img6/3UVmapping42b805ac.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5- As arestas seleccionadas vão servir como linha de corte para desembrulhar o modelo 3D.  Clique em CTRL+E e escolha a opção Mark Seam. As arestas seleccionadas passam a estar assinalado com uma cor laranja. Em vez de desembrulhar as faces com uma lógica própria, a aplicação vai desembrulhar o modelo obedecendo às nossas linhas de corte. Se quiser desfazer a linha de “corte”, clique em CTRL+E e escolha a opção Clear Seam.</p>
+
+<img src="img/img6/4UVmapping627b0fb9.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img6/5UVmapping5d3b8700.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>6- Seleccione todas as arestas (A), clique em U e escolha a opção Unwrap.</p>
+
+<img src="img/img6/6UVmapping56337fa.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+<ul>
+<li>Unwrap: Desembrulha a malha numa superfície plana tendo em conta as seams criadas.</li> 
+<li>Smart UV Project: Desembrulha a mesh tendo em conta o ângulo. Separa as arestas de acordo com o Angle Limit, criando ilhas (conjuntos isolados de arestas/vértices ligados entre si). 
+A Island Margin define o afastamento entre as ilhas compostas pela malha.</li> 
+<li>Lightmap Pack: separa todas as arestas e tenta manter todas as faces do mesmo tamanho.</li> 
+<li>Follow Active Quads: desembrulha tendo em conta os loops de faces existentes.</li>
+<li>Cube: Projeta a UV numa forma cúbica. Útil para formas cúbicas.</li> 
+<li>Sphere: projeta a UV numa forma esférica. Útil para formas esféricas.</li> 
+<li>Cylinder: Projeta a UV numa superfície cilíndrica. Útil para formas cilíndricas.</li> 
+<li>Project from View: Projeta tendo em conta a vista no 3D View.</li> 
+<li>Reset: Todas as faces sobrepostas e do mesmo tamanho.</li>
+</ul>
+</p> 
+
+<p>7- Se mudar para a janela de tipo UV/Image Editor deverá ter algo semelhante à imagem abaixo. Se não tiver, volte à janela 3D View e verifique se seleccionou as arestas correctas, corrigindo caso seja necessário e voltando a fazer Unwrap.</p>
+
+<img src="img/img6/7UVmapping2d496762.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>8- Na janela UV/Image Editor vamos arrumar a imagem, alinhando os vértices e redimensionando algumas das áreas. Utilize os 4 botões assinalados para seleccionar (da esquerda para a direita): vértices, arestas, faces e ilhas (conjunto de faces adjacentes). Seleccione as “ilhas” circulares e redimensione (S), aumentando a sua dimensão ligeiramente. Seleccione os vértices de cada um dos lados do rectângulo e alinhe-os em X (UVs > Weld/Align > Align X).</p>
+
+<img src="img/img6/8UVmapping50f967dd.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>9- Quando estiver satisfeito com a organização do seu UV Layout, exporte-o (UVs > Export UV Layout). Por pré-definição, a imagem será exportada em fomato SVG (Scalable Vector Graphics), um formato Aberto e Livre de vectorial, e com dimensão 1024x1024. Para já, vamos utilizar estas pré-definições.</p>
+
+<p>Na janela UV/Image Editor está a ver todas as faces porque seleccionou todas as faces em Edit Mode. Se voltar à janela 3D View, seleccionar apenas algumas faces e voltar à janela UV/Image Editor, só irá ver as faces seleccionadas.</p>
+
+<img src="img/img6/9UVmapping6622da.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>10- Importe a imagem SVG exportada pelo Blender num editor de imagem que suporte o formato. Neste tutorial, utilizamos o GIMP.</p>
+
+<p>Em baixo, na imagem, pode ver que utilizamos 2 camadas (Layers). Em cima, a camada exportada pelo Blender que serve de guia (ou “mapa”). Em baixo, a uma nova camada onde inserimos a imagem (rótulo) que queremos que surja na lata. A imagem do rótulo foi redimensionada de forma a estar alinhada com as faces correctas.</p>
+
+<p>Depois de estar satisfeito, exporte apenas a camada com o rótulo (esconda a camada com a imagem-guia original) como PNG (Portable Network Graphics), um formato Aberto e Livre de imagem bitmap com compressão “lossless”.</p>
+
+<img src="img/img6/10UVmapping795a16b3.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>11- Na janela UV/Image Editor, menu Image, opção Open e seleccione a imagem PNG que acabou de criar.</p>
+
+<p>Deverá surgir algo semelhante à imagem abaixo. Caso não seja exactamente igual, experimente os botões assinalados (da esquera para a direita):</p>
+
+<p>- Activa o “image painting mode” (vamos utilizar a seguir);</p>
+<p>- Imagem com cores RGB;</p>
+<p>- Imagem com cores RGB e Alpha;</p>
+<p>- Imagem só com Alpha.</p>
+
+<img src="img/img6/11UVmapping65d784f2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>12- Se voltar à janela 3D View, irá ver a imagem “mapeada” no objecto 3D. No nosso caso, a lata parece estar de cabeça para baixo :) isso pode resolver-se rodando as faces na janela UV/Image Editor ou rodando a “lata” na janela 3D View.</p>
+
+<p>O topo da “lata” surge a negro porque não foi editado, na imagem 2D não existe nada na área que corresponde ao topo e à base da “lata” (os círculos).</p>
+
+<img src="img/img6/12UVmapping12daa027.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>13- Volte à janela UV/Image Editor e clique nos botões para activar o “image painting mode” e imagem com cores RGB (no conjunto de 4 botões assinalados no passo 11, correspondem aos dois botões da esquerda).</p>
+
+<p>Active a janela de propriedades (N) para obter um painel semelhante ao apresentado no lado esquerdo da imagem abaixo. Pinte com o rato nos círculos que correspondem às áreas de topo e base da “lata”.</p>
+
+<img src="img/img6/13UVmappingcb99e90.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>14- Se voltar à janela 3D View, o modelo apresentará um aspecto diferente do anterior.</p>
+
+<p>Se desejar, pode dividir a área de trabalho em duas janelas (3D View e UV/Image Editor) e, enquanto pinta na janela UV/Image Editor, vê o resultado a acontecer em tempo real na janela 3D View.</p>
+
+<img src="img/img6/14UVmapping18e4f6e5.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>15- Apesar da imagem já surgir na janela 3D View, se renderizar apenas irá ver o modelo 3D sem texturas ou imagem. O “mapeamento” está feito mas é necessário aplicar um material e, depois, uma imagem-textura ao objecto.</p>
+
+<p>Seleccione a lata. Vá ao painel Material, adicione uma slot de materiais e depois adicione um novo material.</p>
+
+<p>Recomenda-se que atribue um nome mais significativo ao material. Se quiser alterar o nome, clique onde na imagem surge “Material.001” (veja o cursor do rato) e escreva o novo nome que pretende atribuir.</p>
+
+<img src="img/img6/15UVmapping38c2435b.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>16- Vá ao painel Texture, clique em “New” para adicionar uma nova slot de textura, escolha textura de tipo Image or Movie.</p>
+
+<p>Na área de opções Mapping, escolha UV como Coordinates.</p>
+
+<p>Se descer no painel, encontrará uma área de opções identificada com “Image” (não surge na imagem à direita). Se clicar no ícone mais à esquerda, deverá surgir um menu com a imagem PNG que importou anteriormente e deverá apenas seleccionar</p>
+
+<img src="img/img6/16UVmapping3696dfde.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Se não surgir, escolha Open e importe novamente a mesma imagem PNG que utilizou na janela UV/Image Editor.</p>
+
+<img src="img/img6/17UVmapping13f6bce.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>17- Se renderizar (F12), a imagem PNG já deverá surgir a “embrulhar” o objecto 3D.</p>
+
+<p>18- Na janela 3D View, seleccione o objecto. Em Edit Mode, seleccione apenas as faces laterais da lata (onde está aplicado o rótulo) e clique em Smooth (botão no painel de Ferramentas/Tools) para suavizar as faces eliminando as arestas visíveis em cima.</p>
+
+<p>Volte a renderizar para ver a diferença.</p>
+
+<img src="img/img6/18UVmapping2d1411d4.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h3>Sugestão</h3>
+
+<p>- Adicione um plano e posicione-o abaixo da lata.</p>
+
+<p>. Escolha uma cor no Diffuse</p>
+<p>. Active o Mirror</p>
+<p>. Aumente ligeiramente o valor de Reflectivity e renderize!</p>
+
+<img src="img/img6/19UVmapping5a9c2629.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img6/20UVmapping6f454fb5.gif" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+		</div>
+		
+		
+		
+		
+
+ </div>
+
+      <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+</body>
+</html>

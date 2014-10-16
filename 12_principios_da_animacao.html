@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+
+    <div class="container-fluid">
+         <div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+
+
+     <div class="row">
+
+								<h1 class="titulopagina">12 princípios <small>básicos</small> da animação</h1>
+					<ul class="list-unstyled">
+  					<li><a href="#principios">Lista dos 12 princípios</a></li>
+  					<li><a href="#exemplos">Exemplos animados dos 12 princípios</a></li>
+					</ul>				
+					</div>   
+
+
+     <div class="row">					
+       <div class="locaisdasancoras"  id="principios"><br><br></div> 								
+      <div class="page-header" id="online">
+        <a class="pull-right" href="#topo"><i class="fa fa-chevron-up"></i></a>
+        <h2>Lista dos 12 princípios</h2>
+                
+      </div>
+      
+
+
+<p class="pull-right col-xs-offset-1">        	
+<img class="img-thumbnail" src="img/introducao/12principios/Book_the_illusion_of_life.jpg" alt="" /><br>
+<small>Capa do livro <i> The Illusion of Life: Disney Animation</i>.<br>(Imagem retirada da <a href="http://en.wikipedia.org/wiki/12_basic_principles_of_animation#mediaviewer/File:Book_the_illusion_of_life.jpg" target="_blank">Wikipedia</a>)</br></small>
+</p>
+<p>A lista dos 12 princípios básicos da animação foi originalmente criada por Frank Thomas e Ollie Johnston na sua obra seminal "The Illusion of Life: Disney Animation". A lista foi criada a partir da longa e rica experiência dos animadores da Disney em busca de
+movimentos mais realistas e naturais.</p>
+<p>
+Originalmente, a lista destinava-se a ser aplicada na criação de desenho animado. No entanto, John Lasseter e Isaac Kerlow, entre outros autores e animadores, demonstraram como ainda são uma referência essencial para a animação por computador e 3D.</p>
+      
+                           <h4>Leitura recomendada</h4>
+        
+        		<ul class="list-unstyled">
+  					<li>Belgrave, T. A. (2003). Applying the 12 Principles to 3D Animation. CGSociety (CGSFeatures). <a target="_blank" href="http://www.cgsociety.org/index.php/CGSFeatures/CGSFeatureSpecial/applying_the_12_principles_to_3d_computer_animation_by_disneys_isaac_kerlow"><i class="fa fa-file-text-o"></i></a></li>
+  					<li>Lasseter, J. (1987). Principles of Traditional Animation Applied to 3D Computer Animation. ACM SIGGRAPH Computer Graphics, pp. 35-44. <a target="_blank" href="http://www.cs.cmu.edu/~15462/lec_slides/Lesseter.pdf"><i class="fa fa-file-text-o"></i></a></li>
+  					<li><a href="http://www.shutterstock.com/blog/the-12-basic-principles-of-animation-animated" target="_blank">The 12 Basic Principles of Animation, Animated</a></li>
+  				</ul>
+
+
+
+      
+      
+      <h3>1. Squash and stretch</h3>
+<p>É o princípio mais conhecido e importante. Permite dar uma sensação de peso e flexibilidade aos objetos animados.</p>
+<p>Princípio: o volume de um objeto não muda quando é comprimido ou esticado/alongado (se uma bola é comprimida na vertical, a sua largura aumenta).</p>
+
+      <h3>2. Anticipation / Antecipação</h3>
+<p>Antecipação é a preparação da acção para tornar esta mais realista e natural.</p>
+<p>Exemplo: Antes de saltar, dobrar os joelhos; antes de dar um murro,...</p>
+
+      <h3>3. Staging / Encenação /Composição</h3>
+<p>Pode ser feito por diversos meios: posição da personagem, uso de luz e sombra, ângulo e posição da câmera, etc.</p>
+<p>Staging é a apresentação de uma ideia (i.e. objecto, personagem, ação, etc.) para que esta seja completa e clara, manter o foco no
+que é relevante, dirigir a atenção do público,
+tornando claro o que é mais importante.
+Uma silhueta clara é sempre bom!</p>
+      <h3>4. Straight Ahead Action and Pose to Pose</h3>
+<p>2 métodos ou abordagens ao processo de
+desenhar o movimento:</p>
+	<dl>
+	<dt>"Straight ahead"</dt>
+	<dd>o animador desenha a frame
+1, depois a frame 2, depois a frame 3, etc.</dd>
+	
+	<dt>"Pose to pose"</dt>
+	<dd>animador desenha primeiro as
+keyframes e depois as inbetweens.
+Em 3D, isto significa fazer primeiro as keyframes
+(blocking) e só depois as inbetweens.</dd>
+	
+	</dl>
+  
+<p>É comum
+utilizar-se uma combinação dos dois métodos.</p>
+      <h3>5. Follow Through and Overlapping Action</h3>
+<p>Se a antecipação é a preparação da acção, o "follow
+through" é a sua terminação. As acções raramente
+terminam de forma abrupta... É importante para dar
+realismo.</p>
+<p>"Overlapping action" é a tendência de diferentes partes
+do corpo para se movimentaram com tempos
+diferentes.
+Até a personagem parada não está imóvel...</p>
+      <h3>6. Slow In and Slow Out</h3>
+<p>O movimento do corpo humano (e maioria dos
+objetos) necessita de tempo para acelerar e
+desacelerar. Ou seja, uma animação parece mais
+realista se existirem mais frames perto do seu início e
+do seu fim.</p>
+<p>Imagine um carro a arrancar e a atingir os 100 km/h
+ou um carro que arranca logo a 100 km/h...</p>
+      <h3>7. Arcs / Arcos</h3>
+<p>Maioria dos movimentos humanos e animais ocorre ao
+longo de uma trajetória arqueada (de um arco) e a
+animação deve reproduzir esses movimentos para
+maior realismo.</p>
+<p>Exceção: o movimento mecânico ocorre normalmente
+em linha recta.</p>
+      <h3>8. Secondary Action / Acção secundária</h3>
+<p>Uma acção secundária é uma acção que resulta
+directamente de outra acção. São importantes para
+adicionar complexidade à animação, dar mais vida a
+uma cena, ajudar/apoiar a acção principal. Elas
+enfatizam a acção principal, não devem "roubar" o
+protagonismo!</p>
+<p>Uma personagem pode andar ao mesmo tempo que
+balança os braços, assobia, etc.</p>
+      <h3>9. Timing / Tempo</h3>
+<p>É o número de desenhos/frames numa acção. A
+velocidade da acção é um princípio importante porque
+dá sentido ao movimento.</p>
+<p>Através dos tempos comunicam-se emoções e
+humores de uma personagem, personalidade.
+Tempos correctos fazem com que os objectos sejam
+realistas e verosímeis, parecem obedecer às leis da
+física. Dois objetos com formas semelhantes podem
+parecer muito diferentes no peso apenas através da
+manipulação dos respectivos tempos.</p>
+      <h3>10. Exaggeration / Exagero</h3>
+<p>A imitação perfeita da realidade pode ser aborrecida,
+estática. Exagero é permanecer fiel à realidade mas
+apresentá-la de modo mais extremado.</p>
+<p>Grau de exagero depende do nível de realismo
+pretendido e do estilo adoptado mas deve existir
+equilíbrio, consistência.</p>
+<p>Exagero pode ser utilizado para tornar a acção mais
+clara.</p>
+      <h3>11. Solid Drawing / Desenho sólido</h3>
+<p>O domínio das formas, volume e peso. Resulta da
+compreensão das bases das formas tridimensionais,
+anatomia, peso, equilíbrio , luz e sombra, etc.</p>
+<p>Este princípio é respeitado quando fazemos pausa num
+qualquer momento da animação e a “frame” destaca-se
+como uma peça individual de arte.</p>
+<p>Em 3D, existe quem associe este princípio a um bom
+rigging e a uma boa topologia na modelação (para boas
+deformações).</p>
+<p>Exemplo: evitar criar personagens simétricas (lado
+esquerdo = lado direito).</p>
+      <h3>12. Appeal / Encanto</h3>
+<p>Personagens devem ser atraentes, agradar, encantar.
+Corresponde ao carisma nos actores de filmes live-action.</p>
+      
+     
+
+
+      </div>
+
+
+
+ 
+     <div class="row">					
+       <div class="locaisdasancoras"  id="exemplos"><br><br></div> 								
+      <div class="page-header" id="online">
+        <a class="pull-right" href="#topo"><i class="fa fa-chevron-up"></i></a>
+        <h2>Exemplos animados dos 12 princípios</h2>
+                
+      </div>
+      
+
+     <div class="row">
+			   	<div class="col-xs-6 col-xs-offset-3">
+			<div class="well embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="http://player.vimeo.com/video/93206523" width="640" height="253" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>	   	
+			   	</div>
+			   	</div>
+
+     <div class="row">
+			   	<div class="col-xs-6 col-xs-offset-3">
+			<div class="well embed-responsive embed-responsive-16by9">
+        	<iframe src="http://player.vimeo.com/video/87095612?byline=0&amp;portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>	   	
+			   	</div>
+			   	</div>
+			   	
+
+     <div class="row">
+			   	<div class="col-xs-6 col-xs-offset-3">
+			<div class="well embed-responsive embed-responsive-16by9">
+        <iframe src="http://player.vimeo.com/video/86152242?byline=0&amp;portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>	   	
+			   	</div>
+			   	</div>			   	        
+  
+  
+       <div class="row">
+			   	<div class="col-xs-6 col-xs-offset-3">
+			<div class="well embed-responsive embed-responsive-16by9">
+			<iframe width="640" height="360" src="http://www.youtube.com/embed/videoseries?list=PLlhSx0L1hpaFhQzo_lxVinx7RejKRKjir" frameborder="0" allowfullscreen></iframe>
+			</div>	   	
+			   	</div>
+			   	</div>
+
+    
+
+     
+    
+
+             </div>
+        
+      </div>
+
+
+    </div>
+    </div> <!-- /container -->
+
+
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+    
+  </body>
+</html>

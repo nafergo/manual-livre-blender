@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina"><small>Render Pass</small> Vector</h1>
+
+
+      	<div class="page-header">
+				<h2>Motion Blur</h2>
+      	</div>
+
+
+<p>No Blender existem duas formas de criar Motion Blur: </p>
+<p>Método 1: Existe no painel de Render a opção para ativar Motion Blur (e este é configurável). Este método permite criar um efeito mais correto/exato mas é mais lento (é como se renderizasse diversas 
+vezes a mesma frame). Adicionalmente, quando utiliza este método, o Motion Blur é aplicado na imagem final renderizada não 
+permitindo posterior manipulação, deixa de ter acesso à imagem sem o efeito.</p>
+
+<p>Método 2: Através do compositor de nós (Vector Blur) e da Render Pass Vector podemos aplicar e manipular o Motion Blur na etapa de composição. A Render Pass Vector permite isolar a informação 
+da velocidade dos movimentos. É o método mais rápido e que permite maior liberdade criativa.</p>
+
+
+<p>
+A imagem abaixo é o render sem qualquer efeito de Motion Blur de uma animação criada com um círculo de 8 cubos que rodam em torno de um eixo central.
+</p>
+<img src="img/renderpasses/vectorblur2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+A imagem abaixo corresponde exatamente à mesma frame da imagem acima. A única diferença é que foi aplicado um efeito de Motion Blur através do compositor. 
+</p>
+<img src="img/renderpasses/vectorblur3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+Para utilizar esta Render Pass, é preciso que exista movimento (não existe Motion Blur sem Motion...) e esteja ativada a Render Pass Vector.
+</p>
+<img src="img/renderpasses/vectorblur4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+No Node Editor, utiliza o nó Vector Blur (Filter) para manipular o Motion Blur através da informação presente no Z e Speed.
+</p>
+<img src="img/renderpasses/vectorblur1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<ul>
+<li>Samples: a intensidade do efeito Blur (+ samples = objeto + blurred) </li>
+<li>Blur: parecido com a manipulação do Shutter Speed numa máquina fotográfica, permite configurar o cálculo da velocidade do vector</li>
+<li>Speed (Min/Max): por vezes, podem surgir artefatos/erros no blur ou ser complicado separar o fundo (estacionário) da frente (animado) ou diferenciar objetos com velocidades diferente. 
+Sobretudo se tiver objetos extremamente rápidos ou se a câmara também 
+apresentar movimento, é possível que o Vector Blur afete a totalidade da imagem (ou em demasia). Estes parâmetros permitem estabelecer mínimos e máximos para o efeitos ser aplicado (i.e. se tiver um 
+objeto que se move muito rápido e tiver estabelecido um valor moderado no Speed Max, o objeto não será afetado). Por pré-definição, estão configurados para 0.0 (= sem limite), tudo é afetado.</li>
+<li>Curved: interpolação entre duas frames é feita com Bézier em vez de Linear (o efeito é bastante visível quando os objetos descrevem curvas)</li>
+</ul>
+ 
+
+
+		</div>
+		
+		</div>
+		
+		
+		
+		
+
+ </div>
+
+   <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

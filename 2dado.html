@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+  
+<h1 class="titulopagina">Lançando os dados</h1>
+
+
+<p>1- Comece uma nova cena no Blender, limpe o cubo que surge automaticamente (X). Adicione um cubo à cena (ADD/MESH/CUBE).  </p>
+<p>2- O nosso dado vai ter arestas arredondadas. Uma forma rápida de obter esse efeito é aumentando a resolução do cubo e arredondaras arestas. selecione o cubo, passe para modo Edit (Tab), vá ao painel Mesh Tools (lado esquerdo da janela 3D View), clique 5 vezes em Subdivide e, depois, clique 5 vezes em Smooth Vertex. </p>
+
+
+<img src="img/img2/1_ dado_html_m7a86e682.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p> 3- De seguida, vamos remover o interior do cubo, deixando apenas um “esqueleto” com as arestas arredondadas. Retire a seleção de tudo (A). Coloque-se em visão frontal (NUMPAD 1), visão ortogonal (NUMPAD 5) e modo Wireframe (Z). Utilize a seleção por caixa (B) para selecionar os vértices no interior do cubo. Visto de frente, o cubo deverá ficar com este aspeto. </p>
+
+<img src="img/img2/2_ dado_html_57678ebd.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Apague os vértices selecionados (X) e repita o passo nas outras perspetivas até o esqueleto do seu cubo se assemelhar a este... .</p>
+			
+<img src="img/img2/3_ dado_html_mf727af.png" alt="..." class="img-responsive img-thumbnail center-block">
+		
+<p>4- Ainda no modo Edit, selecione todos os vértices do objeto (A). Clique no botão “Smooth” (Shading) para Faces da aba Shading/UVs, no painel de ferramentas (Tools). Esta ação irá tornar o dado com um aspeto ainda mais “smooth” quando renderizado. </p>		
+		
+<p>5- Para os números/pontos do dado, vamos utilizar uma esfera. Passe para Object Mode (TAB), visão de topo, coloque o cursor 3D fora do cubo (clique com o BER). Adicione uma UVSphere e utilize 32 “segments” e 32 “rings”, altere os valores no painel ferramentas (em baixo, lado esquerdo). </p>	
+		
+<p>6- Mude para a visão frontal, em modo Edit utilize a seleção por caixa, corte a parte superior da esfera (apague vértices). A esfera deverá agora estar semelhante a esta... </p>
+
+<img src="img/img2/4_ dado_html_75109339.png" alt="..." class="img-responsive img-thumbnail center-block">		
+
+<p>7- Com todos os vértices selecionados, clique novamente no botão “Smooth” (Shading) para Faces da aba Shading/UVs, no painel de ferramentas (Tools). </p>		
+
+<p>8- Reduza/aumente a escala da sua meia-laranja para uma dimensão razoável (consistente com a dimensão do seu dado) e vamos alinhar os vértices do topo da meia-laranja com os vértices da face superior do seu dado.</p>
+
+<p>Selecione o dado, passe para Edit Mode e ative o painel de propriedades (N). selecione um vértice do topo do dado e veja qual o valor Z desse vértice. No nosso caso, a coordenada Z local do vértice selecionado é 0.998. Clique no botão Global para ver o valor da coordenada global.</p>
+		
+<img src="img/img2/5_ dado_html_50e60b48.png" alt="..." class="img-responsive img-thumbnail center-block">		
+		
+<p>As coordenadas locais dizem respeito à distância entre a origem do objeto – representada pelo ponto laranja que cada objeto tem no seu centro quando é adicionado – e o vértice selecionado. As coordenadas Globais são relativas ao centro do mundo, do espaço global. Dois objetos estão alinhados entre si quando têm as mesmas coordenadas Globais. </p>	
+		
+<p>Por outras palavras, cada objeto tem uma origem e, consequentemente, uma distância entre essa origem e cada um dos vértices. Dois objetos podem ter o mesmo valor local em Z e não estar alinhados, isso significa apenas que têm a mesma distância entre a sua origem e o vértice selecionado. Quando pretendemos alinhar objetos ou vértices, o que pretendemos é que dois objetos/vértices partilhem o mesmo valor nas coordenadas Globais. </p>	
+
+<p>9- Existem várias formas de alinhar objetos. Vamos utilizar a ferramenta Align Objects.</p>
+
+<p>Passe para visão frontal (NUMPAD 1), visão ortogonal (NUMPAD 5). Selecione o dado, passe para Edit Mode, selecione um dos vértices de topo do dado. 
+Vá ao menu Mesh, submenu Snap (atalho Shift+S) e clique na opção “Cursor to Selected” para o 3D Cursor (o “alvo”) ficar em cima do vértice selecionado.  </p>
+
+<img src="img/img2/6_ dado_html_m69e443bf.png" alt="..." class="img-responsive img-thumbnail center-block">	
+
+<p>É este 3D Cursor que vai servir de referência para o alinhamento vertical (em Z).</p>
+
+<p>Passe para Object Mode, selecione a meia-laranja que pretende alinhar.</p>
+
+<p>Vá ao menu Object, submenu Transform e clique na opção Align Objects para ativar um novo painel que irá surgir no painel de ferramentas (Tools), lado esquerdo da janela 3D View.</p>
+
+<p>Escolha o alinhamento relativo ao 3D Cursor (segundo submenu no painel de alinhamento) e ative os eixos e o modo de alinhamento de forma a alinhar na vertical a sua meia-laranja com o seu dado.
+ Escolha o Align Mode para Positive Sides (para utilizar o lado exterior da malha da laranja, por pré-configuração as faces das malhas apontam para fora), selecione o 3D Cursor como Relative To (
+ para utilizar o cursor 3D como referência para o alinhamento) e clique em Z para alinhar em Z a malha da meia-laranja com o cursor 3D.</p>
+
+<img src="img/img2/7_ dado_html_m16dec98c.png" alt="..." class="img-responsive img-thumbnail center-block">	
+<img src="img/img2/8_ dado_html_1733674e.png" alt="..." class="img-responsive img-thumbnail center-block">	
+
+<p>Se preferir, pode experimentar ativar a ferramenta de Snap e mover a meia-laranja.</p>
+
+<img src="img/img2/9_ dado_html_m1588db0a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>10- Em visão de topo, Object Mode, duplique a meia-laranja (SHIFT+D) e desloque-a trancando os eixos X ou Y (ou utilizando os manipuladores de translação)
+ criando uma disposição similar a esta...</p>
+
+<img src="img/img2/10_ dado_html_2f3d0c65.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Neste caso, já tinha 1 meia-laranja alinhada, dupliquei-a em visão de topo (ortogonal) para que o alinhamento
+ em Z não se perca. Dupliquei 2 vezes porque estou a trabalhar o lado do dado que equivale ao número 3 (3 pontos). </p>
+
+<p>11- De seguida, vamos preencher o espaço que falta nos lados do dado. Primeiro, una as meshes do dado e das 
+meia-laranjas (selecione os objetos e clique em CTRL+J). Agora, já consegue ver e selecionar simultaneamente os vértices das meia-laranjas e do dado.</p>
+
+<p>Para que este passo resulte, é preciso que as meia-laranjas e o dado sejam objetos diferentes. Se seguiu o passo 5 deste tutorial, então 
+deverá ter objetos diferentes. Se as meia-laranjas e o dado estiverem num mesmo objeto (se conseguir ver/selecionar 
+simultaneamente os vértices das meia-laranjas e do dado), para separar, criando um novo objeto, selecione os vértices que pretende separar (em Edit Mode) e clique em P.</p>
+
+<p>12- Mude para modo de Edit (TAB). Utilize a seleção por caixa para selecionar os vértices de um dos lados do seu dado com precisão. A sua seleção deverá ser EXACTAMENTE como esta... </p>
+
+<img src="img/img2/11_ dado_html_157647aa.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<img src="img/img2/12_ dado_html_m374f944.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>13- Preencha o espaço vazio na face do topo do seu dado utilizando o ALT+F. Se renderizar a sua imagem (F12),irá ficar semelhante a esta... </p>
+
+<img src="img/img2/13_ dado_html_m7db80c52.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>14- Os pontos devem ter uma cor diferente do resto do dado. Com o cubo selecionado, passe para Edit Mode. Ative a seleção por faces e com a ferramenta de seleção por círculo (C) selecione apenas (!!!) as faces que constituem o interior dos pontos.</p>
+
+<img src="img/img2/14_ dado_html_m741ed25c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Vá até ao painel Material (ver em baixo). Como pode ver, o seu dado já tem um material (com o nome Material) atribuído. Clique no sinal + (à direita do Material que está assinalado com a barra azul) para criar uma nova slot de materiais para este objeto.</p>
+
+<p>As slots são os materiais que está a utilizar ou pretende utilizar no objeto.</p>
+
+<p>O ficheiro .blend pode ter vários objetos e vários materiais. Cada objeto tem as suas slots de materiais. Se pretende utilizar 2 materiais num mesmo objeto, esse objeto tem de ter 2 slots. No nosso caso, vamos utilizar um material para o corpo do dado e outro material para as faces que constituem os pontos do dado. Ou seja, o objeto dado tem de ter 2 slots.</p>
+
+<p>15- Clique no sinal + assinalado e irá criar um novo material. Clique na cor abaixo de Diffuse e escolha preto. Clique em Assign para atribuir este material só às faces que estão selecionadas.</p>
+
+<img src="img/img2/15_ dado_html_m2d60e22c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Agora tem dois materiais atribuídos: Material ao corpo do dado e Material.001 aos pontos. Pode mudar os nomes dos materiais clicando na caixa de texto ao lado do sinal + que clicou previamente e escrevendo o nome desejado.</p>
+
+<p>Nos próximos pontos, apenas precisa de selecionar as faces dos pontos, escolher o material e clicar em Assign.</p>
+
+<p>16- A imagem renderizada deverá ser semelhante a esta... </p>
+
+<img src="img/img2/16_ dado_html_374352b1.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>17- E agora, conclua o seu dado!</p>
+
+<p>DICA: quando estiver a rodar a meia-laranja, mantenha a tecla CTRL pressionada para limitar a rotação com incrementos fixos... facilita E MUITO a exatidão da rotação.</p>
+
+<p>SUGESTÃO: Em vez de utilizar o mesmo material em todos os pontos, crie outros materiais para criar um dado mais colorido.</p>		
+		
+		
+		
+		
+		</div>
+		
+		
+		
+		
+
+ </div>
+
+     <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina"><small>Criar raios de luz com</small> Sun Beams</h1>
+			
+			<p>
+O nó Sun Beams permite adicionar raios de luz similares ao God Rays em pós-produção. Utilizar este processo é 
+bastante mais rápido do que utilizar <a href="godrays_no_cycles.html">iluminação volumétrica</a>.
+			</p>
+			<p>
+Nos exercícios abaixo iremos utilizar a fotografia <a href="http://en.wikipedia.org/wiki/Window#mediaviewer/File:Bleekman_zimmer.jpg" target="_blank">Zimmer</a>  de Bleekman, disponível na Wikipedia.
+			
+			</p>
+      	
+      	<div class="page-header">
+				<h2>Configuração básica</h2>
+      	</div>
+      	
+      	<p>O primeiro passo é definir a área de onde os Sun Beams são lançado. O nó ColorRamp (Converter) permite limitar 
+      	a área de onde vêm os raios (zona mais clara da imagem) aumentando o contraste. 
+      	</p>
+      	<p>O nó Sun Beams (Filter) cria os raios. Podemos configurar a sua origem e comprimento dos raios. Pode colocar a origem 
+      	fora da imagem visível, por exemplo.
+      	</p>
+      	<p>O nó Add (Color > Mix) adiciona os Sun Beams à imagem. É a forma mais correta de adicionar o efeito. O Fac permite 
+      	controlar a quantidade que se pretende adicionar.</p>
+      	<p>Na imagem abaixo, foi ainda utilizado Color Balance (Color) para manipular a cor dos raios.</p>
+      	<p>Atenção: quando pretende utilizar o nó Sun Beams numa imagem já existente, é importante inserir as dimensões/resolução 
+      	da imagem na resolução do render. A configuração do Sun Beams (width, height e ray length) depende da resolução.</p>
+     
+     
+           	 <img src="img/sun_beams/1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+ 
+      	<div class="page-header">
+				<h2>Com máscara</h2>
+      	</div>
+      	
+<p>
+No exemplo abaixo, utilizámos uma Box Mask (Matte) para limitar a área de origem dos raios ao vidro mais à direita, fila de cima. Com 
+a Box Mask foi criada e posicionada uma caixa que limita a área. o nó Multiply (Converter > Math ! Atenção: não confundir com Multiply do 
+Color > Mix) permite utilizar a máscara na imagem.
+</p>      	
+      	
+      	 <img src="img/sun_beams/2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+É visível que os raios só estão a surgir da área definida.
+</p>
+
+       	 <img src="img/sun_beams/3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+       	       	 
+<p>Foi adicionado Color Balance (Color) para tornar mais visível o efeito.</p>       	       	 
+       	       	 <img src="img/sun_beams/4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+ 
+
+    
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

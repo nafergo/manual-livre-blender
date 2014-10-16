@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nelson gonçalves" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina"><small>Introdução à simulação de</small>Cloth <small>(roupa, tecidos)</small></h1>
+
+      	<div class="page-header">
+				<h2>Introdução</h2>
+      	</div>
+      	
+
+<p>1- Comece uma nova cena no Blender, limpe o cubo que surge automaticamente (X). Adicione uma UV Sphere e aplique-lhe um Smooth para esta ficar mais arredondada.</p>
+
+<p>2- Adicione um plano, duplique o seu tamanho (S > 2) e coloque-o acima da esfera, como na imagem. Para controlar melhor a deslocação do plano, clique em CTRL enquanto clica no widget para deslocar em Z (seta azul). Utilize a ferramenta Subdivide mas insira 10 cortes para obter mais vértices. Quantos mais vértices, mais exacta/correcta será a simulação e mais tempo demorará a simulação...</p>
+
+<img src="img/img32/1cloth47611f53.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Aplique um Subdivision Surface ao plano e faça Apply ao modifier. Aplique um Smooth.</p>
+
+<p>4- Em Edit Mode, seleccione todos os vértices e faça Unwrap (U).Na janela de UV/Image Editor, clique em New e depois active a opção UV Test Grid.</p>
+
+<img src="img/img32/2cloth157ea2a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5- Na janela 3D View, no painel de propriedades (N), active a opção Texture Solid para ver na janela 3D a textura de testes.</p>
+
+<img src="img/img32/3cloth2340983f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Para renderizar com esta textura, aplique um material ao plano. Depois, adicione uma textura e active as opções da imagem.</p>
+
+<img src="img/img32/4cloth278c19c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Atenção: neste caso, não necessita de importar uma imagem externa ao Blender. Basta clicar no ícone à esquerda do nome da imagem para surgir uma lista com as imagens actualmente existentes e escolher a imagem que corresponde à grelha.</p>
+
+<p>7- Seleccione a esfera e, no painel Physics, adicione uma simulação Collision.</p>
+
+<p>8- Seleccione o plano e, no painel Physics, adicione uma simulação Cloth. Escolha um preset e faça Alt+A para ver o resultado. Experimente os outros presets (Cotton = algodão; Denim = ganga; Leather = cabedal; Rubber = borracha; Silk = seda).</p>
+
+<img src="img/img32/5cloth29f5c198.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>[Se quiser tornar definitiva ou permanente a forma obtida numa frame, vá ao painel de Modifiers e clique em Apply para o modifier Cloth.]</p>
+
+
+      	<div class="page-header">
+				<h2>Algumas configurações</h2>
+      	</div>
+
+
+
+<p>Steps: qualidade global; mais steps = mais qualidade = simulação mais demorada</p>
+
+<p>Mass e Air: o valor da massa do objeto define o peso da roupa (maior massa = mais peso). Este parâmetro não afeta a velocidade (como a imagem abaixo poderia sugerir...). Na imagem abaixo, existe uma diferença de velocidade por causa do valor do Air que define a fricção do ar. Os objetos caem com a mesma velocidade mesmo que tenham valores diferentes de Massa (Terceira Lei de Newton: A toda ação há sempre uma reação oposta e de igual intensidade).</p>
+
+<img src="img/img32/6cloth4ebbd1d0.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Pequena nota sobre Física: “Na física, massa e peso são propriedades diferentes. A massa é uma medida da inércia de um corpo, uma grandeza escalar que mede a oposição que um corpo apresenta a mudanças em sua velocidade quando observado a partir de um referencial inercial, enquanto o peso, uma grandeza vetorial é a força resultante da interação gravitacional entre este corpo e algum outro em sua vizinhança. Assim, o peso depende das massas dos corpos envolvidos na interação gravitacional bem como da distância que os separa, mas os conceitos de peso e massa são bem distintos.”1</p>
+
+<p>Structural (Stiffness): Define a rigidez da forma, valores baixos atribuem maior elasticidade, valores altos conferem maior rigidez.</p>
+
+<p>Imagens foram retiradas de "Blender Cloth Simulator Tutorial" de Daniel Kreuter, disponível em http://www.youtube.com/watch?v=k4czh0x31xk</p>
+
+<p>http://pt.wikipedia.org/wiki/Diferen%C3%A7as_entre_massa_e_peso</p>
+
+<img src="img/img32/7cloth73ec35dc.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Bending: define valor das rugas/dobras do tecido, seda tem valores menos elevados e cabedal tem valores mais altos.</p>
+
+<img src="img/img32/8cloth63bb0b80.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Damping: valores que afetam a velocidade da simulação, amortecimento da velocidade do cloth e “espessura” (resistência) do ar</p>
+
+<p>Pinning: permite definir parte do objeto (grupo de vértices) que não colide ou só colide parcialmente.</p>
+
+<p>Pre roll: frame em que começa a simulação</p>
+
+<p>Cloth Collision > Distance: especifica o espaço entre a cloth e outros objetos. Valores muito baixos podem originar problemas, os valores pré-definidos são suficientes para a maioria das situações.</p>
+
+<img src="img/img32/9cloth13091e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Cloth Collision > Friction: especifica o grau de fricção entre a cloth e os restantes objetos.</p>
+
+<img src="img/img32/10cloth578f2e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+      	<div class="page-header">
+				<h2>3 possibilidades úteis</h2>
+      	</div>
+
+<h3>1 Pinning</h3>
+
+<p>Em Edit Mode, selecione uma linha de vértices. No painel Object Data, crie um grupo de vértices com o nome “varao” e clique Assign para associar os vértices selecionado ao grupo criado. Vamos manter o peso máximo 1.000 mas pode criar associações com pesos variados para cada vértice... Pode utilizar o botão Remove para remover vértices do grupo.</p>
+
+<img src="img/img32/11cloth71788a86.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>No painel Physics, ative a opção Pinning e escolha o grupo “varao”. Faça Alt+A para ver o resultado.</p>
+
+<img src="img/img32/12cloth9fee0fc.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Experimente uma simulação com um Weight diferente (por exemplo, 0.5) no Vertex Group.</p>
+
+<p>Experimente uma simulação com outros vértices (por exemplo, os 4 cantos) no Vertex Group.</p>
+
+<h3>2 Objetos animados</h3>
+
+<p>Anime a esfera com keyframes de modo a esta colidir com o pano. Faça Alt+A para ver o resultado.</p>
+
+<p>Neste caso, pode ser especialmente útil ativar no Cloth Collision a opção Self Collision para que o pano possa calcular e simular a colisão consigo mesmo. Se não ativar, o pano apenas colide com os objetos que tenham o Collision.</p>
+
+<img src="img/img32/13cloth5593b51.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img32/14cloth3719cb44.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img32/15cloth142e2f66.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h3>3 Wind (Vento)</h3>
+
+<p>Mude a esfera para outro layer.</p>
+
+<p>Adicione um objeto Wind (Add > Force Field > Wind)</p>
+
+<p>Reposicione o Wind e configure de acordo com a imagem abaixo.</p>
+
+<img src="img/img32/16cloth1dbdf0d.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h4>Algumas configurações:</h4>
+
+<p>- Strength: força do vento</p>
+
+<p>- Noise: grau de “ruído” para criar vento com força não constante</p>
+		
+<p>- Collision Absorption: para calcular colisão com objetos que estejam no caminho do vento.</p>
+
+		</div>
+		
+		
+		
+		
+		 
+		
+		
+		
+		 </div>
+		
+		
+		
+
+ </div>
+
+   <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Fundos e Cenários</h1>
+<p>Descarregue aqui <a href="files/10.zip" target="_blank">ficheiros de apoio a este texto</a></p>
+
+<p>Existem diversas formas de preencher o fundo de uma renderização. Aqui ficam algumas das mais utilizadas...</p>
+ 
+<h3>World – Angular Map</h3>
+ 
+<p>1- Comece por visitar o endereço http://blenderartists.org/forum/showthread.php?24038-Free-high-res-skymaps-(Massive-07-update!)  e faça download de 2 texturas para o fundo do seu World: uma de tipo “Angular Map” (angmap) e outro de tipo “Horizontal Map”. Ambas as imagens têm 360º mas apenas os angmaps correspondem a uma projecção esférica. Para perceber melhor para que servem estas imagens, pense na diferença entre uma esfera e um cilindro/tubo ou uma meia esfera.</p>
+ 
+<p>2- Aceda ao painel World e active a caixa Real Sky para que o fundo seja renderizado tendo em conta o horizonte real (a grelha na janela 3D View marca o horizonte)</p> 
+
+<p>3- Aceda ao painel Texture e adicione uma nova textura do tipo Image or Movie. </p> 
+
+<img src="img/img10/1fundos_cenarios93a638.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- Escolha coordenadas AngMap e carregue a imagem de tipo Angular Map.</p>
+
+<p>5- ctive a caixa da opção Horizon.</p>
+
+<img src="img/img10/2fundos_cenarios71f2470a.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img10/3fundos_cenarios7b295147.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>6- Se renderizar irá ver que existe uma textura que cobre todo o fundo, independentemente da posição e rotação da câmara. O horizonte da imagem corresponde ao horizonte da janela 3D View (a imagem está a utilizar a grelha para determinar o horizonte).</p>
+
+<img src="img/img10/4fundos.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img10/5fundos_cenarios63709000.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img10/6fundos_cenarios743f96b4.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h3>World – Horizontal Map</h3>
+
+<p>7- Repita os procedimentos anteriores mas desta feita utilize a imagem do tipo Horizontal Map. Não se esqueça de aceder ao painel World antes de ir até ao painel Texture! (É a forma de indicar que vai inserir uma imagem no World e não no objecto)</p>
+
+<p>8- No nosso caso optámos por utilizar coordenadas de tipo Tube. Se clicar na opção Both pode visualizar lado a lado a imagem original e o modo como esta irá surgir aplicada ao World.</p>
+
+<img src="img/img10/7fundos_cenarios5e952f08.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>9- Esta imagem não tem “chão” mas pode definir a cor do chão através da Horizon Color.</p>
+
+<img src="img/img10/8fundos_cenarios6ee2cc9c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Como não existe solo, recomenda-se que utilize este método apenas quando a linha de horizonte da sua imagem está coberta com relevo, prédios, etc.</p>
+
+<p>Outras opções úteis para configuração do Angular Map e do Horizontal Map:</p>
+
+<img src="img/img10/9fundos_cenarios7ae97aef.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Coordinates (coordenadas):</p>
+
+<p>View : orientação por defeito</p>
+
+<p>AngMap: utilizado para os AngMaps (imagens esféricas, projecções de esferas). É um dos métodos mais rápidos e com melhores resultados. A imagem é projectada no mundo como se este fosse esférico. Se quiser que o céu e o solo estejam incluídos, permitindo que a câmara se desloque com  total liberdade (imagine um combate aéreo entre dois aviões...) este método é altamente recomendável.</p>
+
+<p>Sphere e Tube: aplica a textura a uma semi-esfera ou um cilindro. Apesar do nome ser Sphere, a imagem só é aplicada à metade superior (acima da linha do horizonte até ao zénite) da esfera. É um processo semelhante ao anterior mas em vez da esfera completa apenas utiliza meia esfera, não cobrindo a área do horizonte ao nadir. Terá de criar o solo e recomenda-se, obviamente, que esconda o horizonte com relevo.</p>
+
+<p>Offset X, Y e Z: posicionamento da imagem.</p>
+
+<p>Size X, Y e Z: dimensão da imagem.</p>
+
+<p>Influence:</p>
+
+<p>Blend: a imagem afecta a progressão (horizonte-zénite) das cores de fundo. Resulta numa mistura entre cores horizonte-zénite e textura. Pode escolher o tipo de Blend.</p>
+
+<p>Horizon: imagem afecta cor  do horizonte. Projecta imagem da textura.</p>
+
+<p>Zenith Up e Zenith Down: textura afecta cor do zénite de cima e em baixo (active o Real Sky para perceber os 2 zénites). O zénite de baixo é o nadir.</p>
+
+<h3>World – Horizont/Zenith</h3>
+
+<p>10- Inicie uma cena nova.</p>
+
+<p>11- Posicione a câmara de forma similar à da imagem (importante: a câmara deve incluir a grelha da janela 3D View)</p>
+
+<p>12- Experimente as seguintes opções...</p>
+
+<p>Blend Sky: transição entre cor de horizonte (baixo) e cor do zénite (topo), esta transição tem em conta que o fundo não é plano, tem em conta a perspectiva. Se reparar na janela de pré-visualização (rectângulo menor no ladodireito), o centro ao topo é mais azul do que os cantos. Ou seja, se </p>
+
+<img src="img/img10/10fundos_cenarios5396d78b.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Paper Sky + Blend Sky: existe uma transição (Blend Sky) mas o fundo é plano, como se fosse um cenário (Paper Sky).</p>
+
+<img src="img/img10/11fundos_cenarios799aa501.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Paper Sky + Blend Sky + Real Sky: existe uma transição (Blend Sky) mas o fundo é plano, como se fosse um cenário (Paper Sky) e tem em conta a linha de horizonte (Real Sky).</p>
+
+<img src="img/img10/12fundos_cenarios698f7587.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Blend Sky + Real Sky: existe uma transição (Blend Sky) e tem em conta a linha de horizonte (Real Sky). Ou seja, quanto mais a câmara estiver apontada para cima ou baixo mais visível será a cor definida no Zénith (a imagem de exemplo não é muito clara...)</p>
+
+<img src="img/img10/13fundos_cenarios35bdd14b.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Para ilustrar melhor a importância da opção Real Sky, rodámos a câmara de forma à linha da grelha (horizonte) não estar na horizontal.</p>
+
+<img src="img/img10/14fundos_cenarios48c8f1b8.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Blend Sky: existe uma transição (Blend Sky) e esta não tem em conta o horizonte.</p>
+
+<img src="img/img10/15fundos_cenarios29504c0e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Blend Sky + Paper Sky+ Real Sky: existe uma transição (Blend Sky), o fundo é plano (Paper Sky) e tem em conta a linha de horizonte (Real Sky).</p>
+
+<img src="img/img10/16fundos_cenarios75c82857.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Stars: Por último, se quiser umas estrelas no seu fundo, existe uma opção Stars que pode ser activada e configurada (tamanho das estrelas, distância, etc.).</p>
+
+<img src="img/img10/17fundos_cenarios7f7c5c7.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Estas opções podem ser utilizadas em conjugação com uma imagem de fundo...</p>
+
+<p>No exemplo abaixo foi utilizada a mesma imagem do tutorial “World – Horizontal Map”...</p>
+
+<img src="img/img10/18fundos_cenarios684dbc53.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img10/19fundos_cenarios309538cb.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h3>Outras formas “clássicas” mas ainda em uso</h3>
+
+<p>13- Crie um plano e aplique uma textura ao plano. No exemplo abaixo foi utilizada uma textura para cobrir o fundo atrás de uma cidade. O plano foi colocado de forma a tapar sempre o fundo tendo em conta o movimento da câmara.</p>
+
+<img src="img/img10/20fundos_cenarios2fd0e79c.gif" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>14- Crie uma meia esfera (hemisfério) e aplique uma imagem.</p>
+
+<img src="img/img10/21fundos_cenarios74e4e74.gif" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Como não existe solo, recomenda-se que utilize estes métodos apenas quando a linha de horizonte da sua imagem está coberta com relevo, prédios, etc.</p>
+
+
+
+		</div>
+		
+		
+		
+		
+		
+
+ </div>
+
+     <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+</body>
+</html>

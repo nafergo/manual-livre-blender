@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina">InsaneBump + Cycles <small>para criar texturas mais realistas</small></h1>
+      	
+
+<p>Geralmente, a criação de texturas realistas implica a utilização de vários mapas. Utilizar uma imagem apenas (geralmente o Color/Diffuse map) é similar a imprimir a imagem e colar numa parede lisa. A 
+configuração mais comum implica utilizar uma combinação de Diffuse map + Normal map + Specularity map + Occlusion map + Displacement map.</p>
+
+<p>Nem sempre é fácil criar todos estes maps mas, felizmente, existem aplicações que auxiliam nesta tarefa. O InsaneBump é 
+uma aplicação de Software Livre que permite gerar estes maps a partir de uma qualquer imagem. Existem outras aplicações mas o 
+procedimento é quase sempre similar: a partir de um diffuse/color map (imagem que se pretende visualizar no objeto), a aplicação 
+gera os restantes maps respeitando os parâmetros inseridos pelo utilizador.</p>
+
+
+
+			<div class="page-header">
+        		<h2>InsaneBump <small>para criar os diferentes mapas</small></h2>
+	      </div>
+    
+			<p>O InsaneBump é um Software Livre que permite criar diferentes mapas a partir de uma imagem. Neste momento, 
+			existem duas versões úteis da aplicação:</p>
+
+<p><a href="https://sites.google.com/site/ccdsurgeon/download" target="_blank">InsaneBump 2.* (standalone)</a></p>
+<p><a href="https://code.google.com/p/gimp-plugin-insanebump/wiki/MainPage" target="_blank">InsaneBump 1.* (Gimp plugin)</a></p>
+
+<p>Importa referir que a versão InsaneBump 2.* (standalone) é a mais recente mas ainda está em desenvolvimento, sendo 
+expectável alguma evolução e novas funcionalidades no futuro.</p>
+
+
+
+<h3>InsaneBump 2.* (standalone)</h3>
+<p>O procedimento de utilização é simples. Depois de iniciar a aplicação, abra a imagem a partir da qual pretende gerar os 
+diferentes mapas (Open New Texture). A interface do permite configurar diferentes parâmetros para melhorar o resultado final (barra lateral, lado esquerdo) e pode 
+visualizar o impacto das suas configurações em tempo real (barra lateral, lado direito).</p> 
+<p>Quando estiver satisfeito, clique em Save Texture para gerar os diferentes mapas e armazenar os mesmos na mesma pasta onde se encontra a 
+imagem original. Os diferentes mapas gerados são identificados com os respetivos sufixos:</p>
+
+<ul>
+<li>NR = normal map,</li>
+<li>SPEC = specular map</li>
+<li>HGT = height map (ou displacement map)</li>
+<li>Também são gerados falsos AO maps, gravados enquanto Alfa do Normal map.</li>
+</ul>
+<img src="img/insanebump/1.jpg" alt="..." class="img-responsive img-thumbnail center-block">       
+
+
+
+
+<h3>InsaneBump 1.* (Gimp plugin)</h3>
+
+<p>O procedimento de utilização é simples. Depois de iniciar o GIMP, abra a imagem a partir da qual pretende gerar os 
+diferentes mapas. A interface do plugin permite configurar diferentes parâmetros para melhorar o resultado final.</p>
+<p>Depois de clicar em Execute, o plugin irá gerar os diferentes mapas e armazenar os mesmos na mesma pasta onde se encontra a 
+imagem original. Os diferentes mapas gerados são identificados com os respetivos sufixos:</p>
+
+<ul>
+<li>_n = normal map,</li>
+<li>_s = specular map</li>
+<li>_d = diffusion map (apenas cor)</li>
+<li>_a = ambient occlusion map</li>
+<li>_h =  height map (ou displacement map)</li>
+</ul>
+
+
+<img src="img/insanebump/2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/insanebump/3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+			<div class="page-header">
+        		<h2>Do InsaneBump ao Cycles</h2>
+	      </div>
+    
+			<p>No exercício que se segue, foi utilizada uma textura do site
+			 <a href="http://www.cgtextures.com/texview.php?id=38225" target="_blank">
+			CGTextures.com</a>.</p>
+
+<p>Para gerar os diferentes mapas, foi utilizado o InsaneBump 1.* (Gimp plugin) com as configurações predefinidas.</p>
+
+
+<h3>Comparar resultados de diferentes possibilidades</h3>
+
+<p>As imagens abaixo apresentam o impacto da utilização de diferentes mapas, foram criadas com as mesmas condições de 
+iluminação. </p>
+
+<p>
+Na primeira fila, a imagem da esquerda (imagem 1) apresenta uma textura de imagem (Diffuse/color map) simplesmente aplicada a um plano. 
+A imagem da direita (imagem 2) apresenta a mesma textura mas acompanhada de um Specular map, Normal map 
+e Ambient Occlusion map. Em ambos os casos, o plano só tem 4 vértices.</p>
+  
+
+
+	<div class="row">
+   	<div class="col-xs-6">
+
+		<img src="img/insanebump/plugin_flat.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+		</div>
+    
+    <div class="col-xs-6">
+
+		<img src="img/insanebump/plugin_semdisplacement.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+		</div>
+</div>    
+
+
+<p>
+Na segunda fila, a imagem da esquerda (imagem 3) apresenta todos os maps anteriores mais a utilização de um Displacement map 
+através do modifier Displacement. Para o modifier funcionar, foi necessário subdividir o plano criando 1764 vértices (40 cuts).</p>
+<p>A imagem da direita (imagem 4) utiliza o Height/Displacement map no material, não foi utilizado qualquer modifier. Plano tem 4 
+vértices.</p>
+
+	<div class="row">
+   	<div class="col-xs-6">
+
+<img src="img/insanebump/plugin_comdisplacement.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+		</div>
+    
+    <div class="col-xs-6">
+
+<img src="img/insanebump/plugin_comdisplacement_node.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+		</div>
+		
+
+</div>    
+
+
+<p>A última imagem (imagem 5) combina todos os maps e o modifier Displacement..</p>
+
+<img src="img/insanebump/plugin_comdisplacement_mais_node.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<h3>Configuração no Cycles</h3>
+
+
+<p>O processo de configuração é simples. Em primeiro lugar, inserimos um plano e foi aplicada a 
+imagem de textura original com UV map (fizemos Unwrap). O resultado é a imagem 1.</p>
+
+
+<p>De seguida, configuramos o material aplicado ao plano de acordo com a imagem abaixo.</p>
+
+<img src="img/insanebump/plugin_config2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+<ol>LEGENDA
+<li>Utilizamos um Mix Shader para combinar um shader Diffuse e um shader Glossy.</li>
+<li>AMARELO = Normal texture map (imagem com sufixo _n) liga a nó Normal Map que, por sua vez, conecta ao Normal dos shaders Diffuse e Glossy. Importa referir que, para obter 
+resultados mais corretos, deverá escolher a opção Non-Color Data no nó de imagem com o Normal texture map. O Stregth no nó 
+Normal Map controla a intensidade do efeito.</li>
+<li>AZUL = Specular texture map (imagem com sufixo _n) liga a um nó MixRGB (Color) que, por sua vez, conecta ao Fac do Mix Shader. Esta imagem 
+controla a mistura entre Diffuse e Glossy. Ou seja, controla onde o plano tem mais brilhos. A utilização do MixRGB (Color) permite mais 
+controle sobre a intensidade dos brilhos. No shader Glossy podemos definir a cor dos brilhos e o Roughness determina 
+a (im)perfeição do brilho/reflexo (i.e um espelho tem Rougness 0.0).
+</li>
+<li>
+VERMELHO = é a imagem original que estamos a utilizar como Difuse/color map.</li>
+<li>VERDE = Ambient Occlusion texture map (imagem com sufixo _a). Esta imagem é combinada com a imagem original através 
+de um nó MixRGB (Color) mas em modo Multiply.</li>
+</ol>
+</p>
+<p>O resultado é a imagem 2.</p>
+<img src="img/insanebump/plugin_config.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Depois, inserimos o Height texture map (imagem com sufixo _h) conectado ao Displacement do Material Output. Foi inserido um nó MixRGB (Color)
+ para controlar melhor a intensidade do efeito, solução similar à utilizada para o Specular texture map.</p>
+ <p>O resultado é a imagem 4.</p>
+<img src="img/insanebump/plugin_config_node.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Até aqui, o plano tem 4 vértices e a sua geometria permanece inalterada. Todas as alterações são apenas resultado da 
+utilização de diferentes texture maps. No entanto, para obter o resultado da imagem 5 temos de alterar a geometria. Este último passo não é 
+obrigatório, depende do grau de realismo desejado.</p>
+<p>O plano foi subdividido com 40 Cuts (ver à esquerda, barra de ferramentas).</p> 
+ 
+ 
+<img src="img/insanebump/disp1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Foi adicionado um modifier do tipo Displace ao plano.</p>
+<img src="img/insanebump/disp2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>No painel de texturas, escolhemos o tipo Displace (só fica disponível após adicionar o modifier Dsiplace) e escolhemos 
+Height texture map (imagem com sufixo _h).</p> 
+<img src="img/insanebump/disp3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>De volta ao modifier Displace, escolhemos a textura entretanto criada no passo anterior e manipulamos a intensidade do 
+efeito através do painel Strength. Para o Displace surgir alinhado com as restantes testuras, escolhemos 
+UV como Texture Coordinate.</p>
+<img src="img/insanebump/disp4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+NOTAS FINAIS 1: se quiser mais detalhe no Displace, adicione um Subdivision Surface. No entanto, na lista de modifiers assegure-se que o 
+Subdivision Surface está em cima, antes do modifier Displace. 
+</p>
+
+<p>
+NOTAS FINAIS 2: A utilização do modifier Displace + Height texture map é opcional. Nem sempre é necessária ou desejável.  
+</p>
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

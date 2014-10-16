@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina">Introdução à modelação <small>no Blender</small></h1>
+
+      	<div class="page-header">
+				<h2>Definição</h2>
+      	</div>
+      	<p>De uma forma simples, a <strong>modelação</strong> pode ser entendida como o processo de definição da forma de um objeto através da 
+      	manipulação da sua geometria.</p>
+      	
+
+
+      	
+      	<div class="page-header">
+				<h2>Tipos de modelação</h2>
+      	</div>
+      	
+      	<p>     			
+	Um modelo 3D é uma representação matemática de
+superfícies tridimensionais. Esta representação pode
+ser criada manualmente ou automaticamente.
+Atualmente, estas são as três formas mais comuns de modelar:</p>
+<p><strong>
+Polygonal modeling (Modelação poligonal):</strong> pontos/vértices, ligados entre si através de
+linhas/arestas, delimitam faces formando uma malha poligonal. Atualmente, a grande
+maioria dos modelos 3D é construída com recurso a modelos poligonais texturizados. No
+entanto, os polígonos são planos, só conseguem representar superfícies curvas através do
+recurso a muitos polígonos.</p>
+
+<p><strong>
+Curve modeling (Modelação de curvas):</strong> As superfícies são definidos por curvas que são
+manipuladas através de pontos de controle, a curva segue os pontos. Existem diferentes
+tipos de curvas, incluindo NURBS.</p>
+
+<p><strong>
+Digital sculpting:</strong> Método relativamente recente. Existem atualmente três subtipos:
+Displacement, Volumetric, Dynamic tesselation.</p>
+		
+			
+      	<div class="page-header">
+				<h2>Técnicas de modelação</h2>
+      	</div>
+
+<p><strong>			
+Box/Subdivision Modeling:</strong> Técnica de modelação
+poligonal que utiliza preferencialmente a ferramenta
+Subdivide. O modelador começa com uma forma
+simples, frequentemente um cubo ou outro objecto
+geométrico primitivo (cilindro, esfera, etc.), e vai
+subdividindo, refinando, moldando o objecto.
+É, provavelmente, a
+forma mais comum de
+modelação poligonal e
+é frequentemente
+utilizada em conjunto
+com outras técnicas
+de modelação.</p>
+
+ 		<p class="text-center"><img src="img/intros/modelacao/box.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem publicada em Southern, G. (agosto, 2011). Boxing Clever. <i>3D World</i>, p.83.</small>
+</p>
+
+
+<p><strong>			
+Edge Modeling (também designada por "contour
+modeling", "point by point" ou "poly-by-poly"):</strong> Técnica de
+modelação poligonal em que o modelador cria o
+contorno do objecto (geralmente, a partir de uma
+imagem de referência) e, depois, começa a dar volume
+ao objecto. Ao invés de começar com uma forma
+primitiva (como no box modeling), o modelo é
+essencialmente construído polígono a polígono,
+colocando faces ao longo dos contornos salientes e,
+depois, preenchendo o espaço entre estes.
+Especialmente indicada quando é necessária maior
+precisão e melhor topologia (por exemplo, na modelação
+de rostos).</p>
+
+
+ 		<p class="text-center"><img src="img/intros/modelacao/edge.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+
+
+
+<p><strong>			
+NURBS Modeling (ou Spline Modeling):</strong> Técnica de
+modelação muito comum para fins industriais. Os
+objectos do tipo NURBS (Nonuniform rational B-spline)
+não são poligonais, não possuem faces, arestas ou
+vértices. NURBS é um modelo matemático para criar e
+representar curvas e superfícies.</p>
+
+<p><strong>			
+Digital Sculpting:</strong> Técnica de modelação que permite criar modelos 3D de uma forma muito
+intuitiva, semelhante à modelação de argila, barro ou plasticina. Permite trabalhar com malhas
+de alta resolução (high-resolution meshes), com milhões de polígonos, criando níveis muito
+elevados de detalhe.</p>
+
+<p><strong>			
+Procedural Modeling:</strong> Técnica não manual, criação de modelos 3D algoritmicamente
+respeitando as regras ou parâmetros definidos pelo utilizador. É muito utilizada na criação de
+ambientes e paisagens (environment modeling) ou árvores e folhagens.</p>
+
+<p><strong>			
+Image Based Modeling:</strong> Processo de criação de objetos 3D, algoritmicamente, a partir
+imagens bidimensionais.</p>
+
+<p><strong>			
+3D Scanning:</strong> Processo de digitalização de objetos do mundo real em que os dados em bruto
+(geralmente, uma nuvem de pontos x, y, z | "x,y,z point cloud") são utilizados para gerar uma
+malha poligonal ou superfícies NURBS.</p>
+
+
+
+      	<div class="page-header">
+				<h2>Organic e Hard surface</h2>
+      	</div>
+
+<p><strong>			
+Organic modeling:</strong> modelação de seres vivos
+ou que deveriam ter vida (plantas, animais,
+elfos, humanos, monstros, árvores, rochas,
+nuvens, insetos, bactérias, etc.), que
+naturalmente existem na natureza. Objetos com
+contornos suaves, sem muitas áreas
+geométricas e arestas claras, que se deformam.</p>
+
+ 		<p class="text-center"><img src="img/intros/modelacao/organic.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem retirada de cmiVFX - <a href="https://cmivfx.com/store/201-blender+organic+modeling+techniques" target="_blank">Blender Organic Modeling Techniques</a></small>
+</p>
+
+<p><strong>			
+Hard surface modeling:</strong> modelação de objetos
+feitos pelo homem ou construídos (carros,
+tanques, canetas, lápis, helicópteros, óculos de
+sol, estruturas arquitetónicas, veículos,
+máquinas, etc.). Objetos com arestas claras,
+não se deformam.</p>
+
+ 		<p class="text-center"><img src="img/intros/modelacao/hard.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem retirada de Blender Cookie - <a href="http://cgcookie.com/blender/2011/03/25/vehicle-series-production-complete-end-of-pre-orders/" target="_blank">Vehicle Series: Production Complete / End of Pre-orders</a></small>
+</p>
+
+
+      	<div class="page-header">
+				<h2>Alguns termos e conceitos importantes</h2>
+      	</div>
+      	
+<p><strong>			      	
+Objects:</strong> Uma cena é composta por um ou mais objetos.
+Nem todos os objetos servem para modelar.
+Eis os objetos mais comuns na modelação:</p>
+
+<p><strong>			
+Mesh:</strong> Objetos compostos de Faces Poligonais,
+Arestas e / ou Vértices.</p>
+
+<p><strong>			
+Curves:</strong> Curvas são objetos definidos
+matematicamente que podem ser manipulados
+com alças ou pontos de controle.</p>
+
+<p><strong>			
+Surfaces:</strong> Superfícies também são manipuladas
+com pontos de controle. Muito úteis para formas
+simples mas muito orgânicas e arredondadas.</p>
+
+<p><strong>			
+Meta Objects:</strong> Metaballs são objetos formados
+por uma função que define o volume 3D em que
+o objeto existe.</p>
+
+<p><strong>			
+Text:</strong> Objetos de texto, representação 2D de
+uma sequência de caracteres.
+Empty: são objectos sem geometria, não
+renderizam, mas são extremanente úteis para
+controlar a posição e movimento e outros
+objectos.</p>
+
+
+<p><strong>			
+Object e Edit Mode:</strong> São os dois modos de trabalho
+essenciais. Em Object Mode, as operações aplicam-se à
+totalidade de um objecto (por exemplo, desloca o cubo).
+Em Edit Mode, as operações aplicam-se à malha que
+define o objecto (por exemplo, desloca um vértice do
+cubo).
+Os objetos numa cena estão todos em Object Mode e só
+um de cada vez em Edit Mode.</p>
+
+ 		<p class="text-center"><img src="img/intros/modelacao/objectedit.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+
+
+
+<p><strong>			
+Topology:</strong> está relacionada com a estrutura da malha,
+a forma como a malha flui ao redor da superfície e
+atribui detalhes ao modelo. É o layout de um modelo
+3D, o modo como os vértices e as arestas são
+posicionados para criar a superfície de malha (mesh).
+Uma boa topologia, limpa e eficaz, é essencial para
+framerates rápidos (em tempo real) e boas
+deformações (tempo real e pré-rendered).</p>
+
+ 		<p class="text-center"><img src="img/intros/modelacao/topologia.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem retirada de Blender Cookie - <a href="http://cgcookie.com/blender/cgc-courses/learning-mesh-topology-collection/" target="_blank">Learning Mesh Topology Collection</a></small>
+</p>
+
+
+      	<div class="page-header">
+				<h2>Algumas ferramentas comuns</h2>
+      	</div>
+
+<p><strong>			
+Extrusion:</strong> Extrusão é uma ferramenta essencial de
+modelação. Permite criar nova malha a partir da malha
+existente. Projeta faces, arestas ou vértices com o mesmo
+tamanho e forma dos selecionados. Por exemplo, extrusão
+sobre uma face quadrada criaria um cubo, etc.</p>
+
+
+   	<div class="col-xs-6">
+
+ 		<p class="text-center"><img src="img/intros/modelacao/extrusion1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Diferença entre Extrude Individual e Extrude Region</small>
+</p>
+		</div>
+		
+		   	<div class="col-xs-6">
+
+ 		<p class="text-center"><img src="img/intros/modelacao/extrusion2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Extrusão de faces, arestas e vértices.</small>
+</p>
+		</div>
+
+<p><strong>			
+Subdivide:</strong> Ferramenta essencial de modelação, permite
+criar novas faces, arestas ou vértices através da divisão da
+malha já existente.</p>
+
+ 		<p class="text-center"><img src="img/intros/modelacao/subdivide.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+
+
+
+<p><strong>			
+Bevels ou Chamfers:</strong> Biselar/chanfrar (cortar em bisel ou
+fazer chanfros) permite cortar as arestas de um objecto.
+Pode-se usar a ferramenta Bevel só nos vértices (em vez
+de arestas), com diferentes limites de ângulo, cortes
+diferente larguras, etc.</p>
+
+ 		<p class="text-center"><img src="img/intros/modelacao/bevel.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+
+
+
+<p><strong>			
+Subdivision Surface (SubSurf):</strong> Técnica descoberta em
+1978 por Edwin Catmull and Jim Clark. É um método de
+representação de uma superfície lisa calculada através da
+subdivisão das faces. No Blender, é um modifier, pode ser
+utilizado de forma não-destrutiva.</p>
+
+ 		<p class="text-center"><img src="img/intros/modelacao/subsurf1.png" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem retirada da <a href="http://en.wikipedia.org/wiki/Subdivision_surfaces#mediaviewer/File:Catmull-Clark_subdivision_of_a_cube.svg" target="_blank">Wikipedia</a></small>
+</p>
+
+ 		<p class="text-center"><img src="img/intros/modelacao/subsurf2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem publicada em Southern, G. (setembro, 2011). Divide and conquer. <i>3D World</i>, p.76.</small>
+</p>
+
+
+<p><strong>			
+Loops (Edge e Cuts):</strong>
+Edge Loop pode ser definido como um conjunto de arestas
+ligadas através de uma superfície. Geralmente, a última
+aresta está ligada à primeira, criando um loop. As Edges de
+um modelo devem seguir em forma de loops para que a
+animação de uma personagem resulte sem erros e
+deformações que resultam da malha entrelaçada.
+Loop Cuts é uma ferramenta de modelação que permite
+cortar um loop de faces inserindo um novo Edge Loop.</p>
+
+ 		<p class="text-center"><img src="img/intros/modelacao/loop.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+
+<p><strong>			
+Non-Destructive Modeling e Modifiers:</strong> Modifiers são
+operações automáticas que afetam um objeto de um modo
+não-destrutivo, de forma não definitiva. Os modificadores
+pemitem realizar diversas operações sem afetar a
+topologia base do objeto, a sua geometria real. Se desejar,
+os Modifiers podem ser tornados definitivos, aplicados
+(Apply).</p>
+
+ 		<p class="text-center"><img src="img/intros/modelacao/modifiers.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Utilização de 3 modifiers (da esq. para a dir.): Simple Deform, Mirror e Bevel</small>
+</p>
+
+
+
+      	<div class="page-header">
+				<h2>Material adicional recomendado</h2>
+      	</div>
+
+<p>      	
+<a href="http://www.creativebloq.com/10-anatomy-tips-3d-artists-3113091" target="_blank">10 anatomy tips for 3D artists</a>
+</p>
+<p>
+<a href="http://www.creativebloq.com/3d-tips/12-expert-tips-for-creating-3d-spaceships-and-space-scenes-123748" target="_blank">13 expert tips for modelling 3D spaceships and space scenes</a>
+</p>
+<p>
+<a href="http://www.webreference.com/3d/lesson52/index.html" target="_blank">3D Animation Workshop: Lesson 52: Low-Polygon Modeling</a>
+</p>
+<p>
+<a href="http://www.creativebloq.com/3d/create-3d-models-game-engines-5-pro-tips-41411267" target="_blank">Create 3D models for game engines: 5 pro tips</a>
+</p>
+<p>
+<a href="http://www.scott-eaton.com/outgoing/3dWorld-Anatomy-Tips-Eaton.pdf" target="_blank">Anatomy for 3D artists</a>
+</p>
+<p>
+<a href="http://www.creativebloq.com/3d/how-create-3d-monster-just-9-steps-51411506" target="_blank">How to create a 3D monster in just 9 steps</a>
+</p>
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?roPos=1&catDisplay=1&id=1210#.UDJqqDLyc_k" target="_blank">Making A Toon Character Called “Geoff” & his Rig</a>
+</p>
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?roPos=2&catDisplay=9&id=1282#.UO1YnDLzU_k" target="_blank">Making Of “Antonio”</a> 
+</p>
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?roPos=1&catDisplay=1&id=280#.UDJsCjLyc_k" target="_blank">Making of “My Pets”</a>
+</p>
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?roPos=2&catDisplay=9&id=269#.UO1YpjLzU_k" target="_blank">Making of “Night Of The Cat”</a>
+</p>
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?roPos=1&catDisplay=1&id=418#.UDJr4DLyc_k" target="_blank">Making Of “Rusty”</a> 
+</p>
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?id=336&search=snail#.UO1YCjLzU_k" target="_blank">Making of “Snail”</a>
+</p>
+<p>
+<a href="http://www.3dtotal.com/team/Tutorials/benmathis/benmathis_1.php" target="_blank">LowPoly Character Modelling</a>
+</p>
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?roPos=1&catDisplay=1&id=1109#.UDJr8zLyc_k" target="_blank">Modeling a Cartoon Duck</a>
+</p>
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?id=858#.Tw8G_6tLs5Y" target="_blank">Edge Loops for Faces</a>
+</p>
+<p>
+<a href="http://ezinearticles.com/?Professional-3D-Character-Modeling-Explained-For-Beginners&id=2703528" target="_blank">Professional 3D Character Modeling Explained For Beginners</a>
+</p>
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?catDisplay=1&id=782#.TxB7QvM9ulQ" target="_blank">Modeling the Human Figure</a>
+</p>
+<p>
+<a href="http://3d.about.com/od/3d-101-The-Basics/a/Introduction-To-3d-Modeling-Techniques.htm" target="_blank">7 Common 3D Modeling Techniques for Film and Games</a>
+</p>
+<p>
+<a href="http://3d.about.com/od/3d-101-The-Basics/a/Anatomy-Of-A-3d-Model.htm" target="_blank">Anatomy of a 3D Model</a>
+</p>
+<p>
+<a href="http://3d.about.com/od/Creating-3D-The-CG-Pipeline/tp/Polygonal-3d-Modeling-Common-Box-And-Edge-Modeling-Workflows.htm" target="_blank">Polygonal 3D Modeling - Common Box and Edge Modeling Workflows</a>
+   </p>
+   	
+    
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

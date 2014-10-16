@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Rig de humanóide</h1>
+
+
+<p>Vamos criar um Rig simples e associar o mesmo a um modelo já feito. Vamos utilizar o Blu (http://www.blendswap.com/blends/characters/blu/) criado por Macouno (aka Dolf Veenvliet).</p>
+
+<p>O Blu já vem com uma armadura muito simples mas nós vamos criar uma nova que é um pouco mais sofisticada.</p>
+
+<p>Para este exercício utilize o ficheiro <a href="files/38.zip" target="_blank">38_Blu_limpo.blend</a></p>
+
+<p>Após terminar este exercício, recomenda-se o treino com outros modelos ou melhorar a flexibilidade desta armadura incluindo controladores IK para os braços, dedos nas mãos, etc.</p>
+
+<img src="img/img38/1rig55f36bb2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>1. Vamos começar por preparar o modelo: coloque a Origin no centro da geometria; faça Apply a eventuais rotações e alterações na escala.</p>
+
+<img src="img/img38/2rig42f06161.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img38/3rig5ed404cb.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2. Coloque-se em visão frontal, ortogonal, e coloque o 3D Cursor na Origin do modelo. [Selecione o modelo, clique em SHIFT+S e Cursor to Selected]</p>
+
+<p>3. Adicione um Single Bone. No painel de opções da armadura, ative a opção X-Ray para conseguir ver o osso através da malha.</p>
+
+<img src="img/img38/4rig406acf7e.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img38/5rig31d23ef9.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4. Em visão lateral, rode o Bone e coloque-o em posição similar à da imagem. A Tip está dentro do modelo e o Bone está na linha e cintura.</p>
+
+<img src="img/img38/6rig19b58d58.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5. Em Edit Mode, selecione a Tip do Bone e faça Extrude.</p>
+
+<img src="img/img38/7rig34712fd0.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>No exemplo, fizemos Extrude 4 vezes. De todas as vezes, após o Extrude (E), bloqueámos o eixo Z (Z) e depois procedemos a alguns ajustamentos em Y para criar uma ligeira curvatura na espinha.</p>
+
+<p>6. Selecione novamente a Tip do primeiro Bone (daqui em diante designado por Root) e faça extrude para baixo. Em visão frontal, mova a Tip do novo Bone no eixo Z até conseguir um posicionamento similar ao da imagem abaixo.</p>
+
+<img src="img/img38/8rig72e702f5.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img38/9rig6cf3ff1d.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>7. Atribua nomes significativos a todos os Bones e ative a visibilidade dos Names. No nosso exemplo, utilizámos Root, Pelvis, Stomach, Chest, Neck e Head.</p>
+
+<img src="img/img38/10rig58685d83.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img38/11rig799014bb.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img38/12rig7bc61df1.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>8. Coloque-se em visão frontal e ative a opção X-Axis Mirror (barra de Tools).</p>
+
+<img src="img/img38/13rig3c16056e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>9. Selecione o Tip e clique em E para fazer Extrude em Mirror. Com o  X-Axis Mirror o Extrude normal (E) é substituído pelo Extrude em Mirror. Posicione os novos ossos de forma similar à imagem.</p>
+
+<img src="img/img38/14rig678af21b.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>10. Construa a armadura para as pernas e pés utilizando o Extrude. Proceda aos ajustamentos necessários reposicionando as Tips e os Roots. Procure manter os bones no centro da malha. As alterações que faz de um lado aplicam-se automaticamente ao outro.</p>
+
+<img src="img/img38/15rig3287b188.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img38/16rig5bde6d6d.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img38/17rig38e9454e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>11. Em visão frontal, selecione um dos Bones que ligam o Pelvis ao início da perna e apague-o. </p>
+
+<img src="img/img38/18rig581e6978.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>12. Renomeie os novos Bones. Nós utilizámos Thigh, Leg, Foot e Toe. Mantenha a logica do _L e _R para indicar Esquerda e Direita!</p>
+
+<p>13. Utilize os mesmos processos e procedimentos adotados nas pernas para criar a armadura para os braços.</p>
+
+<img src="img/img38/19rig45a908ea.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>14. Quando acabar esta parte, crie dois olhos e posicione os mesmo. Os olhos aqui criados são duas UV Sphere.</p>
+
+<img src="img/img38/20rig3bba4b99.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>15. Volte à sua armadura e em Edit Mode adicione novos bones para os olhos.</p>
+
+<p>Utilizámos o mesmo procedimento. Extrude duas vezes e apagámos o bone que liga a Tip do bone Head ao root do bone do olho. </p>
+
+<img src="img/img38/21rig73c5f46f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>O root do bone do olho está posicionado exatamente no centro da UV Sphere. Utilizámos o cursor 3D para posicionar com exatidão. Seleccionar UV Sphere e SHIFT+S (Cursor to Selected), selecionar root do bone do olho e SHIFT+S (Selected to Cursor)</p>
+
+<p>16. Selecione os dois bones dos olhos e SHIFT+S, escolha Cursor to Selected. Faça SHIFT+A para adicionar um novo osso que vai surgir exatamente no meio dos dois bones.</p>
+
+<img src="img/img38/22rig1465.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Em visão lateral, utilize o widget para deslocar o novo bone afastando-o dos olhos (seta verde). Este bone chama-se Eye_target e vai servir para controlar para onde os olhos estão virados.</p>
+
+<img src="img/img38/23rig54ced2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>17. Passe para Pose Mode. Selecione o Eye_L e aplique-lhe um Bone Constraint do tipo Track To. Repita o processo para o Eye_R.</p>
+
+<img src="img/img38/24rig2f6bcc8a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Os bones dos olhos vão passar a apresentar uma cor diferente dos restantes bones indicando que têm um Constraint.</p>
+
+<p>Em Pose Mode, se mover o Eye_target irá ver os bones dos olhos rodarem na sua direção.</p>
+
+<img src="img/img38/25rig161df757.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>18. Vamos agora configurar as pernas e pés com um setup de IK (Inverse Kinematics).</p>
+
+<p>Em Edit Mode e em visão lateral, selecione o Tip da Leg e faça Extrude. Posicione o novo bone de acordo com a imagem e nomeie os bones IK_Leg_L e IK_Leg_R.</p>
+
+<img src="img/img38/26rig7e8923f4.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<img src="img/img38/27rig68a98d69.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>19. Estes dois novos bones não vão ser “child” de nenhum outro bone nem vão estar ligados. Irão servir para podermos manipular livremente a IK Chain.</p>
+
+<img src="img/img38/28rig12bdbf1a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Em cada um destes novos dois bones, apague o bone Parent e desative o Connected.</p>
+
+<p>20. De seguida, vamos criar Pole Targets, bones que indicam a direção para onde os joelhos apontam para que as rotações dos joelhos surjam sempre com a direção correta.</p>
+
+<p>Selecione o Foot e duplique-o (SHIFT+D), posicione o novo bone em frente do joelho e alinhado.</p>
+
+<img src="img/img38/29rig19a28a56.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Dê os nomes Knee_L e Knee_R aos novos bones.</p>
+
+<img src="img/img38/30rig44a4ffa1.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>21. Torne o Knee_L child do IK_Leg_L.</p>
+
+<img src="img/img38/31rig334eadd5.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Repita o processo para o Knee_R.</p>
+
+<p>22. Em Pose Mode, selecione o Leg_L e aplique-lhe um Bone Constraint do tipo Inverse Kinematics.</p>
+
+<img src="img/img38/32rig4cd4c227.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Siga a imagem para perceber as configurações.</p>
+
+<p>Por vezes, o bone ganha uma rotação algo estranha. Se necessário, ajuste o Pole Angle para compensar essa rotação.</p>
+
+<img src="img/img38/33rig2d8c68c1.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Repita o processo no Leg_R.</p>
+
+<p>23. Experimente em Pose Mode agarrar (G) o IK_Leg_L e IK_Leg_R e mova-o para ver se o joelho dobra corretamente.</p>
+
+<p>No nosso caso foi necessário rever o Pole Angle mas tudo funcionou melhor depois de fletirmos ligeiramente os joelhos e ajustarmos a posição do Knee_L e Knee_R (em Edit Mode!).</p>
+
+<img src="img/img38/34rig3f52607e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Em Edit Mode, selecione a junta entre a Thigh_L e a Leg_L (o joelho) e desloque-a ligeiramente para a frente, fletindo ligeiramente o joelho.</p>
+
+<p>24. A Armadura está pronta, é tempo de fazermos o Skinning, aparentar e associar a armadura à malha. Vamos começar pelos olhos.</p>
+
+<p>Em Object Mode, selecione primeiro o olho esquerdo e depois a armadura (com SHIFT). Clique em CTRL+P e escolha a opção With Automatic Weights.</p>
+
+<img src="img/img38/35rig139dd4e4.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Repita o processo para o olho direito. </p>
+
+<p>25. O parentesco que acabámos de criar associou grupos de vértices da malha do objeto que constitui o olho à armadura. A associação tem em conta a proximidade e geralmente produz bons resultados iniciais que, ainda assim, têm de ser verificados e melhorados.</p>
+
+<p>Selecione o olho esquerdo e passe para Edit Mode. Na janela Vertex Groups foram criados tantos grupos quantos os ossos mas, neste caso, queremos que...</p>
+
+<p>- todos os vértices do olho estejam associados só a um osso (Eye_L)</p>
+
+<p>- o osso Eye_L é o único que está associado aos vértices deste objeto.</p>
+
+<img src="img/img38/36rig79c94041.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img38/37rig49faf17a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Utilize as ferramentas para verificar a associação automática nos dois olhos.</p>
+
+<p>Assign – atribui ao grupo (que tem o mesmo nome do osso) selecionado os vértices que estiverem selecionados na malha com o peso (Weight) definido.</p>
+
+<p>Remove – remove os  vértices que estiverem selecionados na malha do grupo</p>
+
+<p>Select – seleciona os vértices que pertencem ao grupo selecionado</p>
+
+<p>Deselect – retira a seleção dos vértices</p>
+
+<p>26. Depois de verificar que todos os vértices do olho esquerdo estão associados ao grupo Eye_L e apenas ao grupo Eye_L, verifique se o mesmo acontece com o Eye_R.</p>
+
+<p>Se tudo estiver bem, em Pose Mode mova o Eye_target e verá os olhos a apontarem na direção do Eye_target.</p>
+
+<p>27. Em Object Mode, selecione a malha da personagem e depois a armadura (com SHIFT). Clique em CTRL+P e escolha a opção With Automatic Weights.</p>
+
+<p>28. Repita o processo de verificação.</p>
+
+<p>Se preferir, pode utilizar o método de Weight Painting para proceder a um skinning mais completo, criando zonas de influência total (a vermelho) e zonas intermédias (amarelo e verde).</p>
+
+<p>Atenção: </p>
+
+<p>- nem todos os bones deverão ter vértices associados! Existem alguns bones que não tem nenhum vértice associado (Eye_target, Knee_L, etc.).</p>
+
+<p>- não deve ter apenas vértices com 1 (vermelho = máximo de Weight ou influência) e vértices com 0 (azul = mínimo de Weight ou influência). Uma boa deformação implica ter áreas com Weights diferentes.</p>
+
+<p>Resultado da associação com Automatic Weigths ao bone Upper_arm_L</p>
+
+<img src="img/img38/38rig15c420b9.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Upper_arm_L depois de corrigido</p>
+
+<img src="img/img38/39rig6e6f88fe.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Resultado da associação com Automatic Weigths ao bone Lower_arm_L</p>
+
+<img src="img/img38/40rig4c9fbb9f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Lower_arm_L depois de corrigido</p>
+
+<img src="img/img38/41rig574.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Resultado da associação com Automatic Weigths ao bone Head</p>
+
+<p>Repare como a cara da personagem iria deformar de forma estranha caso animasse o bone Head...</p>
+
+<img src="img/img38/42rig52feddcf.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Resultado da associação com Weigth Painting ao bone Head</p>
+
+<img src="img/img38/43rig6e153b53.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+
+		</div>
+		
+		
+		
+		
+		 
+		
+		
+		
+		
+		
+		
+		
+
+ </div>
+
+     <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

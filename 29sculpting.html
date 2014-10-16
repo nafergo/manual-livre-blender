@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="tic" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Blender – Sculpting</h1>
+
+
+<p>Duas considerações ou sugestões iniciais:</p>
+
+<p>a) É muito comum a utilização de um workflow que implica começar com um objecto que tem as suas formas básicas já definidas de outro modo (por exemplo, box modelling) e utilizar o Sculpt para adicionar detalhes.</p>
+
+<p>b) Como o grau de detalhe está relacionado com o desempenho do computador (quanto maior o grau de detalhe, mais exigente é o desempenho), sugere-se que resista à tentação de adicionar vários níveis de subdivisão desde o início e opte por ir adicionado novos niveis à medida que for necessário.</p>
+
+<p>1- O modo Sculpting permite modelar com elevado grau de detalhe e liberdade. No entanto, também implica utilizar um elevado número de vértices para obter os melhores resultados. Para aumentar o número de vértices do cubo inicial, podíamos simplesmente utilizar a ferramenta Subdivide. No nosso caso, vamos utilizar uma forma mais dinâmica e sofisticada, vamos utilizar o modifier Multiresolution para aumentar a resolução do objecto (aumentar o número de vértices da malha).</p>
+
+<p>Seleccione o cubo inicial. No painel Object Modifiers, adicione um modifier do tipo Multiresolution.</p>
+
+<img src="img/img29/1sculpting43a48bd3.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2- Adicione novos níveis de subdivisão, clicando no botão Subdivide. Na imagem abaixo, clicámos 3 vezes no botão mencionado criando 3 níveis de Preview, Scultp e Render. Pode adicionar ou remover (botão Delete Higher) níveis de subdivisão a qualquer altura. Atenção: sempre que aumentar os níveis de subdivisão, estará também a aumentar a exigência no desempenho do seu computador!</p>
+
+<p>Preview: níveis de subdivisão utilizados na janela 3D quando não está em Sculpt Mode. Sugestão: diminua os níveis de Preview para que, quando não estiver a esculpir, o objecto não exiba o grau de detalhe esculpido e, consequentemente, ocupe memória, utilizando recursos desnecessariamente e afectando o desempenho do computador.</p>
+
+<p>Sculpt: níveis de subdivisão utilizados quando estiver em Sculpt Mode.</p>
+
+<p>Render: níveis de subdivisão utilizados quando renderizar.</p>
+
+<img src="img/img29/2sculpting5b69a61c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Ainda com o cubo seleccionado, active o Sculpt Mode.</p>
+
+<img src="img/img29/3sculpting77430ea3.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- Na barra de Tools (T), deverá agora ver diversas opções e ferramentas relacionadas com o modo de trabalho Sculpting.</p>
+
+<p> primeira janela permite-lhe escolher (clique na imagem situada perto do topo para abrir menu) e configurar algumas opções básicas relativas aos Brushes.</p>
+
+<p>As opções principais de configuração não são sempre iguais, existe alguma variação de acordo com as características do Brush. No entanto, existem algumas opções básicas mais comuns:</p>
+
+<img src="img/img29/4sculpting6eec3287.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Radius: define o alcance ou área afectada, dimensão do Brush. O botão do lado direito (dedo a pressionar linha azul) activa sensibilidade à pressão para tablets.</p>
+
+<p>Strength: Intensidade do efeito, força do Brush. O botão do lado direito (dedo a pressionar linha azul) activa sensibilidade à pressão para tablets.</p>
+
+<p>Autosmooth: Grau de suavização ou aplainamento aplicado. O botão do lado direito (dedo a pressionar linha azul) activa sensibilidade à pressão para tablets.</p>
+
+<p>Add/Subtract: modo como o efeito do Brush é aplicado. Pode ser positivo (Add), “insuflando” o objecto, ou negativo (Subtract), “escavando” o objecto.</p>
+
+<p>5- O menu de acesso rápido permite escolher entre diferentes tipos de Brushes.</p>
+		
+<img src="img/img29/5sculpting1b667a43.png" alt="..." class="img-responsive img-thumbnail center-block">	
+
+<p><strong>Blob:</strong> Aplica um efeito esférico a uma área, faz crescer saliência esférica ou abre cratera.</p>
+		
+<p><strong>Clay:</strong> Permite fazer encolher ou expandir uma área.</p>
+
+<p><strong>Crease:</strong> O Add belisca a malha para criar um pico/crista, o Substract vinca a malha criando uma reentrância tipo ruga ou vale.</p>
+
+<p><strong>Fill/Deepen:</strong> Funciona de forma similar ao Draw, o Fill preenche concavidades/reentrâncias e o Deepen afunda ainda mais.</p>
+		
+<p><strong>Flatten/Contrast:</strong> Flatten alisa a área sob o ponteiro, Contrast exagera as diferenças.</p>
+
+<p><strong>Grab:</strong> Agarra uma área e move-a com o Brush.</p>
+
+<p><strong>Inflate/Deflate:</strong> Expande uma área insuflando-a (como um balão), o Deflate encolhe partes da malha. </p>
+
+<p><strong>Layer:</strong> É similar ao Draw mas pode definir uma altura (Height) para as linhas.</p>
+
+<p><strong>Nudge:</strong> Empurra  áreas da malha ao longo da superfície. </p>
+
+<p><strong>Pinch/Magnify:</strong> Pinch puxa uma área para o meio do Brush, Magnify espalha a superfície.</p>
+
+<p><strong>Polish:</strong> Suaviza áreas da malha tentando preservar a forma. </p>
+
+<p><strong>Scrape/Peaks:</strong> escava/abre ravinas ou faz emergir elevações/montes na superfície</p>
+
+<p><strong>Sculpt/Draw:</strong> puxa a superfície da malha que está debaixo do ponteiro do rato para fora (Add) ou para dentro (Subtract). É o melhor Brush para desenhar linhas. </p>
+
+<p><strong>Smooth:</strong> Suaviza a superfície da malha. </p>
+
+<p><strong>Snake Hook:</strong>Similar ao Grab, permite puxar áreas criando arcos parecidos com tentáculos.</p>
+
+<p><strong>Thumb:</strong> Cria um efeito de atrito/fricção.</p>
+
+<p><strong>Twist:</strong> Move a área da superfície em espiral. </p>
+
+<p>6- A barra de ferramentas permite ainda configurar diversos outros aspectos importantes. Por exemplo, o painel Options permite bloquear eixos (desactivar efeitos do Sculpting no eixo X, etc.) e o painel Symmetry permite esculpir de forma simétrica, em “espelho”.</p>
+
+
+
+		</div>
+		
+		
+		
+		 
+		
+		
+		
+		
+		
+		
+		
+
+ </div>
+
+    <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+</body>
+</html>

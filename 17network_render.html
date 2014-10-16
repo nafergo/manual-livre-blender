@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nelson gonçalves" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Network Render <small>do Blender</small></h1>
+
+      	
+      	<div class="page-header">
+				<h2>Criar uma Render farm com Blender</h2>
+      	</div>
+
+
+<p>O Blender Network Render é um sistema de renderização distribuída incluído no código da aplicação Blender. Permite criar facilmente uma renderfarm tanto em ambiente local (LAN) como através da Internet.</p>
+
+<p>Para ativar esta opção deverá escolher o Network Render como motor. Se não tiver esta opção disponível, deverá ativar primeiro a opção através da janela de Add-Ons (User Preferences > Addons).</p>
+
+<img src="img/img17/1network_render71406872.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>O funcionamento do Blender Network Render  assenta na existência de três tipos de entidades:</p>
+
+<ul>
+<li><strong>Master:</strong> o computador que coordena a distribuição. Só existe um por rede.</li>
+
+<li><strong>Client:</strong> computador que envia Jobs (tarefas de renderização) e para onde é enviado trabalho final ou de onde é possível recolher frames renderizadas.</li>
+
+<li><strong>Slave:</strong> computador que renderiza. Quantos mais Slaves, mais distribuída é a renderização e, pelo menos teoricamente, é mais rápido o processo.</li>
+</ul>
+<p>Na realidade, o mesmo computador pode desempenhar em simultâneo as 3 funções. Para isso, basta iniciar 3 instâncias diferentes do Blender Network Render e escolher uma função diferente para cada uma delas.</p>
+
+<p>O processo de organização de uma renderfarm com o Network Render é rápido. Em alguns minutos, se tiver uma rede local e computadores disponíveis, pode criar uma renderfarm caseira.</p>
+
+<ol>
+<li><strong>Crie o Master</strong></li>
+
+<li><strong>2º Crie tantos slaves quanto possível</strong></li>
+
+<li><strong>3º Inicie o Cliente para enviar Job.</strong></li>
+
+</ol>
+
+<h4>NOTAS</h4>
+<p>- Pode ativar estes processos por linha de comandos (sobretudo útil para renderfarms dedicadas).</p>
+
+<h3>MASTER</h3>
+
+<p>Para iniciar o Master, escolha a opção Master e clique em Start Service.</p>
+
+<img src="img/img17/2network_render1e2f62a3.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Para parar, clique em ESC, como se interrompesse um render normal.</p>
+
+
+<ul>
+<li>
+Path: local onde o Master irá gravar ficheiros dos jobs (tarefas de renderização), resultados, logs, etc.</li>
+
+<li>Pode especificar o IP e a porta. Deixe em [default] se quiser que o master esteja a escutar toda a rede (todos os IP) na porta definida.</li>
+
+<li>SSL: utiliza SSL (Https) para  comunicação encriptada com clientes e slaves.</li>
+
+<li>Open Master Monitor: abre interface  web para informação e gestão do funcionamento da renderfarm. A página fica disponível em http://master_ip_address:master_port</li>
+		
+<li>Broadcast: envia para a rede o IP e porta do Master. O Master fica visível na rede.</li>		
+		
+<li>Force Dependency Upload: força o cliente a fazer upload dos ficheiros dependentes</li>
+
+<li>Clear on exit: remove a pasta criada em Path quando o Master é desligado.</li>
+</ul>		
+		
+<h3>SLAVE</h3>	
+
+<p>Para iniciar o Slave, escolha a opção Slave, clique no botão de Refresh (duas setas) para detetar Master que esteja a fazer Broadcast na rede (Pode demorar alguns segundos). Depois de detetar Master, clique em Start Service.</p>	
+		
+<p>Se o Master não estiver a fazer Broadcast, tem de introduzir IP e porta do Master.</p>
+		
+<img src="img/img17/3network_render18b080da.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Para parar, clique em ESC, como se interrompesse um render normal.</p>
+		
+<p>Path: local onde o Slave irá gravar ficheiros dos jobs (tarefas de renderização), resultados, logs, etc.</p>		
+
+
+<ul>		
+<li>SSL: utiliza SSL (Https) para  comunicação encriptada com clientes e slaves.</li>
+
+<li>Open Master Monitor: abre interface  web para informação e gestão do funcionamento da renderfarm. A página fica disponível em http://master_ip_address:master_port</li>
+
+<li>Tags: tags atribuídas ao Slave (separadas por ponto e vírgula). Um Slave só recebe Job se tiver as mesmas tags atribuídas ao Job. Permite ter vários Slaves a serem utilizados para Jobs diferentes.</li>
+
+<li>Clear on exit: remove a pasta criada em Path quando o Slave é desligado.</li>
+
+<li>Generate thumbnails: Cria thumbnails do resultado da renderização. Caso contrário, só serão criados mediante pedido do Master.</li>
+
+<li>Output render log on console: produz log do processo de renderização.</li>
+
+<li>Threads: número de threads que o Slave utiliza para renderização. Permite reservar processamento no computador que serve de Slave para outras tarefas (muito útil caso o Slave também esteja a ser utilizado para outras tarefas).</li>
+</ul>
+
+
+<h3>CLIENT</h3>
+
+<p>Para enviar um Job de renderização do seu computador:</p>
+
+<p>Abra o ficheiro blend que pretende renderizar e confirme os settings (dimensão, resolução, etc.)</p>
+
+<p>Grave o ficheiro.</p>
+
+<p>Inicie o Network Render e selecione modo Client. Clique no botão de Refresh (duas setas) para detetar Master que esteja a fazer Broadcast na rede (Pode demorar alguns segundos). </p>		
+
+<img src="img/img17/4network_render33f43d7e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Caso o Master não esteja a fazer Broadcast, tem de introduzir IP e porta do Master.</p>
+
+<p>Opção mais fácil: Clique em Animation on Network e aguarde pela devolução das frames renderizadas quando o Job estiver concluído.</p>
+
+
+<h4>NETWORK settings</h4>
+
+<ul>
+<li>Path: local onde o Client irá gravar ficheiros temporários de renderização.</li>
+
+<li>Address: IP e Porta do Master</li>
+
+<li>SSL: utiliza SSL (Https) para  comunicação encriptada com clientes e slaves.</li>
+
+<li>Open Master Monitor: abre interface  web para informação e gestão do funcionamento da renderfarm. A página fica disponível em http://master_ip_address:master_port</li>
+</ul>
+
+<h4>JOB Settings </h4>
+<ul>
+<li>Animation on network: envia ficheiro aberto como Job para o Master e fica a aguardar pelo resultado. É um processo similar a uma renderização normal só que esta é feita nos Slaves.</li>
+
+<li>Send job: envia ficheiro aberto como Job para o Master. Sempre que quiser, faça CTRL+F12 (renderizar animação) para recolher frames renderizadas até esse momento.</li>
+
+<li>Bake on network: envia Job de baking. </li>
+
+<li>Send current frame job: envia ficheiro aberto como Job para o Master mas apenas para renderizar frame atual. </li>
+
+<li>Name: nome do Job. [default] utiliza nome do ficheiro blend</li>
+
+<li>Category: Categoria do Job (opcional). </li>
+
+<li>Tags: tags atribuídas ao Job (separadas por ponto e vírgula). Um Job só será enviado para um Slave caso este também contenha todas as tags do Job.</li>
+
+<li>Engine: Render engine a utilizar para renderização.</li>
+
+<li>Priority: prioridade do Job. Se tiver dois Jobs, um de prioridade 1 e outro de prioridade 2, o Master irá dar 33% do processamento ao 1 e 66% ao 2 (conta como se fosse 2 Jobs).</li>
+
+<li>Chunks: quantidade de frames a realizar por Slave em cada Job atribuído.</li>
+
+<li>Save Before Job: força a gravação da versão atual antes de enviar para o Master.</li>
+</ul>
+
+<h4>Slaves Status </h4>
+<p>Lista dos Slaves conectados  aos Master. </p>
+
+<img src="img/img17/5network_render289bfe74.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<ul>
+<li>Refresh: atualiza lista.</li>
+
+<li>Remove: Move Slave para Blacklist.</li>
+</ul>
+
+<h4>Slaves Blacklist </h4>
+<p>Lista dos Slaves na Blacklist </p>
+
+<ul>
+
+<li>Remove: Remove Slave da Blacklist. </li>
+</ul>
+
+<h4>Jobs </h4>
+<p>Lista dos Jobs no Master. </p>
+
+<ul>
+
+<li>Refresh: atualiza Jobs nos Master.</li>
+
+<li>Remove: Remove Job do Master. </li>
+
+<li>Remove All: Remove todos os Jobs do Master. </li>
+		
+<li>Get Results: recolhe todas as frames renderizadas do Job. Resultado são descarregados como EXR para a atual pasta de Output. </li>
+</ul>
+
+
+		
+		
+		
+		
+		
+		</div>
+		 
+		
+		
+		
+		
+		
+		
+		
+
+ </div>
+
+    <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+</body>
+</html>

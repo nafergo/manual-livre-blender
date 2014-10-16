@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina"><small>Criar bandos, enxames, manadas, rebanhos, cardumes... com sistema de</small> Boids</h1>
+      	
+      	<div class="page-header">
+				<h2>Bando de borboletas</h2>
+      	</div>
+     
+
+
+        	<h3>Cenário</h3>
+
+<p>
+1. Crie um plano (irá servir para emitir as borboletas) e uma borboleta. Pode alterar o aspeto ou utilizar um qualquer outro objeto.
+</p>
+<img src="img/boids/boids1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+        	<h3>Animação das borboletas</h3>
+
+<p>
+2. Criámos 2 shapekeys para animar as asas. Na primeira shapekey, as asas estão em baixo. 
+</p>
+<img src="img/boids/boids2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+3. Na segunda shapekey, as asas estão em cima. Quando o valor da Key1 estiver a 1 as asas estão em cima. Quando o valor da Key1 estiver a 0, as asas estão em baixo.
+</p>
+<img src="img/boids/boids3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+4. Introduza keyframes no Value da Key1. Na frame 1 coloque o Value a 0. Na frame 10 coloque o Value a 1. Na frame 20 volte a colocar o Value a 0. Deste modo, criou um ciclo.
+</p>
+<img src="img/boids/boids4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+5. No Graph Editor, com o canal Key1 selecionado (canal onde foram introduzidas as keyframes), adicione um modifier Cycles. Os Modifiers no Graph Editor estão disponíveis na barra de propriedades (atalho N).  
+</p>
+<p>Com o Modifier Cycles, a animação deverá repetir-se infinitamente.</p>
+<img src="img/boids/boids5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<h3>Material das borboletas</h3>
+<p>    	
+
+6. Como estamos a trabalhar em Cycles, crie um material similar ao apresentado abaixo para a borboleta. Deste modo, só com um material conseguimos criar variedade de cores.
+</p>
+<p>
+Em baixo, duplicámos a borboleta (Não precisa de duplicar a sua borboleta!) apenas para ver que ambas as borboletas,
+ com o mesmo material, têm um aspeto diferente porque têm uma localização diferente. Com esta configuração (Location) as borboletas vão mudar de cor quando
+  estiverem a voar (porque vão alterando a sua localização). Se quiser que as borboletas tenham cores diferentes mas 
+ mantenham essas mesmas cores durante a animação, utilize o Random.
+</p>
+<img src="img/boids/boids6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+        	<h3>Criar o bando</h3>
+
+<p>
+7. Inserimos um sistema de partículas do tipo Boids com as seguintes configurações:</p>
+
+<ul>
+<li>Number: 20 (número de borboletas criadas)</li>
+<li>Start: 1 (frame em que começa a simulação e surgem as borboletas)</li>
+<li>End: 1 (frame em que termina a simulação e a partir da qual já não são adicionadas borboletas) [Nós queremos que estejam todas as borboletas adicionadas desde o início, daí utilizarmos a frame 1 no Start e End.]</li>
+<li>Lifetime: 5000 (frames de vida das partículas-borboletas) [Para evitar que as partículas-borboletas desapareçam/morram, inserimos um valor exageradamente elevado]</li>
+</ul>
+
+ 
+
+<img src="img/boids/boids7.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+O sistema Boids permite diversas configurações com diferentes comportamentos. Os boids podem mover-se no ar (Allow Flight), em "terra" (Allow Land) ou trepar/escalar objetos (Allow Climbing). É ainda possível criar "batalhas" entre boids.
+</p>
+<p>
+Estes comportamentos podem ser configurados em diversos parâmetros específicos para voar, andar em terra e lutar/combater. Para as nossas borboletas (que só voam) os importantes são:
+</p>
+
+   
+<ul>
+<li>Max/Min Air Speed: velocidade máxima/mínima no ar</li>
+<li>Max Air Acceleration: define velocidade com que o boid pode mudar de direção</li>
+
+<li>Max Air Angular Velocity: aceleração súbita para cumprir regra</li>
+     
+<li>Air Personal Space: raio/espaço do boid, distância para os restantes boids</li>
+     
+</ul>
+    
+
+
+<p>
+8. No painel Render escolhemos a opção Object e selecionámos a borboleta criada anteriormente. O Size permite manipular a dimensão das borboletas-partículas.
+</p>
+
+<img src="img/boids/boids8.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+<p>
+9. Para controlarmos o bando de borboletas, adicionámos um Empty à cena e no Boids Brain introduzimos uma regra do tipo Goal apontada ao objeto Empty. Agora, podemos manipular o Empty (ou animar
+ com keyframes) e as borboletas irão atrás. 
+</p>
+
+<p>
+Por vezes, a lógica-comportamento não é imediatamente atualizada. Deve sempre recomeçar a simulação do início e pode ser necessário apagar a Cache (painel Cache)...
+</p>
+<img src="img/boids/boids9.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>O Boids Brain é onde programamos os vários comportamentos do sistema de partículas e a sua relação/hierarquia. Se os boids agrupam, afastam-se, etc.</p>
+<p>
+Regras/rules existentes 
+
+</p>
+<ul>
+
+<li>Goal: procura atingir objetivo</li> 
+  
+<li>Avoid: evita objeto identificado</li>
+ 
+<li>Avoid Collision: evita colisão com outros boids ou objetos com Deflection ativado</li>
+
+<li>Separate: Boids afastam-se uns dos outros.</li>
+    
+<li>Flock: Boids copiam movimentos dos que estão próximos, agrupam.</li>
+    
+<li>Follow Leader: seguem o líder em vez de um Boid (Distance = distância do líder; Line = seguem o líder em linha)</li>
+
+<li>Average Speed: é mantida velocidade média</li>
+     
+<li>Fight: "atacam" outros boids</li>
+</ul>    
+
+     
+
+<p>
+Rule Evaluation (modo como as regras são avaliadas/interpretadas): Average (utiliza média das regras), Random (regra aleatória para cada boid), Fuzzy (utiliza fuzzy logic para avaliar regras). 
+</p>
+
+<p>
+10. E agora temos um bando de borboletas a voar que segue o nosso Empty...
+</p>
+<img src="img/boids/boids10.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+      	<div class="page-header">
+				<h2>Battle of the Boids</h2>
+      	</div>
+    <p>Em breve.</p>
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

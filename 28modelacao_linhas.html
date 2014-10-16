@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nelson gonçalves" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Modelação <small>de uma cadeira de praia</small> com linhas</h1>
+
+
+<p>1- Apague o cubo inicial. Adicione uma curva Bezier.</p>
+
+<p>2- Comece por  seleccionar a curva e subdividi-la (2x). Depois, utilizando as alças de controle e o Grab, Rotate e Scale, molde uma curva com forma semelhante à da imagem abaixo. 
+Em Edit Mode, pode utilizar o atalho V para escolher modo de controlo dos pontos (livre, alinhado, vector, etc).</p>
+
+<img src="img/img28/1modelacao_linhas2ed29328.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Converta a linha para malha (Mesh). Em Object Mode, seleccione a linha e utilize o atalho ALT+C.  Depois, transformada a linha em malha, pode utilizar as ferramentas habituais de modelação de malha (i.e. extrusão, etc.).</p>
+
+<img src="img/img28/2modelacao_linhas746cd682.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- Aplique uma extrusão para obter uma forma semelhante à abaixo exibida.</p>
+
+<img src="img/img28/3modelacao_linhas4d3eaba8.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5- Aplique uma nova extrusão para aumentar a espessura do objecto. Se preferir, pode utilizar o modifier Solidify para criar 
+espessura. Pode ainda utilizar shading Smooth combinado com o modifier Edge Split para suavizar/arredondar as faces mas preservar alguns 
+ângulos mais proeminentes.</p>
+
+<img src="img/img28/4modelacao_linhas76b263ba.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>6- Em Object Mode, adicione uma NURBS Curve. Seleccione uma das extremidades (um dos pontos) e adicione novos segmentos (clique com o BER enquanto tem o CTRL pressionado). Manipule até obter uma forma semelhante à apresentada abaixo.</p>
+
+<img src="img/img28/5modelacao_linhas676d25d8.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>7- Posicione a curva NURBS ao lado do objecto anterior. Verifique a dimensão e altere se necessário.</p>
+
+<img src="img/img28/6modelacao_linhas5cd349e1.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img28/7modelacao_linhas78661981.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>8- Adicione um Bezier Circle, redimensione-o e modifique o seu posicionamento de forma semelhante à apresentada abaixo. Repare que a Bezier Circle está posicionada perto de um dos vértices (extremidades) da curva NURBS. </p>
+
+<img src="img/img28/8modelacao_linhas3361f9d9.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Veja qual é o nome do objecto Bezier Circle adicionado. Provavelmente é CurveCircle. </p>
+
+<p>Seleccione a NURBS Curve e na caixa Bevel Object digite o nome da Bezier Circle ou clique na caixa e escolha. </p>
+
+<p>9- Deverá ter obtido um tubo que vamos utilizar como braço da cadeira. Modifique a dimensão do braço ou do círculo a seu gosto.</p>
+
+<p>Quando estiver satisfeito, seleccione o braço da cadeira, converta-o para malha (ALT+C). Edite novamente o braço a seu gosto. Crie um duplicado e posicione-o do outro lado.</p>
+
+<img src="img/img28/9modelacao_linhas1f81b7e6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+		</div>
+		
+		
+		 
+		
+		
+		
+		
+		
+		
+		
+
+ </div>
+
+      <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+</body>
+</html>

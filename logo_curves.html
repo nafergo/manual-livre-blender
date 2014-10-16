@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina"><small>Modelação de um</small> Logótipo <small>com linhas</small></h1>
+      	
+<p>
+1. Neste exercício vamos utilizar a imagem apresentada abaixo e disponivel em <a href="https://openclipart.org/detail/190107/etna-logo-by-etna-yhtym%C3%A4" target="_blank">OpenClipart</a>.
+</p>     
+     
+     
+    <img src="img/logo_curves/Logo.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+2. Introduza a imagem que irá servir de guia no fundo da área de trabalho.
+</p>
+
+    <img src="img/logo_curves/1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+3. Ative o Snap during Transform para controlar melhor a modelação e insira uma Curve > Bézier.
+</p>
+
+    <img src="img/logo_curves/2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+4. Manipule a Bézier até obter uma forma aproximada à do vulcão. Em Edit Mode, utilize o E para criar novos 
+pontos (extrusion) e, no final, para fechar a forma, selecione os dois pontos que pretende ligar e pressione F (Fill). 
+</p>
+<p>
+Em Edit Mode, pode utilizar o atalho V para escolher modo de controlo dos pontos (livre, alinhado, vector, etc).
+</p>
+<p>
+Se selecionar dois pontos e clicar em S + X + 0, os dois pontos selecionados ficarão alinhados no eixo X. A mesma técnica pode ser utilizada 
+para alinhar nos restantes dois eixos ou em mais pontos (pode alinhar 5 pontos no mesmo eixo, por exemplo).
+</p>
+
+    <img src="img/logo_curves/3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+    <img src="img/logo_curves/4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+5. Depois de concluir o vulcão, posicione o cursor 3D em cima nuvem e adicione (Shift+A) uma nova Bézier. Esta última Bézier faz 
+parte do mesmo objeto mas não está diretamente ligada ao vulcão. Desenhe uma nuvem aproximada.
+</p>
+<p>
+Depois, ative o modo 2D para preencher a forma que desenhou.
+</p>
+
+<div class="row">
+
+   	<div class="col-xs-5 col-xs-offset-1">
+    <img src="img/logo_curves/5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+    </div>
+   	<div class="col-xs-5">    
+        <img src="img/logo_curves/6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+</div>
+</div>
+
+
+<p>
+6. Selecione apenas todos os pontos que desenham a nuvem. Duplique os mesmos (Shift+D) e redimensione (S) para criar uma 
+forma similar à segunda imagem abaixo. 
+</p>
+
+    <img src="img/logo_curves/7.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+    <img src="img/logo_curves/8.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+7. Selecione o objeto do vulcão e insira 0.5 no valor de Extrude da curva para criar espessura na forma. Depois posicione a forma de forma similar 
+à imagem abaixo (ou a seu gosto) e junte o texto que considerar adequado.
+</p>
+
+    <img src="img/logo_curves/9.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+    
+
+<p>
+8. Atribua materiais e construa um sistema de iluminação. Na imagem abaixo, foi utilizada a luz do Background e uma luz do 
+tipo Sun.
+</p>
+
+    <img src="img/logo_curves/11.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+    <img src="img/logo_curves/10.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+
+
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

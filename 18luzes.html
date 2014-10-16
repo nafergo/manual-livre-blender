@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina"><small>Introdução à </small>Iluminação no Blender Internal Render</h1>
+
+
+      	<div class="page-header">
+				<h2>Lâmpadas</h2>
+      	</div>
+
+
+<p>Para simplificar, podemos dizer que o Blender tem ferramentas de iluminação directa, luz que vem de uma origem específica, e iluminação indirecta, luz que não vem de uma origem específica.</p>
+
+<p>No Blender, a lâmpada é um ponto de luz, uma origem que permite criar a iluminação directa. Pode ser “direccional”, luz que tem uma direcção, e “omnidireccional”, luz que tem uma posição mas emite iluminação em todas as direcções. </p>
+
+<p>Dentro da luzes com direcção, existem algumas que têm posição (i.e. Spot, Area) e outras que não (i.e Sun, Hemi).</p>
+
+<p>As imagens abaixo demonstram a utilização das lâmpadas Point, Sun, Spot, Hemi e Area com uma configuração semelhante à inicial. Na cena, apenas trocámos o cubo pela Suzanne e inserimos um plano. As configurações dos materiais e luzes são as pré-definidas.</p>
+
+
+<p class="text-center">        	
+<small>Point</small>
+<img src="img/img18/1Introluzes6c38158d.png" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+
+<p class="text-center">        	
+<small>Sun</small>
+<img src="img/img18/2Intro_luzes56759bae.png" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+
+<p class="text-center">        	
+<small>Spot</small>
+<img src="img/img18/3Intro_luzes181a2306.png" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+
+<p class="text-center">        	
+<small>Hemi</small>
+<img src="img/img18/4Intro_luzes7990343b.png" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+
+<p class="text-center">        	
+<small>Area</small>
+<img src="img/img18/5Intro_luzes29768696.png" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+
+
+
+
+
+
+
+<h3>POINT</h3>
+
+<p>O Point é um ponto de luz omnidireccional, emite luz em todas as direcções. Boa luz para diversos fins mas sobretudo para preenchimento ou iluminação secundária.</p>
+
+<img src="img/img18/6Intro_luzes7ebc62f2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Para perceber melhor o que isto significa, pense num candeeiro de rua.</p>
+
+<p>Cor: cor da luz emitida pela lâmpada.</p>
+		
+<p>Energy: energia/intensidade da luz.</p>
+
+<p>This Layer Only: lâmpada só ilumina objectos que estejam no mesmo layer.</p>
+
+<p>Negative: lâmpada emite luz negativa, subtrai luz (em vez de adicionar).</p>
+
+<p>Diffuse: luz (não) emite a cor (diffuse) definida sobre os objectos. </p>
+
+<p>Specular: luz (não) cria brilhos (specular).</p>
+
+<p>menu Falloff: método para transição entre área iluminada e área não iluminada. </p>
+		
+<p>(Falloff) Distance: distância a que a lâmpada está a 50% da sua intensidade.</p>		
+		
+<p>Sphere: luz tem intensidade 0 para lá do valor definido em Distance.</p>		
+
+<h4>Diferentes exemplos de iluminação só com um Point</h4>
+
+
+<img src="img/img18/1Introluzes6c38158d.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img18/7Intro_luzes504aea2b.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img18/2Intro_luzes56759bae.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h3>SUN</h3>
+
+<p>O Sun é uma luz que pretende simular a luz solar. Emite uma luz de intensidade constante (iluminação independente da distância a que se encontram os objectos) numa direcção. Ou seja, o seu posicionamento não é importante, é com o ângulo/rotação da luz que deve preocupar-se. É a única que afecta o Sky e é uma boa opção para Key Light.</p>
+
+<img src="img/img18/8Intro_luzes3c8505e9.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>As configurações base da Sun são bastante simples e não diferem da luz anterior. </p>
+
+<p>O painel Sky & Atmosphere permite aplicar outros parâmetros fazendo com que a luz Sun afecte o Céu e a Atmosfera. As pré-configurações Classic, Desert e Mountain (só funcionam se activar o Sky e Atmosphere) facilitam a configuração.</p>
+
+<p>Pode encontrar mais informações sobre estes parâmetros no URL:</p>
+
+<p>http://wiki.blender.org/index.php/Doc:Manual/Lighting/Lamps/Sun/Sky_and_Atmosphere</p>
+
+<img src="img/img18/2Intro_luzes56759bae.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img18/9Intro_luzes20b7bb99.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h3>SPOT</h3>
+
+<p>A Spot é uma luz direccional, funciona como um cone de luz ou uma lanterna. Tradicionalmente, é uma das lâmpadas mais utilizadas, dada a sua versatilidade e possibilidades de controlo. É uma óptima opção para Key Light mas pode ser utilizada para todos os fins.</p>
+
+<img src="img/img18/10Intro_luzes5fd7317.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>As configurações base não diferem das do Point.</p>
+
+<p>Relativamente às sombras, partilha características com as outras lâmpadas (ver abaixo) mas é a única que permite sombras do tipo Buffer Shadow. Este método é mais difícil de configurar e menos exacto do que o Ray Shadow mas é significativamente mais rápido.</p>
+
+<p>Configurações da Spot Shape:</p>
+
+<p>Size: ângulo (abertura) do spot, dimensão da área onde incide a luz.</p>
+
+<p>Blend: suavidade da transição entre área iluminada e área sem iluminação.</p>
+
+<p>Square: a área de spot  passa a quadrada.</p>
+
+<p>Show Cone: mostra o cone na janela 3D View.</p>
+
+<p>Halo: renderiza uma luz volumétrica, renderiza um cone de luz.</p>
+
+<p>Intensity: intensidade do Halo.</p>
+
+<h4>Diferentes exemplos de iluminação só com uma Spot</h4>
+
+<img src="img/img18/11Intro_luzes4789806f.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img18/12Intro_luzes2c862329.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h3>HEMI</h3>
+
+<p>A Hemi é uma luz direccional sem sombras. Produz uma iluminação suave e é uma forma simples de preencher a cena com iluminação. São mais úteis como Fill Light ou Back Light.</p>
+
+<img src="img/img18/13Intro_luzes4b9e7454.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Tal como com a Sun, o seu  posicionamento não é importante, apenas importa o ângulo da luz. </p>
+
+<h3>AREA</h3>
+
+<p>Area é uma luz direccional (está apontada numa direcção) que simula a emissão de luz a partir de um plano ou superfície. </p>
+
+<img src="img/img18/14Intro_luzes2aabe7c9.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Como precisam de mais tempo de processamento, utilize com cautela.</p>
+
+<p>São bastante semelhantes às luzes Spot e costumam ser utilizadas como Key Light.</p>
+
+<p>Gamma: valor de correcção do brilho da iluminação, valores mais altos produzem mais contraste. </p>
+
+<p>Area Shape: permite definir a forma da área (quadrado ou rectangular) de onde emite luz e a dimensão.</p>
+
+<h4>Diferentes exemplos de iluminação só com uma Area</h4>
+
+<img src="img/img18/15Intro_luzes3bb0550a.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img18/16Intro_luzesmdfc157a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h3>SHADOW</h3>
+
+<p>No Shadow: luz não emite sombras.</p>
+
+<img src="img/img18/17Introluzes7ca4dbef.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Ray Shadow: luz gera sombras por ray tracing.</p>
+
+<p>Cor: cor da sombra.</p>
+
+<p>Only Shadow: só cria sombras</p>
+
+<p>This Layer Only: só objectos no mesmo layer é que emitem sombras. </p>
+
+<p>Método para gerar sombras: Adaptative QMC é mais rápido, Constant QMC é melhor. </p>
+
+<p>Soft Size: dimensão da área de penumbra, área em torno da sombra (separa da área iluminada) </p>
+
+<p>Samples: nº de amostras (samples) utilizado para calcular sombras (mais samples = melhor qualidade = mais demorado). </p>
+
+<p>Threshold: só disponível no Adaptive QMC, ajuda a definir que samples são tidas em conta. Quanto mais alto = mais rápido = menor exactidão nas sombras.</p>
+
+<h4>Diferentes exemplos de Ray Shadow só com uma lâmpada</h4>
+
+<img src="img/img18/18 Intro as luzes_html_m25c3a062.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img18/18Intro_luzes791f9a8.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img18/19Intro_luzes7061f679.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img18/20Intro_luzes511a0bd6.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img18/21Intro_luzes3b9f67.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+      	<div class="page-header">
+				<h2>Iluminação de 3 pontos (e 4 pontos) no Blender Render</h2>
+      	</div>
+
+
+<p>A iluminação com três pontos é uma das técnicas de iluminação mais utilizadas em fotografia e 3D para iluminar personagens ou objectos focados pela câmara. Este sistema recorre a 3 pontos de luz: </p>
+
+<p><strong>1. Luz principal</strong> (key light): Luz forte que gera a maior parte da iluminação. Habitualmente, é posicionada perto (ao lado) da câmara e está apontada ao objecto a iluminar, em foco. É a primeira luz a ser posicionada e a sua posição depende da câmara.</p>
+
+<p><strong>2. Luz de preenchimento</strong> (fill light): Regra geral, este ponto de luz encontra-se colocado do outro lado da câmara, em relação à Luz principal (Sugestão: desenhe uma linha imaginária entre a Key Light e o objecto, rode 90º tendo o objecto como pivot e posicione a sua Fill Light). Aponta directamente para o objecto tentando amenizar/suavizar as fortes sombras e contrastes criados pela Luz principal. Esta luz deve ser mais suave ou menos intensa (geralmente, metade da luz principal) e mais dispersa. </p>
+
+<p><strong>3. Contra-luz</strong> (back light ou rim light): Geralmente, os dois pontos de luz anteriores estão posicionados frontalmente, deixando a parte posterior do(s) objecto(s) sem iluminação. Este ponto de luz serve para completar a iluminação, permitindo destacar os contornos do objecto, reforçando a sua tridimensionalidade e fazendo com que o(s) objecto(s) se destaque(m) do fundo. Esta luz costuma estar atrás do objecto, no lado oposto à câmara. </p>
+
+<p><strong>4. Luz de fundo de cenário</strong>  (set light ou background light): Por vezes, é utilizada uma quarta luz para iluminar o fundo, permitindo maior controle sobre a atenção ou destaque a atribuir ao fundo. Quando utilizada, é a última luz a ser posicionada.</p>
+
+<img src="img/img18/22Intro_luzes9834808.gif" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p> Imagem retirada de http://wiki.eca.luli.com.br/index.php?title=Iluminação_de_três_pontos</p>
+
+<img src="img/img18/23Intro_luzes7d645366.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Exemplo de uma configuração de iluminação de 3 pontos em Blender</p>
+
+<p>Imagem retirada de http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/</p>
+
+<h3>Sugestão:</h3>
+
+<p>- Key light: Spot com Buffer Shadows. Valores pré-definidos mas com Spot Shape Size a 60º e opções Autoclip Start e Autoclip End activados.</p>
+
+<p>- Fill light: Hemi com Energy 0.5 e Specular desactivado.</p>
+
+<p>- Back light: Hemi com Energy entre 0.75 e 1.0, Specular desactivado.</p>
+
+<p>Dica útil: Por vezes, é recomendável aparentar as lâmpadas à câmara depois de obter uma configuração de luz interessante. Deste modo, pode depois movimentar a câmara livremente, escolhendo outra perspectiva sobre o objecto, sem ter receio de desequilibrar ou destruir a configuração de luz ;)</p>
+
+
+
+      	<div class="page-header">
+				<h2>Ambient Occlusion, Environmental Lighting e Indirect Lighting</h2>
+      	</div>
+<h3>Ambient Occlusion</h3>
+
+<p>O Ambient Occlusion (AO) é um método sofisticado inventado pela Industrial Light & Magic para simular iluminação global, permitindo criar cenas iluminadas de forma mais natural e realista. Com este método, é possível obter uma iluminação suave e difusa, com sombras suaves, semelhante à iluminação ao ar livre de um dia nublado, sem utilizar qualquer lâmpada. </p>
+
+<p>Em termos simples, o AO é calculado através do envio de raios de luz em todas as direcções a partir das superfícies. Os raios que chegam ao fundo, ao "sky", aumentam a claridade da superfície e os raios que colidem com outros objectos escurecem. Por outras palavras, objectos rodeados de geometria estão menos iluminados que objectos isolados. O AO é muito popular na indústria da animação pela sua simplicidade e eficiência. </p>
+
+<p>Para experimentar o AO, apague todos os pontos de luz (Lamps) que tiver na cena e active o Ambient Occlusion (painel World). É possível, e em alguns casos recomendável, utilizar o AO em combinação com outros métodos de iluminação. Ou seja, pode sempre utilizar o AO para criar um nível mínimo de visibilidade e reforçar a iluminação e/ou sombras com Lamps, por exemplo.</p>
+
+<p>No exemplo abaixo, a cena é constituída apenas por 1 câmara, 1 plano e 7 suzannes. Foram utilizados os parâmetros de configuração do AO pré-definidos.</p>
+
+<img src="img/img18/24Intro_luzes4080ba37.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>O AO tem em conta a Ambient Color. Repare no que aconteceu quando alterámos a Ambiente Color da nossa cena.</p>
+
+<img src="img/img18/25Intro_luzes756f5b95.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img18/26Intro_luzes1c1423d0.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img18/27Intro-luzes21dc122f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h4>Principais opções de configuração</h4>
+
+<p><strong>Factor:</strong> controla a intensidade/força do Blend Mode do AO.</p>
+
+<p><strong>Blend Mode:</strong> define a forma como o AO afecta os materiais. O mais comum é o Add, adiciona luz/sombra de acordo com a oclusão encontrada, permite aclarar a cena. Se utilizar o Multiply deverá incluir outra fonte de luz. </p>
+
+<p>Método para recolha dos dados de oclusão: Raytrace (mais exacto) e Approximate (mais rápido) .</p>
+
+<p><strong>Samples:</strong> nº de raios disparados para detectar a oclusão dos objectos presentes na cena.  + raios  =  > exactidão/qualidade  =  + tempo para renderização.   5 é um bom número para pré-visualizações. O “granulado” na imagem que este método produz é eliminado aumentando o nº de Samples. </p>
+
+<p><strong>Distance:</strong> comprimento dos raios. Se aumentar, os objectos mais distantes são tidos em conta para calcular a oclusão (= mais tempo) .</p>
+
+<p><strong>Falloff:</strong> a distância para os objectos é utilizada para atenuar as sombras. Se activar pode controlar a força deste factor, valores mais altos = sombras mais curtas.</p>
+
+<p><strong>Sampling (raytrace):</strong> método para gerar amostra de sombras. Constant QMC permite melhor qualidade dos resultados. </p>
+
+<p><strong>Passes:</strong> nº de passagens (+ passagens = + tempo de renderização) </p>
+
+<p><strong>Correction:</strong> factor de correcção, permite corrigir excesso de escurecimento que pode ocorrer com este método. </p>
+
+<p><strong>Error:</strong> tolerância ao erro (quanto menor a tolerância mais tempo demora e melhor qualidade é obtida) </p>
+
+<p><strong>Pixel Cache:</strong> usa interpolação (utiliza dois pólos para calcular o meio) entre pixels e aumenta bastante a rapidez.</p>
+
+<h4>Sugestão de configuração do AO para animação</h4>
+
+<p>Apesar de ser menos exacto, o método “Approximate” permite maior rapidez e boa qualidade. Daí ser um método bastante comum para iluminação em animações, permitindo conjugar bons resultados com rapidez. </p>
+
+<h5>Sugestão: </h5>
+
+<p>Approximate</p>
+
+<p>	Passes 5</p>
+
+<p>Correction 0.5</p>
+
+<p>	Error 0.250</p>
+
+<p>PixelCache activado</p>
+
+<p>Falloff a seu gosto</p>
+
+
+
+				<h3>Environmental Lighting e Indirect Lighting</h3>
+
+
+<p>Se o Ambient Occlusion adiciona sombras (áreas mais claras e mais escuras) baseando-se na distância entre os objectos presentes na cena, o Environmental Lighting adiciona iluminação vinda do ambiente.</p>
+
+<p>Ambas as soluções podem ser combinadas com lâmapadas, activadas em simultâneo ou activadas isoladamente.</p>
+
+<p>Ambas as soluções podem utilizar Raytrace ou Approximate para recolha dos dados. Sendo esta última mais rápida mas menos exacta. Caso utilizem  Approximate, é possível activar a Indirect Lighting, luz indirecta que vem dos raios reflectidos nos objectos circundantes.</p>
+
+<p>Estas 3 opções (AO, EL e IL), constituem boas soluções para criar uma boa base, uma boas luz ambiente. No entanto, raramente permitem dispensar a utilização de lâmpadas.</p>
+
+
+
+
+
+
+
+		
+		
+		</div>
+		 
+		
+				</div>
+		
+		
+		
+		
+		
+
+ </div>
+
+   <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

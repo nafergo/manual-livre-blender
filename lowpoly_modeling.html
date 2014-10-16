@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+   	
+
+			<h1 class="titulopagina">Estilo Low Poly</h1>
+					
+			
+					      	
+   	
+   	      	<div class="page-header">
+				<h2>Definição</h2>
+      	</div>
+  	
+
+      <p>
+O termo Low Poly é atualmente utilizado num duplo sentido. Designa um estilo visual e, num sentido mais técnico, identifica um tipo de modelo 3D.</p>
+
+<p>No seu sentido mais técnico, Low Poly é utilizado para designar um modelo 3D poligonal com um número reduzido de vértices/faces. Este tipo de modelos 3D são especialmente comuns e
+ úteis em aplicações que funcionam em tempo real (por exemplo, videojogos) dado que o número de vértices/faces tem impacto na performance de um sistema.</p>
+<p>Enquanto estilo visual, Low Poly identifica ilustrações e animações com um visual distinto que se carateriza pela utilização de formas tridimensionais algo estilizadas e simplificadas, 
+existência de faces planas e visualização das arestas que delimitam as formas. Num certo sentido, constitui o equivalente tridimensional da <a href="http://en.wikipedia.org/wiki/Pixel_art" target="_blank">Pixel Art</a>.</p>      
+      
+      <p>Para ver ilustrações criadas neste estilo, sugere-se a exploração dos trabalhos de <a href="http://www.parochat.ch/" target="_blank">P. A. Rochat</a> e 
+<a href="https://www.behance.net/turnislefthome" target="_blank">Timothy J. Reynolds</a>.
+      
+      </p>
+
+     <div class="row">
+			   	<div class="col-xs-6">
+			   	<h3>Yellow Ribbon</h3>
+			<div class="well embed-responsive embed-responsive-16by9">
+			<iframe width="640" height="360" src="http://www.youtube.com/embed/N8UkW1psoew" frameborder="0" allowfullscreen></iframe>
+			</div>			   	
+			   	</div>
+
+			   	<div class="col-xs-6">
+			   	<h3>The story of humanity in 250 frames</h3>
+			<div class="well embed-responsive embed-responsive-16by9">
+			<iframe width="640" height="360" src="http://www.youtube.com/embed/iER4I8D5kLI" frameborder="0" allowfullscreen></iframe>
+			</div>			   	
+			   	</div>
+
+</div>
+
+
+   	      	<div class="page-header">
+				<h2>Algumas sugestões para criar em estilo Low Poly <small>e renderizar em Cycles</small></h2>
+	        <small>Adaptado do vídeo de PigArt -­ <a href="https://www.youtube.com/watch?v=SjorqMgvdZs" target="_blank">My 10 Step Workflow</a>.</small>
+      	</div>
+
+
+<h4>
+1. Modelação</h4>
+<p>
+A modelação para estilo Low poly não difere muito da modelação normal. A maior diferença reside na não utilização de ferramentas que suavizem em demasia as formas eliminando o visual <i>flat</i>
+ (por exemplo, o modifier Subsurface Subdivision).</p>
+ <p>O número de polígonos não é realmente importante, o que importa é o aspeto visual. </p>
+
+<h4>
+2. Materiais</h4>
+<p>
+Materiais devem ser simples. Utilize o Diffuse para praticamente tudo e o Transparent ou Glass (com 1.333 IOR) para água.</p>
+
+<h4>
+3. Modifiers</h4>
+<p>
+Se pretender criar um terreno, paisagem, é sugerida a utilização da seguinte combinação/sequência de modifiers:
+<ul>
+<li>Displace</li>
+<li>Decimate</li>
+<li>Edge split</li>
+</ul>
+</p>
+<p>
+Recomenda-se que subdivida o modelo diversas vezes para ter mais vértices e obter melhores resultados (sobretudo com o Displace).
+</p>
+
+<h4>
+4. Iluminação</h4>
+
+<p>
+Utilize uma iluminação simples:</p>i like to use really simple lighting
+<p>Mude o Sky para branco liso;</p>
+<p>Adicione um Sun e posicione o mesmo de acordo com a sua vontade;</p>
+<p>Altere o Size do Sun para 0.3 para obter sombras acentuadas;</p>
+<p>Aumente a Strength do Sun se pretender uma cena com maior claridade.</p>
+
+<h4>
+5. Composição</h4>
+<p>
+A composição da cena é um aspeto essencial nem sempre devidamente valorizado. Mesmo uma modelação rica ou um render de ótima qualidade não conseguem sobreviver a uma composição menos conseguida.</p>  
+ 
+ <p>Sugestão: nas opções da câmara, ative Thirds nas Composition Guides e utilize a <a href="http://pt.wikipedia.org/wiki/Regra_dos_ter%C3%A7os" target="_blank">regra dos terços</a>.</p>
+
+<h4>
+6. Depth of Field (profundidade de campo)</h4>
+
+<p>
+DoF (Depth of Field) pode ser extremamente útil para criar uma boa composição e guiar a atenção. </p>
+
+<h4>
+7. Mist/fog</h4>
+
+<p>
+O efeito de Mist/Fog também pode ser útil para criar uma  certa atmosfera e profundidade.</p>
+
+<h4>
+8. Correção de cor</h4>
+
+<p>
+Existem dois nós no Node Editor que são extremamente úteis para aplicar correção de cor: RGB Curves e Color Balance.</p>
+<p>Apesar de poder efetuar esta operação dentro do Blender, caso prefira, pode sempre aplicar a correção de cor num editor de imagem (por exemplo, GIMP).</p>
+
+<h4>
+9. Vignette</h4>
+<p>
+Escurecer os cantos (efeito Vignette) é um efeito que pode ser extremamente útil para criar uma certa ambiência na imagem final.</p>
+<p>Apesar de poder efetuar esta operação dentro do Blender, caso prefira, pode sempre aplicar este efeito num editor de imagem (por exemplo, GIMP).</p>
+<h4>
+10. Overlay de texturas</h4>
+
+<p>
+A sobreposição de texturas permite adicionar mais alguns detalhes adicionais. 
+</p>
+<p>Sugestão: combine o seu render com uma textura de papel amarrotado através do "multiply" e reduzindo a opacidade.</p>
+
+<p>Apesar de poder efetuar esta operação dentro do Blender, caso prefira, pode sempre aplicar este efeito num editor de imagem (por exemplo, GIMP).</p>
+
+
+     <div class="row">
+			   			<div class="col-xs-6 col-xs-offset-3">
+			   	<h3>PigArt - 10 Step Workflow</h3>
+			<div class="well embed-responsive embed-responsive-16by9">
+			<iframe width="640" height="360" src="http://www.youtube.com/embed/SjorqMgvdZs" frameborder="0" allowfullscreen></iframe>
+			</div>			   	
+			   	</div>
+			   	</div>
+
+
+      	<div class="page-header">
+				<h2>Material adicional recomendado</h2>
+      	</div>
+
+<p>      	
+<a href="http://thecreatorsproject.vice.com/blog/tim-reynolds-ilow-poly-isometric-worldsi-are-a-fantastical-feast-for-the-eyes" target="_blank">Tim Reynolds' Low-Poly, Isometric Worlds Are A Fantastical Feast For The Eyes</a>
+</p>
+<p>      	
+<a href="http://www.hurricanemedia.co.uk/articles/2012/7/31/the-culture-of-low-poly-3d-modeling-and-it-s-impact-on-other-styles-of-animation" target="_blank">The Culture of Low Poly 3D modeling and it's impact on other styles of animation</a>
+</p>
+    
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina">Introdução à animação <small>no Blender</small></h1>
+
+  	      	
+      	
+      	
+      	<div class="page-header">
+				<h2>Alguns termos e conceitos importantes</h2>
+      	</div>
+
+      	<p><strong>      	
+Keyframes:</strong> são os pontos de início e finais de transições. São momentos com informação armazenada sobre posicionamento dos objetos.</p>
+
+      	<p><strong>      	
+Extrapolação</strong> (extrapolation): define comportamento da curva antes e após a primeira e última keyframe.</p>
+
+ 		<p class="text-center">
+ 		<strong>Constant</strong> significa que antes e depois da última keyframe o valor da keyframe é constante.<br /> 		
+ 		<img src="img/intros/animacao/Doc26-fcurve-extrapolate1.png" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Jaredr122 publicada na <a href="http://wiki.blender.org/index.php/File:Doc26-fcurve-extrapolate1.png" target="_blank">Blender Wiki</a>.</small>
+</p>
+
+ 		<p class="text-center">
+ 		<strong>Linear</strong> significa que curvas terminam em linhas direitas (linear).<br /> 		
+ 		<img src="img/intros/animacao/Doc26-fcurve-extrapolate2.png" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Jaredr122 publicada na <a href="http://wiki.blender.org/index.php/File:Doc26-fcurve-extrapolate2.png" target="_blank">Blender Wiki</a>.</small>
+</p>
+
+
+      	<p><strong>      	
+Interpolação</strong> (interpolation): define comportamento entre keyframes.</p>
+
+ 		<p class="text-center">
+ 		<strong>Constant</strong> significa que o valor da keyframe é constante até à nova keyframe.<br /> 		
+ 		<img src="img/intros/animacao/Doc26-fcurve-constant.png" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Jaredr122 publicada na <a href="http://wiki.blender.org/index.php/File:Doc26-fcurve-constant.png" target="_blank">Blender Wiki</a>.</small>
+</p>
+
+
+ 		<p class="text-center">
+<strong>Linear</strong> é uma interpolação simples, linha direita entre duas keyframes.
+ 		<img src="img/intros/animacao/Doc26-fcurve-linear.png" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Jaredr122 publicada na <a href="http://wiki.blender.org/index.php/File:Doc26-fcurve-linear.png" target="_blank">Blender Wiki</a>.</small>
+</p>
+
+ 		<p class="text-center">
+<strong>Bezier</strong> é a interpolação pré-definida, curvas suaves entre keyframes.
+ 		<img src="img/intros/animacao/Doc26-fcurve-clean1.png" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Jaredr122 publicada na <a href="http://wiki.blender.org/index.php/File:Doc26-fcurve-clean1.png" target="_blank">Blender Wiki</a>.</small>
+</p>
+
+
+
+      	<p><strong>      	
+Graph Editor:</strong> espaço de trabalho que permite manipular as keyframes, incluindo Extrapolação e Interpolação.</p>
+
+ 		<p class="text-center"><img src="img/intros/animacao/800px-Doc_Graph_Editor.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Koilz publicada na <a href="http://wiki.blender.org/index.php/File:Doc_Graph_Editor.PNG" target="_blank">Blender Wiki</a>.</small>
+</p>
+
+      	<p><strong>      	
+Dopesheet:</strong> conceito herdado da animação tradicional. Atualmente, designa um espaço de trabalho sobretudo útil para manipular os tempos, o espaçamento entre keyframes.</p>
+
+ 		<p class="text-center"><img src="img/intros/animacao/Manual-dopesheet-overview.png" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Mikahl publicada na <a href="http://wiki.blender.org/index.php/File:Manual-dopesheet-overview.png" target="_blank">Blender Wiki</a>.</small>
+</p>
+
+      	<p><strong>      	
+Motion paths</strong> é uma ferramenta que permite visualizar uma animação identificando as respetivas frames. Depois de 
+criadas keyframes, a aplicação calcula a animação e exibe uma representação estática da mesma.</p>
+
+ 		<p class="text-center"><img src="img/intros/animacao/motionpath.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+
+      	<p><strong>      	
+Path animation</strong> é uma ferramenta de animação. O objeto segue um percurso, um caminho (path), previamente definido. A animação é controlada através da manipulação do path.</p>      	
+      	      	      	
+ 		<p class="text-center"><img src="img/intros/animacao/pathanim.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+    
+
+
+
+          	<div class="page-header">
+				<h2>Utilização de referências</h2>
+      	</div>
+
+<p>
+A utilização de imagens de referência é uma prática comum de enorme utilidade. Em animação são utilizadas imagens sem movimento e vídeos como referência para 
+</p>
+
+<p class="text-center"><img src="img/intros/animacao/blender_walk_cycle.gif" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Retirado do DVD “Animation Fundamentals” (Beorn Leonard, 2011)</small>
+</p>
+
+
+     <div class="row">
+			   			<div class="col-xs-6 col-xs-offset-3">
+			   	<h4>Trailer do DVD “Animation Fundamentals” (Beorn Leonard, 2011)</h4>
+			<div class="well embed-responsive embed-responsive-16by9">
+			<iframe width="640" height="360" src="http://www.youtube.com/embed/IAE582Zsb3E" frameborder="0" allowfullscreen></iframe>
+			</div>			   	
+			   	</div>
+			   	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+          	<div class="page-header">
+				<h2>Material adicional recomendado</h2>
+      	</div>
+      	
+
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?id=800#.Tw8K6atLs5Y" target="_blank">Pose to Pose Pop-Through Animation</a>
+</p>
+<p>
+<a href="http://www.humintell.com/2010/06/the-seven-basic-emotions-do-you-know-them/" target="_blank">The Seven Basic Emotions: Do you know them?</a>
+</p>
+<p>
+<a href="http://www.3dtotal.com/team/Tutorials/lango_life/lango_life_01.php" target="_blank">Life After Pose to Pose: Taking it to the Next Level</a>
+</p>
+<p>
+<a href="http://www.peachpit.com/articles/article.aspx?p=23620" target="_blank">Nonlinear Animation</a>
+</p>
+<p>
+<a href="http://www.cgsociety.org/index.php/CGSFeatures/CGSFeatureSpecial/applying_the_12_principles_to_3d_computer_animation_by_disneys_isaac_kerlow" target="_blank">Applying the 12 Principles to 3D Computer Animation by Disney’s Isaac Kerlow</a>
+</p>
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?catDisplay=1&id=1430#.TxB2KPM9ulQ" target="_blank">A Simple Method for creating Walk Cycles</a>
+</p>      	
+
+<p>
+<a href="http://www.rubberbug.com/walking.htm" target="_blank">Anatomy of a Walk</a>
+</p>  
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

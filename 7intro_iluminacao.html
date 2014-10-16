@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina"><small>Utilizar</small> Light Rigs <small>pré-feitas</small></h1>
+
+ <p>Descarregue aqui <a href="files/7.zip" target="_blank">ficheiros de apoio a este texto</a>.</p>
+ 
+<p>Neste tutorial, vamos utilizar “light rigs” (configurações/set ups de iluminação) para o Blender Internal Render 
+disponíveis online. Os procedimentos para “light rigs” para Cycles são similares.</p>
+
+<p>0 - Comece por 
+descompactar o ficheiro zip que acompanha este tutorial para poder aceder aos seguintes 
+ficheiros:blender_sphere_250.blend e Manual-Lighting_250.blend.</p> 
+ 
+<p>1- Carregue um ficheiro .blend a seu gosto. No nosso caso, utilizámos a lata criada noutro <a href="6uv_mapping.html">texto</a>.</p> 
+
+<p>2- Aceda ao menu File > Append e através da janela File Browser localize o ficheiro “blender_sphere_250.blend”. Quando clicar neste ficheiro, terá acesso às diferentes pastas onde são armazenadas as informações que constituem um ficheiro blend (i.e. Brush, Camera, Scene, Mesh, etc.).</p>
+
+<img src="img/img7/1iluminacao6d953708.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Seleccione a pasta Scene. Dentro dessa pasta encontrará uma cena com o nome Scene. Seleccione a cena Scene e clique no botão “Link/Append from Library” (localizado no topo, lado direito).</p>
+
+<img src="img/img7/2iluminacao4b8215aa.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Se aceder agora ao menu de Scenes (topo do ecrã), encontrará 2 cenas: Scene (é a cena pré-definida) e Scene.001 (a cena que acabou de importar. Neste menu, pode navegar entre as cenas existentes no ficheiro, renomear, criar novas e apagar cenas.</p>
+
+<p>Se seleccionar a Scene.001 irão surgir todos os elementos importados do ficheiro “blender_sphere_250.blend” (i.e. Lâmpadas, objectos, materiais, câmara, etc.).</p>
+
+<img src="img/img7/3iluminacao91f137.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- Na sua Scene, seleccione a “lata” e clique em CTRL+L para criar um link entre cenas. Na realidade, vai criar uma cópia linked do objecto “lata” entre cenas. Isto significa que o mesmo objecto vai surgir nas duas cenas. Ou seja, se modificar o objecto numa das cenas, a modificação será visível em todas as cenas.</p>
+
+<img src="img/img7/4iluminacao5160ad87.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5- Utilize o menu de Scenes para navegar até à Scene.001. Agora, para além de todos os objectos importados, existe uma cópia da sua “lata”. Redimensione (S) a sua “lata” e posicione-a de forma a ocupar o lugar da esfera. A sua lata deverá ficar com uma altura aproximada à da esfera (para poder utilizar o mesmo enquadramento).</p>
+
+<img src="img/img7/5iluminacao5c9bb707.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>6- E agora renderize...</p>
+
+<img src="img/img7/6iluminacao1189af9b.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img7/7iluminacao53bf1aa5.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+      	<div class="page-header">
+				<h2>Sugestões</h2>
+      	</div>
+
+
+<p>- Aproveite para ver que tipo de lâmpadas estão a ser utilizadas e respectivas configurações.</p>
+<p>- Utilize o mesmo procedimento para importar e experimentar as light rigs disponíveis no ficheiro Manual-Lighting_250.blend </p>
+<p>- Experimente importar "light rigs" para Cycles.</p>
+		</div>
+		
+		
+		
+		
+
+ </div>
+
+     <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

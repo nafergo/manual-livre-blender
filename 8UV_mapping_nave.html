@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">UV Mapping <small>de uma aeronave</small></h1>
+
+ 
+<p>Neste tutorial vamos repetir procedimentos utilizados em tutoriais anteriores. 
+Se preferir não modelar uma nova aeronave, utilize a aeronave que modelou no exercício <a href="3nave.html">Modelar uma Nave</a>.</p>
+ 
+<p>1- Comece por criar uma cena limpa de objectos. Clique em “Delete” (ou X) para apagar o cubo.</p> 
+ 
+<p>2- Introduza um cilindro. Aplique uma rotação de 90º no eixo X. </p>
+ 
+<p>Apague apenas os vértices que estão no centro do topo e da base do cilindro para ficar com uma forma semelhante à da imagem.</p>
+ 
+<img src="img/img8/1UVmapping_nave9e49d5c.png" alt="..." class="img-responsive img-thumbnail center-block">
+ 
+<p>3- Apague Apague os vértices de um dos lados do cilindro. Aplique o modifier Mirror.</p>
+
+<img src="img/img8/2UV mapping_nave6e06b9ed.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- Introduza uma imagem de referência para guiar a modelação (sugestão: http://richard.ferriere.free.fr/3vues/fury_fj1_3v.jpg).</p>
+
+<img src="img/img8/3UV mapping_nave2f670f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5- Utilize a extrusão e Loop Cut para ir criando mais vértices.</p>
+
+<p>Vá alinhado os vértices na visão lateral e de topo (ortogonal) até obter uma forma próxima da imagem abaixo.</p>
+
+<img src="img/img8/4UV mapping_nave3030eeeb.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img8/5UV mapping_nave765c0bd1.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Na imagem acima foram aplicados 2 materiais: um para o corpo do avião, outro para o cockpit.</p>
+
+<p>6- Quando estiver minimamente satisfeito com a forma, aplique um modifier Subdivision Surface (Value: 2) e aplique Smooth (botão no painel de ferramentas).</p>
+
+<img src="img/img8/6UV mapping_nave1b52f3e2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>7- Altere a cor do material do corpo da aeronave para um verde militar escuro.</p>
+
+<img src="img/img8/7UV mapping_nave8d00902.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>8- Adicione uma textura e escolha o tipo Clouds.</p>
+
+<img src="img/img8/8UV mapping_nave4de696c5.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>9- No painel de texturas, desça até às opções de “Influence” e substitua a cor original (magenta) por um castanho.</p>
+
+<img src="img/img8/9UV mapping_nave198e408c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>10- Seleccione a lâmpada inserida por pré-definição (tipo Lamp) e mude o seu tipo para Hemi.</p>
+
+<img src="img/img8/10UV mapping_nave5add5030.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>11- Renderize (F12) para ver o efeito do “camuflado”. Se desejar, pode utilizar o menu de Render Slots para modificar configurações, fazer experiências, e voltar a renderizar sem perder o render prévio.</p>
+
+<p>Active a Slot 2; altere o Noise de Soft para Hard (painel de texturas); renderize (F12). Agora, se activar a Slot 1 vê o render anterior e na Slot 2 o último render.</p>
+
+<img src="img/img8/11UV mapping_nave1453afc8.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>12- No painel de modifiers, faça Apply ao modifier Mirror tornando as modificações por ele criadas – o espelhamento – definitivas. Assegure-se que tem activada a opção do modifier Subdivision Surface que permite visualizar a modificação em Edit Mode.</p>
+
+<img src="img/img8/12UV mapping_nave7cec20b6.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>13- Seleccione arestas nas asas e nos lados do tronco do avião de forma a criar “caixas”. Crie “linhas de corte” (CTRL+E > Mark Seam). Nessas caixas irão surgir imagens/logótipos.</p>
+
+<img src="img/img8/13UV mapping_nave5ff4c0c4.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img8/14UV mapping_nave9be9755.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>14- Com as faces das “caixas” seleccionadas, faça Unwrap (U). Pode seleccionar as faces todas e fazer Unwrap mas como só vamos introduzir texturas-imagens nas caixas, se apenas seleccionar as faces das “caixas” o UV Layout será mais claro, terá mais espaço...</p>
+
+<p>15- Na janela de UV/Image Editor deverão surgir agora as faces que correspondem às “linhas de corte” por si definidas. Tente organizar melhor as faces, alinhando algumas arestas/vértices.</p>
+
+<img src="img/img8/15UV mapping_nave500ab5cc.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img8/16UV mapping_nave1ad819b6.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>16- Exporte o UV Layout. Utilize um programa de edição de imagem para introduzir algumas imagens a seu gosto. Quando exportar a imagem (em PNG), exporte apenas a camada com os ícones/logótipos.</p>
+
+<img src="img/img8/17UV mapping_nave260fb37.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>17- Quando importar a textura, deverá ter algo semelhante à imagem abaixo.</p>
+
+<img src="img/img8/18UV mapping_nave6370ba62.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>18- Na janela 3D View deverá ter algo como isto:</p>
+
+<img src="img/img8/19UV mapping_nave5ddab67f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>19- Se atentar na imagem, é visível que uma das cabeças de GNU está investida. Na janela de UV/Image Editor manipule os vértices/arestas/faces (rotação, escala, etc.) de forma a corrigir eventuais erros.</p>
+
+<p>Nesta fase, poderá ser útil dividir o ecrã em 2 janelas (3D View e UV/Image Editor) para poder manipular os vértices/arestas/faces na janela de UV/Image Editor e ir vendo o resultado em tempo real na janela de 3D View.</p>
+
+<img src="img/img8/20UV mapping_nave23afa9c6.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>20- Eis o resultado do noss mapeamento:</p>
+
+<img src="img/img8/21UV mapping_nave3a2e23dd.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h3>Sugestões</h3>
+
+<p>- Refaça o UV Layout criando uma “linha de corte” em torno das faces do cockpit;</p>
+<p>- Crie um UV Layout para todo o avião.</p>
+
+		</div>
+		
+		
+		
+		
+
+ </div>
+
+    <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+</body>
+</html>

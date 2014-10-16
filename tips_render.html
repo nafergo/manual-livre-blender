@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina"><small>Algumas</small> Dicas para criar Imagens <small>bem sucedidas</small></h1>
+
+
+
+
+      	<div class="page-header">
+				<h2>Fundo</h2>
+      	</div>
+
+<p> 
+O fundo utilizado nos renders diz muito sobre o profissionalismo do seu autor. O fundo não deve roubar atenção mas deve complementar a imagem, fornecer um contexto. Mesmo as imagens mais simples, de teste, podem ser partilhadas com profissionalismo e brio. Se a imagem é para partilhar, deve preocupar-se com o fundo.
+</p>
+<p>
+Sugestão: consulte  <a href="fundo_render.html">Fundo para Renderização</a>.          
+</p>
+
+<img src="img/tips_render/sem_fundo_e_sem_comp.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/tips_render/com_fundo_e_sem_comp1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/tips_render/com_fundo_e_sem_comp.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+      	<div class="page-header">
+				<h2>Detalhes subtis</h2>
+      	</div>
+
+<p>
+Depende da imagem e da intenção mas, regra geral, é sempre mais interessante se introduzir alguns detalhes subtis através de bump/normal/displacement maps. Quebra a monotonia do flat e da simetria.
+</p>
+
+
+      	<div class="page-header">
+				<h2>Bisel/ Chanfro (Bevel)</h2>
+      	</div>
+
+<p>
+No mundo real, praticamente não existem arestas afiadas, arestas sem chanfro. Pode ser muito subtil, apenas um ligeiro arredondamento entre duas faces, mas está presente tanto em objetos naturais como em objetos criados por mão humana.
+</p>
+
+<img src="img/tips_render/bevel_flat.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+      	<div class="page-header">
+				<h2>Smooth/Flat</h2>
+      	</div>
+<p>
+A combinação de Smooth/Flat na geometria ou superfícies tem impacto nos reflexos da luz e depende muito do efeito 
+que se pretende. Existem várias ferramentas para combinar estas duas caraterísticas.
+</p>
+<p>Estes cubos têm todos 8 vértices. A diferença no aspeto está relacionada com a utilização do modifier Bevel que introduz 
+mais vértices para arredondar as arestas.</p>
+<p>É comum utilizar Smooth (shading) + Edge Split ( e + Mark Sharp Edges) se quiser preservar algumas arestas ou o 
+Subdivision Surface + Smooth (shading).
+<p>
+Sugestão: consulte  <a href="modelacao_smooth.html">Smooth/Flat</a>.          
+</p>
+
+
+<img src="img/tips_render/bevel_flat.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/tips_render/bevel_smooth.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+      	<div class="page-header">
+				<h2>Não utilizar apenas uma cor difusa e sólida</h2>
+      	</div>
+<p>
+No Cycles (e não só!), não utilize apenas uma cor difusa (diffuse) sólida.
+No mundo real, não existem materiais completamente difusos (diffuse). 
+Quase todos os materiais refletem pelo menos alguma luz. Utilize sempre algum reflexo, mesmo que muito suave. 
+</p>
+<p>
+É também comum haver alguma variação, mesmo na cor difusa. Misture duas cores difusas, podem ser muito aproximadas mas não exatamente os mesmos valores.
+</p>
+<p>
+Sugestão: consulte  <a href="intro_materiais.html">Introdução aos materiais</a>.          
+</p>
+
+
+      	<div class="page-header">
+				<h2>Não usar cores com valores máximos</h2>
+      	</div>
+<p>No Cycles (e não só!), não utilize cores com Value (formato HSV) superior a 0.8.
+Não usar cores com Value (formato HSV) superior a 0.8 em shaders de tipo Diffuse, Glossy,
+ Velvet e Anisotropic. Valores acima de 0.8 raramente existem no mundo real e aumenta a probabilidade de "fireflies" ("pirilampos", pixels brancos ou muito claros) nos
+ renders.
+</p>
+<p>
+Sugestão: consulte  <a href="intro_materiais.html">Introdução aos materiais</a>.          
+</p>
+
+
+      	<div class="page-header">
+				<h2>Iluminação</h2>
+      	</div>
+<p>
+Crie um sistema de iluminação eficaz. Experimente diferentes valores e posições das luzes. Tenha especial atenção às sombras.
+A iluminação com 3 pontos e o Ambient Occlusion são duas ferramentas comuns mas não se aplicam a todos os casos.
+</p>
+<p>
+Sugestão: consulte  <a href="intro_materiais.html">Introdução à iluminação</a>.          
+</p>
+
+      	<div class="page-header">
+				<h2>Composição, correção</h2>
+      	</div>
+<p>
+Utilize a composição para acrescentar algo às suas imagens. É praticamente impossível esconder a 
+utilidade de manipular o constraste e as cores no compositor. </p>
+<p>
+Melhorar constraste, adicionar um efeito de Vignette ou Aberração Cromática são opções comuns para melhorar a imagem final. 
+É claro que aquilo que adiciona ou manipula no compositor depende sempre do efeito que pretende.
+</p>
+Sugestão: consulte  <a href="11introducao_compositor.html">Introdução ao editor de nós</a>.          
+<img src="img/tips_render/com_fundo_e_sem_comp.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/tips_render/com_fundo_e_comp.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+      	<div class="page-header">
+				<h2>Profundidade de Campo (Depth of Field)</h2>
+      	</div>
+<p>
+É uma forma simples de aumentar o realismo das imagens e de isolar ou destacar os elementos mais importantes na composição. 
+Não é preciso exagerar...
+</p>
+<p>Nas imagens abaixo, mostramos um exemplo sem e com Depth of Field, maior constraste e Vignette. Os últimos dois foram 
+adicionados no compositor.</p>
+<img src="img/tips_render/9.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/tips_render/1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+      	<div class="page-header">
+				<h2>Imperfeições e sujidade</h2>
+      	</div>
+<p>
+Adicione imperfeições. 
+O mundo real está cheio de "imperfeições". No 3D, as imperfeições têm de ser adicionadas. Adicionar assimetrias (na modelação, animação ou composição da cena) e "sujar" a imagem (adicionar falhas, lixo, etc.) são duas opções comuns.   
+</p>
+
+
+      	<div class="page-header">
+				<h2>Composição da vista e lente</h2>
+      	</div>
+<p>
+Planeie cuidadosamente a composição da sua cena. Para auxiliar nessa tarefa, o Blender disponibiliza algumas linhas de guia
+ para composição. A Regra dos Terços é uma solução clássica que resulta muito bem.
+   
+</p>
+<img src="img/tips_render/compo_guides.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Uma outra preocupação que deve cuidar é a da escolha da lente. Diferentes mm na distância focal (focal length) tem um 
+impacto imenso na composição. 
+Em síntese: lentes grande-angular exageram 
+a distância e o tamanho relativo dos objetos; lentes telefoto esbatem diferenças na distância e tamanho relativo dos objetos. 
+Para mais informações e exemplos, consulte o texto sobre a <a href="35camara.html">Câmara</a>.</p>
+
+   <p>
+Nas imagens abaixo, foram utilizadas lentes com 100mm e 20mm. Obviamente, a câmara teve de ser ajustada/movimentada para 
+compensar e obter uma composição similar. 
+</p>
+<img src="img/img35/6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img35/7.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+Sugestão: consulte  <a href="35camara.html">Configurações básicas da câmara</a>.          
+</p>
+
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nelson gonçalves" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina"><small>Dinâmica de corpos rígidos</small> Rigid Bodies</h1>
+
+
+      	<div class="page-header">
+				<h2>Simulação de objetos sólidos dinâmicos</h2>
+      	</div>
+     <h3>Introdução</h3>
+<p>Comece por criar uma cena simples com um cubo e um plano. O plano irá comportar-se como sólido e estático. O cubo irá ser sólido e dinâmico. Para perceber melhor o efeito da 
+simulação, desloque ligeiramente o cubo no eixo Z. Se quiser, pode também rodar ligeiramente o cubo.</p>     
+     
+<img src="img/img23/scene.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Na barra de ferramentas, aba Physics, encontrará as ferramentas principais para construir a simulação. Selecione o cubo e clique em Add Active. Selecione o plano
+ e clique em Add Passive.</p>
+ <p>Se ativar a simulação com Alt+A já deverá ver o resultado.</p>
+<img src="img/img23/toolbar.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+Os restantes botões de Change Shape, Calculate Mass, Copy from Active, Apply Transformations, Bake to Keyframes e Connect (Constraints) permitem configurar rapidamente alguns parâmetros
+ da simulação.
+</p>
+<p>
+Change Shape: permite alterar rapidamente a forma utilizada para calcular a colisão. Este parâmetro pode também ser alterado no painel de propriedades (veja abaixo).
+</p>
+
+<p>
+Calculate Mass: Apresenta uma lista de materiais/objetos com respetivo valor de massa pré-definido. Este parâmetro pode também ser alterado no painel de propriedades (veja abaixo).
+</p>
+
+<p>
+Copy from Active: Quando selecionamos vários objetos, o último selecionado é o Active Object. Este botão permite copiar as definições de um objeto (o último selecionado) para múltiplos objetos.
+</p> 
+
+<p>
+Bake to Keyframes: Fixa a animação de simulação transformando-a em keyframes. É útil para otimizar o desempenho e guardar a animação produzida. Ou seja, após pressionar este botão, a animação já
+ não é resultado da simulação mas sim de keyframes.
+</p>
+<p>
+Connect (Constraints): permite criar relações adicionais entre objetos que pertencem à simulação.
+</p>
+
+
+
+<h3>Active: alguns parâmetros principais</h3>
+<img src="img/img23/active.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<h4>Rigid Body</h4>
+
+<p>Type (escolher entre Active e Passive)</p>
+<p>Dynamic (se o objeto participa na simulação ou não).
+</p>
+<p>Animated: permite controlar objeto com sistema de animação, inserir keyframes. </p>
+<p>Mass: massa do objeto, utilizada no cálculo da simulação.</p>
+
+<h4>Rigid Body Collisions</h4> 
+<p>
+Shape (forma utilizada para calcular colisão; Box, Sphere, Capsule, Cylinder e Cone são as melhores em termos de performance; Convex Hull é uma aproximação 
+convexa mais real à forma do objeto; Mesh permite simular objetos côncavos.); </p>
+<p>Friction (resistência do objeto ao movimento); Bounciness (elasticidade); Sensivity Margin (margem de reconhecimento da simulação); </p>
+<p>Collision Groups (objetos em Collision Groups diferentes não colidem entre si).</p>
+
+ 
+
+
+
+
+<h3>Passive: alguns parâmetros principais</h3>
+<img src="img/img23/passive.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h4>Rigid Body</h4> 
+
+<p>Type (escolher entre Active e Passive).
+</p>
+<p>Animated: permite controlar objeto com sistema de animação, inserir keyframes. </p>
+<h4>Rigid Body Collisions</h4>
+<p>Shape (forma utilizada para calcular colisão; Box, Sphere, Capsule, Cylinder e Cone são as melhores em termos de performance; Convex Hull é uma aproximação 
+convexa mais real à forma do objeto; Mesh permite simular objetos côncavos.); </p>
+<p>Friction (resistência do objeto ao movimento); Bounciness (elasticidade); Sensivity Margin (margem de reconhecimento da simulação); </p>
+<p>Collision Groups (objetos em Collision Groups diferentes não colidem entre si).
+</p>
+
+
+<h3>Sugestão</h3>
+<p>Configure plano como Passive.</p>
+<p>Configure cubos como Active.</p>
+<p>Configure esfera como Active mas ative opção Animated. Insira keyframes na esfera de modo a que esta atravesse a parede de cubos.</p>
+<p>Alt+A para ver o resultado.</p>
+<img src="img/img23/scene2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+      	<div class="page-header">
+				<h2>Método antigo: Game Engine</h2>
+      	</div>
+     
+
+<p>Insira um plano e transforme o cubo original numa forma próxima da de uma peça de dominó.</p>
+
+<img src="img/img23/1Rigidbodies74352476.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Com o objecto seleccionado, faça Apply à Location, Rotation e Scale para aplicar definitivamente todas as alterações que fez à localização, rotação e escala do objecto original. Faça Origin to Geometry para recalcular a Origin para o centro da malha.</p>
+
+<img src="img/img23/2Rigidbodies3f3e768b.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img23/3Rigidbodies23187be.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Active o modo Blender Game e aceda ao painel Physics.</p>
+
+<img src="img/img23/4Rigidbodies3f7c8d.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Com a peça de dominó seleccionada, escolha o tipo Rigid Body e Collision Bounds do tipo Box.</p>
+
+<p>O objecto vai ficar como que envolto numa “caixa” ou campo de forças que vai ser utilizado para detectar a colisão entre objectos. A dimensão desse “campo” é definida através do parâmetro Radius (se alterar o Radius, irá ver que o círculo que envolve agora o objecto diminui/aumenta). O círculo não define a verdadeira forma do “campo de forças”, esta é definida pelo parâmetro Collision Bounds, apenas identifica a extensão/dimensão.
+Mass define a massa do objecto, a quantidade de força requerida para mover um objecto (mais massa = necessário maior força para mover objecto).
+Existem outros tipos de Bounds (limites): Box (caixa), Sphere (esfera), Cylinder (cilindro), Capsule (cápsula, cilindro com arestas arredondadas), Cones (cones), Convex Hull e Triangle Mesh (para formas mais complexas). Escolha o tipo de Bounds que mais se adequa ao seu objecto.</p>
+
+<img src="img/img23/5Rigidbodiesm6f8ee2a9.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>O parâmetro Margin define a dimensão de uma margem extra que envolve o objecto para detecção de colisões. Se o objecto tiver uma margem muito alta ou um Radius maior do que a malha, ele irá reagir à colisão antes que veja a mesma acontecer... como se algo invisível colidisse com o objecto.</p>
+
+<p>Duplique o objecto e construa uma fila de peças. Aplique uma ligeira rotação à primeira peça da fila.</p>
+
+<img src="img/img23/6Rigidbodiesb9245a7.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Em Object Mode, clique em P para activar o Game Engine e ver o resultado. Para sair do Game Engine, clique no ESC.</p>
+
+<p> Proceda aos ajustes que entender necessários (i.e. mover as peças de local, adicionar mais peças, etc.). Não altere a geometria (i.e. escala, disposição da malha)! Estas modificações devem ser feitas antes de aplicar a physics Rigid Body.</p>
+
+<p>Quando estiver satisfeito com a animação, active a opção Record Animation (para converter a simulação do Game Engine em curvas com keyframes). Clique em P, clique em ESC quando acabar a animação. Agora, se for ao Graph Editor deverá ter algo semelhante à imagem abaixo :) e pode renderizar como uma qualquer outra animação por keyframes!</p>
+
+<img src="img/img23/7Rigidbodies222e66f8.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img23/8Rigidbodies576164e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+		
+		</div>
+		 
+		
+		
+		
+		
+		
+		
+		
+
+ </div>
+
+     <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina">God rays no Cycles</h1>
+      	
+      	
+<p>
+Volumetric lighting é uma técnica para adicionar efeitos de iluminação numa cena renderizada, permitindo ver raios/colunas de luz brilhando através do ambiente. O termo God Rays é também diversas vezes utilizado mas sobretudo quando a fonte de luz é o sol.
+</p>  
+
+<p>
+Antes de ler este texto, verifique se já consultou <a href="volumetric_no_cycles.html">Volumetrics no Cycles</a>.
+</p>
+    	
+      	
+      	<div class="page-header">
+				<h2><small>Criar God Rays com</small> Spot e Volume Scatter</h2>
+      	</div>
+
+			
+<p>
+
+</p>			
+     <img src="img/lights_cycles/godrays1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+A cena é composta pelos seguintes elementos:
+</p>			
+
+<ul>
+<li>Paralelepípedo sem face frontal e com uma "janela" lateral</li>
+<li>Lâmpada Spot apontada à janela (o Show Cone ativado facilita a visualização do cone de luz criado)</li>
+<li>Plano com aberturas horizontais (para criar efeito de persiana e cortar os god rays) colocado entre a lâmpada e a janela</li>
+<li>Suzanne colocada dentro do paralelepípedo</li>
+<li>Câmara colocada frontalmente</li>
+</ul>
+
+     <img src="img/lights_cycles/godrays2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+O World tem um nó Volume Scatter com Density 0.100 e cor branco (FFFFFF). Foi ativado o Ambient Occlusion para iluminar as 
+áreas mais escuras.
+</p>			
+<p>Foi ativada a opção Homogeneous (mais rápido a renderizar) 
+o que significa que o Blender vai tratar o World como tendo a mesma densidade (densidade constante). </p>
+     <img src="img/lights_cycles/godrays3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+		
+     <img src="img/lights_cycles/godrays5.jpg" alt="..." class="img-responsive img-thumbnail center-block">    
+
+
+
+<p>
+
+Na configuração da Spot foi introduzido um nó Light Falloff (Color) para que a intensidade da Spot seja constante (comporta-se como uma Sun). Deste modo, a
+ luz vai ter uma intensidade constante em vez de dissipar com a distância (= quanto mais longe da origem menos forte é a iluminação). 
+ A luz tem ainda um tom amarelado.    
+     
+</p>			
+     <img src="img/lights_cycles/godrays4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+Para acelerar um pouco a renderização, definimos o Clamp Indirect para 3 (tem impacto na renderização mas pode ser quase invisível, 
+depende da cena) e o Volume para 0 (não é fisicamente realista, luz não vai espalhar-se de forma realista, mas acelera a 
+renderização e permite um resultado mais interessante)
+</p>			
+     <img src="img/lights_cycles/godrays6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Esta técnica implica alhuma morosidade adicional na renderização. O nó <a href="sun_beams.html">Sun Beams</a> permite 
+adicionar um efeito similar em pós-produção. É bastante mais rápido mas mais limitado.
+</p>
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

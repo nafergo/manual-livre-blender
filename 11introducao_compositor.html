@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Introdução ao editor de nós <small>e à composição: defocus, imagem de fundo, etc.</small></h1>
+
+<p>Descarregue aqui <a href="files/11.zip" target="_blank">ficheiros de apoio a este texto</a></p>
+
+<p>No contexto digital, composição (compositing) designa o processo de juntar digitalmente múltiplas imagens ou elementos para criar uma imagem final. </p>
+
+<p>A gradação e correção de cor é um processo associado à etapa de pós-produção que permite alterar a informação relativa a cor de um filme ou imagem.</p>
+
+<p>A composição baseada em nós é uma forma sofisticada e bastante flexível de trabalhar, permite organizar o processo como um gráfico, com um layout bastante intuitivo, desde os elementos de input até ao output (render final composto) </p>
+
+<img src="img/img11/1introducao_compositor14af5ea5.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>No Blender, o processo de composição é feito através de nós numa janela designada por Node Editor. Se preferir, pode mesmo utilizar uma interface desenhada especificamente para este fim.</p>
+
+
+      	
+      	<div class="page-header">
+				<h2>Defocus</h2>
+      	</div>
+
+<p>[Esta configuração aplica-se sobretudo ao motor de renderização Blender Internal Render. No motor de renderização Cycles, a profundidade de campo pode configurada diretamente nas opções da câmara se assim o preferir.]</p>
+
+<p>1- Crie uma cena onde seja fácil perceber o efeito de desfocagem (por exemplo: uma fila de cubos, etc.). No nosso caso, utilizámos um Array de Suzannes. </p>
+
+<p>Inserimos uma Suzanne (Add > Mesh > Monkey) e rodámos o objecto 90º no eixo X. Aplicámos um modifier Subdivision Surface e Smooth (botão no painel de ferramentas). De seguida, aplicámos um modifier Array (Count: 10) com um Relative Offset de -3.500 em Z (Z porque é relativa aos eixos originais/locais do objecto! No momento em que foi inserida, a Suzanne estava “deitada”, foi por isso que a rodámos 90º...)</p>
+
+<img src="img/img11/2introducao_compositor284004a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Inserimos um plano (Add > Mesh > Plane). Modificámos a escala (S) aumentando 30 vezes. Ajustámos o posicionamento do Array de Suzannes e do plano.</p>
+
+<p>A lâmpada é de tipo Sun.</p>
+
+<img src="img/img11/3introducao_compositor79db477.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2- Posicione a câmara de forma adequada. </p>
+
+<img src="img/img11/4introducao_compositor239bf880.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Adicione um Empty e coloque-o no local/área onde pretende focar.</p>
+
+<p>No nosso exemplo, colocámos o Empty ao lado da 3ª Suzanne (ver cursor 3D).</p>
+
+<img src="img/img11/5introducao_compositor1f720220.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Pode atribuir um nome ao Empty (sugestão: “focagem”). Nós utilizámos o nome original...</p>
+
+<p>4- Seleccione a câmara, no painel de propriedades da câmara, active o botão Limits para surgir uma linha (laranja) que identifica a distância renderizada. Introduza o nome que atribuiu ao Empty na caixa Depth of Field (basta clicar na caixa que surge um menu com os vários objectos presentes na cena) para a focar no objecto escolhido. Ou seja, estamos a definir o Empty como um alvo para a focagem. Deste modo, será depois bastante fácil animar a (des)focagem através da manipulação/animação do Empty com keyframes. </p>
+
+<img src="img/img11/6introducao_compositor352c811c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5-Active a janela Node Editor. Clique para activar os Compositing Nodes, Use Nodes e Backdrop. Deverá surgir uma janela semelhante à da imagem abaixo.</p>
+
+<img src="img/img11/7introducao_compositor150aaff7.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>6- Clique em F12 para criar um render. Depois faça ESC para voltar à janela Node Editor. A área “Backdrop” deverá agora exibir o seu render. A dimensão da imagem é determinada pelas definições no painel Render. No nosso caso, como não modificámos as pré-definições, temos 50% de 1920x1080.</p>
+
+<img src="img/img11/8introducao_compositor147ed9e0.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>7- Na sua janela deverá ter 2 nós: Render Layers (input) e o Composite (output). </p>
+
+<p>Aceda ao menu “Add”, escolha a opção “Filter” e adicione um nó “Defocus”.  Configure os parâmatros de acordo com a imagem abaixo.</p>
+
+<p>Aceda ao menu “Add”, escolha a opção “Output” e adicione um nó “Viewer”. Na imagem abaixo estamos a utilizar 2 nós de tipo Viewer, pode repetir o processo ou seleccionar o “Viewer” adicionado e duplicar (SHIFT+D). O primeiro “Viewer” serve para vermos (no “Backdrop”) o render original. O segundo serve para vermos (no “Backdrop”) o resultado do nó “Defocus”. Não são necessários mas são extremamente úteis!</p>
+
+<img src="img/img11/9introducao-compositor220236f7.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Quando estiver satisfeito com o efeito Defocus, renderize (F12).</p>
+
+<p>Alguns parâmetros do Defocus: </p>
+
+<p>	Bokeh type: nº de “lâminas” da íris da máquina fotográfica virtual.</p>
+
+<p>Gamma correct: pode ser útil para tornar mais clara a área desfocada. </p>
+
+<p>	FStop: controla a quantidade de blur. Se diminuir o valor, aumenta o blur.</p>
+
+<p>	Maxblur: limitar a quantidade de blur na área mais desfocada. </p>
+
+<p><strong>Sugestão:</strong> anime o Empty para criar um efeito de (des)focagem animado.</p>
+
+
+   	
+      	<div class="page-header">
+				<h2>Imagem de fundo</h2>
+      	</div>
+
+<p>1- Vamos utilizar a cena pré-definida.</p>
+
+<img src="img/img11/10introducao_compositor4e2d0804.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2- Vá ao site http://www.flickr.com/photos/mcdemoura/4463485764/ e grave a imagem apresentada.</p>
+
+<p>3- Active a janela Node Editor. Clique para activar os Compositing Nodes, Use Nodes e Backdrop. Clique em F12 para criar um render. Depois faça ESC para voltar à janela Node Editor. A área “Backdrop” deverá agora exibir o seu render. </p>
+
+<p>4- Na sua janela deverá ter 2 nós: Render Layers (input) e o Composite (output). </p>
+
+<p>Aceda ao menu “Add”, escolha a opção “Input” e adicione um nó “Image”. Clique em Open e carregue a imagem que gravou no passo 1.</p>
+
+<p>Aceda ao menu “Add”, escolha a opção “Color” e adicione um nó “AlphaOver”. </p>
+
+<p>Aceda ao menu “Add”, escolha a opção “Output” e adicione um nó “Viewer”. Na imagem abaixo estamos a utilizar 2 nós de tipo Viewer, pode repetir o processo ou seleccionar o “Viewer” adicionado e duplicar (SHIFT+D). </p>
+
+<p>Configure a ligações entre os nós de acordo com o layout abaixo.</p>
+
+<img src="img/img11/11introducao_compositor7777fda7.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5- Pode introduzir outros nós, experimentando novos efeitos. Veja o layout abaixo e respectivo resultado. O nó Scale permite manipular a resolução, é particularmente útil quando utilizamos inputs/imagens com resoluções diferentes.</p>
+
+<img src="img/img11/12introducao_compositor79856e1f.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img11/13introducao_compositor99c5bc.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+      	<div class="page-header">
+				<h2>Efeito “Vignette”</h2>
+      	</div>
+<p>
+1. Para este exemplo estamos a utilizar uma cena simples. Pode aplicar este efeito diretamente ao render (como no exemplo abaixo) ou aplicar por cima de uma imagem ou filme já existente. Temos o 
+backdrop ativado no Node Editor, daí estarmos a ver o render no centro do editor através do nó Viewer.
+</p>
+<img src="img/compositing/vignette1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<p>
+2. Adicione uma Elipse Mask.
+</p>
+<img src="img/compositing/vignette2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<p>
+3. Redimensione a Elipse Mask de modo a esta abranger a totalidade da imagem se esse for o efeito pretendido.
+</p>
+<img src="img/compositing/vignette3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<p>
+4. Adicione o nó Mix (Color) mas altere para Multiply para conjugar os dois inputs (render e máscara).
+</p>
+<img src="img/compositing/vignette4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+5. Introduza um nó Blur (Filter) para desfocar a máscara. No exemplo, estamos a utilizar o modo Fast Gaussian, Relative ativado e um desfoque de 20% em X e Y.
+<img src="img/compositing/vignette5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+      	<div class="page-header">
+				<h2>Efeito “Sin City”</h2>
+      	</div>
+
+<p>O Node Editor permite implementar diversas operações com efeitos e correção/gradação de cor. Adicionalmente, existem várias formas para obter diferentes efeitos, com diferentes graus de dificuldade. Deverá conseguir o efeito apresentado abaixo em alguns minutos...</p>
+
+<p>Utilizámos uma fotografia da ESEV e o nó Hue Correct (Color). Este nó permite ajustar  os valores de Hue (matiz), Saturation (saturação) e Value (valor) de uma imagem através de uma curva com pontos. Incialmente, a curva é uma linha (sem alterações) mas depois é possível aumentar/diminuir os níveis de HSV nas diferentes cores. Pode adicionar novos pontos clicando com o rato em cima da linha no local onde pretende adicionar o novo ponto.</p>
+
+<img src="img/img11/17introducao_compositor72432e28.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img11/18introducao_compositor184177f8.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img11/19introducao_compositor7e5bb1df.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+      	
+      	<div class="page-header">
+				<h2>Manipular imagem e vídeo</h2>
+      	</div>
+
+
+<h3>Imagem fixa</h3>
+
+<p>1- Mude a interface para tipo Compositing. A interface apresenta 3 janelas: Node Editor, onde configura os nós; Image Editor, que permite ver o resultado; e 3D View em visão de câmara. Clique em Use Nodes e certifique-se que está a utilizar os Compositing Nodes. Não vamos utilizar o Backdrop.</p>
+
+<p>2- Apague o nó “Render layers” porque não vamos utilizar o conteúdo da janela 3D e introduza um nó de Input do tipo Image. Clique em Open e insira uma imagem sua. Ligue o nó Image ao nó Composite e faça F12 para renderizar. O resultado da sua renderização deverá surgir na slot 1 da janela Image Editor.</p>
+
+<img src="img/img11/26introducao_compositor2577822a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Na janela Image Editor, passe para a Slot 2 e faça novo render. Esta nova slot passa a ser a slot activa. Ou seja, se desligar o  nó Image do nó Composite, a imagem na slot 2 desaparece mas na slot 1 continua armazenado o primeiro render. Isto irá ser útil para poder ir comparando a imagem original com o resultado da configuração dos nós.</p>
+
+<p>4- Introduza em sequência (do input-image para o output-composite) os seguintes nós: Scale (tipo Distort), RGB Curves (tipo Color), Blur (tipo Filter), Glare (tipo Filter), Chroma Key (tipo Matte) e AphaOver (tipo Color).</p>
+
+<p>5- Veja a configuração abaixo e altere a seu gosto. Repare que a imagem de input está a ser utilizada 2 vezes.</p>
+
+<p>Image > Scale > RGB Curves > AlphaOver > Composite</p>
+
+<p>Image > Scale > Blur > Glare > Chroma Key > AlphaOver > Composite</p>
+
+<img src="img/img11/27introducao_compositor52cd43ef.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>6- <strong>Image:</strong> Imagem de input, imagem original.</p>
+
+<p>7- <strong>Scale:</strong> Permite manipular a dimensão/escala da imagem de input. Utilizámos este nó para a imagem de input se ajustar/redimensionar tendo em conta a dimensão definida no painel de render.</p>
+
+<p>8- <strong>RGB Curves:</strong> Controle/manipulação através de curvas de cada canal de cor (RGB) e da composição/combinação (C).</p>
+
+<img src="img/img11/28introducao_compositor3f65852a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>9- Algumas configurações comuns: A = Iluminar; B = Negativo ; C = Diminuir contraste; e D = Posterize</p>
+
+<p>10- <strong>Blur:</strong> Permite introduzir diferentes tipos de blur.</p>
+
+<p>11- <strong>Glare:</strong> Permite introduzir brilhos intensos.</p>
+
+<p>12- <strong>Chroma Key:</strong> Transforma uma cor ou variação de cores em transparência. </p>
+
+<p>13- <strong>AlphaOver:</strong> Permite combinar/sobrepor 2 imagens.</p>
+
+<p>14- <strong>Composite:</strong> Imagem de output, resultado que irá ser renderizado.</p>
+
+<p>Eis a imagem inicial e o nosso resultado final.</p>
+
+
+<img src="img/img11/29introducao_compositor3405bace.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img11/30introducao_compositor153f0ba6.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>15- Com o adicionar de novos nós, é fácil atingir um ponto de enorme complexidade. Para simplificar, pode agrupar nós. Na imagem abaixo, seleccionámos (Shift + BER) os três nós da linha de baixo e agrupámos os mesmos (Ctrl+G). Utilize Alt+G para desagrupar e TAB para editar ou visualizar o interior do grupo.</p>
+
+<img src="img/img11/31introducao_compositor5535ddcb.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h3>Vídeo</h3>
+
+<p>A composição num vídeo já existente é um processo muito similar ao anterior. </p>
+
+<p>1- Comece por descarregar o ficheiro “Blender Color Grading Preset_v2.blend” do endereço http://code.google.com/p/ft-projects/downloads/list?q=label:Blender</p>
+
+<p>2- Abra o ficheiro no Blender. Utilize o nó Image já existente para carregar um ficheiro de vídeo.</p>
+
+<img src="img/img11/32introducao_compositor54b30fcf.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Frames: nº de frames do vídeo.</p>
+
+<p>Start Frame: Frame em que se inicia o filme</p>
+
+<p>Offset: deslocação/compensação</p>
+
+<p>Na imagem ao lado, podemos ver a frame 10 de um vídeo com 30 frames.</p>
+
+<p>3- Na imagem abaixo podemos ver 6 configurações de nós que produzem resultados diferentes.  Existe uma janela que mostra o resultado do Viewer (janela à direita) e outra que mostra o resultado do Composite.</p>
+
+<p>Substitua as ligações existentes (no Viewer ou no Composite) para ver o resultado da aplicação de outros grupos de nós.</p>
+
+<p>Se quiser espreitar/modificar a configuração dos grupos de nós, seleccione com o rato e clique em TAB para abrir o grupo.</p>
+
+<p>A diferença de dimensão entre as imagens do Viewer e do Composite explica-se pelo facto da imagem do Composite ser um render, tem em conta as dimensões definidas no painel de render. Aqui está uma situação onde a dimensão da imagem de input (do vídeo) não corresponde à imagem de output (render). Ou seja, poderá ser útil utilizar o nó Scale (ver páginas anteriores)...</p>
+
+<img src="img/img11/33introducao_compositor3aba7dd5.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- O vídeo por nós utilizado é um AVI com 10 segundos, framerate de 3 FPS e uma dimensão de 800x600. Ou seja, o vídeo tem 30 frames.</p>
+
+<p>5- No entanto, se atentar nas configurações do painel de render do ficheiro irá encontrar os seguintes parâmetros:</p>
+
+<p><strong>Dimensão:</strong> 25% de 1920x1080m (480x270)</p>
+
+<p><strong>FPS:</strong> 24 frames por segundo</p>
+
+<p><strong>Formato:</strong> PNG</p>
+
+<p><strong>Frame Range:</strong> da frame 1 à 250</p>
+
+
+
+<p>6- Neste caso, se clicasse no botão “Animation”, iria criar 250 imagens em formato PNG e com dimensão  480x270. As primeiras 30 frames iriam mostrar parte da “aranha” do vídeo. Existem diversas inconsistências por resolver...</p>
+
+<p>7- Formato: bastaria seleccionar um formato de output de vídeo. Poderia escolher o mesmo AVI ou aproveitar para converter para outro formato.</p>
+
+<p>8- Dimensão: Pode utilizar o nó Scale (tipo Distort), mantendo as dimensões do painel de renderização. Pode alterar as dimensões no painel de renderizar.</p>
+
+<p>FPS/Frame Range: se quisesse criar um filme exactamente igual ao do input, teria de mudar as FPS para 3 e o Frame Range para de 1 a 30.</p>
+
+
+
+		</div>
+		
+		
+		
+		
+		
+
+ </div>
+
+   <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="tic" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Blender – Shapekeys</h1>
+
+
+<p>Os objectos do tipo Mesh, Curve, Lattice e Surface podem armazenar várias formas (shapes) que podem animadas através de keyframes. Podem ser utilizadas para criar uma "biblioteca" de formas dentro do mesmo objecto que podem ser animadas com diferentes tempos e combinadas entre si. O funciomento das shapekeys é fácil de compreender. A malha inicial, não deformada, é a shape "Basis". A partir desta forma "Basis" pode criar diversas variações e pode ainda criar variações a partir de outras variações! Estas formas ficam armazenadas e podem ser animadas através de keyframes. Não pode adicionar ou apagar vértices, as ShapeKeys armazenam as posições dos vértices e não a criação/eliminação de vértices.</p>
+
+<p>As Shapekeys são uma ferramenta extremamente útil, sobretudo para animação. Imagine uma biblioteca de expressões faciais...</p>
+
+<p>1- Comece uma nova cena no Blender, limpe o cubo que surge automaticamente. Adicione um plano e subdivida-o para ficar com um aspecto similar ao apresentado abaixo.</p>
+
+<img src="img/img27/1shapekeys43279855.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2- Volte a Object Mode. Vá ao painel Object Data e, na janela Shape Keys, clique no sinal + para adicionar a primeira Shapekey. Automaticamente é criada uma key de nome “Basis” que vai armazenar a forma da malha sem deformação.</p>
+
+<p>Com a Shapekey “Basis” seleccionada, clique novamente no sinal + para adicionar uma nova Shapekey. No exemplo abaixo, demos o nome “dobra” a esta nova shapekey.</p>
+
+<p>Com a shapekey “dobra” seleccionada, passe para Edit Mode e altere a forma do plano seguindo o exemplo na imagem abaixo.</p>
+
+<img src="img/img27/2shapekeys3e38ce83.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Passe para Object Mode. O plano vai retornar à posição original porque a “Basis” é a primeira forma. Se seleccionar a Shapekey “dobra” e modificar o Value irá ver a sua forma a alterar-se. </p>
+
+<p>Coloque o Value de “dobra” a 0. Seleccione a Shapekey “Basis” e adicione uma nova shapekey com o nome “dobra2”. Siga o exemplo abaixo.</p>
+
+<img src="img/img27/3shapekeys4965b6d4.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img27/4shapekeys1eafe3b5.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- Agora temos 3 Shapekeys. A original “Basis” e duas que foram construídas a partir da forma original: “dobra” e “dobra2”. No entanto, estas podem ser combinadas, utilizadas em simultâneo...</p>
+
+<img src="img/img27/5shapekeys58efd1.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img27/6shapekeys11eac8c9.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img27/7shapekeys2f380451.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img27/8shapekeys53b12341.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>O Value determina o grau de influência da Shapekey, sendo que 0 significa nenhuma alteração. O Range  (min/max) define o valor que é possível alterar na caixa Value.</p>
+
+<p>Através de keyframes no valor de Value pode animar as suas shapekeys!</p>
+
+<p>5- Para animar as suas shapekeys, pode inserir keyframes directamente na janela de Value. Depois, estas keyframes também existem e podem ser manipuladas/editadas no Graph Editor. </p>
+
+<p>No entanto, existe uma ferramenta especialmente concebida para animar e manipular shapekeys. Na janela DopeSheet, active a opção ShapeKey Editor para poder ver as Shapekeys existentes no objecto e adicionar/remover/mover keyframes.</p>
+
+<img src="img/img27/9shapekeys39a72296.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img27/10shapekeys3e2027d8.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+
+		</div>
+		
+		 
+		
+		
+		
+		
+		
+		
+		
+
+ </div>
+
+      <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

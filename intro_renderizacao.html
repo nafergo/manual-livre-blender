@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina">Introdução à renderização <small>no Blender</small></h1>
+      	
+      	<div class="page-header">
+				<h2>Definição</h2>
+      	</div>
+           	<p><strong>      	
+Renderização</strong> (Rendering) significa processamento digital. 
+Em 3D, descreve o processo de conversão de dados 3D numa imagem bidimensional, 
+criação de uma imagem a partir de um modelo ou cena através de um software específico. O ficheiro 3D armazena dados sobre geometria, ponto de vista, perspetiva, iluminação, materiais, etc. O software de renderização interpreta esses dados e cria a sua tradução em 2D.
+</p>
+
+
+
+      	<div class="page-header">
+				<h2>Blender Render, Cycles e Freestyle</h2>
+      	</div>
+      	
+      	<h3>Cycles</h3>
+
+<p>Cycles é o nome de um novo motor de renderização do Blender. Disponível desde o Blender 2.61, o Cycles ainda está em desenvolvimento. No entanto, o elevado nível de maturação entretanto atingido permite já a sua utilização em produção.</p>
+
+<p>O Cycles situa-se entre um motor de renderização que visa um realismo total e um motor de renderização totalmente configurável e programável. Este motor sofisticado disponibiliza uma renderização baseada na física, permite uma enorme flexibilidade de configuração através de um sistema baseado em nós e suporta a programação em Open Shading Language1 (OSL).</p>
+
+<p>A renderização com GPU (Graphic Processing Unit) e o Rendered Viewport shading são duas das funcionalidades mais interessantes do Cycles. A primeira, disponível apenas para aqueles que possuem uma placa gráfica com GPU compatível, permite renderizar muito mais rapidamente do que no processo tradicional com CPU. A segunda, disponível para todos os utilizadores, permite pré-visualizar com bastante rigor, rapidez e realismo o render final na própria janela de 3D!</p>
+
+<p>No futuro, este novo motor de renderização deverá substituir o atual motor interno (Blender Render), comummente designado por Blender Internal (BI), como principal motor de renderização. No entanto, isto não significa o desaparecimento do Blender Internal.  Na realidade, pretende-se que os utilizadores de Blender tenham acesso “out-of-the-box” aos 2 sistemas de renderização, dado que estes são complementares e apresentam  vantagens e desvantagens, dependendo dos objetivos pretendidos.</p>
+
+<p>O BI é um “biased rasterization engine”. “Biased” significa que faz concessões ao realismo da imagem renderizada em favor da eficiência, rapidez. Os motores de renderização “biased” introduzem um “bias error”, geralmente sob a forma de blur, para reduzir os tempos de renderização. Maior controle na configuração (do que os motores “unbiased”) e maior rapidez são as duas principais vantagens associadas a este tipo de motor de renderização. “Rasterization” significa que o motor de renderização calcula os objetos que são visíveis para a câmara e não a simulação do comportamento da luz, a renderização resulta do mapeamento da geometria da cena para pixels, projeção dos objetos presentes na cena para uma imagem plana sem efeitos óticos avançados.</p>
+
+<p>O Cycles é um “unbiased, physically based, path tracing engine”. Isto significa que não é voluntariamente introduzido nenhum erro ou “bias” e que o Cycles calcula o caminho da luz (path of light) de forma tão realista e correta (do ponto de vista da física) quanto possível. Geralmente, os motores “unbiased” produzem renderizações com muito maior qualidade e realismo  do que os motores “biased”. No entanto, essa qualidade e correção traduz-se em perda de velocidade. </p>
+
+<p>Em síntese, os motores “biased”, como o Blender Internal, são orientados para a rapidez e permitem (assim como exigem!) maior configuração. Os motores “unbiased”, como o Cycles, são orientados para o maior realismo e exatidão da imagem renderizada.</p>
+
+<img src="img/img40/1cycles6f1b5196.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Para mais informações, sugere-se a consulta de http://wiki.blender.org/index.php/Doc:2.6/Manual/Render/Cycles</p>           	
+           	
+
+ <h4>Ativar o motor de renderização Cycles no Blender</h4>
+
+<p>Para ativar o motor Cycles, utilize o menu de Render Engines existente no topo da interface da aplicação.</p>
+
+<img src="img/img40/2cycles78b78114.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Se não tiver a opção disponível, verifique na janela de Addons se o Cycles Render Engine está ativado.</p>
+
+<img src="img/img40/3cycles1cd6a9aa.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<h4>Ativar GPU no Cycles</h4>
+<p>Para ativar a renderização por GPU, aceda às preferências do System e veja se tem disponível alguma opção no Compute Device. </p>
+
+<p>Presentemente, a renderização por GPU só está disponível para os utilizadores com placa gráfica da NVIDIA.</p>
+
+<img src="img/img40/4cycles5b86ae41.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Depois de ativar a opção CUDA, no painel de renderização passa a ter disponíveis as opções CPU e GPU em Device.</p>
+
+<img src="img/img40/5cycles71e4e700.png" alt="..." class="img-responsive img-thumbnail center-block">
+     
+
+
+      	<div class="page-header">
+				<h2>Alguns termos e conceitos importantes</h2>
+      	</div>
+
+      	<p>      	
+Os motores de renderização são muitas vezes distinguidos entre <strong>unbiased</strong> e <strong>biased</strong>. Unbiased rendering engines 
+são softwares que baseiam a sua síntese de imagem nos princípios da física, são fisicamente corretos. Renders são mais realistas mas mais morosos.</p>
+
+      	<p><strong>      	
+Render farm</strong> é um cluster de computadores criado para renderizar 
+um projeto (geralmente, de animação ou vfx). Estes computadores podem renderizar várias frames em simultâneo ou renderizar partes de uma mesma frame (bucket rendering).</p>
+
+      <ul>
+<li>Queue manager: software que distribui automaticamente os processos entre os vários processadores disponíveis.</li>
+
+<li>Slave ou Render node: sistema que tem como função processar tarefas de renderização.</li>
+
+<li>Master: sistema que coordena a rede.</li>
+
+<li>Client: sistema que submete tarefas de renderização.</li>
+     </ul>      	
+     
+
+     <div class="row">
+			   	<div class="col-xs-6 col-xs-offset-3">
+			<div class="well embed-responsive embed-responsive-16by9">
+			<iframe width="640" height="360" src="http://www.youtube.com/embed/4VUWrZRCtI8?rel=0" frameborder="0" allowfullscreen></iframe>
+			</div>			   	
+			   	</div>
+
+</div>
+     
+     
+     
+     
+      	<p><strong>
+Boom smash</strong> (no Blender) é um sistema de pré-visualização. É uma animação com renders da área de trabalho e não de render finais.</p>
+
+
+     <div class="row">
+			   	<div class="col-xs-6 col-xs-offset-3">
+			<div class="well embed-responsive embed-responsive-16by9">
+<iframe src="http://player.vimeo.com/video/32593730" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>			   	
+			   	</div>
+
+</div>
+
+
+      	<p><strong>
+GPU (Graphics Processing Unit) rendering</strong> é o processo que permite utilizar a placa gráfica em vez do
+ processador central do computador (CPU) para renderizar. Geralmente, é mais rápido a renderizar (embora dependa da placa) mas pode suscitar problemas
+  em cenas mais complexas pelos limites de memória da placa.</p> 
+
+
+
+     <div class="row">
+			   	<div class="col-xs-6 col-xs-offset-3">
+			<div class="well embed-responsive embed-responsive-16by9">
+			<iframe width="640" height="360" src="http://www.youtube.com/embed/Rd0lDJ51FVk?rel=0" frameborder="0" allowfullscreen></iframe>
+			</div>			   	
+			   	</div>
+
+</div>
+
+
+      	<div class="page-header">
+				<h2>Funcionalidades úteis</h2>
+      	</div>
+
+<h3>Slots de render </h3>
+
+<p>As slots para renderização são uma funcionalidade extremamente útil para comparar facilmente entre resultados.</p>
+
+<p>Sempre que renderiza, se não fizer qualquer alteração, o Blender armazena o seu render na Slot 1. É esta a slot escolhida ou ativada por pré-definição. </p>
+
+<p>No entanto, se, na janela UV/Image Editor (na janela onde surge o seu render), escolher outra slot (ver imagem abaixo), o render seguinte vai ser armazenado na slot escolhida. Isto permite ter vários renders em slots diferentes e comparar rapidamente entre diversos resultados.</p>
+
+<img src="img/img41/12algumas_dicas53ee8429.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<h3>Play renderização</h3>
+
+<p>Quando renderiza várias frames de uma animação, para ver o resultado animado não é necessário renderizar em formato vídeo, pode utilizar o atalho 
+Ctrl + F11 ou a opção Play Rendered Animation (menu Render, disponível no topo). </p>
+
+
+
+<p>As frames que estiverem na pasta Output irão ser exibidas nas FPS definidas.</p>
+
+<p>Por pré-definição, o Blender utiliza o seu próprio player mas é possível utilizar outros players externos. Na imagem abaixo é possível ver que o Blender está configurado para utilizar o player Djv (http://djv.sourceforge.net/).</p>
+
+<img src="img/img41/19algumas_dicas7d22287e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<h3>Render Border</h3>
+
+<p>A opção Render Border permite renderizar apenas uma parte da imagem. </p>
+
+<p>Em modo de visão de câmara, clique em CTRL+B e desenhe um retângulo com a parte que pretende renderizar.</p>
+
+<img src="img/img41/22algumas_dicas413c5010.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img41/23algumas_dicas39ee60.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img41/24algumas_dicas3ec6e092.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img41/25algumas_dicas2ef85c63.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Para remover a Render Border, clique em CTRL+B e desenhe um retângulo que inclua a totalidade da vista da câmara.</p>
+
+<img src="img/img41/26algumas_dicas56d47e9a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<h3>Boom Smash</h3>
+<p>Ver texto sobre <a href="boom_smash.html">Boom Smash</a>.</p>
+
+
+<h3>Progressive Render</h3>
+<p>No painel Performance, disponível nas opções de renderização, 
+existe a opção Progressive Refine. Se ativar esta opção, em vez de a renderização ser feita por <i>tiles</i> (vão surgindo quadrados à medida que termina a renderizaçao) surge a
+imagem total e esta vai sendo refinada. Ou seja, em vez de renderizar até ao fim cada <i>tile</i>, renderiza a imagem total com 1 sample de cada vez. A grande vantagem é que pode 
+definir o número de samples para 5000 e depois parar quando considerar que já tem qualidade suficiente (sem ter de esperar até a última <i>tile</i> estar renderizada).</p>
+
+<img src="img/intros/renderizacao/progressive1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/intros/renderizacao/progressive2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/intros/renderizacao/progressive3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+      	<div class="page-header">
+				<h2>Material adicional recomendado</h2>
+      	</div>
+
+
+     <p> 	
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?id=705#.Tw8KpqtLs5Y" target="_blank">Resolution and Compression</a>
+</p>
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?id=862#.Tw8KtatLs5Y" target="_blank">72 DPI or 300 DPI</a>
+</p>
+<p>
+<a href="http://3d.about.com/od/3d-101-The-Basics/a/Rendering-Finalizing-The-3d-Image.htm" target="_blank">What is Rendering?</a>
+</p>
+<p>
+<a href="http://www.fxguide.com/featured/the-art-of-rendering/" target="_blank">The Art of Rendering</a>
+   </p>   	
+      	
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

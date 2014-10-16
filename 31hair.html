@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina"><small>Criar cabelo e relva com</small> Hair</h1>
+
+
+
+      	
+	      	<div class="page-header">
+				<h2>Cabelo</h2>
+      	</div>
+
+
+<p>
+1. No cubo inicial, em Edit Mode, clique W e escolha Subdivide Smooth. No exemplo abaixo, utilizámos a barra de ferramentas para definir Number of Cuts = 3.
+</p>
+<img src="img/img31/hair1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+2. Aplicámos um Smoth Shading ao objeto e um Subdivision Surface.
+</p>
+<img src="img/img31/hair2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+3. Com a ferramenta de Proportional Edit, alisámos a área da face da "cabeça".
+</p>
+<img src="img/img31/hair3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+4. Em Edit Mode, foram selecionadas as faces do topo da cabeça (onde vão nascer os cabelos) e criado um Vertex Group. Para associar os vértices selecionados ao Vertex Group, tem de ter 
+um Vertex Group selecionado e pressionar o botão Assign.
+</p>
+<img src="img/img31/hair4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+5. Este é o aspeto inicial quando criarmos o sistema de partículas de tipo Hair.
+</p>
+<img src="img/img31/hair5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+6. Atente nas seguintes configurações: 
+</p>
+
+<p>Nas configurações iniciais, o Type é Hair.</p>
+<p>No painel Render, o material para as partículas chama-se "pelo" (o objeto tem dois materiais criados, o segundo chama-se "pelo").</p>
+<p>No painel Vertex Group, a Density das partículas está associada a um Vertex Group com o nome Group (foi criado no passo 4).</p>
+<p>Embora não seja visível na imagem abaixo (painel está fechado), no painel Children (partículas-filhas) escolhemos Interpolated.</p>
+
+<img src="img/img31/hair6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Outras opções básicas úteis:</p>
+
+<p>Emission: Number (número de fios de cabelo) e Hair Length (comprimento dos fios).</p>
+
+<p>Render: Path (cabelo é como um path, um fio), Object (permite escolher um objeto), Group (permite escolher um Group).</p>
+
+<p>Display: Rendered (cabelo como curvas), Path (só pontos onde os fios terminam).</p>
+
+<p>Children: permite criar partículas-filhas (preferível a aumentar número de fios no Emission). Display (partículas-filhas exibidas no 3D View), Rendered (partículas-filhas renderizadas).    </p>
+
+<p>
+7. Neste exercícios, estamos a usar o Hair com o renderizador Cycles. O painel abaixo só existe quando utiliza o Cycles.
+</p>
+<img src="img/img31/hair7.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+As opções Primitive (Curve Segments, Line Segments e Triangles) e Shape (Thick ou Ribbon) permitem configurar o modo como os fios de cabelo são criados, o que tem impacto no aspeto e na rapidez/desempenho. 
+</p>
+ 
+    <p>Primitive pode ser Curve Segments (utiliza uma curva para desenhar o fio de cabelo; Curve Subdivisions permite definir número de subdivisões), Line Segments (utiliza curva para desenhar fio de cabelo. Podem aparecer espaços vazios entre pontos. Permite aspeto próximo do Curve mas mais rápido a renderizar), 
+    Triangles (malha triangular),</p>
+    <p>Shape pode ser Ribbon (aspeto liso/flat) ou Thick (cilindros).</p>
+    
+
+<p class="text-center">        	
+<small>Curve - Thick (com Root 10 e Tip 10)</small>
+<img src="img/img31/1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+<p class="text-center">        	
+<small>Line - Thick (com Root 10 e Tip 10)</small>
+<img src="img/img31/2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+<p class="text-center">        	
+<small>Triangles- Thick (com Root 10 e Tip 10)</small>
+<img src="img/img31/3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+<p class="text-center">        	
+<small>Curve - Ribbon (com Root 10 e Tip 10)</small>
+<img src="img/img31/4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+<p class="text-center">        	
+<small>Line - Ribbon (com Root 10 e Tip 10)</small>
+<img src="img/img31/5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+<p class="text-center">        	
+<small>Triangles - Ribbon (com Root 10 e Tip 10)</small>
+<img src="img/img31/6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+</p>
+    
+    
+    
+<p>Shape: a rapidez com que o cabelo vai estreitando, a forma da grossura do cabelo (-1 = raiz e ponta têm mesma grossura; 1 = cabelo fica fino muito perto da raiz).</p>
+<p>Root/Tip: grossura/largura da raiz e ponta do fio cabelo.</p>
+<p>Close Tip: define a ponta como 0. Se não estiver ativado, cabelo não é fechado (similar a um canudo ou uma palhinha de beber).</p>
+
+
+
+
+<p>
+8. Vamos utilizar o modo Particle Edit para alterar o aspeto do cabelo.
+</p>
+
+
+
+<img src="img/img31/hair8.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+9. Na barra de ferramentas encontra várias ferramentas que permitem pentear o cabelo, 
+adicionar/cortar cabelos, aumentar/reduzir comprimento, etc.
+</p>
+<img src="img/img31/hair9.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+<p>
+10. Depois de usarmos o Comb para pentear...
+</p>
+<img src="img/img31/hair10.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+11. Depois de usarmos o Add, Length e o Comb...
+</p>
+<img src="img/img31/hair11.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+12. Com o Puff!
+</p>
+<img src="img/img31/hair12.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+		
+		
+		
+      	<div class="page-header">
+				<h2>Relva</h2>
+      	</div>
+      	
+      	<p>Em curso.</p>
+      	
+      	
+      	
+      			
+		
+		</div>
+		</div>		
+		
+		
+
+ </div>
+
+   <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+</body>
+</html>

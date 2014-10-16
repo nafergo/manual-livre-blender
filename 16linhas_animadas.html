@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="tic" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Blender – Animação de linhas: “vinhas que crescem”</h1>
+
+
+<p>Animar linhas é uma técnica bastante simples que permite construir efeitos 2D/3D animados que podem ser utilizados em variadas circunstâncias.</p>
+
+<p>1- Apague o cubo inicial, coloque-se em visão de topo, ortogonal.</p>
+
+<p>2- Adicione um objecto do tipo Curve > Bezier. Passe para Edit Mode e construa uma forma similar à da imagem abaixo. A nossa forma foi construída tendo em conta a visão de câmara e esta está perpendicular à grelha e à linha. Para adicionar mais pontos, seleccione um dos ponto e utilize a extrusão (E) ou Ctrl+BER. </p>
+
+<img src="img/img16/1linhas_animadas36dece48.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img16/2linhas_animadas3a9c75c7.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Adicione um novo objecto do tipo Curve > Circle e redimensione a mesma seguindo a imagem. Posicione o círculo fora do enquadramento da câmara.</p>
+
+<img src="img/img16/3linhas_animadas19520693.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- Seleccione a Bezier e, no painel Object Data, seleccione o círculo como Bevel Object. Aproveite para redimensionar o círculo novamente.</p>
+
+<img src="img/img16/4linhas_animadas47b35e.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img16/5linhas_animadas90ff011.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5- Adicione um objecto do tipo Curve > Bezier e posicione-o fora do enquadramento da câmara. Não altere as dimensões!</p>
+
+<img src="img/img16/6linhas_animadas85bf59.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>6- Passe para Edit Mode, seleccione todos os pontos (A) e clique em V. Isto vai transformar os pontos em Vectores e alinhar, resultando numa linha direita.</p>
+
+<img src="img/img16/7linhas_animadas70253828.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>7- Seleccione o ponto de controle da esquerda (ponto de controle é diferente de “handle” ou ponto de ajuste). Pressione E > Y > 2 para criar uma extrusão no eixo Y de 2 Blender Units. Ou seja, vai criar um ângulo recto com 2 lados iguais.</p>
+
+<img src="img/img16/8linhas_animadas446a71f2.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img16/9linhas_animadas520f61b0.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>8- Em Edit Mode, seleccione o ponto de controle que está no “canto” do ângulo. Clique em Ctrl+H e seleccione a primeira opção (Hook to New Object) para criar um Empty que vai ficar associado e permitir controlar este “gráfico”. Na realidade, os dois lados iguais vão servir como um gŕafico que permite criar a animação e controlar a nossa linha.</p>
+
+<img src="img/img16/10linhas_animadas73004451.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>9- Seleccione a Curve (a primeira Curve inserida) e coloque o “gráfico” (se não alterou os nomes, deverá chamar-se Curve.001) como Taper Object.</p>
+
+<img src="img/img16/11linhas_animadas59c796d7.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>10- Agora, pode animar o Empty com keyframes e ver a linha a surgir de forma animada. Apesar de poder mover o Empty ao longo do eixo Y e X, obtendo uma animação diferente, sugere-se que faça as suas primeira experiências movendo o Empty apenas no eixo X.</p>
+
+<img src="img/img16/12linhas_animadas463199ba.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h3>Sugestões</h3>
+
+<p>a) Crie formas diferentes para a sua animação.</p>
+
+<img src="img/img16/13linhas_animadas572c3e03.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>b) Utilize a mesma técnica de modelação (por linhas) para criar outro tipo de objectos. No exemplo abaixo utilizámos 2 linhas. O perfil do centro da cadeira foi criado com uma linha. Depois, convertemos a linha em malha (Mesh), em Object Mode clique em ALT+C. Transformando a linha em malha, pode utilizar as ferramentas habituais de modelação de malha (i.e. extrusão, etc.) </p>
+
+<img src="img/img16/14linhas_animadas3c83507c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>c) Veja a animação “Lebanese Blonde: Blender Experimental Animation” (http://vimeo.com/3857705), realizada com a técnica aqui apresentada, para visualizar outras potencialidades.</p>
+
+		</div>
+		
+		
+		
+		
+		
+		
+
+ </div>
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+</body>
+</html>

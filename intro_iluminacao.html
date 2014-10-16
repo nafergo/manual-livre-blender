@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina">Introdução à iluminação <small>no Blender</small></h1>
+      	
+
+      	
+      	<div class="page-header">
+				<h2>Definição</h2>
+      	</div>
+
+<p>A <strong>iluminação</strong> é um dos aspetos mais importantes no trabalho com 3D. Criar uma iluminação adequada e eficaz para uma cena ou 
+objeto implica muitas vezes experimentar e refazer, corrigir. Uma boa iluminação deve permitir ver as superfícies e os 
+contornos ou formas, deve 
+reforçar a sensação de profundidade e volume, a tridimensionalidade, e guiar a atenção do espetador para os aspetos mais importantes.</p>
+      	<p>Em 3D, é comum identificarmos três tipos de iluminação.</p>
+      	<p><strong>      	
+Direct illumination/light</strong> (luz/iluminação directa): luz que vem de uma fonte específica sem refletir noutras superfícies. Os raios de luz viajam numa linha direita e numa direção.</p>
+
+      	<p><strong>      	
+Indirect illumination/light</strong> (luz/iluminação indirecta): luz que não vem de uma origem específica, luz refletida por outras superfícies na cena.</p>
+
+      	<p><strong>      	
+Global illumination</strong> (iluminação global): Conjunto de técnicas de radiosidade e renderização raytracing. O seu objetivo é calcular todas as interações de luz possíveis entre as superfícies numa cena e, deste modo, obter uma imagem fotorealista. É utilizada em 3D para aumentar o realismo da iluminação, tem em conta a luz proveniente de origem distintas/específicas (iluminação direta) e a luz proveniente dos raios refletidos nas superfícies existentes na cena (iluminação indireta).
+</p>
+
+
+      	<div class="page-header">
+				<h2>Tipos de luzes</h2>
+      	</div>
+<p>
+Tipos mais comuns de luzes:</p>
+
+      	<p><strong>      	
+Spotlight:</strong> luz com direção e posição, emite luz de um ponto e numa direção, funciona como um cone
+ de luz. Tradicionalmente, é uma das lâmpadas mais utilizadas, dada a sua versatilidade e possibilidades de controlo. É 
+ uma óptima opção para Key Light mas pode ser utilizada para todos os fins.</p>
+
+      	<p><strong>      	
+Omni/Point light:</strong> luz que tem uma posição mas não tem uma direcção, é um ponto que emite luz em todas as direcções. Boa luz sobretudo para preenchimento ou iluminação secundária.</p> 
+
+      	<p><strong>      	
+Infinite/Directional light:</strong> luz de intensidade constante (iluminação independente da distância a que se 
+encontram os objectos) que tem uma direcção mas não uma posição. Ilumina todos os objectos de forma igual, mesma direcção, como se a origem da luz estivesse muito distante (i.e. sol, lua).</p>
+
+      	<p><strong>      	
+Area light:</strong> luzes muito realistas mas mais complexas de configurar e demoram mais tempo a processar. 
+Estas luzes emitem luz a partir de uma área ou superfície (por exemplo, uma janela, ecrã) e com direção.</p>
+
+      	<p><strong>      	 
+Ambient light:</strong> luz que não parece vir de uma origem específica, ilumina todos os objectos de uma 
+cena de forma igual, ilumina com uma intensidade constante de todos os ângulos. 
+Servem para simular a Global Illumination, definem uma quantidade mínima de luz na cena evitando que objetos fiquem totalmente na escuridão.</p>
+
+
+
+      	<div class="page-header">
+				<h2>Alguns setups mais comuns</h2>
+      	</div>
+      	
+        	<h3>3 pontos </h3>      	
+      	
+      	<p> A <strong>      	       	
+3 Point Lighting</strong> (Iluminação de 3 pontos) é uma técnica bastante eficaz de iluminação. É mais utilizada para retratos e iluminação cinematográfica.</p>
+
+ 		<p class="text-center"><img src="img/intros/iluminacao/threepointsetup.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Ben Simonds publicada em <a href="http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/" target="_blank">Lighting Tips from the Masters</a>.</small>
+</p>
+
+
+      	<p><strong>      	 
+Key light</strong> (luz principal): fonte de luz primária, frequentemente colocada a 45 graus em frente e por cima do sujeito. 
+Luz que gera a maior parte da iluminação. Principal função é iluminar os aspectos mais importantes.</p>
+
+      	<p><strong>      	 
+Fill light</strong> (luz de preenchimento): fonte de luz mais suave que ameniza as sombras e contrastes 
+criados pela Luz principal, para iluminar áreas de sombra. Tipicamente colocada do outro lado da câmara e num ângulo de 90º relativamente à key light.</p>
+
+      	<p><strong>      	 
+Back light ou rim light</strong> (contra-luz): luz forte e brilhante colocada atrás do objeto, utilizada para 
+separar o objecto de interesse do fundo criando uma fina linha de luz ao longo da silhueta do objeto de interesse. Permite 
+destacar os contornos do objecto fazendo com que este se destaque do fundo.</p>
+
+
+        	<h3>4 pontos </h3>
+      	<p>Sistema de 3 pontos mais uma...</p>
+
+      	<p><strong>      	 
+Set light ou background light</strong> (luz do cenário ou do fundo de cenário): ilumina o fundo, permitindo maior controle sobre a atenção ou destaque a atribuir ao fundo.</p>      	
+
+
+
+<h3>Iluminação de exteriores com Blender Internal Render 1</h3>
+
+<p>Seguir o setup sugerido acima para a iluminação com 3 pontos mas substituir a Key Light por um Sun com Ray (Trace) Shadows</p>
+
+
+<h3>Iluminação de exteriores com Blender Internal Render 2</h3>
+
+<p>Seguir o setup sugerido acima para a iluminação com 3 pontos mas substituir a Key Light por um Sun com No Shadow e 
+uma Spot com Buffer Shadow e Only Shadow. Esta Spot deverá ter a mesma rotação/direcção do Sun (Sugestão: coloque o Sun, depois duplique-o com Shift+D e altere o duplicado para Spot).</p>
+
+
+<h3>Iluminação de exteriores com Blender Internal Render 3</h3>
+
+<p>1. Approximate Ambient Occlusion como base.</p>
+
+<p>2. Iluminação direta com Sun.</p>
+
+<p>3. Sombras com Spot, Only Shadow e Buffer Shadow.</p>
+
+<h3>Iluminação de exteriores com Cycles 1</h3>
+
+<p>
+Sistema mais básico inclui utilizar a cor de Background (sugestão: azul claro tipo #E8EFFF) + luz Sun. 
+Utilize uma cor amarelada para o Sun e diminua o Shadow Size (sugestão: 0.005) para obter sombras mais 
+nítidas (como num dia de sol). 
+</p>
+
+<h3>Iluminação de exteriores com Cycles 2</h3>
+<p>
+Sun (RGB 1, 0.98, 0.9) + Shadows Size = 0.050 + No World, definir Color para Sky Texture + Ambient Occlusion = 0.25
+</p>
+
+<h3>Iluminação de exteriores com Cycles 3</h3>
+
+<p>Utilizar iluminação baseada em imagens (Image-based lighting) como no texto <a href="ibl_hdr.html">Environmental Lighting com HDRI</a>.</p>
+
+<p>
+ Em imagens com animação, recomenda-se o segundo setup e substituir o fundo preto pelo fundo que pretende. Em imagens sem 
+ animação pode utilizar qualquer um dos setups, depende apenas se pretende que se veja no fundo a imagem utilizada para a 
+ iluminação.
+
+</p>      	
+
+      	<div class="page-header">
+				<h2>Alguns termos e conceitos importantes</h2>
+      	</div>
+
+      	<p><strong>      	
+Light rigs</strong> (arranjos de luzes): designação de uma configuração e arranjo de iluminação. Geralmente, implica a utilização de várias luzes.</p>
+
+      	<p><strong>
+Ambient Occlusion</strong> é um cálculo sofisticado de raytracing que simula as sombras suaves da Global Illumination. Não existe AO no mundo real, é um truque de renderização (não tem qualquer relação com luzes) fisicamente não correto mas geralmente com bons resultados. É uma espécie de iluminação global indireta de cima para baixo. Cria a impressão de que os objetos presentes na cena são iluminados por uma luz suave e difusa (sem ponto de origem e direção). O cálculo é baseado nas formas, proximidade e orientação dos objetos e como estes bloqueiam (ocludem) a luz. Quanto mais próximo um objeto estiver dos seus vizinhos, mais luz é bloqueada e vice-versa.</p> 
+
+      	<p><strong>
+Radiosity</strong> é uma técnica para renderização de cenas 3D que simula o modo como a luz ressalta (bounce) de uma superfície para outra dentro da cena. É mais preciso mas também exige mais recursos de processamento do que o raytracing.
+</p>
+
+
+ 		<p class="text-center"><img src="img/intros/iluminacao/radiosity_comparison.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Hugo Elias publicada na <a href="http://en.wikipedia.org/wiki/Radiosity_%28computer_graphics%29#mediaviewer/File:Radiosity_Comparison.jpg" target="_blank">Wikipedia</a>.</small>
+</p>
+ 
+
+      	<p><strong>
+Volumetric lighting</strong>: Luzes volumétricas são luzes cuja iluminação pode ser observada através de um volume de espaço, em vez de simplesmente incidir numa superfície. De forma semelhante, as texturas volumétricas são texturas aplicadas através num volume de espaço, em vez de uma superfície. É a técnica utilizada para adicionar efeitos de iluminação numa cena como raios/colunas de luz brilhando através do ambiente. O termo God Rays é também diversas vezes utilizado mas sobretudo quando a fonte de luz é o sol.
+</p>
+
+ 		<p class="text-center"><img src="img/intros/iluminacao/270vol05.png" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Greg Zaal publicada em <a href="http://adaptivesamples.com/2014/02/20/2-70-release-notes-volume-image/" target="_blank">Making-Of 2.70 Release-Notes Volume Image</a>.</small>
+</p>
+
+
+
+
+      	<p><strong>
+Ray tracing</strong> é uma técnica para renderização de cenas 3D. O Raytracing traça o caminho de cada raio de luz a partir da sua origem até que saia da cena ou se torne demasiado fraco para ter qualquer efeito. Por vezes, o termo também é aplicado para o método inverso: traçar o caminho de todos os raios de luz a partir da câmara até à origem da luz.
+</p>
+     
+
+
+      	<div class="page-header">
+				<h2>Material adicional recomendado</h2>
+      	</div>
+
+<p>
+<a href="http://bensimonds.com/2010/06/03/lighting-tips-from-the-masters/" target="_blank">Lighting tips from the Masters @ BenSimonds.com</a>
+</p>
+
+<p>
+<a href="http://www.blenderguru.com/articles/6-tips-for-better-lighting/#.VBBsqz_S5hE" target="_blank"> 6 Tips for Better Lighting  @ Blenderguru.com</a>
+</p>
+
+<p>
+<a href="http://3d.about.com/od/Creating-3D-The-CG-Pipeline/a/3d-Lighting-Techniques-Standard-3d-Lighting.htm" target="_blank">Lighting a 3D Scene @ 3D.about.com</a>
+</p>
+
+
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?id=476#.VAr_m3ZXaV5" target="_blank">Lighting Basics @ 3Dtotal.com</a>
+</p>
+
+
+<p>
+<a href="http://www.3dtotal.com/pages/tutorials/general/lighting_in_lightwave/lighting_in_lightwave1.php" target="_blank">Lighting Theory for CG @ 3Dtotal.com</a>
+</p>
+
+
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?id=1304#.VAr_qHZXaV5" target="_blank">Lighting Tips - Featuring Coney! @ 3Dtotal.com</a>
+</p>
+
+
+
+
+
+<p>
+<ul>
+@ Wikipedia
+<li><a href="http://en.wikipedia.org/wiki/Three-point_lighting" target="_blank">Three-point lighting</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Computer_graphics_lighting" target="_blank">Computer graphics lighting</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Radiosity_%28computer_graphics%29" target="_blank">Radiosity</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Global_illumination" target="_blank">Global illumination</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Ray_tracing_%28graphics%29" target="_blank">Ray tracing</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Ambient_occlusion" target="_blank">Ambient occlusion</a></li>
+</ul>
+</p>
+
+
+
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

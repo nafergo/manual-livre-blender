@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Blender – Modelar uma cara</h1>
+ <p>Descarregue aqui <a href="files/24.zip" target="_blank">ficheiros de apoio a este texto</a></p>
+
+<p>1- Recolha as imagens que acompanham este tutorial. Se preferir, pode dividir a imagem, criando uma imagem independente para a visão frontal e outra para a visão lateral.</p>
+
+<p>2- Apague o cubo. Divida a área de trabalho, coloque uma das áreas em visão forntal e a outra em lateral. Insira as imagens no fundo da sua área de trabalho. </p>
+
+<img src="img/img24/1modelar_cara2c4db8a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Adicione um plano. Apague dois vértices de modo a ficar só com uma linha na vertical com dois vértices. Posicione esses dois vértices em cima dos dois primeiros pontos da linha vermelha. </p>
+
+<img src="img/img24/2modelar_cara62e774ea.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- Como já deve ter reparado, a origem do objecto está deslocada em relação à linha que tem neste momento. Em Object Mode, seleccione a linha com dois vértices e clique no botão Origin e em Origin to Geometry. Ainda em Object Mode, vá ao menu Object > Apply e utilize a função Apply Location. Repita o processo para Apply Rotation e Apply Scale.</p>
+
+<img src="img/img24/3modelar_cara60ab6df.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img24/4modelar_cara1330cb8d.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5- Na visão frontal, seleccione o vértice inferior e faça Extrude para adicionar novos pontos e completar a linha vermelha. Para manter os pontos da linha vermelha alinhados, bloqueie o eixo Z sempre que fizer Extrude.</p>
+
+<p>6- Vá alinhado o vértices na visão lateral. Os pontos do plano frontal e lateral não são exactamente coincidentes, não se preocupe se ficarem ligeiramente desalinhados.</p>
+
+<p>7- Quando tiver todos os pontos criados, seleccione 4 vértices de cada vez e crie uma face (F). Repita o processo até ter metade da cara.</p>
+
+<p>8- Depois de ter criado um lado da cara, passe para Object Mode e utilize o Modifier Mirror (atenção: o “espelhamento” é feito em função da Origin do objecto!). Se estiver tudo bem, torne a aplicação do Modifier definitiva com o Apply (as duas malhas – a original e a do espelho – tornam-se parte do mesmo objecto).</p>
+
+<img src="img/img24/5modelar_cara60684e6c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>9- No final, pode experimentar aplicar o Modifier Subdivison Surface.</p>
+		
+		
+		</div>
+		 
+		
+		
+		
+		
+		
+		
+		
+
+ </div>
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

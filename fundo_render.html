@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina"><small>Criar um</small> Fundo para Renderização <small>de produtos e outros modelos isolados</small></h1>
+
+
+<p>
+O objetivo deste exercício é criar um ficheiro pronto-a-usar para poder fazer renderizações de produtos ou modelos isolados para
+ efeitos de demonstração ou visualização. 
+</p>
+
+<p>
+Neste exercício, iremos utilizar o render Cycles.
+</p>
+
+
+<p>
+1. Apague o cubo (X) e insira um plano (Shift+A > Mesh > Plane).
+</p>
+<img src="img/fundo_render/1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+2. Em Edit Mode, selecione dois vértice e faça um extrude de duas unidades em Z (E > Z > 2).
+</p>
+<img src="img/fundo_render/2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+3. Utilize um Subdivision Surface com valor de 2 no seu plano. 
+</p>
+<img src="img/fundo_render/3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+4. Introduza um Loop Cut (Ctrl + R) com 2 cortes (rodar o botão do meio do rato) em cada uma das duas faces agora 
+existentes. Estes Loops vão permitir limitar a área do arredondamento criado pelo Subdivision Surface. 
+</p>
+<img src="img/fundo_render/4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+5. Introduza um Loop Cut (Ctrl + R) com 2 cortes (rodar o botão do meio do rato) que atravesse as duas faces. 
+</p>
+<img src="img/fundo_render/5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+6. Ainda com os novos Loop Cuts selecionados, faça um redimensionamento no eixo X (S > X) para aproximar os novos Loop Cuts dos limites 
+das faces. Deste modo, vão limitar ainda mais a área do arredondamento criado pelo Subdivision Surface.
+</p>
+<img src="img/fundo_render/6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+7. Divida a área de trabalho para ter o 3D View e o UV/Image Editor. Em Edit Mode, selecione todas as faces (A) do seu objeto e pressione U para 
+aceder ao menu de Unwrap. Vamos criar uma textura para melhorar o aspeto do objeto. Escolha a opção Unwrap.
+</p>
+<img src="img/fundo_render/7.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+8. No UV/Image Editor, pressione o botão New para criar uma nova textura. Escolha a opção UV Grid para o tipo de textura.
+</p>
+<img src="img/fundo_render/8.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+9. Deverá ter uma vista similar à apresentada na imagem abaixo. À esquerda, o objeto com todas as faces selecionadas. À direita, a 
+textura UV Grid com o UV Layout sobreposto. A textura chama-se Untitled porque não alterámos o seu
+ nome (pode alterar o nome quando entender).
+</p>
+<img src="img/fundo_render/9.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+10. Com o objeto selecionado, utilizando o Node Editor, crie a configuração para o material do objeto.
+</p>
+<img src="img/fundo_render/10.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+11. Posicione a sua câmara de modo similar ao da imagem abaixo.
+</p>
+<img src="img/fundo_render/11.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+12. Ative a visualização Rendered para perceber melhor o que está a construir. Como pode ver, o plano não ocupa toda a largura do 
+enquadramento. 
+</p>
+<img src="img/fundo_render/12.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+13. Podíamos aproximar a câmara e/ou modificar a lente da câmara. No entanto, vamos redimensinar a largura do objeto. No nosso caso, 
+isso significa redimensionar no eixo X ( S > X). 
+</p>
+<img src="img/fundo_render/13.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+14. Como estamos a distorcer a malha, a textura irá "esticar-se" acompanhado a modificação. Com o objeto selecionado e em Object Mode, vamos aplicar a 
+alteração à dimensão (Ctrl+A > Scale). 
+</p>
+<img src="img/fundo_render/14.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+15. E agora vamos fazer um novo Unwrap com as novas dimensões. Em Edit Mode, selecione todas as faces e pressione U, depois escolha
+ Unwrap.
+</p>
+<img src="img/fundo_render/15.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+16. Agora, o objeto já deve ter as novas dimensões e a textura com aspeto correto.
+</p>
+<img src="img/fundo_render/16.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+17. Neste exercício vamos apenas utilizar 1 lâmpada. Estamos a utilizar um Sun posicionado do lado direito da câmara com as 
+seguintes configurações:
+</p>
+<img src="img/fundo_render/17.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+18. Também ativámos o Ambiente Occlusion.
+</p>
+<img src="img/fundo_render/18.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+19. Depois de inserida uma Suzanne, o aspeto é este.
+</p>
+<img src="img/fundo_render/19.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+20. Faça Pack All Into .blend e ative o Automatically Pack Into .blend para quando gravar o seu ficheiro armazenar a textura criada. 
+</p>
+<p>Limpe o seu ficheiro de tudo o que é desnecessário e grave.</p>
+<img src="img/fundo_render/20.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Agora, quando tiver um modelo que pretenda renderizar, pode simplemente fazer Append à Scene que acabou de criar tal como fez no 
+texto <a href="7intro_iluminacao.html">Light Rigs</a>.                    
+          </p>
+
+
+<h3>Sugestões</h3>
+
+<p>1. Melhore a iluminação.</p>
+<p>2. Utilize outras texturas (em vez de UV Grid utilize Color Grid ou <a href="img/fundo_render/grid.png">esta grelha</a>).</p>
+
+
+
+
+
+		</div>
+		
+		
+				</div>
+		
+
+ </div>
+
+
+
+    </div><!-- /.container -->
+  
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Configurações básicas da câmara</h1>
+
+
+      	
+      	<div class="page-header">
+				<h2>Blender Internal</h2>
+      	</div>
+      	
+    
+<img src="img/img35/camara_bi.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Perspective/Ortographic/Panoramic: Tipo de câmara. Por pré-configuração, a câmara está em modo perspetiva. Em Perspective e Panoramic pode ser configurada a Focal Length (valor em mm da lente) ou ângulo do Field of View (campo de visão). Estes valores 
+podem ser animada com keyframes, permitindo fazer zooms por exemplo. Se alterar o tipo de câmara para Ortographic, este parâmetro é substituído pelo Ortographic Scale.</p>
+
+<p>Shift X e Y: deslocação horizontal e vertical da visão da câmara sem alterar o posicionamento da mesma na janela 3D View.</p>
+
+<p>Clipping  Start e End: distância visível através da câmara (o que irá ser renderizado). O que estiver para além do 
+End e antes do Start não é visível no editor 3D View (visão da câmara) e não será renderizado.  Se tiver a opção Limits ativada, consegue ver uma linha laranja que identifica esta distância.</p>
+
+<p>Camera Presets e Sensor: permite escolher um modelo de câmara (Canon, Nikon, GoPro, etc.) ou definir uma configuração customizada do sensor.</p>
+
+<p>Depth of Field Distance: distância para o ponto focal, distância da profundidade de campo. Se tiver a opção Limits activada, consegue ver um indicador (cruz amarela). 
+É utilizado em combinação com o editor de nós para (des)focagem.</p>
+
+<p>Depth of Field Object: permite especificar um objeto (a sua localização) como ponto focal. É utilizado em combinação com o editor de nós para (des)focagem.</p>
+
+<p>Limits: torna (in)visível o alcance do Clipping (o que é visível pela câmara) e da distância focal.</p>
+
+<p>Mist: torna visível os limites de nevoeiro (Mist) caso este esteja ativado.</p>
+
+<p>Safe Areas: torna visível (na visão de câmara) linhas de segurança que permitem identificar áreas consideradas "seguras" para elementos importantes (títulos, etc.).</p>
+
+<p>Sensor: torna visível (na visão de câmara) linha que representa limites do sensor.</p>
+
+<p>Name: torna visível o nome da câmara em visão de câmra. É especialmente útil se tiver várias câmaras.</p>
+
+<p>Composition Guides: permite ativar guias para auxílio na composição/enquadramentos (terços, centro, triângulo dourado, etc.).</p>
+
+<p>Size: dimensão relativa da câmara na janela de 3D View. Não afeta imagem/render, apenas permite tornar a câmara com maior/menor dimensão na 3D View.</p>
+
+<p>Passepartout: escurece a área fora da visão da câmara e o grau de opacidade é definido no controlador Alpha.</p>
+
+
+	
+      	
+      	      	
+      	<div class="page-header">
+				<h2>Cycles</h2>
+      	</div>
+<p>No Cycles, a única diferença são as opções relativas às profundidade de Campo (Depth of Field).</p>
+<img src="img/img35/camara_cycles.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Depth of Field - Distance: distância para o ponto focal, distância da profundidade de campo. Se tiver a opção Limits activada, consegue ver um indicador (cruz amarela). 
+É utilizado em combinação com o editor de nós para (des)focagem.</p>
+
+<p>Depth of Field - Focus: permite especificar um objeto (a sua localização) como ponto focal. É utilizado em combinação com o editor de nós para (des)focagem.</p>
+
+<p>Aperture: permite escolher entre 
+F/Stop (abertura relativa; mais comum na fotografia; números menores = maior desfoque) e Radius (raio da abertura da lente; 0 = todos os objetos surgem focados)</p>
+
+<p>Aperture - Blades: número de lâminas da abertura. Se utilizar 3 ou +,  será utilizada uma abertura com forma poligonal (em vez da circular pré-definida)
+ o que irá afetar a forma dos elementos desfocados.
+ </p>
+<p>Aperture - Rotation: rotação das lâminas</p>
+
+
+      	<div class="page-header">
+				<h2>Distância focal (focal length)</h2>
+      	</div>    
+
+<p>
+Compare a distância e o tamanho relativo dos objetos. Em síntese: lentes grande-angular exageram 
+a distância e o tamanho relativo dos objetos; lentes telefoto esbatem diferenças na distância e tamanho relativo dos objetos 
+</p>
+ 
+
+<p>Para ilustrar as diferenças, construímos uma cena simples com 3 esferas, 1 cubo, 1 Suzanne, 1 plano no fundo/chão.
+</p>
+
+<img src="img/img35/1.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img35/2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+A iluminação da cena é feita com o Background e uma luz Sun.
+</p>
+<img src="img/img35/3.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img35/4.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>150mm: teleobjetiva (ou lente telefoto), a visão aproxima-se e quando afastamos a câmara (para compensar e obter composição similar) 
+a distância e diferenças de dimensão são esbatidas.
+</p>
+
+<img src="img/img35/1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<p>
+35mm: lente mais clássica, próxima da visão do olho humano.
+</p>
+<img src="img/img35/3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<p>
+20mm: lente/objetiva grande-angular, permite incluir mais cena na imagem o que é particularmente útil em arquitetura, 
+interiores e paisagens. Permite realçar a diferença nas dimensões ou distância entre objetos, entre fundo e primeiro plano 
+(objetos próximos aparentam ser muito grandes e objetos a distância moderada aparentam ser pequenos e estar distantes). Permite 
+exagerar a dimensão relativa tornando os objetos mais próximos mais salientes, mais imponentes.
+</p>
+<img src="img/img35/5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+Nas imagens abaixo, foram utilizadas lentes com 100mm e 20mm. Obviamente, a câmara teve de ser ajustada/movimentada para 
+compensar e obter uma composição similar. 
+</p>
+<img src="img/img35/6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img35/7.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+
+
+
+
+
+
+
+      	<div class="page-header">
+				<h2>Alguns comandos úteis</h2>
+      	</div>      	
+<p>1. Adicionar nova câmara: adicione através do mesmo menu para adicionar objetos ou luzes (Add > Camera). Atalho é Shift +A.</p>
+
+<p>2. Mudar câmara activa (câmara que irá renderizar): selecione a câmara e CTRL + NUMPAD 0 ou utilize o menu View > Cameras > Set Active Object as Camera. </p>
+
+<p>Pode definir qualquer objeto como câmara (utilize o menu View > Cameras > Set Active Object as Camera). Esta opção é especialmente 
+útil para ver  alinhamentos ou enquadramentos. Exemplo: se tiver 2 personagens, pode ver como que através dos olhos de ambas para verificar a orientação das personagens, etc.</p>
+
+<p>3. “Fly Mode”: utilize o Shift+F para ativar o “Camera Fly Mode”. Utilize o rato para apontar a câmara e WASD para mover-se. Rode o rato para (des)acelerar.
+ BER para confirmar e BDR (ou ESC) para cancelar.</p>
+
+<p>4. Rodar nos eixos: câmara roda como qualquer outro objeto. Selecione a câmara, clique em R e depois no eixo em que pretende rodar. 
+Se clicar uma vez no X roda em torno do eixo X do mundo (global), se clicar XX (duas vezes no X) roda em torno do eixo X local (do próprio objeto).</p>
+
+<p>5. Aproximar/afastar: selecione a câmara, clique em G e depois no botão do meio do rato (roda). Mexa o rato para aproximar ou afastar.
+ O botão esquerdo do rato confirma, botão direito do rato cancela.</p>
+
+<p>6. Deslocar num eixo: câmara move-se (translação) como qualquer outro objeto.  Selecione a câmara, clique em G e no eixo em que pretende mover (se não clicar em nenhum eixo, move livremente).</p>
+  	
+ <p>7. Alternar perspetiva/ortogonal : Numpad 5</p>
+ 
+ <p>8. Colocar-se em visão câmara : Numpad 0</p>
+
+<p>9.Colocar a câmara na visão atual : CTRL+ Alt + Numpad 0</p>
+
+<p>Zoom in/out: rodar o botão do meio do rato (roda).</p>
+
+
+
+
+		</div>
+				</div>
+		
+		 
+		
+		
+		
+		
+		
+		
+		
+
+ </div>
+
+     <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+
+</body>
+</html>

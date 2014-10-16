@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Síntese <small>onde são apresentadas as operações e ferramentas mais comuns para</small> modelação</h1>
+
+
+
+<h3>Menus e Barras de Ferramentas</h3>
+
+<p>As principais ferramentas e operações úteis para modelação são várias e estão disponíveis em diferentes locais ou em diferentes modos. 
+A barra de ferramentas (lado esquerdo do editor 3D View) apresenta
+ diferentes abas que permitem acesso a várias ferramemtas. Os menus em baixo permitem acesso ainda a mais opções.</p>
+ <p> Deverá ter em atenção que as opções e ferramentas em Edit Mode são
+  diferentes das disponíveis em Object Mode.</p>
+<p>Finalmente, o menu Specials, acedido através da tecla W, e a janela de pesquisa, acedida através da barra de espaços, são também extremamente úteis durante a modelação.</p>
+<img src="img/img41/20algumas_dicas20d582a0.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img41/21algumas_dicas6d50059b.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<h3>Adicionar objetos e malha</h3>
+<p>Adicionar novos objetos é feito através do atalho Shift+A ou da aba Create (disponível na barra de ferramentas). Contudo, é preciso atentar ao modo de trabalho em que se encontra.</p>
+<p>Se estiver em Object Mode, ao utilizar o atalho ou a aba irá criar um novo objeto. No entanto, se estiver em
+ Edit Mode, a malha adicionada fará parte do objeto onde ativou o Edit Mode. Por outras palavras, não adiciona um novo objeto, adiciona mais malha ao objeto já existente.</p>
+<p>O cursor 3D (tem o aspeto de um alvo) marca o local onde serão adicionados os novos elementos (objetos ou malha).</p>
+<p>Claro está que existem diversos outros modos de introduzir mais vértices/arestas/faces. Mais abaixo são apresentados alguns do mais comuns (subdivisão, extrusão).</p>
+<p>Para apagar pode utilizar Del ou X.</p>
+
+<h3>Object Mode e Edit Mode</h3>
+<p>Permitem operações diferentes e utilizam ferramentas diferentes.</p>
+
+
+<h3>Origin</h3>
+<p>
+Todos os objetos inseridos no Blender possuem uma origem (Origin). Em versões anteriores, a Origin era designada por Centro. No momento 
+em que adicionamos um objeto, o ponto mediano entre os vértices que constituem o objeto torna-se na Origin do novo objeto. A Origin está representada por um ponto laranja no meio do objeto.
+</p>
+ 			 <img src="img/introducao/interface/17.png" alt="..." class="img-responsive img-thumbnail center-block">	
+<p>
+Se estiver em Edit Mode e mover todos os vértices de um objeto, a Origin não vai ser alterada e vai permanecer no mesmo local.
+</p>
+<p>
+A Origin de um objeto pode ser manipulada através do botão Origin no painel de ferramentas. 
+As opções são claras: na primeira opção, os vértices do objeto vão deslocar-se até à Origin; 
+na segunda, a Origin vai ser deslocada para o centro do objeto (calcula o centro com base na geometria); 
+na terceira, a Origin vai para onde estiver o 3D Cursor; 
+na última, move a Origin para o centro calculado da massa do objeto.
+</p>
+ 			 <img src="img/introducao/interface/16.png" alt="..." class="img-responsive img-thumbnail center-block">	
+
+
+<h3>Selecionar</h3>
+
+<p>
+A forma mais simples de selecionar um objeto ou um vértice é clicando nele com botão direito do rato (BDR). Para selecionar os vértices ou as faces de um objeto, terá primeiro de selecionar o objeto e ativar o modo de edição (por exemplo, utilizando a tecla TAB).
+</p>
+<p>
+Pode utilizar a tecla A para selecionar ou retirar a seleção de tudo. Ou seja, se estiver em modo de objeto e clicar na tecla A seleciona todos os objetos existentes. Se estiver  em modo de edição, seleciona todos os vértices, arestas ou faces que constituem o objeto.
+</p>
+<p>
+A tecla B serve para ativar a seleção por caixa (Box) e a tecla C serve para ativar a seleção por círculo (Circle). Neste último caso, pode utilizar a roda do rato para reduzir ou aumentar o círculo de seleção. Para selecionar  objetos, vértices, arestas ou faces que não sejam adjacentes (e portanto, não pode utilizar a seleção por caixa...) utilize o Shift e clique com o BDR.
+</p>
+<p>
+Para utilizar a seleção por laço, clique no Ctrl e no botão esquerdo do rato (BER). Sem largar o BER, desenhe o laço, selecionado todos os objetos (em Objet Mode) ou vértices/arestas/faces (Edit Mode) que ficarem
+ inseridos no mesmo.
+</p>
+<p>
+Em Edit Mode pode ainda utilizar outras ferramentas de seleção:</p>
+<ul>
+<li>Ctrl + NUMPAD+ = aumenta/expande gradualmente a seleção</li> 
+<li>Ctrl + NUMPAD– = diminui/reduz gradualmente a seleção</li> 
+<li>Alt +  BDR (em GNU/Linux é Shift + Alt + BDR) = seleciona Edge Loops</li>
+<li>Ctrl + Alt + BDR = seleciona Edge Rings</li>
+</ul>
+
+
+
+<h3>Mover, Rodar e Redimensionar</h3>
+
+<p>
+As teclas G, R e S servem para aGarrar (para deslocar no espaço), Rodar e eScalar (alterar a dimensão) do que estiver selecionado. Ou seja, se estiver em modo objeto, aplica as modificações ao objeto como um todo. Se estiver em modo edição, aplica as modificações aos vértices, arestas ou faces selecionados.
+</p>
+<p>
+Em vez destas teclas, pode utilizar os manipuladores para os mesmos fins.
+</p>
+ 			 <img src="img/introducao/interface/26.png" alt="..." class="img-responsive img-thumbnail center-block">	
+<p>
+Se desejar, pode bloquear as operações aos eixos X, Y e Z e introduzir valores numéricos exatos. Por exemplo, se clicar na sequência de teclas G, Z, 2, o objeto irá deslocar-se no eixo Z em 2 unidades. Se clicar em R, Z, 45, o objeto irá rodar 45º sobre o eixo Z.
+</p>
+<p>
+Se pretende maior controlo nas operações mas não pretende introduzir valores numéricos, pode utilizar as teclas Ctrl, Ctrl+Shift e Shift para obter maior precisão.
+</p>
+<p>
+Também pode introduzir os valores numéricos desejados diretamente na barra de propriedades do 3D View (tecla de atalho é N).
+</p>
+
+
+
+<h3>Parentesco e Grupos</h3>
+<p>Para criar uma relação de parentesco (child-parent), clique em SHIFT e selecione os vários objetos (o último selecionado será o pai), 
+clique em CTRL+P. Agora, o que fizer ao “pai” também se aplica aos filhos (se mover o “pai”, os filhos irão atrás, etc.).  </p>
+<p>Para desfazer, 
+selecione os filhos que pretende tornar orfãos e ALT+P.</p>
+
+
+<p>Grupos é uma forma de associar objetos sem que estes tenham alguma relação hierárquica entre si (como no parentesco). Pode criar grupos e adicionar/remover objetos a um grupo de 
+diversas formas. Pode utilizar CTRL+G para associar um objeto a um novo grupo e pode utilizar as opções disponíveis na aba Relations (barra de ferramentas) ou utilizar o painel Object do
+ editor Properties para gerir os grupos.</p>
+
+
+<h3>Unir/Juntar/Fundir e Separar/Dividir/Desligar</h3>
+
+<h4>Object Mode</h4>
+<p>
+Em modo Object, selecione os objetos que pretende unir (Join) e prima Ctrl+J.	
+</p>
+
+
+<h4>Edit Mode</h4>
+<p>
+Em modo Edit, para criar mais vértices, arestas ou faces, selecione o que pretende dividir e prima W (Subdivide), utilize a faca (Knife) para riscar a linha de corte com a tecla K
+ ou crie Loop Cuts (CTRL+R). Estas opções são descritas abaixo.
+</p>
+<p>Para Fundir (merge) faces, vértices ou arestas: seleccione e ALT+M ou prima W, opção Merge. Para apagar pode utilizar Del ou X.</p>
+
+<p>Ainda em Edit Mode, existem diversas outras formas úteis de separar. Pode separar vértices, arestas ou faces,
+ criando novos objectos (selecione o que pretende separar e clique em P) ou desligando (rip) (selecione o que pretende desligar e clique em V ou utilize o menu Mesh).</p>
+
+
+
+<h3>Preencher</h3>
+<p>Para completar (criar faces) e Preencher: se selecionar 2 vértices e clicar em F cria uma nova aresta, 
+se tiver arestas seleccionadas cria uma face. Se tiver 4 vértices seleccionados, cria uma face.</p>
+<p>
+Se tiver uma área para preencher com diversos vértices, pode pressionar F (criando um única face com vários vértices), Alt+F (
+preenchendo com várias faces) ou unir duas sequências de vértices criando faces entre elas através de W, opção Bridge Edge Loops.
+</p>
+
+
+
+<h3>Duplicar e Clonar</h3>
+<p>SHIFT+D duplica o objeto original. Ficamos com dois objectos totalmente independentes.</p>
+<p>ALT+D clona o objeto original mas os dois objetos não são totalmente independentes. Se depois editarmos a malha (por exemplo, mover um vértice), a ação
+ irá ser aplicada em ambos os objetos.</p>
+
+<h3>Subdividir</h3>
+
+<p>a. Em Edit Mode, selecione as linhas (não é possível subdividir um vértice…) ou lados que pretende subdividir e clique em W (menu Specials) para cortar ao meio o que estiver 
+selecionado (também pode utilizar o botão Subdivide na barra de ferramentas).</p>
+<p>
+Na barra de ferramentas deverão surgir várias opções de configuração que permitem definir número de subdivisões, grau de suavização (Smooth), etc.
+</p>
+
+
+<p>Tal como podemos dividir um objeto sólido, também é possível dividir curvas ou superfícies NURBS.</p>
+
+
+
+<h3>Extrusão</h3>
+<p>É possível fazer extrusão a vértices, arestas ou faces. Em Edit Mode, selecione o que pretende estender e clique em E (pode utilizar botão na barra de ferramentas). </p>
+
+<p>
+Também é possível, utilizar a extrusão para criar faces. Faça extrusão e depois clique no botão direito do rato (sem mexer!). É criada uma nova “camada”, depois clique em S
+ , nova extrusão e desloque em Z. O efeito é similar a utilizar a ferramenta Inset Faces (disponível no atalho I ou no menu W).
+
+
+<p>Quando se faz extrusão, também pode optar entre Individual ou Region.</p>
+
+
+
+
+ 		<p class="text-center"><img src="img/intros/modelacao/extrusion1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Diferença entre Extrude Individual e Extrude Region</small>
+</p>
+
+
+<h3>Arredondar e Suavizar</h3>
+<p>Existem diversas formas de suavizar/arredondar as formas ou o aspeto. Importa referir que estas últimas não modificam a geometria, apenas alteram o aspeto na renderização, comportamento em
+ relação à luz.</p>
+
+
+<h4>Shading Smooth</h4>
+<p>Em Edit Mode (para aplicar apenas a algumas faces) pode ser ativado via menu W (Shade Smooth ou Shade Flat - aspeto arredondado ou aspeto liso/plano) ou 
+através da barra de ferramentas, aba Shading/UVs</p>
+<p>Em Object Mode, aplica o aspeto a todo o objeto (via barra de ferramentas, aba Tools).</p>
+
+
+<h4>Bevel</h4>
+<p>Pode utilizar o modifier ou a ferramenta disponível no menu W (em Edit Mode).</p>
+
+
+<h4>Smooth</h4>
+<p>Em Edit Mode, na barra de ferramentas (Smooth Vertex) ou via menu W (Smooth), pode aplicar o Smooth aos vértices selecionado, arredondando a forma.</p>
+<p>A opção Subdivide Smooth (menu W) permite subdividir e introduz logo um fator de Smooth.</p>
+
+
+
+
+<h3>Proportional Edit</h3>
+<p>É a ferramenta utilizada em <a href="4objetos_para_um_cenario.html">Objetos para um cenário</a>.
+</p>
+<p>A ferramenta apresenta um menu que permite escolher o perfil ou tipo de curva e pode ser utilizada em Object ou em Edit Mode </p>
+<p>Deverá ter em atenção ao raio de selecção (círculo cinzento) que pode aumentar/diminuir com roda do rato.</p>
+
+
+
+<h3>Knife</h3>
+<p>A Knife (faca) é uma forma de inserir vértices ou criar novas faces.</p>
+<p>Pode ativar a ferramenta via K ou botão na barra de ferramentas. Depois, deve clicar no local das arestas onde pretende inserir vértices (criando cortes).</p>
+<p>Se clicar no CTRL tranca a Knife ao Midpoint, o corte será efetuado no meio da aresta. Se clicar no C tranca a Knife aos ângulos.</p>
+
+
+<h3>Loop Cuts</h3>
+<p>A Loop Cut permite criar um corte em todas as faces que estão ligadas. </p>
+
+ 		<img src="img/intros/modelacao/loop.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+		</div>
+		
+		
+		
+		 
+		
+		
+		
+		
+		
+		
+		
+
+ </div>
+
+ <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina"><small>Renderização com</small> LuxRender</h1>
+      	
+      	<div class="page-header">
+				<h2>Introdução</h2>
+      	</div>
+     
+        	<h3>O que é o LuxRender?</h3>
+
+<p> LuxRender (http://www.luxrender.net/) é um Software Livre para renderização 3D que permite a síntese de imagens
+  de forma fisicamente correcta. É um motor de renderização unbiased, baseado na física, simula o fluxo da luz de acordo com equações físicas, 
+  produzindo imagens realistas com qualidade fotográfica.</p>
+
+<p>
+Se pretender utilizar o LuxRender habitualmente ou com alguma regularidade, a Wiki oficial (http://www.luxrender.net/wiki/index.php?title=Main_Page) é um recurso essencial.</p>
+
+
+
+        	<h3>Instalação</h3>
+
+
+ <p>1. Vá ao endereço http://www.luxrender.net e faça download da versão mais recente para o seu sistema operativo. A instalação deverá ser bastante fácil e rápida.</p>
+
+<p>2. No mesmo endereço, descarregue o plugin (LuxBlend) para utilizar o Blender com o LuxRender.</p>
+
+<p>3. Caso surjam algumas dificuldades, visite as instruções para instalação manual: http://www.luxrender.net/wiki/LuxBlend_2.5_installation_instructions
+</p>
+
+<p>4. Inicie o Blender. Vá ao painel de User Preferences e ative o LuxRender.</p>
+
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_1b6c64a0.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5. Se tudo estiver bem instalado, deverá poder ativar o LuxRender como render.</p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_41523968.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>6- No painel de Render deverá ter agora novas janelas para configurar. Ative o Run Renderer e escolha a pasta (não escolha o ficheiro!) onde tem o LuxRender (ver passo 1).</p>
+
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_m374cd338.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+ 
+			<div class="page-header">
+        		<h2>Criar uma cena para renderização</h2>
+	      </div>
+    
+<p>1. Certifique-se que tem o LuxRender seleccionado.</p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_m15c4c585.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>2. Crie uma cena com plano, 1 Suzanne, 3 esferas e 3 cubos. Redimensione um dos cubos e disponha os objectos de acordo com a imagem abaixo.</p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_4dcba2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>3. Aplique materiais aos objetos seguindo a lista abaixo:</p>
+
+<p><strong>Cubo à esquerda e plano</strong></p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_4dcba2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p><strong>Cubo à direita</strong></p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_6d00c7f3.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p><strong>Suzanne</strong></p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_ae76290.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p><strong>Esfera esquerda</strong></p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_3427bee3.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p><strong>Esfera centro</strong></p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_md409310.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p><strong>Esfera direita</strong></p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_466adf86.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p><strong>Cubo central</strong></p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_m562b060b.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_m75c7c1ce.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>No nosso caso, utilizámos uma imagem da pintura “De sterrennacht”, de Vincent van Gogh, disponível no seguinte endereço: http://www.paintingsite.net/images/renaissance_paintings_starry_night.jpg</p>
+
+<p>A imagem foi aplicada por UV. Depois de selecionado o cubo, marcámos os “seams” em Edit mode e fizemos Unwrap. A imagem foi introduzida através do UV/Image Editor.</p>
+
+<p>4.Selecione o objecto Lamp existente e, no painel Object Data, escolha uma luz tipo Sun. No nosso exemplo, o Sun está posicionado à esquerda da câmara.</p>
+
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_m105315a0.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_78836.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>5. No painel Render, certifique-se que tem o “Rendering Mode” em “External” e o “External type” em “LuxRender GUI”. 
+Deste modo, mesmo que o Blender seja terminado/encerrado ou sofra um “crash”, a renderização continua. Paralelamente, irá surgir uma interface (GUI) nova, 
+da aplicação LuxRender, que permitirá manipular alguns parâmetros.
+
+<p>Certifique-se que o caminho “Path to LuxRender installation” está correcto. Quando selecionar o caminho para a instalação do LuxRender,
+ certifique-se que selecionou a pasta e não um ficheiro dentro da pasta!</p>
+
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_m5d9a93ee.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>6. Clique no botão para renderizar uma imagem. Deverá surgir uma janela nova semelhante à da imagem abaixo. A renderização no LuxRender decorre agora de forma independente
+ do Blender. Inclusivamente, pode fechar o Blender que esta renderização continua...
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_mc99a49e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+      	<div class="page-header">
+				<h2>Algumas informações sobre Materiais</h2>
+				<small>Imagens e textos adaptados da oficial LuxRender Wiki (http://www.luxrender.net/wiki/index.php?title=LuxRender_Materials)</small>
+      	</div>
+    
+
+
+<p>Shiny Metal : Representa metais e outros materiais condutores.</p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_m470da585.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Rough Glass : Materiais translúcidos com superfícies rugosas/ásperas. Recomendado para p lásticos, vidro fosco ou alguns tipos de gelo menos transparentes/nítidos.</p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_m2f9d95ae.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Null : Material completamente invisível. Quando utilizado em combinação com o material Mix pode ser utilizado para criar transparência.</p>
+
+
+<p>Mix : Permite misturar 2 materiais. Este material Mix pode ser utilizado com materiais que já são mistura de outros dois materiais.</p>
+
+
+<p>Mirror : Material para criar espelhos polidos, especularidade perfeita.</p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_m1d288c62.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Metal : Renderiza vários tipos de metais de forma precisa. São disponibilizadas algumas configurações predefinidas: gold (ouro), silver (prata), 
+copper (cobre), aluminium (alumínio) e amorphous carbon (carbono amorfo). 
+Se pretender criar um metal ou outro material condutor sem utilizar estes predefinidos, utilize o material Shiny Metal.</p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_a9acba.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Matte Translucent: Parte da luz brilha através do material enquanto a outra parte é reflectida. A superfície é rugosa, não existem reflexos brilhantes. 
+É um material adequado para superfícies rugosas que também aparentam ser translúcidos/transluzentes, como os têxteis.
+Também podem ser úteis para tapar/cobrir luzes (por exemplo, em candeeiros).</p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_m568d8527.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Matte: Este material dispersa luz em todas as direcções de forma uniforme e, consequentemente, aparenta ser uma superfícies rugosa sem qualquer reflexo brilhante. 
+É recomendado para para superfícies rugosas (não polidas) como paredes de interiores, gesso, argila/barro, tinta matte, etc.</p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_330a96d.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Glossy (Lossy)</p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_m5b7b65b2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Glossy : Material com algum grau de brilho. Recomendado para superfícies brilhantes não metálicas, como plásticos, madeira laqueada, tinta glossy, etc.</p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_2e54a4ce.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Glass2 : Nova versão do material Glass. Permite absorção volumétrica, a absorção da cor é determinada pela distância que a luz percorre ao atravessar o material.
+As suas propriedade derivam quase na totalidade das configurações para o meio interior e exterior.</p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_m604ecb48.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Glass : Para criar objectos feitos de vidro, plásticos transparentes, líquidos nítidos, etc.
+Para obter melhores resultados, quando não utilizar o branco para as cores de reflexo (Reflection) e transmissão (Transmission) assegure-se que ambas
+ as cores têm um valor de intensidade aproximado.</p>
+ <img src="img/luxrender/0989160001408714180_22 luxrender_html_6f1a600f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Car Paint: Conjunto de configurações predefinidas (blue matte, blue, white, 2k acrylac, bmw339, opel titan, polaris silber e ford f8.) baseadas 
+em medições de luminosidade feitas em pintura de carros.</p>
+<img src="img/luxrender/0989160001408714180_22 luxrender_html_66f6c1a3.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

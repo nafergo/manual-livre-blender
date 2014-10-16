@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina"> Dynamic Paint</h1>
+
+
+      	<div class="page-header">
+				<h2>Líquidos com Wave</h2>
+      	</div>
+
+<p>1. Crie uma cena com 2 planos e uma esfera. O plano menor irá emitir esferar através de um sistema de partículas que irão colidir com o plano maior. Este plano maior irá reagir às
+ colisões como se fosse líquido, com ondas. Posicione os dois planos de forma aproximada à da imagem abaixo.</p>
+ <p>Quantos mais vértices tiver o plano maior, maior resolução terá o efeito das ondas. Subdivida o plano maior algumas vezes.</p>
+<img src="img/dynamic_paint/dp_wave1.jpg" alt="..." class="img-responsive img-thumbnail center-block">      	
+
+
+<p>
+2. Configure o plano maior ativando o Dynamic Paint e escolhendo-o como Canvas. Escolha Waves como Surface Type.
+</p>
+<img src="img/dynamic_paint/dp_wave2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+3. Crie um sistema de partículas no plano menor. No painel Render defina para modo Object e escolha a Sphere.
+</p>
+<img src="img/dynamic_paint/dp_wave3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+4. Configure o plano menor ativando o Dynamic Paint e escolhendo-o como Canvas. Escolha Particle System como Paint Source e selecione o Particle System criado no passo anterior.
+</p>
+<img src="img/dynamic_paint/dp_wave4.jpg" alt="..." class="img-responsive img-thumbnail center-block">      	
+
+<p>5. Clique em Alt+A para ver o efeito.</p>
+<img src="img/dynamic_paint/dp_wave5.jpg" alt="..." class="img-responsive img-thumbnail center-block">      	
+
+<h3>Sugestões</h3>
+<p>- Selecione o plano maior e clique em Shading: Smooth para o aspeto do "líquido" ser menos poligonal.</p>
+<p>- Anime com keyframes o plano menor.</p>
+      	
+	      	<div class="page-header">
+				<h2>Pegada na neve</h2>
+      	</div>
+
+
+<p>
+1. Crie uma cena com 2 objetos: um plano e outro objeto com a aparência de uma sola de uma bota. Subdivida o plano algumas vezes.
+</p>
+
+<img src="img/dynamic_paint/neve1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+2. Posicione a sua bota perto de um dos lados do plano e de forma a atravessar o plano.
+</p>
+
+<img src="img/dynamic_paint/neve2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+3. Introduza 4 keyframes na bota criando uma animação. Movimente a bota na direção do lado oposto do plano e lateralmente de forma alternada. Imagine que está a criar pegadas utilizando a bota.  
+</p>
+
+<img src="img/dynamic_paint/neve3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+4. Se reproduzir a animação, a bota deverá deslizar desenhando um S. No Graph Editor, selecione os canais que correspondem às keyframes.
+</p>
+
+
+<img src="img/dynamic_paint/neve4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<p>
+Escolha uma interpolação de tipo Constant. Se reproduzir agora a animação, a bota deverá "saltar" para os locais onde inseriu as keyframes.
+
+</p>
+
+<img src="img/dynamic_paint/neve5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<img src="img/dynamic_paint/neve6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+5. Selecione o plano, ative o Dynamic Paint e escolha-o como Canvas. Escolha Displace como Surface Type. Se quiser que os "buracos/pegadas" desapareçam com o tempo, ative a opção Dissolve. 
+</p>
+
+<img src="img/dynamic_paint/neve7.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+6. Selecione a bota, ative o Dynamic Paint e escolha-o como Brush. 
+</p>
+<img src="img/dynamic_paint/neve8.jpg" alt="..." class="img-responsive img-thumbnail center-block">      	
+<p>
+7. Se fizer Alt+A deverá agora ver a bota a mover-se deixando pegadas atrás de si.
+</p>
+
+
+<img src="img/dynamic_paint/neve9.jpg" alt="..." class="img-responsive img-thumbnail center-block">      	
+
+
+<h3>Sugestões</h3>
+<p>Aplique um Smooth Shading no plano para melhorar o aspeto.</p>
+<p>No editor Outliner, desative a renderização (ícone é uma câmara fotográfica) e a visualização no 3D View (ícone é um olho) no objeto que serve de bota. Deste modo, só a animação das pegadas... 
+</p>
+<img src="img/dynamic_paint/neve10.jpg" alt="..." class="img-responsive img-thumbnail center-block">      	
+
+		</div>
+		
+		
+		
+		
+		 
+		
+		
+		
+		
+		
+		
+		
+
+ </div>
+
+   <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+</body>
+</html>

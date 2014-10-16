@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nelson gonçalves" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina"><small>Introdução à simulação de</small> Fumo</h1>
+
+      	<div class="page-header">
+				<h2>Introdução</h2>
+      	</div>
+
+
+<p>A simulação de fumos é construída com 2 elementos fundamentais mínimos: o emissor de fumo e o domínio. O domínio é a malha que vai delimitar a área onde existe o fumo.</p>
+
+<p>1- Aumente o cubo inicial de modo a ocupar uma larga área do enquadramento da câmara. Este cubo irá servir de domínio.</p>
+
+<img src="img/img15/1fumo145548f1.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2- Adicione uma Suzanne no centro do cubo, mais perto da base.</p>
+
+<img src="img/img15/2fumo618eb03.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Selecione o cubo, vá ao painel Physics, adicione uma simulação Smoke e atribua ao cubo o papel de Domain.</p>
+
+<img src="img/img15/3fumo2f41eb1b.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- Selecione a Suzanne, vá ao painel Physics, adicione uma simulação Smoke e atribua-lhe o papel de Flow. Automaticamente é criado um Particle System com o nome SmokeParticles.</p>
+
+<img src="img/img15/4fumo6a1d1e9f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5- Se fizer Alt+A já conseguirá ver uma torre de fumo a subir da Suzanne até ao topo do cubo. No entanto, ainda não conseguirá renderizar... o cubo está a cobrir o fumo.</p>
+
+<p>6- Selecione o Domain (o cubo), vá ao painel Material e configure para o objeto cubo ser renderizado como Volume. Altere a densidade base do Volume para 0.</p>
+
+<img src="img/img15/5fumof2a61a0.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>7- Ainda com o Domain selecionado, vá ao painel Texture e mude o tipo de textura para Voxel Data. Mais abaixo, ainda no mesmo painel, escolha o cubo como Domain Object e ative a Density na Influence.</p>
+
+<img src="img/img15/6fumo6a23c663.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img15/7fumo349b1cfe.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>8- Opcional: Selecione a Suzanne, o seu emissor de fumo, vá ao painel Particles e desative a opção Emitter. Ou seja, não irá ser renderizado o emissor, a Suzanne.</p>
+
+<img src="img/img15/8fumo449f8403.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>9- Faça um render de teste para ver a evolução. Nesta altura, para ver melhor o fumo, talvez seja útil ir ao painel World e escolher uma cor mais escura para o fundo.</p>
+
+<img src="img/img15/9fumo44462621.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>10- Selecione o Domain, vá ao painel Material e altere o valor Emission para 1. Se aumentar o valor de Emission, o seu fumo vai ficar ainda mais claro. Os tons de “rosa” são resultado da cor definida em Influence no painel Texture. Pode alterar a cor e/ou alterar para outro Blend Mode (nem todos são úteis...).</p>
+
+<img src="img/img15/10fumo18a48210.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img15/11fumo3a737196.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>11- Volte ao painel Material e configure o Emission para 0.000, Scattering para 10.000 e Asymmetry para 0.500. Desta feita, talvez seja útil, voltar ao painel World e mudar o fundo para uma cor mais clara... Através da combinação de valores e cores do painel Shading consegue alterar radicalmente o aspeto do fumo.</p>
+
+<img src="img/img15/12fumo12ba0d10.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>12- Para melhorar a qualidade/aspeto do seu fumo, selecione o Domain, vá ao painel Physics e ative a opção Smoke High Resolution. Volte à frame 1 e faça novo Alt+A. A qualidade do fumo irá aumentar substancialmente. Aumentar o valor de divisões no painel Smoke e Smoke High Resolution também melhora o aspeto do fumo, tornando-o mais definido (sharp).</p>
+
+<img src="img/img15/13fumo5ea2d387.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img15/14fumo987d86.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>13- No Domain, painel Material, o valor Density Scale permite criar um fumo mais denso (valor + alto) ou mais rarefeito (valor + baixo).</p>
+
+<img src="img/img15/15fumo1a45d21c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h3>Alguns parâmetros</h3>
+
+<p>Density: Valor em que a densidade afeta o movimento do fumo. Valores mais elevados fazem com que o fumo suba mais depressa.</p>
+
+<img src="img/img15/16fumo69c044f9.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Resolution: define o grau de detalhe da simulação. Na imagem abaixo foi ativada a opção Smoke High Resolution.</p>
+
+<img src="img/img15/17fumo6f26e4c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Tme > Scale: Define a velocidade da simulação de fumo. Valores mais baixos tornam o fumo mais lento, valores mais altos fazem o fumo mais rápido.</p>
+
+<img src="img/img15/18fumo4921aa5.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Vorticity: define a turbulência dentro do fumo. Valores mais baixos fazem com que o fumo suba mais direito, valores mais altos introduzem maior turbulência.</p>
+
+<img src="img/img15/19fumo1b77f4f0.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Temperature Difference: quantidade de calor média que afeta o movimento do fumo, valores mais elevados fazem com que o fumo suba mais depressa. Este parâmetro também existe nos settings do Emitter (emissor de fumo), permitindo ter emissores diferentes dentro de um mesmo Domain com temperaturas diferentes (com o fumo a subir a velocidades diferentes).</p>
+
+<img src="img/img15/20fumo73a1fed4.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Border Collisions: </p>
+
+<p>Vertically Open : Fumo desaparece quando colide com topo ou chão do Domain.</p>
+
+<p>Open : Fumo desaparece quando atravessa limites do Domain.</p>
+
+<p>Collide All : Limites do Domain funcionam como Collision, fumo colide e fica no interior do Domain.</p>
+
+<p>Dissolve & Time : permite que o fumo se dissipe com o tempo &  velocidade da dissipação do fumo.</p>
+
+<h3>Mais duas notas:</h3>
+
+<p>1- Para renderizar uma animação, deverá gravar o seu ficheiro e fazer Bake. Atribua um nome ao Bake digitando o mesmo na caixa File Name antes de fazer Bake.</p>
+
+<img src="img/img15/21fumo460b69c8.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2. Para criar fumos de cor diferente...</p>
+
+<p>a) Crie um Domain e 2 objetos Flow seguindo o tutorial acima. Os  2 objetos Flow devem ter um “temperatura” diferente (por exemplo: -2.0 para um objeto e 2.0 para o outro).</p>
+
+<img src="img/img15/22fumo7ce701ee.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>b) Selecione o Domain e atribua uma segunda textura seguindo a configuração abaixo.</p>
+
+<img src="img/img15/23fumo37c07812.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img15/24fumo5325d17e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Anime os objetos Flow  e depois faça Alt+A :)</p>
+
+
+
+      	<div class="page-header">
+				<h2>Quick Effect Operators</h2>
+      	</div>
+
+<p>Para facilitar a configuração básica de diversos efeitos (i.e. Smoke/Fumo, Fluid/Fluído, Explode/Explosão e Fur/Pêlo), foram criados Quick Effects Operators.</p>
+
+<p>a) Selecione o objeto que irá servir de emissor e clique na Barra de Espaços.</p>
+
+<p>b) Escreva Quick Smoke e clique no Enter.</p>
+
+<img src="img/img15/25fumo522a4b13.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+		</div>
+		
+		
+		
+		
+		
+		
+
+ </div>
+
+    <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

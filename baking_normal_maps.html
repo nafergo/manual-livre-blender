@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina">Baking Normal Maps</h1>
+      	
+      	<div class="page-header">
+				<h2>...</h2>
+      	</div>
+     
+<p>
+Os Normal Maps são um dos "truques" mais utilizados em 3D. Permitem introduzir detalhe e variação sem necessitar
+ de mais geometria. Cria uma simulação de detalhes ou imperfeições na superfície mas não altera a geometria.
+</p>
+
+<p>
+Compare as duas Suzanne presentes abaixo. A da esquerda tem 500 faces e um Subdivision Surface com 2 níveis. Se 
+aplicássemos (Apply) o Modifier Subdivision Surface ficaríamos com  7.872 faces (mas na imagem não foi aplicado!). A Suzanne 
+da direita tem 31.488 faces. 
+</p>
+
+
+
+<img src="img/baking_normals/baking_normals1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Vamos utilizar o Blender Internal Render para criar o Normal Map e depois vamos aplicá-lo em Cycles. Assegure-se que está 
+em Blender Internal Render.</p>
+
+<p>Comece por criar 2 versões do seu modelo: a versão High Poly (com os detalhes e a partir da 
+qual irá criar a o Normal Map) e a versão Low Poly (onde irá aplicar o Normal Map).</p>
+
+<p>A nossa Suzanne Low Poly é simplesmente a Suzanne original com um Subdivision Surface com 2 níveis e Shading: Smooth.</p>
+
+<p>A nossa Suzanne High Poly foi criada com a seguinte sequência: 1º adicionar a Suzanne original; 
+2º Adicionar um Subdivision Surface com 2 níveis; 3º Aplicar o Subdivision Surface; 4º Em Edit Mode, selecionar 
+todas as faces, pressionar W e escolher Subdivide; Aplicar um Shading: Smooth.</p>
+
+<p>Os efeitos (as cruzes) foram criadas com as ferramentas de Sculpt Mode.</p>
+
+
+<img src="img/baking_normals/baking_normals6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+Os dois modelos têm de estar exatamente no mesmo local (há quem coloque os dois modelos em 2 layers diferentes para 
+poder ter os dois modelos "separados" mas no mesmo local). No nosso caso, selecionámos o modelo Low Poly, pressionámos Shift+S e 
+escolhemos Cursor To Selected. Depois, selecionámos o High Poly, pressionámos Shift+S e e escolhemos Selected To Cursor. Agora, as duas
+ versões estão sobrepostas.
+</p>
+
+<p>
+Crie um UV Layout na versão Low Poly. Selecionámos a versão Low Poly e, em Edit Mode, pressionámos U e escolhemos Smart UV Projet. Dividimos 
+a área de trabalho e criámos uma nova imagem. 
+</p>
+
+<p>No passo seguinte, a ordem de seleção dos modelos é importante! Selecione primeiro a versão High Poly e depois a versão 
+Low Poly. Passe para Edit Mode. Deverá estar a ver o UV Layout criado para a versão Low Poly.</p>
+
+<p>No painel Render, localize a secção Bake e configure de acordo com a imagem.</p>
+<img src="img/baking_normals/baking_normals3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>O Bake Mode é Normals porque pretendemos criar um Normal Map. Ative a opção Selected To Active para criar o Normal Map a partir
+ do High Poly (o Selected) e aplicar o mesmo no Low Poly (o Active - quando seleciona vários objetos, o último é o Active). Clique em Bake 
+ e aguarde até criar uma imagem com tonos azulados (semelhante à apresentada no passo anterior).</p>
+ 
+ <p>Se a sua imagem tiver áreas a verde ou outras cores que não as visíveis no exemplo, provavelmente tem de recalcular os Normals
+  (ver <a href="erros_comuns.html">Erros Comuns</a>). Depois de recalcular os Normals, faça Bake.
+    </p>
+    
+    <p>Grave a imagem "azul" criada.</p>
+
+<img src="img/baking_normals/baking_normals5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Em Cycles, configure o material aplicado na versão Low Poly de acordo com a imagem abaixo. Repare que no nó 
+Image Texture escolhemos a imagem criada (a imagem azul que constitui o Normal Map) e foi 
+ativada a opção Non-Color Data (não quer que esta imagem influencie a cor...). No nó Normal Map esolhemos o 
+UV Layout criado anteriormente. Neste nós pode utilizar a opção Strength para controlar a intensidade do efeito criado pelo Normal Map.</p>
+
+<img src="img/baking_normals/baking_normals2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+Em baixo vê a renderização com o Normal Map aplicado na versão Low Poly (repare que as cruzes são visíveis!) mas sem que esteja a ser 
+utilizado o Subdivision Surface. Ou seja, está a aplicar o Normal Map na Suzanne original. Se utilizar um Subdivision Surface e o 
+Normal Map o efeito é o apresentado no topo desta página. 
+</p>
+
+<img src="img/baking_normals/baking_normals4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+
+
+
+
+    
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

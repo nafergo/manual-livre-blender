@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nelson gonçalves" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Modifiers</h1>
+
+
+      	<div class="page-header">
+				<h2>Introdução</h2>
+      	</div>
+
+
+<p>Os Modifiers são operações automáticas não destrutivas que podem ser utilizadas em objetos, 
+são utilizadas em Object Mode. 
+Não destrutivas significa que podem ser desfeitas, repondo o estado original do objeto em que foram utilizados.
+ Por outras palavras, 
+para além de permitirem a configuração de diversos parâmetros, é sempre
+ possível desfazer ou esconder temporariamente as consequências da sua ação.</p> 
+
+
+<p>É possível utilizar diferentes Modifiers num mesmo objeto ou o mesmo Modifier várias vezes, criando combinações.
+ No entanto, como os Modifiers interagem entre si, a ordem de utilização é importante.</p>
+
+ <p>Os Modifiers do Blender podem ser aplicados (botão Apply) tornando-se definitivos (não se pode desfazer!).</p>
+
+<p>Vários Modifiers são introduzidos automaticamente através de outros menus ou teclas de atalho. Apesar de todos poderem 
+ser introduzidos através do menu abaixo, muitos costumam ser introduzidos de outro modo.</p>
+
+<img src="img/img34/1Modifiers23776b0.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Existem Modifiers de vários tipos e nem todos são úteis para modelação. Não obstante, a maioria dos Modifiers 
+tem utilidade no contexto da modelação e permite fazer uma Non-Destructive Modeling. Ou seja, 
+permitem realizar diversas operações sem afetar a topologia base do objeto, a sua geometria real.</p>
+
+		
+<p> A maioria dos Modifiers apresenta três opções de visualização:(des)ativar o Modifier 
+aquando da renderização, (des)ativar o modifier na janela 3D e (des)ativar o modifier em Edit Mode. </p>
+
+<img src="img/img34/2Modifiers7c72994d.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Alguns modificadores permitem ainda (des)ativar o modifier para manipulação em Edit Mode.</p>
+
+
+<p>No ponto seguinte, apresentamos alguns dos Modifiers de tipo Generate e Deform 
+com utilização mais comum no contexto da modelação. Os restantes tipos, pelas suas especificidades, 
+irão ser tratados noutros locais. Por exemplo, os Modifiers de tipo Simulate são abordados na secção Simulação.</p>
+
+ 		<p class="text-center"><img src="img/intros/modelacao/modifiers.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Utilização de 3 modifiers (da esq. para a dir.): Simple Deform, Mirror e Bevel</small>
+</p>
+
+
+
+
+      	<div class="page-header">
+				<h2>Alguns Modifiers</h2>
+      	</div>
+  
+
+<h3>Array</h3>
+
+<p>Permite criar sequências de objetos a partir de um único. No primeiro exemplo, utilizámos um array num cubo.
+ No segundo, adicionámos um segundo array ao mesmo objeto. Ou seja, foi criado um array de outro array.</p>
+
+<p>Existem diversas opções de configuração interessantes. Destacamos a possibilidade criar um array com base num número de repetições (como no exemplo abaixo), 
+com base numa distância ou ao longo de uma curva (Ver exemplo no final deste texto), e a configuração do Offset (distância entre os objetos criados pelo array).</p>
+
+<img src="img/img34/3Modifiers7b7f7ecc.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img34/4Modifiers639b1938.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<h3>Bevel</h3>		
+
+<p>O Bevel (bisel ou chanfro) permite cortar ângulos, criando um efeito de arredondamento.</p>
+
+<p>Destacam-se as seguintes opções de configuração: definir a amplitude do corte (Width); definir o número de segmentos 
+utilizados (+ segmentos = + arredondado); utilizar o corte apenas a vértices (em vez de arestas); definir o ângulo (Angle) a partir do qual é utilizado o Bevel.</p>
+
+<img src="img/img34/5Modifiers2527d37f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<h3>Boolean</h3>
+
+<p>As operações Booleanas (Difference, Union, Intersect) permitem definir o resultado da interação entre dois objetos. Mais informação no texto <a href="booleanas.html">Operações Booleanans</a>.</p>
+
+
+
+
+<h3>Build</h3>
+
+<p>Build é um Modifier que permite animar facilmente a visibilidade de um objeto. O Modifier vai revelando progressivamente o objeto como se este estivesse
+ a ser construído (build) no momento. </p>
+
+<p>1- Adicione uma UV Sphere ou outro objecto a seu gosto, ou mesmo texto.</p>
+
+<p>2- No painel de Modifiers, escolha Build.</p>
+
+<p>Alguns dos principais parâmetros...</p>
+
+<p>Start: frame em que se inicia a “construção”, em que o objecto começa a ser revelado.</p>
+
+<p>Length: duração do efeito</p>
+
+<p>Randomize: torna aleatória a ordem com que vão sendo reveladas (“construídas”) as faces de um objeto. [Sugestão: faça ALT+A com e sem esta opção 
+ativada para ver a diferença na forma como a esfera é construída] </p>
+
+<img src="img/img34/9Modifiers252cd9d0.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<h3>Decimate</h3>
+
+<p>O Decimate (dizimar) permite reduzir o número de polígonos da malha onde é utilizado.
+É uma operação inversa ao subdividir. Tentando preservar a forma original da malha, o Modifier irá remover vértices/faces. Pode definir o Ratio 
+(por exemplo, 0.5 significa retirar 50% das faces) e aplicar apenas a um grupo de vértices (como fizemos no exemplo abaixo). Neste último caso, terá de criar previamente um Vertex Group.</p>
+<p>No exemplo abaixo, ativámos ainda a opção Triangulate para converter todos os quads originais em tris.</p>
+
+<img src="img/img34/10Modifiers3599bcb1.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<img src="img/img34/decimate.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+<h3>Edge Split</h3>
+<p>Adiciona “sharp edges” à malha e é sobretudo útil quando aplicado em conjugação com o Smooth Shading.  
+Permite controlar a partir de que ângulo é aplicado o Smooth Shading.</p>
+<p>Na imagem abaixo vemos o mesmo objeto com Smooth Shading + Edge Split, só com Smooth Shading e sem Smooth Shading nem Edge Split.</p>
+
+<img src="img/img34/11Modifiers1fdd93cc.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+<h3>Mask</h3>
+
+<p>Permite ocultar partes de um objeto a partir de um Vertex Group. No exemplo abaixo, criámos um Vertex Group com alguns vértices da cara da Suzanne. 
+De seguida, utilizámos esse Vertex Group  para controlar que parte do objeto fica visível. </p>
+
+<p>A grande vantagem relativamente à ferramenta Hide (H) é que quando aplicamos um Hide a vértices (Edit Mode), estes não permanecem escondidos em Object Mode. 
+Com este modifier, é possível esconder vértices que permanecem escondidos tanto em Edit Mode como em Object Mode.</p>
+
+<img src="img/img34/12Modifiers14c51b5a.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img34/13Modifiers175444c8.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<h3>Mirror</h3>
+
+<p>O mirror permite espelhar uma malha, permitindo modelar de forma simétrica e evitar operações em duplicado. 
+Por pré-definição, o espelhamento é feito tendo por referência a origem de cada objeto.</p>
+
+<p>Podemos definir em torno de que eixo(s) é feito o espelhamento, sendo possível ativar mais do que um.</p>
+
+<p>Clipping: Evita que os vértices atravessem a fronteira do espelhamento, fundindo-os nessa mesma fonteira.</p>
+
+<p>Merge: quanto ativado, funde vértices que tenham sido espelhados de acordo com o Merge Limit.</p>
+
+<p>Mirror Object: permite definir outro objeto como referência para o espelhamento.</p>
+
+<img src="img/img34/14Modifiers7bafd9ab.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+<h3>Multiresolution</h3>
+
+<p>Este Modifier é abordado no texto sobre <a href="29sculpting.html">Sculpting</a>.</p>
+
+
+
+<h3>Remesh</h3>
+
+<p>Remesh permite refazer a topologia de uma malha com quads.</p>
+
+<p>Octree Depth: resolução da operação, quantidade de faces criadas. Mais Depth significa menos erros e uma malha mais densa (recomendação: nunca ultrapasse o 8).</p>
+
+<p>Scale: Completa o Octree Depth definindo a escala das faces criadas.</p>
+
+<p>No exemplo abaixo, utilizámos um cone para converter as suas faces (tris) para quads com este Modifier. Repare que na segunda imagem alterámos a escala das faces.</p>
+
+<img src="img/img34/15Modifiers676a9f6c.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img34/16Modifiers22fa6e0e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+<h3>Screw</h3>
+
+<p>Screw é sobretudo utilizado para criar espirais. Utiliza um objeto como perfil (Mesh ou Curve) e cria uma revolução em torno da origem do objeto. 
+No exemplo abaixo, repare que o plano está deslocado da sua origem. O resultado da configuração apresentada está visível na imagem seguinte.</p>
+
+<img src="img/img34/17Modifiers2db8444f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Axis: Eixo em torno do qual irá fazer a revolução.</p>
+
+<p>AxisOb: Objeto em torno do qual irá fazer a revolução (se não definir nenhum, utiliza a sua própria origem)</p>
+
+<img src="img/img34/18Modifiers36217003.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Angle: Ângulo de uma revolução</p>
+
+<p>Steps: número de “steps” numa revolução (equivale a resolução)</p>
+
+<p>Render Steps: número de “steps” numa revolu</p>
+
+<p>Screw: grau de espiral (se tiver a 0, não faz espiral, faz um círculo)</p>
+
+<p>Calc Order: Calcula a ordem das arestas (pode ser necessário mas só com Meshes)</p>
+
+<p>Flip: inverte os “normals”</p>
+
+<p>Iterations: número de revoluções (cria uma espécie de Array).</p>
+
+
+
+<h3>Skin</h3>
+
+<p>O Skin é um Modifier bastante diferente dos 
+restantes: utiliza as arestas de um objeto para criar “tubos”. Na realidade, 
+o workflow habitual é modelar a partir de um vértice que pertence a um objeto que já tem este 
+modifier aplicado. É uma forma rápida de modelar algumas formas mais simples ou de criar uma base 
+para modelar formas orgânicas ou para Sculpting. </p>
+
+<p>1. Adicione este modifier a um cubo. Em Edit Mode, selecione todos os vértices 
+do cubo e clique em W. No menu de Specials escolha a opção Merge e depois At Center. Deste modo, 
+ficará só com um vértice localizado no mesmo ponto onde se encontra a origem do objeto. </p>
+
+<p>2. Para ver melhor o que acontece, passe para modo Wireframe. Faça alguns Extrudes até criar 
+uma forma. Utilize o CTRL+A para modificar a dimensão ou espessura dos vértices.</p>
+
+<p>3. Quando estiver satisfeito, volte a Object Mode e clique em Create Armature para criar 
+uma armadura a partir dos vértices. Em alguns segundos, é possível criar uma forma, pronta a animar...</p>
+
+<p>Branch Smoothing: suaviza a geometria nos locais onde existem vários “ramos” (interseção de vértices)</p>
+
+<p>Mark/Clear Loose: nos vértices selecionados, marca (e retira) como “Loosing”, locais onde as faces se vão fundir (adelgaça)</p>
+
+<p>Mark Root: define o centro do objeto</p>
+
+<p>Equalize Radii: nos vértices selecionados, faz com que o raio da “skin” seja igual.</p>
+
+<p>Smooth Shading: Suaviza o aspeto das faces.</p>
+
+<img src="img/img34/19Modifiers1a187daf.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img34/20Modifiers0dfea.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img34/21Modifiers6e8d0f68.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+
+<h3>Solidify</h3>
+
+<p>Permite atribuir espessura às faces de um objeto. Nos exemplos abaixo, aplicámos
+ o Modifier a um plano e a um Circle (com um Extrude em Z) e alterámos a Thickness.</p>
+
+<img src="img/img34/22Modifiers1e1202c.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img34/23Modifiers1160c87f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<h3>Subdivision Surface</h3>
+
+<p>O Subdivision Surface (SubSurf) é um dos Modifiers mais utilizados. Permite subdividir
+ e arredondar as faces de um objeto, suaviza a malha, criando geometria interpolada.
+  Uma das grandes vantagens deste modifier é que permite trabalhar
+ com um reduzido número de vértices (facilitando a manipulação) mas obter resultados finais
+  só possíveis com um número mais elevado de vértices. </p>
+
+<p>No exemplo abaixo, temos um cubo (8 vértices) com uma subdivisão de nível 2. É por isso que
+ cada face do cubo parece subdividida.</p>
+
+<p>O painel View e Render permite definir os níveis de subdivisão visíveis e aquando da
+ renderização. Tipicamente, o nível de subdivisão na renderização é superior ao visualizado na área de trabalho.</p>
+
+<img src="img/img34/24Modifiers21b594a8.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<h3>Triangulate</h3>
+
+<p>Permite converter as faces de um objeto em triângulos (tris).</p>
+
+
+
+<h3>Armature</h3>
+
+<p>Este Modifier é abordado nos tutoriais de Rigging e armaduras. 
+Permite utilizar Bones para deformar e animar a malha.</p>
+
+
+
+
+<h3>Cast</h3>
+
+<p>Permite manipular a forma de uma malha utilizando um cubo, esfera ou cilindro como referência. Adicionalmente, 
+é possível utilizar outros objetos (Control Object), incluindo objetos com animação, para deformar a malha .</p>
+
+<p>Nos exemplos abaixo, utilizámos o Cast Type Sphere num Cubo e o Cuboid na Suzanne.</p>
+
+<img src="img/img34/25Modifiers2efc2824.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img34/26Modifiers589a5c84.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+<h3>Curve</h3>
+
+<p>Este Modifier permite deformar  um objeto tendo uma Curve como referência, modifica a malha utilizando uma curva como guia.</p>
+
+<p>1. Adicione uma Suzanne.</p>
+
+<p>2. Adicione uma Curve > Bezier</p>
+
+<p>3. Em Edit Mode, manipule a Bezier deslocando os dois controladores até obter uma forma similar à apresentada.</p>
+
+<img src="img/img34/27Modifiers24615a67.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4. Volte a Object Mode. Selecione a Suzanne e adicione o Modifier Curve. Selecione a 
+Bezier Curve como Object. Se manipular (pode animar!) a Suzanne, irá ver que esta se deforma tendo em conta a curva.</p>
+
+<img src="img/img34/28Modifiers14f94b44.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<h3>Displace</h3>
+
+<p>A completar.</p>
+
+
+
+
+
+<h3>Hook</h3>
+
+<p>Este Modifier permite associar/aparentar vértices de um objeto a um outro objeto. Podendo depois utilizar 
+este objeto de controlo para manipular/animar os vértices do primeiro objeto.</p>
+
+<p>A forma mais simples de utilizar esta ferramenta:</p>
+
+<p>1. Em Edit Mode, selecione os vértices que pretende associar ao gancho (hook).</p>
+
+<p>2. Clique em CTRL+H e selecione Hook To New Object para criar um Empty como objeto de controlo. 
+Se desejar, pode associar a um Hook já existente (Assign To Hook), remover de um Hook, etc. Se voltar a Object Mode e
+ consultar o painel de Modifiers verá que foi criado automaticamente um Modifier de tipo Hook.</p>
+
+<p>No exemplo abaixo, selecionámos os vértices do topo, fizemos CTRL+H e Hook To New Object para associar os mesmo a um Empty. Depois, movemos o Empty em Z para deslocar os vértices.</p>
+
+<img src="img/img34/29Modifiers496d19cd.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img34/30Modifiers3a89e69c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+<h3>Laplacian Smooth</h3>
+
+<p>A completar.</p>
+
+
+
+
+<h3>Lattice</h3>
+<p>Permite utilizar uma Lattice (grade) para deformar a malha. </p>
+
+<p>1- Adicione uma Suzanne. Adicione uma Lattice (Menu Add) e configure a mesma de forma semelhante à imagem abaixo.</p>
+
+<img src="img/img34/31Modifiers147c0cf7.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2- Alinhe os dois objetos. Anime a Suzanne 
+inserindo keyframes de Localização na frame 1 e 51 de forma a fazer com que esta atravesse 
+a Lattice. Na frame 51, a Suzanne deverá ter atravessado totalmente a 
+Lattice (deverá estar no lado oposto ao da imagem acima). </p>
+
+<p>3- Selecione a Suzanne e, no painel Modifiers, adicione o modifier
+ Lattice. Clique na caixa Object para escolher a Lattice que pretende associar ao 
+ objecto (pode associar várias!). Como só temos uma Lattice na cena e não modificámos o seu nome, a única 
+ opção que surge no menu é uma Lattice chamada “Lattice”.</p>
+
+<img src="img/img34/32Modifiers1876fc89.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- Seleccione a Lattice e, em Edit Mode, modifique a disposição dos pontos. No nosso caso, seleccionámos 
+todos os pontos das duas grades internas e redimensionámos em Y.</p>
+
+<img src="img/img34/33Modifiers67b93d55.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Se animar (ALT+A), quando a Suzanne atravessar a Lattice deverá deformar-se de acordo com a 
+forma/posicionamento dos pontos desta.</p>
+
+
+
+
+<h3>Mesh Deform</h3>
+
+<p>O modifier Mesh Deform permite utilizar uma malha fechada como “cage” (gaiola) para deformar outra malha.</p>
+
+<p>No exemplo abaixo, definimos um cubo como “cage”. O modifier foi aplicado na Suzanne.</p>
+
+<img src="img/img34/34Modifiers5ca30e30.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img34/35Modifiers39e5614e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+<h3>Shrinkwrap</h3>
+
+<p>A completar.</p>
+
+
+
+
+<h3>Simple Deform</h3>
+
+<p>Simple Deform permite aplicar operações simples de deformação a um objeto. </p>
+
+<img src="img/img34/36Modifiers7c607735.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Twist (torção): rotação em torno do eixo Z.</p>
+
+<p>Bend (dobra): dobra a malha em torno do eixo Z.</p>
+
+<p>Taper (adelgaçar): Escala ao longo do eixo Z.</p>
+
+<p>Stretch (esticar/encolher): Estica ao longo do eixo Z.</p>
+
+<p>Origin: Objeto que define origem da deformação (geralmente, um Empty). Este objeto pode ser rodado,
+redimensionado e movido.</p>
+
+<p>Deform: Intensidade ou ângulo da deformação.</p>
+
+<p>Limits: permite introduzir limites no topo e na base.</p>
+
+<p>Locks: permite definir se existem (ou não) deformações no eixo X e Y.</p>
+
+<p>Nos exemplos abaixo, utilizámos sempre o mesmo objeto.</p>
+
+<img src="img/img34/37Modifiers7a41eb13.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img34/38Modifiers33f7bf28.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img34/39Modifiers5a0b4682.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img34/40Modifiers68f52cdc.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+
+<h3>Smooth</h3>
+<p>Este modifier permite suavizar a geometria da malha de um objeto, alisando os ângulos, sem aumentar o seu número de vértices.</p>
+
+<p>No exemplo abaixo, as duas Suzannes têm o mesmo número de vértices. A da direita tem 
+um modifier Smooth. O Factor define a intensidade do 
+Smooth e o Repeat define o número de vezes que se aplica o Smooth com aquela intensidade.</p>
+
+<img src="img/img34/41Modifiers11135c4d.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+<h3>Warp</h3>
+
+<p>O modifier Warp permite deformar a malha de um objeto através de dois outros objetos de controlo. 
+Permite operações similares às implementadas pela ferramenta Proportional Editing.</p>
+
+<p>No exemplo abaixo, utilizámos um cubo no topo (From) e um cubo em baixo (To). A movimentação do 
+cubo existente no topo deforma a malha da Suzanne e esta é deformada na direção do cubo em baixo.</p>
+
+<p>Strength: força-intensidade da  deformação</p>
+
+<p>Radius: amplitude-raio da deformação</p>
+
+<p>Falloff Type: forma da deformação.</p>
+
+<img src="img/img34/42Modifiers4a351d73.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img34/43Modifiers3c1eee47.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img34/44Modifiers287a0394.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+<h3>Wave</h3>
+ 
+<p>Wave é um modifier que permite criar uma animação ondulatória, criar “ondas”, deformando a malha. A deformação depende do 
+número de vértices.</p>
+
+<p>1- Adicione um plano. Redimensione o plano, aumentando-o 5 vezes, e subdivida-o 4 vezes.</p>
+
+<img src="img/img34/45Modifiers32fb8e84.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2- No painel Modifiers, adicione o modifier Wave. Em modo Object, já é visível o efeito ou animação resultante desta ferramenta. </p>
+
+<img src="img/img34/46Modifiers338090c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>As principais opções de configuração permitem definir...</p>
+
+<p>...eixos ou direções em que se dá o movimento e se este é cíclico;</p>
+
+<p>...quando começa (Offset) e duração (Life) do efeito;</p>
+
+<p>...posição do movimento em relação ao objeto;</p>
+
+<p>...forma do movimento das ondas (com destaque para altura, largura e velocidade).</p>
+
+
+
+
+
+
+
+      	<div class="page-header">
+				<h2>Combinando Modifiers</h2>
+      	</div>
+
+<h3>Array + Curve</h3>
+<p>Um cubo com Array que se prolonga pelo comprimento da curva Bezier e depois com um Modifier Curve que faz com que o array se molde ao perfil da mesma curva.</p>
+<img src="img/img34/combinacao.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+<h3>Composição abstrata</h3>
+<p>Adicione um cubo. Aplique 2/3 cores diferentes a faces diferentes.</p>
+
+<p>1º Array com Count 5 e Relative Offset de 1 em X</p>
+
+<p>2º Array com Count 5 e Relative Offset de 1 em Y</p>
+
+<p>3º Array com Count 5 e Relative Offset de 1 em Z</p>
+
+<p>4º Build com Start em 1 e Length 100, Randomize ativado e Seed 1.</p>
+		
+<p>5º Array com Count 5 e Relative Offset de 1 em X</p>
+
+<p>6º Simple Deform de tipo Bend com 250º</p>
+
+<p>7º Build com Start em 1 e Length 120, Randomize ativado e Seed 2.</p>
+
+<p>8º Array com Count 5 e Relative Offset de 1 em Z</p>
+
+<p>9º Build com Start em 1 e Length 250, Randomize ativado e Seed 1.</p>
+
+<p>10º Bevel com Width 0.1 e Clamp Overlap ativado</p>
+
+<p>11º Solidify com Thickness 0.03</p>
+		
+<p>12º Cast do tipo Cylinder e utilize um Empty como Control Objet.</p>
+
+<p>Avance algumas frames a seu gosto (com menos de 50 não deverá ver muito...)</p>
+
+<p>Se desejar, modifique algumas das configurações a seu gosto.</p>
+		
+<p>Posicione a câmara, configure a iluminação e Renderize!</p>		
+		
+<img src="img/img34/55Modifiers845cf6e.png" alt="..." class="img-responsive img-thumbnail center-block">
+		
+	
+	
+      	<div class="page-header">
+				<h2>Recursos adicionais</h2>
+      	</div>
+	
+	<p>Para mais informações sobre os modifiers disponíveis no Blender...</p>
+	
+	<p>
+<a href="http://wiki.blender.org/index.php/Doc:2.6/Manual/Modifiers" target="_blank">Modifiers @ Blender Wiki</a>
+</p>
+
+<p>
+<a href="http://www.blenderguru.com/articles/blender-101-modifier-encyclopedia/" target="_blank">Modifiers Encyclopedia @ Blenderguru.com</a>
+</p>
+
+<p>
+<a href="http://www.blenderdiplom.com/en/tutorials/all-tutorials/406-ressource-blender-modifiers-explained.html" target="_blank">Compendium: Blender modifiers @ BlenderDiplom.com</a>
+</p>
+
+	
+ </div>
+ </div>
+ </div>
+
+
+   <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nelson gonçalves" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina">Materiais no Cycles</h1>
+      	
+      	<div class="page-header">
+				<h2>Criar a primeira cena</h2>
+      	</div>
+     
+<p>Comece por apagar a lâmpada Lamp e adicionar um plano como chão e adicionar os seguintes objetos: </p>
+
+<p>a) Suzanne: Em Object Mode, aplique um Modifier Subdivision Surface com 2 níveis de Subdivison. Utilize a ferramenta Smooth.</p>
+
+<p>b) Sphere: Em Edit Mode, selecione metade superior da esfera e apague-a. Em Object Mode, aplique um Modifier Solidify e escolha 0.05 Thickness.</p>
+
+<p>c)  Cubo</p>
+
+<img src="img/img40/6cycles38810c72.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Divida o seu ambiente de trabalho para poder ter a janela Node Editor aberta. As configurações dos materiais irão surgir, e podem ser manipuladas, na janela Node Editor.</p>
+
+<img src="img/img40/7cycles3678f02.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Na janela Node Editor ative a opção Use Nodes para ver os nós que correspondem ao material aplicado no objeto selecionado.</p>
+
+<img src="img/img40/8cycles336624b4.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Selecione o cubo e aplique um material Diffuse de cor verde.</p>
+
+<img src="img/img40/9cycles2b57ca90.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/10cycles2835c80a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Selecione a meia-esfera e aplique um material Glass.</p>
+
+<img src="img/img40/11cycles3eea35da.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/12cycles66e0db8e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Selecione a Suzanne e aplique um material Gloss cinza.</p>
+
+<img src="img/img40/13cycles4d5d0f13.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/14cycles73630a3c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Selecione o plano e aplique um material Gloss. Não altere os valores pré-definidos.</p>
+
+<p>Nas opções World, adicione um Background com características similares às da configuração abaixo.</p>
+
+<img src="img/img40/15cycles30f61621.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/16cycles4727fcd2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Na janela de opções de Render, defina 20 Samples para o Preview. Os Samples definem a qualidade da renderização. Se tiver 0 samples a renderização nunca é interrompida, é infinita, vão sendo acrescentados sempre mais Samples.</p>
+
+<img src="img/img40/17cycles639b4068.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Em cima, pode definir CPU ou GPU (se tiver as drivers e placa gráfica compatíveis) como dispositivo de renderização.</p>
+
+<p>Para ver o resultado na janela de 3D View, ative a nova opção Rendered existente no menu de Viewport shading.</p>
+
+<img src="img/img40/18cycles154190d2.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/19cycles7dbb4226.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Sugestões: seleccione o plano e altere os valores de Roughness para 0.3 para ver a diferença no reflexo.</p>
+
+<p>Selecione a câmara. Na janela de opções da câmara, defina qual o objeto que pretende focar (no nosso exemplo, escolhemos o Cube) e altere o valor de Aperture para configurar a Profundidade de Campo.</p>
+
+<img src="img/img40/20cycles34991498.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/21cycles1840593c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Na janela de opções de World, adicione um Environment Texture e escolha uma imagem HDR para iluminar a sua cena. No nosso caso, fizemos download de uma imagem de Paul Debevec disponível em:  http://ict.debevec.org/~debevec/Probes/stpeters_probe.hdr </p>
+
+<img src="img/img40/22cycles74178733.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/23cyclesbe8c578.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>O noise (grão) da imagem revela que são necessárias mais Samples. Se desejar, pode aumentar o número de Samples do Preview.</p>
+
+<p>Aumente a Strength do Background para melhorar a iluminação da sua cena. Para adicionar Luzes, adicione um plano e aplique-lhe o material Emission. 
+Aumente as Samples de Render e pode renderizar! </p>
+
+<p>Nota: quando estiver preparado para renderizar a imagem final, certifique-se que a janela 3D View não tem o Viewport Shading no Rendered! </p>
+
+
+
+      	<div class="page-header">
+				<h2>Alguns Shader Nodes</h2>
+      	</div>
+      	
+<img src="img/img40/24cycles33ee406b.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p><strong>Volume Scatter:</strong> Utilizado em fumo, nevoeiro, etc. </p>
+
+<p><strong>Volume Absorption:</strong> Absorve luz quando esta atravessa o volume.</p>
+
+<p><strong>Emission:</strong> Para além do sistema comum de luzes, o Cycles permite que um qualquer objeto possa servir como lâmpada, emitir iluminação. Este material transforma um objeto em uma lâmpada, é um material emissor. Strength determina a intensidade da emissão do material. Quando conectado ao encaixe Surface do nó Material Output, transforma a superfície do volume em emissor de luz. Quando conectado ao encaixe Volume do nó Material Output, transforma o próprio volume em emissor de luz.</p>
+
+<p><strong>Toon:</strong> Combinação de Diffuse e Glossy para criar efeitos toon (cartoon)</p>
+
+<p><strong>Mix Shader:</strong> Cria duas slots permitindo misturar dois materiais. Permite que as próprias slots criadas sejam ocupadas por outros Mix Closures, criando um material ainda mais complexo. Fac determina o grau de mistura entre as duas slots, 0.500 significa que o material é criado em percentagens iguais pelas duas slots.</p>
+
+<p><strong>Transparent:</strong> Material transparente, sem refração ou Fresnel. O valor Alfa é o mesmo em todo o material.</p>
+
+<p><strong>Velvet:</strong> Material que ilumina/clareia os limites do objeto. Sigma determina quanto do objeto é iluminado. Fresnel determina quão brilhante é o objeto.</p>
+
+<p><strong>Translucent:</strong> Material translúcido, parte da luz brilha através do material enquanto a outra parte é refletida. Não existem reflexos brilhantes.</p>
+
+<p><strong>Diffuse:</strong> material básico, aspeto barrento e sem qualquer reflexo brilhante, dispersa a luz em todas as direções de forma uniforme. É recomendado para superfícies não polidas como paredes de interiores, gesso, argila, barro, tinta matte, etc.</p>
+
+<p><strong>Background:</strong> É o material utilizado no World, define o fundo e a iluminação global. Strength determina a intensidade do material.</p>
+
+<p><strong>Subsurface Scattering:</strong> Para materiais como pele, cera ou leite. Em vez da luz ser simplesmente refletida na superfície, penetra na superfície e ressalta  (bounce) internamente antes de ser absorvida ou abandonar a superfície. </p>
+
+<p><strong>Ambient Occlusion:</strong> Permite controlar a quantidade de AO (se o AO tiver sido ativado) que afeta um material.</p>
+
+<p><strong>Add Shader:</strong> Adiciona materiais em vez de misturá-los.</p>
+
+<p><strong>Glossy:</strong> Material brilhante, com reflexão, recomendado para superfícies brilhantes (metálicas, plásticos, madeira laqueada, tinta glossy, etc.).</p>
+
+<p><strong>Holdout:</strong> Útil para compositing, cria um vazio/buraco com Alpha 0. Para funcionar, tem de ativar a opção Transparent nas opções de Render (Film).</p>
+
+<p><strong>Glass:</strong> Material transparente e com refração, utilizado para criar objetos feitos de vidro, plásticos transparentes, líquidos nítidos, etc. Roughness determina a rugosidade ou polimento do vidro. Fresnel controla quão definido é o vidro e grau de refração da luz. Com Zero, o vidro não refrata a luz e a transparência é determinada pela quantidade de camadas de malha que o raio de luz atravessa. Fresnel elevado resulta num vidro mais definido e com maior refração.</p>
+
+
+      	<div class="page-header">
+				<h2>Texturas de imagens</h2>
+      	</div>
+
+<p>1. Para adicionar uma imagem como textura, comece por atribuir um material ao objeto. Neste caso, escolhemos o material de tipo Diffuse.</p>
+
+<p>2. Na opção Color, clique no cursor do lado direito (círculo pequeno), escolha Image Texture.</p>
+
+<p>3. Irá surgir uma caixa para localizar a imagem que pretende utilizar.</p>
+
+
+<img src="img/img40/25cycles5afcc549.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/26cycles35f2d972.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Ao contrário do Blender Internal que utiliza por pré-definição as coordenadas Generated, o Cycles tem as coordenadas UV ativadas por pré-definição. Isso significa que, no Cycles, quando adiciona uma imagem como textura, tem duas opções: ativar Generated nas Texture Coordinates ou fazer Unwrap ao seu objeto.</p>
+
+<p>As opções disponíveis em Vector permitem configurar o modo como a textura é mapeada e as coordenadas utilizadas. Para configurar melhor as opções disponíveis, recomenda-se a utilização do Node Editor.</p>
+
+<p>O nó Mapping permite manipular a textura, configurar  Location, Rotation e Scale, e deve ser inserido entre os nós Texture Coordinates e Image Texture.</p>
+
+
+      	<div class="page-header">
+				<h2>Bump e Normal maps</h2>
+      	</div>
+
+<h3>Bump map - opção 1</h3>
+
+<p>Pode criar um Bump Map através da opção Displacement existente no nó Material Output. Abaixo são apresentados alguns exemplos para ilustrar o processo.</p>
+
+<p>Na imagem abaixo, temos uma esfera com um material Diffuse. Está a ser utilizada uma imagem HDR (high dynamic range) no Background para iluminação. Repare que a esfera está a ser iluminada com uma luz que vem do lado direito e com a direção correta tendo em conta a posição do sol na imagem.</p>
+
+<img src="img/img40/27cyclesf0ca69.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/28cycles22e68751.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Na imagem abaixo, introduzimos um nó de textura Voronoi e ligámos o mesmo à opção Displacement. Não foi manipulada a malha da esfera. A esfera continua a ser exatamente a mesma, a geometria não foi alterada. A textura Voronoi está a ser utilizada para modificar o aspeto da esfera.</p>
+
+<img src="img/img40/29cycles362f642c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>O Scale presente no nó da textura pode ser utilizado para aumentar/reduzir a dimensão das crateras. Por pré-definição, é apresentado um valor de 5 para o Scale.</p>
+
+<img src="img/img40/30cycles4d769d7c.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/31cycles120d62c5.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Nos conjuntos abaixo, introduzimos um nó Math (submenu Convertor) e escolhemos a operação Multiply para poder controlar a intensidade do bump. No primeiro conjunto, o valor de bump é multiplicado por 0.5 e, portanto, a intensidade é metade da existente por pré-definição. No segundo conjunto, o valor de Bump é multiplicado por 20!</p>
+
+<img src="img/img40/32cycles7bbcbda8.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/33cycles1d8b94c8.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/34cycles22fe48e8.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/35cycles41e64815.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>No exemplo seguinte, utilizámos uma textura de imagem e um plano. O plano tem apenas 4 vértices.</p>
+
+<img src="img/img40/36cycles450b7365.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Como o Cycles tem coordenadas UV por pré-definição, em Edit Mode, fizemos Unwrap ao plano para criar um UV Layout.</p>
+
+<p>Na configuração de nós é possível ver que estamos a utilizar uma Image Texture (UV Coordinates) para a Surface e mantivemos a Voronoi Texture multiplicada por 20 no Displacement.</p>
+
+<img src="img/img40/37cycles7722aba4.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/38cycles1597f0dd.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>No conjunto abaixo, foi retirado o Displacement. O plano apenas tem a textura de imagem.</p>
+
+<img src="img/img40/39cycles6dace6ad.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>No conjunto abaixo estamos a utilizar a mesma imagem para o Surface e para o Displacement. No entanto, nem sempre os resultados são os melhores.</p>
+
+<img src="img/img40/40cycles9f0ada5.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/41cycles1c43a0a4.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>No conjunto abaixo, estamos a utilizar duas imagens. A imagem das telhas com cor para a Surface e a correspondente textura de bump map para o Displacement.</p>
+
+<img src="img/img40/42cycles5ff410aa.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>A imagem de Bump Map está a ser convertida para BW (black & white) antes de ligar ao nó Multiply. Este passo não é sempre necessário mas, muitas vezes, evita problemas nos Shaders mais complexos que utilizam imagens RGB. Neste caso, como a imagem de Bump Map já é BW, não seria necessário, mas também não cria problemas e é um bom hábito.</p>
+
+<img src="img/img40/43cycles1bf338fc.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/44cycles8a67faf.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<h3>Bump map - opção 2 (resultados mais corretos)</h3>
+
+<p>Com a introdução do nó Bump, é possível simplificar o processo acima descrito e podemos combinar facilmente diferentes Bumps, etc.</p>
+
+<img src="img/img40/45cycles39dfd5a0.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Vejamos a imagem abaixo. Um Mix Shader combina dois Diffuse (azul claro e laranja) de acordo com um padrão em xadrez (Checker Texture). 
+Na imagem abaixo, o Bump com a textura Voronoi só afeta os quadrados do primeiro Diffuse.
+</p>
+
+<img src="img/img40/46cycles44f108dd.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<img src="img/img40/49cycles1090fb1f.png" alt="..." class="img-responsive img-thumbnail center-block">
+<p>Se o nó Bump estiver conectado a ambos os Diffuses permite controlar a aplicação da textura voronoi (Voronoi Texture) a todo o cubo porque afeta todos os materiais.</p>
+
+<img src="img/img40/47cycles62894b31.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Na configuração abaixo utilizámos a textura Checker para criar um relevo na esfera.</p>
+
+<img src="img/img40/2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<h3>Normal maps</h3>
+
+<p>Na configuração abaixo utilizámos um normal map disponível <a href="http://www.pinterest.com/nafergo/uv-for-3d/" target="_blank">aqui</a>.</p>
+
+<img src="img/img40/1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

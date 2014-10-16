@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina"><small>Render Pass</small> Shadow</h1>
+
+
+      	<div class="page-header">
+				<h2>"Shadow Only" no Cycles</h2>
+      	</div>
+
+
+<p>
+O Blender Internal Render tem uma opção de "Shadows Only" (painel dos materiais) que permite 
+tornar um material transparente com exceção das áreas sobreadas. Esta opção é extremamente útil quando se pretende criar 
+ uma sobreposição de imagens (por exemplo: imagem de fundo externa e objeto 3D com sombras por cima).</p>
+<p>No Cycles, ainda não existe uma opção tão prática mas é possível obter o mesmo efeito com a Render Pass Shadow.</p>
+
+
+<p>
+A nossa cena é composta por 2 objetos. O cubo está na scene layer 1 e o plano está na scene layer 2. Ambas as scene layers estão 
+visíveis e ativas. 
+</p>
+<img src="img/renderpasses/shadow1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+No painel de Render, definimos o fundo como transparente para não renderizar o fundo. 
+
+</p>
+<img src="img/renderpasses/shadow0.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+No painel de Render Layer, mantenha as duas scene layers ativas mas selecione apenas a layer do cubo. No exemplo abaixo, também modificámos 
+o nome da Render Layer para "cubo". Esta Render Layer só irá renderizar o cubo.
+</p>
+<img src="img/renderpasses/shadow2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+Crie uma segunda Render Layer (no exemplo, demos o nome shadow). 
+Mantenha as duas scene layers ativas mas selecione apenas a layer do plano. Ative ainda a Render Pass Shadow. 
+Esta Render Layer só irá renderizar o plano com a sombra e esta poderá depois ser isolada.
+</p>
+<img src="img/renderpasses/shadow3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+A configuração inicia com 3 nós de input: imagem que irá ficar no fundo (porque vamos usar uma fotografia), 
+renderização da Render Layer shadow e renderização da Render Layer cubo. 
+</p>
+<p>
+O principal trabalho de configuração é feito na Render Layer shadow. O nó Multiply (Color > Mix) irá permitir controlar a intensidade da sombra através
+ do Fac. O nó Subtract (Color > Mix) irá permitir isolar a sobra e o Set Alpha (Converter > Set Alpha) irá definir o que não é sombra como Alpha 
+ (transparência). O primeiro nó Alpha Over (Color > Alpha Over) vai permitir sobrepor o cubo à sombra. O segundo irá permitir sobrepor o cubo com sombra à imagem
+  de fundo.
+</p>
+<img src="img/renderpasses/shadow4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Não se esqueça de ligar o último Alpha Over ao nó Composite!</p>
+<p>Nota: a pouca qualidade da sombra deve-se às poucas samples utilizadas na renderização.</p>
+
+		</div>
+		
+		</div>
+		
+		
+		
+		
+
+ </div>
+
+   <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+<h1 class="titulopagina"><small> Algumas estratégias para</small> Acelerar renderização <small> no Cycles</small> </h1>
+
+
+
+<p>1. Renderizar com GPU. Geralmente, renderizar em GPU é mais rápido do que em CPU.</p>
+
+
+<p>2. Ativar "No Caustics" (Render Panel, opções de Light Paths): para obter menos noise quando utiliza shaders de tipo Glossy/Glass. Pode afetar gravemente as sombras de vidro...</p>
+
+<p>3. Utilize o "Filter Glossy" (Render Panel, opções de Light Paths): permite fazer blur aos reflexos do glossy. Reduz exatidão/correção mas pode reduzir  o noise.</p>
+
+<p>4. Modificar Tile Size (Render Panel, opções de Performance): de acordo com alguns testes, aparentemente os melhores Tile Sizes são 256x256 para GPU e  16x16 CPU. No entanto, isto pode variar com complexidade das cenas e caraterísticas do computador. Utilize sempre múltiplos de 2.</p>
+
+<img src="img/img40/73cycles164a6cf6.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Esta alteração não tem impacto na qualidade final da imagem. A imagem abaixo (foi redimensionada e convertida para jpg) foi renderizada com...</p>
+
+<ul>
+<li>GPU</li>
+<li>500 Samples</li>
+<li>Bounces: 1 (min) e 5 (max)</li>
+<li>No Caustics ativado</li>
+<li>Tiles: 256x256</li>
+<li>Tempo de renderização: 5m 30s</li>
+</ul>
+
+<ul>
+<li>GPU</li>
+<li>500 Samples</li>
+<li>Bounces: 1 (min) e 5 (max)</li>
+<li>No Caustics ativado</li>
+<li>Tiles: 64x64</li>
+<li>Tempo de renderização: 8m 8s</li>
+</ul>
+
+
+
+<img src="img/img40/rendertricks2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>5. Reduzir número de Bounces (Render Panel, opções de Light Paths): raramente é preciso mais do que 4 (Min: 0 e Max: 4)</p>
+
+<img src="img/img40/72cycles5839c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Esta alteração tem impacto na qualidade final da imagem. A imagem apresentada no ponto anterior também foi renderizada com...</p>
+
+<ul>
+<li>GPU</li>
+<li>500 Samples</li>
+<li>Bounces: 1 (min) e 5 (max)</li>
+<li>No Caustics ativado</li>
+<li>Tiles: 256x256</li>
+<li>Tempo de renderização: 5m 30s</li>
+</ul>
+
+<ul>
+<li>GPU</li>
+<li>500 Samples</li>
+<li>Bounces: 3 (min) e 12 (max)</li>
+<li>No Caustics ativado</li>
+<li>Tiles: 256x256</li>
+<li>Tempo de renderização: 7m 26s</li>
+</ul>
+
+<p>Em visão normal, as diferenças são quase invisíveis. É preciso fazer um Zoom muito aproximado (canto inferior direito da imagem), sobretudo nas zonas com sombras, para encontrar diferenças. A 
+imagem da esquerda usou Bounces: 3 (min) e 12 (max).</p>
+<img src="img/img40/rendertricks1.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>6. Reduzir as Samples implica perder qualidade mas também aumenta a rapidez. Não existe um número mágico, depende de cada caso/cena. Não obstante, recomenda-se que teste vários valores. Não são raros os casos em que depois de esperar várias horas por uma imagem com 5000 samples descobre que pouca diferença existe para versão de 2000 samples...</p>
+
+<img src="img/img40/74cycles4073e2d4.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>7. Utilizar "Clamp"  (Render Panel, opções de Performance): para eliminar os fireflies (pirilampos / pixels brilhantes). Não utilize valores abaixo de 1 ou 2 porque elimina demasiado contraste.</p>
+
+<p>8. Utilize Shader Colors sem valores 1.0 ou perto disso. Tente não ultrapassar o 0.8 e tornar as luzes mais brilhantes.</p>
+
+<img src="img/img40/75cycles56ae77f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>9. Experimente utilizar o preset Limited Global Illumination.</p>
+
+<p>10. Se utilizar Mesh com Emission e a luz for muito brilhante, talvez seja útil ativar opção “Sampled as a Lamp”. O World Background também tem esta opção, sobretudo útil se tiver Environment Maps com pontos brilhantes de reduzida dimensão.</p>
+
+<p>11.  Janelas de Luz: quando renderizar uma cena interior diurna e tem luz que vem através de uma janela ou porta é muito recomendável utilizar um plano com Emission no lugar da abertura. Para este plano não ser renderizado e tapar a janela ou porta, pode desativar a sua visibilidade.</p>
+
+<img src="img/img40/76cycles63ce3164.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+		</div>
+		
+		
+		
+				</div>
+		
+		
+		 
+		
+		
+		
+		
+		
+		
+		
+
+ </div>
+
+     <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

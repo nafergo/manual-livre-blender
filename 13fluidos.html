@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nelson gonçalves" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina"><small>Introdução à simulação de</small> Fluídos</h1>
+
+      	<div class="page-header">
+				<h2>Introdução</h2>
+      	</div>
+
+<p>A simulação de fluídos é construída com 2 elementos fundamentais e 1 terceiro de grande utilidade: o fluído, o domínio e os obstáculos. O fluído é a malha que vai constituir o líquido (ou seja, se quisermos um líquido vermelho, é o objeto ao qual atribuímos um material de cor vermelha), o domínio é a malha que vai delimitar a área onde existe o líquido, os obstáculos são os objetos que não são atravessados pelo o líquido (por exemplo: um copo, etc.).</p>
+
+<p>1- Aumente o cubo inicial (Cubo1) de modo a ocupar uma larga área do enquadramento da câmara.</p>
+
+<p>2- Introduza um novo cubo (Cubo2), diminua o seu tamanho e coloque-o totalmente dentro do Cubo1, perto do topo.</p>
+
+<img src="img/img13/1fluídos5aa27f59.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Selecione o Cubo2, ative o painel de Physics, ative o Fluid e selecione o Type Inflow. Atribua valor 0.200 na Inflow Velocity no eixo X ou Y (depende da sua cena) para o líquido não cair na vertical e descrever um arco  (repare nas imagens em cima).</p>
+
+<img src="img/img13/2fluídos1dfdb407.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- Selecione o Cubo1, repita os passos  mas atribua o Type Domain.</p>
+
+<p>5- No painel de configuração do Domain, altere o valor de End para 10 segundos e clique em Bake para calcular a animação do líquido.</p>
+
+<p>6- Depois de concluído o processo de Bake, pode fazer ALT+A para ver a animação. </p>
+
+<p>7- Deverá ter surgido uma nova malha (o líquido), selecione-a e atribua-lhe um material. Aplique um Smooth (painel de Ferramentas/Tools). Renderize para ver o aspeto.</p>
+
+<p>8- No painel de configuração do Domain, pode melhorar a resolução final do líquido subindo o respetivo valor (inicialmente deverá estar definido para 65) mas tenha em atenção a memória necessária para o cálculo. Se alterar a resolução, faça novo Bake.</p>
+
+<p>9- Depois de estar satisfeito com o fluído, se já não vai fazer um novo Bake, pode enviar o Cubo2 para outro layer, para este não ser visível durante a renderização.</p>
+
+<p>10- Pode renderizar a animação.</p>
+
+
+      	<div class="page-header">
+				<h2>Sugestões para Exercícios</h2>
+      	</div>
+
+<p>a) Crie uma animação seguindo o processo atrás descrito. Depois, na configuração do Domain, ative a opção Reverse Frames e renderize uma nova animação.</p>
+
+<p>b) Altere o Cubo2 de Inflow para Fluid, faça novo Bake e renderize animação. Depois, pode  utilizar novamente o Reverse Frames e voltar a renderizar.</p>
+
+<p>c)  Na configuração do Domain, experimente outros tipos de viscosidade e alterar a dimensão da simulação (dimensão do cubo que serve de Domain) para obter resultados diferentes.</p>
+
+<img src="img/img13/3fluídos530a2d40.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>d) Introduza outros objetos de Type Obstacle dentro do Domain para interferir com o líquido.</p>
+
+
+      	<div class="page-header">
+				<h2>Informações adicionais</h2>
+      	</div>
+      	
+
+<p>1- Se fizer alterações que afetem a simulação (i.e. introduzir novos obstáculos, redimensionar o domain, etc.) , tem de fazer Bake novamente. Imagine que depois de fazer um Bake decide que afinal pretende um copo mais alto ou cúbico, se alterar a forma do copo e não fizer novo Bake o líquido vai continuar com o mesmo comportamento e ignora a nova forma. É claro que, por vezes, esta possibilidade pode ser útil para criar um efeito especial qualquer. Imagine que coloca um cubo Obstacle que faz com que o líquido altere o seu percurso durante o Bake, se, antes de renderizar, apagar o Obstacle, o líquido vai continuar a comportar-se da mesma maneira, como se chocasse contra um obstáculo invisível...</p>
+
+<p>2- Geralmente, o processo de construção de uma simulação de fluidos segue estes passos:</p>
+
+<p>Criar os objetos e a cena;</p>
+
+<p>Definir o Domain da simulação, onde o fluído existe;</p>
+
+<p>Definir a função dos vários elementos da cena: obstáculos, etc.;</p>
+
+<p>Criar a origem do fluído e suas características;</p>
+
+<p>Bake: calcular a simulação;</p>
+
+<p>Rever e Bake final;</p>
+
+<p>Renderiza animação.</p>
+
+<p>3- Principais parâmetros de configuração:</p>
+
+<img src="img/img13/4fluídos6e8223ee.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>O painel Fluid define os limites da existência da simulação do fluído.</p>
+
+<p>A simulação pode ser visível em 3 modos: Final, Preview e Geometry. É possível escolher que modo pretende ver quando renderiza e que modo está visível na janela de 3D. Geralmente, quando renderiza pretende ver a simulação com a qualidade final e na janela de 3D é suficiente ver em qualidade Preview.</p>
+
+<p>A resolução é o principal atributo que define a qualidade (e tempo que demora!) da simulação. Pode definir uma resolução para o Final e para o Preview. </p>
+
+<p>Algumas da imagens foram retiradas de "Blender Fluids in 3 Minutes" de Daniel Kreuter, disponível em http://www.youtube.com/watch?v=mxG8KbJPNI4</p>
+
+<img src="img/img13/5fluídos2a0f0fc5.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>O modo Geometry mostra o líquido representado por uma caixa virtual com 6 lados que representa a extensão máxima do objeto.</p>
+
+<p>Time: o tempo de início e fim da simulação. O Start define o início do tempo (em segundos) da simulação na primeira frame, O End especifica o tempo (em segundos) da simulação na última frame.</p>
+
+<p>Se o Start estiver no 0 e o End no 4, se a primeira frame for a 1 e a última a 100, se estiver a trabalhar com 25 Frames Per Second, a sua simulação durará 4 segundos.</p>
+
+<p>Se definir o Start para 2 segundos, o conteúdo da primeira frame da simulação será igual ao que surgiria se a simulação já tivesse começado há 2 segundos. Se definir o Start para 2 (segundos) e o End para 5 (segundos) e a sua animação estiver configurada para durar 250 frames e 25 FPS, a animação que irá obter será equivalente a 3 segundos de simulação em 10 segundos de tempo. Ou seja, o líquido irá comportar-se como se estivesse a ser filmado em câmara lenta.</p>
+
+<img src="img/img13/6fluídos6d07ecb2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Reverse Frames: inverte a ordem das frames. Se já fez Bake e ativar esta opção, quando renderizar a animação o líquido “anda para trás”.</p>
+
+<p>Path: pasta onde irá armazenar os ficheiros de Bake (necessários para renderizar a animação). Estes ficheiros não são eliminados automaticamente mas não os apague antes de renderizar ou terá de voltar a fazer Bake.</p>
+
+<p>No painel <strong>Fluid World</strong> pode definir valores para a gravidade (terá de desbloquear estes valores no painel de Scene) se não quiser utilizar os valores que correspondem à gravidade do planeta Terra. </p>
+
+
+<p>Ainda neste painel, pode definir o tipo de viscosidade do liquido (existem alguns líquidos pré-definidos mas é possível definir valores personalizados) e a dimensão em metros do Domain (até um máximo de 10 metros).</p>
+
+<img src="img/img13/7fluídos6f7a4e9d.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img13/8fluídos50c83df.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>No painel <strong>Fluid Boundary</strong> pode definir o tipo de Slip: No Slip (o limite tem resistência, é “pegajoso”), Free Slip (o limite permite ao fluído mover-se livremente, sem resistência) e Partial Slip (mistura dos outros dois tipos e pode definir o Amount, sendo que 0 é igual a No Slip e 1 é igual a Free Slip). </p>
+
+<p>Neste painel pode ainda definir valores para Subdivisions (permite criar superfícies de líquido com alta resolução e é um valor necessário se quiser gerar partículas) e Smoothing (quantidade de Smooth a aplicar na face do fluído).</p>
+
+<img src="img/img13/9fluídos6f99d89e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>No painel Fluid Particles pode definir valores para:</p>
+
+<img src="img/img13/10fluídosmccc210a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Tracer particles: nº de partículas a inserir no início da simulação (para mostrar estas partículas tem de ter outro objeto do tipo Particle). Pense na espuma de uma onda.</p>
+
+<p>Generate Particles: nº de partículas do fluído (0 = desligado; 1= normal; >1 = mais). </p>
+
+<p><strong>Object Fluid:</strong> as partes deste objeto que estiverem dentro do Domain serão o fluído.</p>
+
+<p>Volume: funciona só quando a mesh é fechada, o interior do objeto é o fluído.</p>
+
+<p>Shell: funciona também quando o objeto é aberto, as faces são líquido.</p>
+
+<p>Both: funciona só quando a mesh é fechada, combina as anteriores.</p>
+
+<p>Initial Velocity: velocidade do fluído no início da simulação.</p>
+
+<p><strong>Object Obstacle:</strong> objeto será utilizado como obstáculo.</p>
+
+<p>Volume, Shell e Both:  ver objeto Fluid.</p>
+
+<p>No Slip, Free Slip e Partial Slip: ver acima  Domain Boundary.</p>
+
+<p><strong>Impact factor:</strong> impacto dos objetos animados (só se aplica a objetos em movimento) no fluído quando colidem.</p>
+
+<p><strong>Object Inflow:</strong> Objecto gera fluído (é uma “torneira”).</p>
+
+<p><strong>Object Outflow:</strong> Objecto absorve fluído (“ralo” da banheira).</p>
+
+<p><strong>Object Particle e Control</strong> serão abordados noutro tutorial.</p>
+
+      	<div class="page-header">
+				<h2>Quick Effect Operators</h2>
+      	</div>
+
+
+<p>Para facilitar a configuração básica de diversos efeitos (i.e. Smoke/Fumo, Fluid/Fluído, Explode/Explosão e Fur/Pêlo), foram criados Quick Effects Operators.</p>
+
+<p>a) Selecione o objeto que irá servir de fluído e clique na Barra de Espaços.</p>
+
+<p>b) Escreva Quick Fluid e clique no Enter.</p>
+
+<img src="img/img13/11fluídos522a4b13.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+		</div>
+		
+		
+				</div>
+		
+		
+
+ </div>
+
+     <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

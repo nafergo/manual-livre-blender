@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina">Iluminação no Cycles</h1>
+      	
+      	<div class="page-header">
+				<h2><small>Hard e Soft shadows com</small> Shadow Size</h2>
+      	</div>
+
+			<p>Alterar o Shadow Size nas lâmpadas modifica drasticamente o resultado da iluminação.</p>
+			<p>Soft Shadows podem criar um ambiente calmo ou proporcionar uma iluminação de um dia nublado. As Hard Shadows destacam
+			 detalhes ou imitam uma iluminação de um dia de sol forte.</p>
+
+     
+        	<h3>Spot</h3>
+
+<p>No exemplo abaixo só estamos a utilizar uma lâmpada Spot para iluminar a cena. Não é suficiente para construir uma sistema de iluminação eficiente mas permite ver a diferença provocada nas 
+sombras pela alteração do Size. A única diferença entre as duas imagens é o Size.</p>
+<p>No caso da Spot, o Spot Shape Size permite ainda definir a dimensão da região iluminada e o Blend permite definir a nitidez 
+da transição entre área iluminada e área sem iluminação.</p>	
+			
+			
+     <img src="img/lights_cycles/light_shadow_size1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+     <img src="img/lights_cycles/light_shadow_size2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+        	<h3>Sun</h3>
+			<p>
+			Com a lâmpada Sun é mais visível o impacto global na cena. Novamente, a única alteração é o Size mas a primeira imagem 
+			apresenta uma iluminação tipo "dia nublado" e a última é mais próxima da luz num dia limpo de verão.
+			</p>
+     <img src="img/lights_cycles/light_shadow_size3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+			<p>
+			
+			</p>
+     <img src="img/lights_cycles/light_shadow_size4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+			<p>
+			
+			</p>
+     <img src="img/lights_cycles/light_shadow_size5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+      	<div class="page-header">
+				<h2><small>Algumas utilidades de </small> iluminação com planos</h2>
+      	</div>
+
+			<p>
+			No Cycles, é possível (e comum!) utilizar um plano para iluminar a cena, como fonde de luz. Por pré-definição, a utilização 
+			do plano irá fazer com que a luz seja emitida nas duas direções. No entanto, a opção Backfacing do nó Geometry permite
+			 configurar esta funcionalidade. No exemplo abaixo, estamos a utilizar duas cores diferentes, o plano emite cores diferente 
+			 em cada um dos lados. Se quiser que o plano só emita de um lado, basta desligar um dos dois nós "Emission" que estão a 
+			 ser utilizados. 
+			</p>
+     <img src="img/lights_cycles/plane_light1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+			<p>
+			E pode "esconder" o plano (não é renderizado) desativando a opção de Camera no Ray Visibility. A iluminação que vez do plano
+			 contonua visível mas o plano não é renderizado. Esta opção é especialmente útil quando pretende simular luz de uma janela 
+			 exterior, por exemplo. Coloque um plano na janela a emitir luz para o interior e desative a opção Camera. A cena irá 
+			 surgir iluminada mas o plano que emite luz não será visível.
+			</p>
+     <img src="img/lights_cycles/plane_light2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina"><small>Uma</small> Ovelha nos carris <small>para experimentar mais algumas ferramentas</small></h1>
+      	
+
+<p>
+1. Comece por criar um objeto que vai servir de modelo para os carris. O nosso objeto foi modelado a partir de um cubo. 
+Atribua dois materiais para diferenciar a parte de madeira e os carris de metal.  
+</p>
+<img src="img/ovelha_carris/1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+2. Insira uma Bezier (Curve) e, em Edit Mode, manipule a mesma até ćonstruir um percurso similar ao da imagem abaixo. 
+</p>
+<img src="img/ovelha_carris/2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+3. Coloque a Origin do carril e da Bezier alinhados. No nosso caso, utilizámos o Snap (Shift+S) e Cursor to Center 
+para colocar o cursor no centro  da grelha. Depois, selecionámos cada um dos objetos e, novamente com Snap, Selection To Cursor. 
+</p>
+<p>
+Selecione cada um dos objetos (carril e Curve) e aplique a Rotation e a Scale (Ctrl+A).
+</p>
+<p>
+Selecione o carril e adicione um modifier Array com opção Fit Curve e escolha a Bezier Curve manipulada no passo anterior. 
+</p>
+<p>
+Adicione um novo modifier Curve e escolha a Bezier Curve manipulada no passo anterior.
+</p>
+<p>
+Deverá obter uma imagem similar à apresentada abaixo. Pode manipular a Curve para melhorar o aspeto e certifique-se que tem as Origin dos 
+dois objetos (carril e Curve) alinhadas.
+</p>
+<img src="img/ovelha_carris/3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+4. Posicione a câmara. Se precisar de mover/rodar o carril, selecione o carril e Curve e mova ambos. 
+</p>
+<img src="img/ovelha_carris/4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+5. Numa outra layer, adicione um cubo para criarmos o vagão. Em Edit Mode, faça Unwrap ao cubo. 
+</p>
+<img src="img/ovelha_carris/100.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/ovelha_carris/101.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+6. Insira uma imagem. No nosso caso, estamos a utilizar a mesma imagem 
+(disponível <a href="http://www.pinterest.com/pin/226657793721995298/" target="_blank">aqui</a>) para as 6 faces.  
+</p>
+
+<img src="img/ovelha_carris/102.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+7. Configure o material para a imagem ser visível. Se desejar, pode ainda adicionar a imagem do  
+<a href="http://www.pinterest.com/pin/226657793721995294/" target="_blank">normal map</a> e a do 
+<a href="http://www.pinterest.com/pin/226657793721995296/" target="_blank">specular map</a>.
+</p>
+<img src="img/ovelha_carris/103.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+8. Faça um Scale suave na face superior do cubo. No nosso caso, fizemos ainda um scale suave em X para o vagão ser mais comprido do 
+que largo.
+</p>
+<img src="img/ovelha_carris/104.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+9. Crie uma rodas, posicione as mesmas corretamente e crie um parentesco com o vagão (selecione as rodas e, em último, o vagão depois 
+clique em Ctrl+P).
+</p>
+<img src="img/ovelha_carris/105.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+10. Ative as layers onde tem o vagão e o carril. Posicione o vagão em cima do carril. 
+<img src="img/ovelha_carris/106.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>
+11. Adicione um cubo, redimensione de acordo com a imagem e subdivida-o. Depois, utilize a ferramenta Proportional Editing para 
+criar alguma irregularidade. Atribua um material.
+</p>
+<img src="img/ovelha_carris/200.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/ovelha_carris/201.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+12. Atente na imagem acima para ver a localização/direção do Sol. A nossa iluminação irá ser muito simples: uma luz Sun e Background.
+</p>
+<img src="img/ovelha_carris/204.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/ovelha_carris/202.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/ovelha_carris/203.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+13. Noutra layer, vamos criar a personagem. Adicione uma Suzanne e uma IcoSphere. Redimensione a IcoSphere criando uma forma 
+mais oval similar à imagem abaixo.
+</p>
+
+<img src="img/ovelha_carris/300.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+14. Adicione uma UVSphere e aparente esta à IcoSphere. A UVSphere é "child" e a IcoSphere é "parent". No painel Object 
+da IcoSphere, ative a duplicação para Verts. Deste modo, irá surgir uma UVSphere em cada vértice da IcoSphere. Alinhe as duas e 
+redimensione a seu gosto. 
+</p>
+
+<img src="img/ovelha_carris/301.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<img src="img/ovelha_carris/302.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+15. Alinhe a IcoSphere+UVSpheres com o vagão. Depois posicione a Suzanne. No nosso caso, foi utilizado um modifier Subdivision Surface e Shading Smooth 
+na Suzanne. Adicione materiais à Suzanne.
+</p>
+
+<img src="img/ovelha_carris/303.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+16. Adicione material à UVSphere.
+</p>
+
+<img src="img/ovelha_carris/305.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+17. Deverá obter algo similar à imagem abaixo.
+</p>
+
+<img src="img/ovelha_carris/304.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+18. Adicione uma UVSphere e posicione a mesma de acordo com as imagens abaixo.
+</p>
+
+<img src="img/ovelha_carris/500.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/ovelha_carris/504.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+19. Adicione um modifier Displace à UVSphere com uma textura de tipo Noise. 
+</p>
+
+<div class="row">
+
+   	<div class="col-xs-6">
+		<img src="img/ovelha_carris/501.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+		</div>
+
+		<div class="col-xs-6">
+		<img src="img/ovelha_carris/502.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+		</div>
+</div>
+<p>
+20. Na etapa de composição, adicionámos 2 efeitos: Sun Beams (azul) e Vignette (vermelho). Se precisar de mais informação sobre 
+estes efeitos, pode consultar os textos <a href="sun_beams.html">Sun Beams</a> e  <a href="11introducao_compositor.html">Introdução ao editor de nós</a>.
+</p>
+
+<p>
+Também foi adicionada Depth of Field: a câmara está focada na IcoSphere e foi utilizado um Radius Size de 0.1000. 
+Se precisar de mais informação sobre esta técnica, consulte o texto sobre a <a href="35camara.html">Câmara</a></p>
+<img src="img/ovelha_carris/503.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<img src="img/ovelha_carris/final.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+    
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

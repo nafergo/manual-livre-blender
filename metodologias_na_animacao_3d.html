@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+   	
+   	
+     <div class="row">
+			<h1 class="titulopagina">Metodologias na produção <small>de animação 3D</small></h1>
+					
+					<ul class="list-unstyled">
+  					<li><a href="#sugestoes">Sugestões para uma metodologia de trabalho</a></li>
+  					<li><a href="#sugestoesblender">Recomendações para produção de animação 3D</a></li>  					
+  					<li><a href="#workflows">Workflows em animação 3D</a></li>
+  					<li><a href="#organizacao">Organização de um projeto</a></li>  					
+  					<li><a href="#videos">Vídeos</a></li>
+  					<li><a href="#outromaterial">Material adicional recomendado</a></li>
+					</ul>				
+					</div>   	
+   	
+   	
+   	
+   	
+     <div class="row">					
+       <div class="locaisdasancoras"  id="sugestoes"><br><br></div> 								
+      <div class="page-header" id="online">
+        <a class="pull-right" href="#topo"><i class="fa fa-chevron-up"></i></a>
+        <h2>Sugestões para uma metodologia de trabalho <small>que não se aplicam apenas a projetos de animação</small></h2>
+                
+      </div>
+      
+
+      <h3>Faça pesquisa</h3>
+      <p>Pesquisar e conhecer trabalhos, autores, escolas, estúdios, correntes, etc. Conhecer a “cultura” e o “estado da arte” da área.</p>
+
+      <h3>Use um sketchbook</h3>
+      <p>Pequeno caderno para desenhar ou registar ideias e conceitos para projetos em curso ou futuros. Os desenhos podem ser só esboços e rabiscos, são sobretudo auxiliares de memória "visuais".</p>
+
+      <h3>Crie um scrapbook</h3>
+      <p>Pequeno caderno com recortes  e colagens de imagens e conceitos para referência ou inspiração em projectos em curso ou futuros.</p>
+
+      <h3>Crie mood boards</h3>
+      <p>Quadro com recolha de referências (i.e. imagens, textos, objectos) que estão relacionadas, influenciam ou inspiram o trabalho.</p>
+
+      <h3>Visite museus, festivais, exposições e galerias</h3>
+      <p>Visitar museus, festivais, exposições e galerias para experienciar ambientes repletos de criatividade, expandir horizontes, conhecer outros modos de ver e criar.</p>
+      <p>O meio digital veio ajudar, complementar mas não substituir. Visitem MESMO os espaços físicos.</p>
+      
+      <h3>Expanda competências</h3>
+      <p>Criar o hábito de explorar novas técnicas e novas ferramentas, descobrir e seguir tutoriais, ver e analisar timelapses, breakdowns ou making-of's..</p>
+
+      <h3>Estabeleça prazos e planeie</h3>
+      <p>Criar o hábito de estabelecer e cumprir prazos, seguir planos de trabalho. E explorar vias alternativas.</p>
+
+      <h3>Grave cedo e grave frequentemente (Save early, save often) + cópias de segurança</h3>
+      <p>Se trabalha com meios digitais já deve ter percebido que é importante criar o hábito de gravar cedo e frequentemente. Criar o hábito de fazer cópias de segurança.</p>
+
+     
+      
+   	</div>
+   	
+
+
+
+
+     <div class="row">					
+       <div class="locaisdasancoras"  id="sugestoesblender"><br><br></div> 								
+      <div class="page-header" id="online">
+        <a class="pull-right" href="#topo"><i class="fa fa-chevron-up"></i></a>
+        <h2>Recomendações para produção de animação 3D <small>com Blender e não só</small></h2>
+                
+      </div>
+      
+
+      <h3>Utilize Layers e Scenes</h3>
+      <p>Utilizar o sistema de Layers e Scenes para organizar o seu trabalho. Optimize a área de trabalho e o 
+      desempenho do sistema informático "escondendo" o que é desnecessário.</p> 
+      <p>Exemplo: não faz sentido 
+      estar a ver todas as árvores do parque que está a modelar se tiver a trabalhar no muro que envolve o parque... desative a layer onde 
+      armazenou as árvores.</p>
+
+      <h3>Link, Groups e caminhos relativos</h3>
+      <p>Utilizar a funcionalidade Link para evitar duplicados e manter os ficheiros com a dimensão reduzida. 
+      Paralelamente, permite trabalho em simultâneo e evita que alguns artistas tenham de esperar pela conclusão do trabalho de terceiros.</p>
+      <p>
+      Exemplo: pedro está a modelar um quarto e ana está a modelar a cama. Se a cama estiver "linkada" no ficheiro do quarto, pedro 
+      pode ir trabalhando e sempre que reabrir o ficheiro a cama vai ser atualizada para a versão mais recente.
+      
+      </p>
+
+      <h3>Grave muitas vezes e faça backups</h3>
+      <p>Criar o hábito de gravar cedo e frequentemente. Criar o hábito de fazer cópias de segurança.</p>
+
+      <h3>Pack into Blend file</h3>
+      <p>Opção para mover ficheiros entre computadores sem perder ficheiros dependentes (por exemplo, texturas). Depois 
+      de mover o ficheiro, é importante fazer "unpack" para criar as pastas originais e tornar o ficheiro mais leve (menos 
+      peso na memória do sistema).</p>
+
+      <h3>Manter produção limpa</h3>
+      <p>Não misture ficheiros temporários, abandonados ou backups com ficheiros de produção. Se não está a ser utilizado, remova o ficheiro das pastas de produção.</p>
+
+
+      <h3>Defina uma estrutura/hierarquia de pastas para todos os membros seguirem</h3>
+      <p>Criar uma organização de pastas para armazenar os ficheiros e definir que tipo de ficheiros é armazenado 
+      em cada pasta. Este passo é importante para manter os caminhos relativos entre ficheiros e funcionar sem 
+      problemas com o Pack into Blend file e com Links.</p>
+
+      <h3>Defina convenções para todos os membros seguirem</h3>
+      <p>Criar regras para o projeto (tipos de ficheiros, resolução, nomes dos ficheiros, etc.).</p>
+       <p>Algumas sugestões para nomes dos ficheiros: 
+       
+<ul>       
+       <li>nunca utilizar espaços em branco (mau exemplo: textura da casa.png),</li> 
+       <li>nunca utilizar maiúsculas (mau exemplo: Textura da Casa.png),</li> 
+       <li>nunca utilizar carateres especiais ou acentos (maus 
+       exemplos: textura_da_mobília.png, textura_da_caçarola.png, textura_da_casa#2.png)</li>
+       </ul>       
+       </p>
+
+      
+   	</div>
+
+
+
+   	
+     <div class="row">					
+       <div class="locaisdasancoras"  id="workflows"><br><br></div> 								
+      <div class="page-header" id="online">
+        <a class="pull-right" href="#topo"><i class="fa fa-chevron-up"></i></a>
+        <h2>Workflows em animação 3D</h2>
+                
+      </div>   	
+     
+      <p>Utilizamos <i>workflow</i> para designar o fluxo de trabalho ou a sequência de etapas. Na animação digital, o <i>workflow</i> é sustentado por uma infraestrutura tecnológica digital e implica um encadeamento de softwares (a <i>pipeline</i>).
+      </p>
+      
+      <p>
+       Geralmente, as etapas da produção de animação digital são agrupadas em três momentos principais, seguindo a organização comum da produção cinematográfica e audiovisual:
+<ol>
+<li>Pré-produção: Preparação/planeamento do projecto, escrita do guião, storyboard, equipa, calendário, orçamento, financiamento.</li>
+<li>Produção: Modelação, texturas, materiais, rigging, animação, iluminação, renderização.</li>
+<li>Pós-produção: Edição vídeo, edição banda sonora, efeitos sonoros, efeitos especiais.</li>
+</ol>      
+      </p>
+
+
+          
+      
+        <div class="col-xs-4">
+
+        <h3>Pixar: How we do it</h3>
+         <small>Página original já não está disponível mas pode ainda ser consultada <a href="https://web.archive.org/web/20110204092704/http://www.pixar.com/howwedoit/index.html" target="_blank">aqui</a> via <a href="https://archive.org/web/" target="_blank">Internet Archive</a>.</small>
+
+        <ul class="list-group">
+          <li class="list-group-item">A story idea is pitched</li>
+          <li class="list-group-item">The text treatment is written</li>
+          <li class="list-group-item">Storyboards are drawn</li>
+          <li class="list-group-item">Voice talent begins recording</li>
+          <li class="list-group-item">Editorial begins making reels</li>
+          <li class="list-group-item">The art department creates the look and feel</li>
+          <li class="list-group-item">Models are sculpted and articulated</li>
+          <li class="list-group-item">The sets are dressed</li>
+          <li class="list-group-item">The shots are laid out</li>
+          <li class="list-group-item">The shot is animated</li>
+          <li class="list-group-item">Sets and characters are shaded</li>
+          <li class="list-group-item">Lighting completes the look</li>
+          <li class="list-group-item">The computer data is "rendered"</li>
+          <li class="list-group-item">Final touches are added</li>
+         </ul>
+
+        </div><!-- /.col-sm-4 -->   	   	
+
+        <div class="col-xs-4">
+
+        <h3>Blue Sky Studios: How do we work?</h3>
+         <small>Página original já não está disponível mas pode ainda ser consultada <a href="https://web.archive.org/web/20110412013022/http://www.blueskystudios.com/content/process.php" target="_blank">aqui</a> via <a href="https://archive.org/web/" target="_blank">Internet Archive</a>.</small>
+        <ul class="list-group">
+          <li class="list-group-item">Story</li>
+          <li class="list-group-item">Art</li>
+          <li class="list-group-item">Modeling</li>
+          <li class="list-group-item">Rigging</li>
+          <li class="list-group-item">Materials</li>
+          <li class="list-group-item">Layout</li>
+          <li class="list-group-item">Animation</li>
+          <li class="list-group-item">Lighting</li>
+          <li class="list-group-item">Effects</li>
+          <li class="list-group-item">Rendering</li>
+          <li class="list-group-item">Paint</li>
+          <li class="list-group-item">Editorial</li>
+          <li class="list-group-item">R&D</li>
+          <li class="list-group-item">Systems</li>
+
+         </ul>
+
+        </div><!-- /.col-sm-4 -->   	   	
+
+
+
+        <div class="col-xs-12">
+                <h3>Esquema de etapas 1</h3>
+         <small>Beane, A. (2012). 3D Animation Essentials. Indianapolis: Sybex.</small>                
+                		
+         <img src="img/introducao/metodologia/beane.jpg" class="img-rounded img-responsive" alt="">
+         </div>
+        <div class="col-xs-12">
+                <h3>Esquema de etapas 2</h3>
+          <img src="img/introducao/metodologia/metodologia.png" class="img-rounded img-responsive" alt="">
+         </div>
+
+		</div>
+
+
+
+
+
+
+     <div class="row">					
+       <div class="locaisdasancoras"  id="organizacao"><br><br></div> 								
+      <div class="page-header" id="online">
+        <a class="pull-right" href="#topo"><i class="fa fa-chevron-up"></i></a>
+        <h2>Organização de um projeto</h2>
+                
+      </div>
+      
+      <p>
+      Organizar um projeto de animação 3D não é uma tarefa trivial e tem uma importância fundamental. 
+      Uma boa organização é um requisito importante para qualquer projeto na área e 
+      é absolutamente imprescindível caso o projeto que envolva vários artistas. Gostaríamos de destacar aqui dois aspetos: 
+      estrutura das pastas e convenções.
+      
+      </p>  
+      
+      <h3>Estrutura das pastas de um projecto</h3> 
+ 		<p>Geralmente, um projeto nesta área envolve um enorme número de ficheiros de diversos tipos. Sem uma boa organização, é relativamente fácil 
+ 		perder imenso tempo a localizar recursos e destruir a <i>linkagem</i> entre ficheiros.</p>
+ 		
+ 		<h4>Pastas com hierarquia</h4>
+ 		<p>A imagem abaixo apresenta a estrutura de pastas utilizada nas curtas-metragens produzidas pela Blender Foundation e constitui um bom 
+ 		ponto de partida para uma organização simples e eficiente. As setas indicam a <i>linkagem</i> entre ficheiros.
+ 		
+ 		</p>
+ 		
+ 		<p class="text-center"><img src="img/introducao/metodologia/Peach_svn_production_dir.png" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem de Campbell Barton retirada da <a href="http://wiki.blender.org/index.php/File:Peach_svn_production_dir" target="_blank">Blender Wiki</a></small>
+</p>
+
+
+
+
+ 		<dl>
+ 		<p><small>O texto que se segue foi adaptado do disponível na <a href="http://wiki.blender.org/index.php/Org:Institute/Open_projects/Peach/Dir_structure" target="_blank">Blender Wiki</a></small></p>
+<dt>scenes</dt>
+
+<dd>
+Cada <i>scene</i> (cena) é uma pasta com <i>shots</i> (planos) que são os ficheiros blend. Estes ficheiros blend contêm a animação (da câmara, characters/personagens e props/adereços), iluminação e composição. É a partir destes ficheiros que se renderiza.Estes ficheiros blend <i>linkam</i> para os ficheiros nas pastas /sets, /chars, /props (só se precisarem de ser animados, caso não necessitem já devem estar no ficheiro da pasta /sets) e /envs (só se precisarem de ser animados, caso não necessitem já devem estar no ficheiro da pasta /sets). Esta pasta não tem subpasta de texturas, não precisa. O conteúdo dos ficheiros blend aqui armazenados vem de ficheiros (está <i>linkado</i>) armazenados noutras pastas.
+
+<h5>Exemplos:</h5>
+<p>/production/scenes/SceneNumber_SceneName/ShotNumber.blend</p>
+<p>/production/scenes/01_intro/01.blend</p>
+<p>/production/scenes/01_intro/02.blend</p>
+<p>/production/scenes/02_rabbit/01.blend</p>
+
+</dd>
+
+
+<dt>sets</dt>
+
+<dd>
+Cada <i>set</i> (cenário) é um ficheiro blend com um nome descritivo e pode ser utilizados em múltiplas <i>shots</i> (planos). Os ficheiros blend contêm paisagens (<i>landscapes</i>) e <i>linkam</i> para os ficheiros nas pastas /mattes (imagens ou objetos nos ficheiros blend) e /envs (por exemplo: árvores, rochas, etc.).  Esta pasta não tem subpasta de texturas, não precisa. O conteúdo dos ficheiros blend aqui armazenados vem de ficheiros (está <i>linkado</i>) armazenados noutras pastas.
+
+<h5>Exemplos:</h5>
+<p>/production/sets/rabbit_house.blend</p>
+<p>/production/sets/rabbit_house.blend</p>
+</dd>
+
+
+<dt>props</dt>
+
+<dd>
+Esta pasta armazena os <i>props</i> (adereços) que serão animados. Os ficheiros blend contêm modelos (em groups) 
+e <i>linkam</i> para recursos (imagens) na subpasta /textures. A pasta /textures pode ter uma subpasta /resources para 
+quando as texturas são criadas a partir de diferentes fontes (outras imagens, brushes). No entanto, esta pasta não deve ser utilizada para armazenar 
+recursos que talvez sejam úteis (só armazena o realmente utilizado!) ou material de referência e inspiração.
+
+<h5>Exemplos:</h5>
+<p>/production/props/apple.blend</p>
+<p>/production/props/walnut.blend</p>
+
+</dd>
+
+
+<dt>envs</dt>
+
+<dd>
+Pasta similar à pasta <i>props</i>. Onde são armazenados os modelos estáticos que podem ser usados nos <i>sets</i> (cenários). Os ficheiros blend contêm modelos (em groups) e <i>linkam</i> para recursos (imagens) na subpasta /textures. 
+A pasta /textures pode ter uma subpasta /resources para 
+quando as texturas são criadas a partir de diferentes fontes (outras imagens, brushes). No entanto, esta pasta não deve ser utilizada para armazenar 
+recursos que talvez sejam úteis (só armazena o realmente utilizado!) ou material de referência e inspiração.
+
+
+<h5>Exemplos:</h5>
+<p>/production/envs/tree_oak_01.blend</p>
+<p>/production/envs/tree_pine_03.blend</p>
+
+</dd>
+
+
+<dt>chars</dt>
+
+<dd>
+Pasta similar à pasta <i>props</i>. Onde são armazenados os modelos com rig. Os ficheiros blend contêm modelos (em groups) e <i>linkam</i> para recursos (imagens) na subpasta /textures. 
+A pasta /textures pode ter uma subpasta /resources para 
+quando as texturas são criadas a partir de diferentes fontes (outras imagens, brushes). No entanto, esta pasta não deve ser utilizada para armazenar 
+recursos que talvez sejam úteis (só armazena o realmente utilizado!) ou material de referência e inspiração.
+
+
+<h5>Exemplos:</h5>
+<p>/production/chars/rabbit.blend</p>
+<p>/production/chars/chinchilla.blend</p>
+
+</dd>
+
+
+<dt>mattes</dt>
+
+<dd>
+Pasta onde são guardados os <i>matte paintings</i> (fundos). Os fundos podem ser imagens ou estar guardados em ficheiros blend. Neste último caso, as texturas já estão mapeadas a um objeto (por exemplo: uma meia-esfera (<i>sky-dome</i>) com a textura do fundo aplicada). 
+A pasta /textures pode ter uma subpasta /resources para 
+quando as texturas são criadas a partir de diferentes fontes (outras imagens, brushes). No entanto, esta pasta não deve ser utilizada para armazenar 
+recursos que talvez sejam úteis (só armazena o realmente utilizado!) ou material de referência e inspiração.
+
+
+<h5>Exemplos:</h5>
+<p>/production/mattes/skydome_afternoon.png</p>
+<p>/production/mattes/forest_interior.blend</p>
+</dd>
+ 		
+ 		</dl>
+
+ 		
+ 		<h4>Caminhos (paths) relativos</h4>
+ 		<p>
+ 		Utilizar uma estrutura similar à apresentada acima implica usar o sistema de <i>linkagem</i> do Blender. Para que funcione corretamente, é extremamente importante ser 
+ 		rigoroso na utilização das pastas e utilizar sempre caminhos (paths) relativos.
+ 		</p>
+
+ 		
+
+
+      <h3>Convenções</h3>
+      <p>
+      A utilização de convenções, regras partilhadas por todos os artistas que participam, é outra preocupação que deve existir desde o início. Num projeto de grupo, o ideal é estabelecer, 
+      logo no início, uma lista com um conjunto de regras e procedimentos que todos devem respeitar. Eis alguns exemplos:
+      </p>
+      
+      <dl>
+      <dt>Nomes dos ficheiros</dt>
+      
+      <dd>Não utilizar maiúsculas ou espaços em branco (ex: madeira_cena23). Nas imagens, utilizar nomes de forma consistente e, caso necessário,
+       sufixos (i.e. col, bump, spec, nor, alpha, emit, disp). Imagens com o nome walnut_spec.png e walnut_bump.png pertencem ao mesmo grupo, são o <i>specular map</i> e o 
+       <i>bump map</i> da textura de imagem walnut.png
+
+      
+      </dd>
+      
+      <dt>Tipos e formatos de ficheiros</dt>
+      <dd>Defina os tipos de ficheiros que vai utilizar no projeto.
+      </dd>
+      
+      <dt>Configurações</dt>
+      <dd>Estabeleça desde o início algumas configurações/settings. Exemplos: renders estáticos de teste devem ser PNG com resolução de 1920x1080; testes de 
+      animação devem ser MP4 com resolução 720p, etc.
+      </dd>
+
+      <dt>Weeklies (semanários)</dt>
+      <dd>Estabeleça um horário/dia semanal para fazer ponto de situação (trabalho realizado por cada um, dificuldades, etc.) do projeto.
+      </dd>
+      
+      </dl>
+
+
+
+
+    </div>
+
+
+
+
+
+
+     <div class="row">					
+       <div class="locaisdasancoras"  id="videos"><br><br></div> 								
+      <div class="page-header" id="online">
+        <a class="pull-right" href="#topo"><i class="fa fa-chevron-up"></i></a>
+        <h2>Vídeos</h2>
+                
+      </div>  
+
+
+     <div class="row">
+			   	<div class="col-xs-6 col-xs-offset-3">
+			   	<h4>Open Tube - Making of a Blender open movie.</h4>
+			<div class="well embed-responsive embed-responsive-16by9">
+			<iframe width="640" height="360" src="http://www.youtube.com/embed/C_OvOlzs6JY?rel=0" frameborder="0" allowfullscreen></iframe>
+			</div>	   	
+			   	</div>
+			   	</div>
+
+
+     <div class="row">
+			   	<div class="col-xs-6 col-xs-offset-3">
+			   	<h4>Big Buck Bunny <small>Animatic, Blocked animation, Blender View, Final</small></h4>
+			<div class="well embed-responsive embed-responsive-16by9">
+			<iframe width="640" height="360" src="http://www.youtube.com/embed/on21u4BsuK0?rel=0" frameborder="0" allowfullscreen></iframe>
+			</div>	   	
+			   	</div>
+			   	</div>
+			   	
+			   	
+     <div class="row">
+			   	<div class="col-xs-6 col-xs-offset-3">
+			   	<h4>Sintel <small>making of/documentary</small></h4>
+			<div class="well embed-responsive embed-responsive-16by9">
+			<iframe width="640" height="360" src="http://www.youtube.com/embed/IN6w6GnN-Ic?rel=0" frameborder="0" allowfullscreen></iframe>
+			</div>	   	
+			   	</div>
+			   	</div>
+			   	
+			   	
+     <div class="row">
+			   	<div class="col-xs-6 col-xs-offset-3">
+			   	<h4>Throw it in the Canal <small>the making of Tears of Steel</small></h4>
+			<div class="well embed-responsive embed-responsive-16by9">
+			<iframe width="640" height="360" src="http://www.youtube.com/embed/zB2ngfwljtk?rel=0" frameborder="0" allowfullscreen></iframe>
+			</div>	   	
+			   	</div>
+			   	</div>			   				   	      
+
+
+
+
+    </div>
+
+
+     <div class="row">					
+       <div class="locaisdasancoras"  id="outromaterial"><br><br></div> 								
+      <div class="page-header" id="online">
+        <a class="pull-right" href="#topo"><i class="fa fa-chevron-up"></i></a>
+        <h2>Material adicional recomendado</h2>
+                
+      </div>  
+
+	
+<p>      	
+<a href="http://cgi.tutsplus.com/articles/step-by-step-how-to-make-an-animated-movie--cg-3257" target="_blank">Step-by-Step : How to Make an Animated Movie</a>
+</p>
+
+</div>
+
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

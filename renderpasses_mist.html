@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina"><small>Render Pass</small> Mist <small>para criar efeito de nevoeiro</small></h1>
+
+
+<p>A Render Pass Mist (nevoeiro) existe tanto em Blender Internal Render como em Cycles. Neste texto, utilizamos o Cycles mas as configurações 
+não são muito diferentes e criar um efeito similar no BIR não deverá suscitar grande dificuldade</p>
+
+<p>
+O Mist cria uma espécie de "máscara" (escala de cinzentos) com valores entre 0.0 e 1.0. Preto significa sem efeito Mist e
+ Branco significa Mist/nevoeiro total.  
+</p>
+
+
+
+<p>
+1. Crie uma cena com alguma profundidade para perceber melhor o efeito.</p> 
+<p>No nosso caso, utilizámos um plano com algumas 
+"montanhas" (criadas com Proportional Edit) e depois dois Modifiers Array com Value de 4. Inserimos ainda duas Suzannes com cores 
+diferentes e uma lâmpada Sun.
+</p>
+<img src="img/renderpasses/mist1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+2. No painel Render Layers, ative Mist nas Passes. 
+</p>
+<img src="img/renderpasses/mist2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+3. Agora, no painel World pode configurar o Start (distância a que começa o Mist, medida a partir da câmara) e o Depth (onde o Mist atinge 
+valor 1.0, deste ponto em diante existe nevoeiro total).
+</p>
+<img src="img/renderpasses/mist3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+4. Nas opções da câmara, ative a opção Mist para poder visualizar no 3D View o Start e o Depth. 
+</p>
+<img src="img/renderpasses/mist4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+5. No Node Editor, modo Compositing, crie uma configuração de nós similar à apresentada em baixo. Com esta configuração vamos 
+misturar (Color > Mix) a imagem renderizada com a cor azul (ou outra cor qualquer) e controlar a mistura com o nó Map Value (Vector).
+</p>
+<p>
+Na realidade, pode ligar diretamente o Mist ao Fac do Mix (tal como na imagem abaixo) mas é preferível utilizar o Map Value para 
+poder ter mais controle sobre o efeito.
+</p>
+
+<p>
+<ul>
+Map Value
+<li>offset: permite deslocar o nevoeiro no espaço</li> 
+<li>size: permite controlar intensidade do nevoeiro</li>
+<li>Use Minimum: introduz um valor mínimo de nevoeiro para toda a imagem (por pré-definição é 0.0)</li>
+<li>Use Maximum: introduz um limite máximo ao valor de nevoeiro (pro pré-definição é 1.0)</li>
+</ul>
+</p>
+
+<img src="img/renderpasses/mist5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+Imagem renderizada no Node Editor (através do nó Output > Viewer)
+</p>
+<img src="img/renderpasses/mist8.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+Resultado do Mist (através do nó Output > Viewer)
+</p>
+<img src="img/renderpasses/mist6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+Imagem renderizada misturada com azul tendo em conta o Mist (através do nó Output > Viewer). 
+</p>
+<img src="img/renderpasses/mist7.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+Com Offset = -0.2, repare que a Suzanne fica visível e o nevoeiro é empurrado.
+</p>
+
+<img src="img/renderpasses/mist9.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+Com Offset = 0.9, o nevoeiro é puxado na direção da câmara.
+</p>
+<img src="img/renderpasses/mist10.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+Com Size 0.7, o nevoeiro perde intensidade e a Suzanne vermelha fica visível.
+</p>
+<img src="img/renderpasses/mist11.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+Com Size 5.5, o nevoeiro fica mais intenso.
+</p>
+<img src="img/renderpasses/mist12.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+Nevoeiro tem valor mínimo 0.3 e vai até ao 1.0
+</p>
+<img src="img/renderpasses/mist13.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+Máximo é 0.8 (repare que se sobrepõe ao 1.0 do Size)
+</p>
+<img src="img/renderpasses/mist14.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+Pode combinar as várias opções reduzindo/aumentando a distância entre 0.0 e 1.0 ou manipular os valores 0.0 e 1.0.
+</p>
+
+
+
+		</div>
+		
+		
+		
+		</div>
+		
+		
+
+ </div>
+
+   <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

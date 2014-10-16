@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina"><small>Modelar uma</small> Nave</h1>
+
+
+<p>1- Comece uma nova cena no Blender. Partindo do cubo inicial, construa com extrusão uma forma semelhante à apresentada abaixo.  </p>
+
+<p>Posicione-se com visão de topo. Em Edit Mode, seleccione uma face de um dos lados e aplique uma extrusão (E) bloqueada ao eixo X (X) com valor 1. Seleccione a face oposta e repita o processo aplicando um valor de -1.</p>
+
+<p>Seleccione a face da fente do cubo e aplique uma extrusão (E) bloqueada ao eixo Y (Y) com valor 2 (ou -2, depende do lado que seleccionou...). Repita o processo.</p>
+
+<img src="img/img3/1_ nave_html_m3c486544.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2- Passe para visão lateral (NUMPAD 3). Reduza a dimensão da face (S) que vai constituir o “nariz” da nave.</p>
+
+<img src="img/img3/2_ nave_html_m6532fbde.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Passe para visão de topo (NUMPAD 7), active a visão Wireframe e aplique duas extrusões às faces que constituem a traseira da nave. No exemplo, foi utilizada, por duas vezes, a extrusão (E) em Y (Y) com valor -2.</p>
+		
+<img src="img/img3/3_ nave_html_m758845fe.png" alt="..." class="img-responsive img-thumbnail center-block">		
+
+<p>4- Seleccione as faces de topo na secções lateriais e aplique uma extrusão em Z. No exemplo, foi utilizado o valor 0.2.</p>
+
+<img src="img/img3/4_ nave_html_885f03b.png" alt="..." class="img-responsive img-thumbnail center-block">		
+
+<p>5- Construa as asas seleccionando 2 faces e aplicando 2 extrusões em X com valor 2 (e -2 do outro lado).</p>
+
+<img src="img/img3/5_ nave_html_m11538d5c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>6- Assegure-se que está em visão de topo (NUMPAD 7), ortogonal, Wireframe, selecção por vértices e em Edit Mode. Seleccione os vértices indicados e desloque-os para obter um efeito semelhante ao da imagem. No exemplo, os vértices foram deslocados no eixo Y.</p>
+		
+<img src="img/img3/6_ nave_html_23f94010.png" alt="..." class="img-responsive img-thumbnail center-block">		
+		
+<p>7- Seleccione os vértices indicados e desloque-os para obter um efeito semelhante ao da imagem. No exemplo, os vértices foram deslocados no eixo Y.</p>		
+		
+<img src="img/img3/7_ nave_html_17df3d90.png" alt="..." class="img-responsive img-thumbnail center-block">		
+
+<p>8- Ainda com os mesmos vértices seleccionados, passe para visão frontal (NUMPAD 1) e desloque os mesmos para obter um efeito semelhante ao da imagem. No exemplo, os vértices foram deslocados no eixo Z.</p>		
+		
+<img src="img/img3/8_ nave_html_meccf80e.png" alt="..." class="img-responsive img-thumbnail center-block">		
+
+<p>9- Com as faces indicadas na imagem abaixo, aplique uma extrusão em Z. No exemplo foi utilizado o valor 0.3.</p>
+
+<img src="img/img3/9_ nave_html_m62684f72.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>10- Seleccione os vértices indicados e desloque-os em Z, criando um efeito semelhante ao da imagem. No exemplo, os vértices traseiros das 2 caixas novas foram também deslocados (para baixo) de forma a obter maior inclinação.</p>
+
+<img src="img/img3/10_ nave_html_m3840730a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>11- Seleccione as faces indicadas na imagem e active como Pivot a opção Individual Origins.</p>
+
+<img src="img/img3/11_ nave_html_mc72fe17.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>12- Aplique uma extrusão (E) mas clique imediatamente no BER (Botão Esquerdo do Rato) para confirmar a operação. Não altere a localização das novas faces!!! As faces criadas com a extrusão deverão ficar sobrepostas às faces que já existiam. </p>
+
+<p>As faces seleccionadas são as que foram criadas com a extrusão mas não consegue ver nenhuma diferença porque estas novas faces encontram-se totalmente sobrepostas às faces originais.</p>
+
+<p>Clique em S e digite 0.5 para que as novas faces sejam redimensionadas para 50% do seu tamanho. Deverá obter um efeito semelhante ao da imagem.</p>	
+		
+<img src="img/img3/12_ nave_html_5fba03c2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>13- Ainda com as faces seleccionadas, aplique novamente uma extrusão mas desloque do modo a criar uma abertura. No nosso exemplo, deslocámos as novas faces no eixo Y. Desloque ligeiramente de modo a criar uma abertura visível.</p>
+
+<img src="img/img3/13_ nave_html_135e9226.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>14- Utilizando a extrusão (E) e o redimensionamento (S), crie uma cauda similar à apresentada. No exemplo, foram utilizadas 2 extrusões, redimensionar (S) em X e deslocar (G) em Z e em Y.</p>
+
+<img src="img/img3/14_ nave_html_b1b6031.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img3/15_ nave_html_3ac8b0d0.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>15- Seleccione as duas faces indicadas e aplique uma extrusão em Z. No exemplo, foi utilizado um valor de 0.5</p>
+
+<img src="img/img3/16_ nave_html_m4e24ea7a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>16- Clique na ferramenta Loop Cut and Slide e desloque o rato até obter um “loop” na posição indicada na imagem. Pressione uma vez o BER para criar um novo “loop”.</p>
+
+<img src="img/img3/17_ nave_html_103439f2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>17- Por pré-definição, o “loop” é colocado no centro das faces. Desloque o rato de forma a trazer o “loop” para a dianteira, mais próximo do nariz, e clique novamente com o BER.</p>
+
+<img src="img/img3/18_ nave_html_m1514f573.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>18- Seleccione as 3 arestas indicadas na imagem (a traseira e as duas dianteiras mais próximas) e redimensione de forma a estreitá-las. No nosso exemplo, redimensionámos apenas no eixo X.</p>
+
+<img src="img/img3/19_ nave_html_m55bdbf8c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>19- Desloque em Z (e Y, se desejar...) as arestas centrais até obter uma forma semelhante à da imagem abaixo.</p>
+
+<img src="img/img3/20_ nave_html_74b2c864.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>20- Seleccione as duas arestas identificadas à esquerda e desloque-as para cima até obter efeito similar ao da imagem da direita.</p>
+
+<img src="img/img3/21_ nave_html_51212570.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img3/22_ nave_html_51212570.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>21- Seleccione as quatro arestas identificadas à esquerda e, redimensionando-as (no nosso caso, em X), estreite as faces até obter efeito similar ao da imagem da direita.</p>
+
+<img src="img/img3/23_ nave_html_m1ff83bc1.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img3/24_ nave_html_m7ec1e1a0.png" alt="..." class="img-responsive img-thumbnail center-block">	
+
+<p>22- Passe para posição de topo (NUMPAD 7), em Object Mode e coloque novamente o Pivot no Median Point (opção pré-definida). Coloque o 3D Cursor ao lado da sua nave para poder depois adicionar um novo objecto sem que este fique sobreposto com a nave.</p>
+
+<img src="img/img3/25_ nave_html_m373d7138.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>23- Adicione um círculo. Em Edit Mode, elimine todos os vértices menos 2.</p>
+
+<img src="img/img3/26_ nave_html_7596731e.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img3/27_ nave_html_m77d5d7df.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>24- Seleccione o vértices mais à esquerda e faça uma extrusão (E) de um vértice. Repita o processo até obter uma forma similar à da imagem. No final, assegure-se que os dois vértices das extremidades estão alinhados. Active o painel de propriedades (N), seleccione cada um dos vértices e verifique os valores X,Y e Z. Deverão ter o mesmo valor em X.</p>
+	
+<p>Posicione o 3D Cursor ligeiramente à direita dos vértices das extremidades, ligeiramente desalinhado.</p>
+
+<img src="img/img3/28_ nave_html_m32b7eff2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>25- Passe para visão frontal (NUMPAD 1). Certifique-se que o 3D Cursor está ligeiramente à direita do(s) vértices que estiverem mais à direita. Mude o Pivot para 3D Cursor.</p>
+
+<p>Seleccione todos os vértices (A) e clique no botão Spin. Introduza 15 steps (pode introduzir mais) e 360 graus para a rotação ser completa.</p>
+
+<img src="img/img3/29_ nave_html_693a81fd.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>26- Reponha o Pivot no Median Point. Mude para Object Mode e modifique a dimensão do objecto criado para que este sirva de motor da nave. Duplique o objecto (SHIFT+D), seleccione os dois objectos e posicione-os.</p>
+
+<img src="img/img3/30_ nave_html_6b1d8a1a.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>27- Seleccione os 2 motores e, depois, a nave. Ou seja, seleccione os 3 objectos mas é importante que a nave seja o último objecto seleccionado. Clique em CTRL+P para criar uma relação de parentesco (child-parent) entre os objectos. Agora, os motores são “filhos” (childs) e a nave é o “pai” (parent). Se mover o objecto nave, os “filhos”-motores acompanham, estão presos. Se mover um dos “filhos”-motor, o “pai”-nave não acompanha. Os filhos acompanham/seguem o pai. Se quiser eliminar a relação de parentesco, seleccione o filho e clique em ALT-P para desfazer a relação.</p>
+
+<img src="img/img3/31_ nave_html_3452ac6e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>28- Faça os ajustes que considerar importantes para melhorar o aspecto da nave (exemplo: alongar o nariz, abrir a traseira da nave, melhorar asas, adicionar armas, etc.)</p>
+
+<img src="img/img3/32_ nave_html_mf7c67e3.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+		
+		
+		</div>
+		
+		
+		
+		
+
+ </div>
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+</body>
+</html>

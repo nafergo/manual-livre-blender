@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Textos</h1>
+
+
+      	<div class="page-header">
+				<h2>Utilizar texto no Blender</h2>
+      	</div>
+
+<p>Ao adicionar um objeto de texto no Blender (SHIFT+A) é automaticamente inserido um objeto com o texto “Text”. Para editar o texto, escrever novas palavras ou apagar, passe para Edit Mode e utilize o teclado normalmente.</p>
+
+<p>Em Object Mode, o texto funciona de forma muito similar aos restantes objetos, pode mover, rodar, redimensionar, inserir keyframes, aplicar materiais, etc.. </p>
+
+<p>Em Edit Mode, em vez de vértices, arestas e faces, tem um processador de texto, é o modo de escrita. Neste modo, quando estiver a escrever o seu texto, é ativada uma caixa de escrita na barra Tools onde pode utilizar várias opções de atalho comuns (copiar, colar, cortar; Home/End; selecionar blocos de texto com o SHIFT, etc.)</p>
+
+<p>Se desejar editar  vértices, arestas e faces dos caracteres tem primeiro de converter o objeto para Curve ou Mesh, selecionando em Object Mode e clicando em ALT+C. Claro está que depois de converter o texto para Curve ou Mesh já não consegue escrever/apagar caracteres em Edit Mode. Depois da conversão, em Edit Mode, tem acesso aos vértices/arestas/faces.</p>
+
+<p>Os caracteres especiais e acentos estão disponíveis via menu Text ou através da ativação do Accent Mode.</p>
+
+<p>Alguns caracteres especiais estão disponíveis através de atalhos. Caso necessite, recomenda-se a consulta da seguinte página:</p>
+
+<p> http://wiki.blender.org/index.php/Doc:2.6/Manual/Modeling/Texts</p>
+
+<img src="img/img12/1texto5d1ea0ac.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Quando seleciona um objeto de texto no Blender, surge um novo painel com propriedades específicas. Vejamos algumas das possibilidades...</p>
+
+<p>O primeiro menu permite aceder aos diferentes datablocks de texto existentes. Por exemplo, se tiver dois objetos de texto (“texto 1” e “texto 2”), selecionar o “texto 2“ e neste menu escolher o “texto 1”, passa a ter dois objetos de texto iguais e ligados (se modificar no “texto 1”, as modificações aplicam-se aos dois objetos porque partilham o mesmo datablock).</p>
+
+<img src="img/img12/2texto6dce8bcb.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h3>Nas opções de Shape, pode...</h3>
+
+<p>a) Definir a resolução da forma na janela 3D View (Preview) e durante o Render;</p>
+
+<p>b) Preencher a frente e a traseira (só tem as duas se o texto tiver tridimensionalidade), se estiverem desativadas só tem a “outline” dos caracteres;</p>
+
+<h3>Nas opções de Geometry, pode...</h3>
+
+<p>a) Modificar o Offset da geometria dos caracteres;</p>
+
+<p>b) Definir Extrude (dar volume tridimensional);</p>
+
+<p>c) Definir a resolução e amplitude do Bevel (chanfro).</p>
+
+<h3>Nas opções de Font, pode...</h3>
+
+<p>a) Carregar/apagar tipos de fonte e aceder à lista de fontes existentes;</p>
+
+<p>b) Alterar a dimensão da fonte (Size) e o ângulo/inclinação (Shear);</p>
+
+<p>c) Utilizar uma curva (ver explicação nas páginas seguintes);</p>
+
+<p>d) Ativar e configurar o Bold, Italic, Underline e Small Caps;</p>
+
+<p>e) Configurar o Underline (posição/Position e grossura/Thickness) e Small Caps (escala);</p>
+
+<h3>Nas opções de Paragraph, pode...</h3>
+
+<p>a) Escolher o tipo de alinhamento do parágrafo;</p>
+
+<p>[A diferença entre Justify e Flush: Justify alinha o texto à esquerda e direita da caixa de texto; Flush alinha o texto à esquerda e direita da caixa mas com o mesmo espaçamento entre caracteres]</p>
+
+<p>b) Definir o espaçamento entre caracteres, palavras e linhas;</p>
+
+<p>c) Modificar a posição do texto em X e Y relativamente ao Origin do objeto;</p>
+
+<p>d) Criar e configurar caixas de texto (ver explicação nas páginas seguintes).</p>
+
+<img src="img/img12/3texto1c761834.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h3>Caixas de Texto (Text Boxes)</h3>
+
+<p>As caixas de texto permitem que um objeto de texto possa ser dividido em blocos e estes possam ser organizados no espaço. Sempre que introduz um texto é automaticamente criada uma Text Box e, no exemplo abaixo, criámos uma segunda caixa (botão Add Textbox). O texto utilizado é parte do poema “O Maltês” de Manuel da Fonseca. </p>
+
+<p>As caixas de texto só são visíveis em Edit Mode, estão identificadas com um tracejado. Em cada caixa, pode configurar a dimensão altura/largura e posicionamento X/Y. No exemplo abaixo, a primeira caixa tem apenas uma altura de 2.000, portanto o texto que não cabe é automaticamente associado à segunda caixa. A segunda caixa foi distanciada em Y (-3.000) de modo a criar um espaçamento entre as caixas.</p>
+
+<img src="img/img12/4texto7dc29.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Na segunda imagem, utilizámos as mesmas caixas de texto mas modificámos o posicionamento da segunda para criar duas colunas.</p>
+
+<p>Se aumentássemos a altura da primeira caixa, mais linhas de texto seriam transferidas da segunda coluna para primeira coluna.</p>
+
+<img src="img/img12/5texto3f84da67.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Na imagem abaixo, dividimos o texto por 4 caixas de texto. Não é muito legível mas demonstra a utilidade e possibilidades das caixas de texto.</p>
+
+<img src="img/img12/6texto4c3fa02b.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h3>Texto numa Curva </h3>
+
+<p>1- Em visão de topo, insira uma linha de texto e uma Curve (por exemplo: uma Bezier ou um Path). Manipule os vértices da Curve a seu gosto. </p>
+
+<p>2- Selecione o objeto de texto e, no respetivo painel de configurações, introduza o nome do objeto Curve na caixa “Text on Curve” (se clicar no ícone, surge um menu com as várias Curves existentes na cena para poder escolher). Experimente as diferentes formas de alinhamento, no caso abaixo utilizámos o Flush. </p>
+
+<p>AVISO: atenção aos eixos locais dos objetos! Se rodar o texto no eixo X (como no exemplo abaixo), não se esqueça de também rodar a Curve ou os eixos não serão coincidentes.</p>
+
+<img src="img/img12/7texto120b2d67.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+		</div>
+		
+		
+		
+		
+		
+
+ </div>
+
+    <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

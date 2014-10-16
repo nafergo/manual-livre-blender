@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nelson gonçalves" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina"><small>Criar explosões com</small> Explode</h1>
+
+
+
+
+      	<div class="page-header">
+				<h2>Introdução</h2>
+      	</div>
+
+
+<p>O Modifier Explode permite fazer “explodirir” (separa) a malha. No exemplo abaixo, utilizamos o Explode com um sistema de partículas para criar o efeito de explosão. 
+na realidade, quando adiciona o Quick Explode (ver final deste texto), o Blender cria automaticamente um sistema de partículas associado ao Modifier Explode. Nos passos seguintes, mostramos
+ como obter o mesmo efeito manualmente, construindo um sistema similar.</p>
+
+<p>1- Adicione duas Icospheres. Desloque uma esfera no eixo X e redimensione a mesma (0.1). Anime a esfera pequena para esta atravessar a esfera grande em 100 frames. Verifique em que frame a esfera menor toca na esfera maior. No nosso exemplo, a esfera menor toca na maior na frame 43.</p>
+
+<img src="img/img34/47Modifiers4e6f0ba4.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2- Seleccione a esfera maior e, no painel de partículas, adicione um sistema de partículas. Utilize os valores da imagem como referência mas pode experimentar outros valores.</p>
+
+<p>Alguns dos principais parâmetros...</p>
+
+<img src="img/img34/48Modifiers49b85b15.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Amount: nº total de partículas</p>
+
+<p>Start/End: Frame em que começa/acabar emissão de partículas.</p>
+
+<p>Lifetime: tempo de vida das partículas, tempo que levam a desaparecer.</p>
+
+<p>Random: grau de variância do tempo de vida.</p>
+
+<p>Verts/Faces/Volume: de onde são emitidas as partículas.</p>
+
+<p>Random/Even Distribution: emissão com ordem aleatória e com distribuição equitativa.</p>
+
+<p>(Emitter geometry) Normal: velocidade inicial das partículas.</p>
+
+<p>(Emitter Object) X/Y/Z: velocidade/direcção inicial das partículas tendo em conta a orientação do objecto emissor.</p>
+
+<p>Random: grau de variação aleatória da velocidade inicial.</p>
+
+<p>3- Na realidade, não vamos utilizar o sistema de partículas para criar emissão de partículas. Vamos utilizar o sistema de partículas para criar uma explosão  combinando com o modifier Explode (como é ilustrado na imagem abaixo). Se quiser, pode experimentar renderizar para ver o efeito das partículas, depois das experiências deverá activar a opção None para não renderizar partículas. </p>
+
+<img src="img/img34/49Modifiers4d471bc1.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img34/50Modifiers454b25c5.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Alguns dos principais parâmetros...</p>
+
+<p>Material: número do material (mais concretamente, o número da slot dos materiais do objecto) utilizado para as partículas.</p>
+
+<p>Emitter: renderiza objecto emissor.</p>
+		
+<p>Parents: renderiza partículas aparentadas.</p>
+
+<p>Unborn: renderiza partículas antes de serem emitidas (antes de nascerem)</p>
+
+<p>Died: renderiza partículas depois de morrerem (terminado o seu lifetime)</p>
+
+<p>None/Halo/Line/Path/Object/Group/Billboard: diferente formas de renderização das partículas. Através do Object, pode mesmo definir um objecto. Imagine uma explosão de suzannes ou de cubos (imagem da direita)!</p>
+
+<img src="img/img34/51Modifiers2345be1d.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img34/52Modifiers6d2fc6d1.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img34/53Modifiers250f0bee.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- Com a esfera grande seleccionada, adicione o modifier Explode. Respeite a ordem apresentada e as configurações.</p>
+
+<img src="img/img34/54Modifiers7cc92582.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>As opções Unborn, Alive e Dead permitem manipular a visibilidade da mesh. Por exemplo, se quiser que os pedaços da mesh (após a explosão) desapareçam após o lifetime (definido no sistema de partículas), desactive a opção Dead, etc.</p>
+
+<p>5- Aplique materiais e componha a cena.</p>
+
+<p>6- Faça ALT+A. Recoloque a câmara. Renderize. Depois mode modificar as configurações do Modifier Explode ou do sistema de partículas para melhorar o resultado.</p>
+
+
+
+
+
+      	<div class="page-header">
+				<h2>Quick Effect Operators</h2>
+      	</div>
+
+
+<p>Para facilitar a configuração básica de diversos efeitos (i.e. Smoke/Fumo, Fluid/Fluído, Explode/Explosão e Fur/Pêlo), foram criados Quick Effects Operators.</p>
+
+<p>a) Selecione o objeto que irá "explodir" e clique na Barra de Espaços.</p>
+
+<p>b) Escreva Quick Explode e clique no Enter.</p>
+
+<img src="img/img13/11fluídos522a4b13.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+		</div>
+	
+		
+
+ </div>
+ </div>
+ <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+</body>
+</html>

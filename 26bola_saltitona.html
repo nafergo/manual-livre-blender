@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="tic" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina">Blender – Bola saltitona</h1>
+
+
+<p>O método de animação mais comum chama-se keyframing. As keyframes são criadas em vários pontos da animação e o computador gera as frames de transição (as frames que medeiam entre duas keyframes). A mudança de tamanho, rotação e localização de objectos constituem comportamentos tradicionalmente associados a este tipo de animação. </p>
+
+<p>No processo de criação de uma animação, uma das primeiras decisões a tomar é a duração em frames e o nº de FPS. Como orientação, diga-se que, geralmente, um filme utiliza 24 FPS e o sistema PAL utiliza 25 FPS. Por defeito, o Blender vem configurado para 24 FPS e para uma animação com 250 “frames” (pouco mais de 10 segundos). </p>
+
+<p>Coloca-se uma key no início e no final do movimento pretendido, ou na mudança de dimensão ou rotação de um objecto. Defina o tempo que pretende atribuir a essa animação: se pretende que um objecto se mova do ponto A para o ponto B em 2 segundos, e tiver definida uma velocidade de 25 FPS, introduza 50 frames de separação entre as 2 keys. </p>
+
+<p>1- Comece uma nova cena no Blender, limpe o cubo que surge automaticamente (X). Adicione um plano, uma UV Sphere e uma Lattice. Redimensione o plano aumentando 10 vezes (S > 10).</p>
+
+<p>2- Seleccione a UV Sphere. Mude para visão lateral (NUMPAD 3) e modo de visão Wireframe (para conseguir ver o plano...). Clique em CTRL e, com esta tecla pressionada, utilize o manipulador de translação para mover a esfera em sentido positivo no eixo Z (utilize a seta azul para mover a esfera para cirma).  Com o CTRL pressionado, a deslocação dá-se com incrementos fixos o que facilita o alinhamento.</p>
+
+<p>3- Repita o passo anterior para o cubo que representa a Lattice.</p>
+
+<img src="img/img26/1bola_saltitona65e40585.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4- Seleccione a Lattice e duplique a sua dimensão    (S > 2). Volte a alinhar como nos passos anteriores.</p>
+
+<img src="img/img26/2bola_saltitona49cc0aef.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5- Vamos criar um parentesco entre a esfera (child) e a Lattice (parent). Seleccione a esfera e depois a Lattice. Clique em CTRL+P e seleccione a opção Lattice Deform para criar um parentesco de tipo especial [mais informações sobre isto no tutorial nº 34].</p>
+
+<img src="img/img26/3bola_saltitona23ee1a9f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>6- Vamos inserir keyframes na Lattice, nas frames 1, 51 e 101 para criar o movimento da bola a saltar. Em baixo, surgem imagens mostrando o posicionamento da Lattice/esfera nas frames 1, 51 e 101.</p>
+
+<img src="img/img26/4bola_saltitona1987709e.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img26/5bola_saltitona183fd35c.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img26/6bola_saltitona61fe0f52.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>7- Na frames 45 e 65 insira keyframes LocRotScale na Lattice para bloquear a forma. Nessas frames, a nossa esfera irá ter a forma normal ou original. </p>
+
+<p>8- Na frame 51, ponto de contacto entre a esfera e o plano, vamos utilizar a Lattice para deformar a esfera, aplicando o princípio clássico do Squash & Stretch.</p>
+
+<p>Escolha o cursor 3D como pivot para a operação. Certifique-se que o cursor 3D está no local correcto: no meio da esfera e da Lattice mas ao nível do plano.</p>
+
+<p>Seleccione a Lattice e redimensione a sua altura (escala em Z): S > Z > 0.8</p>
+
+<p>Ainda com a Lattice seleccionada, redimensione a escala em X e Y em simultâneo: S > SHIFT+Z > 1.2</p>
+
+<p>[Se clicar em SHIFT+Z, exclui o Z da selecção, seleccionar os restantes. Ou seja, selecciona o X e Y]</p>
+
+<p>Como estamos a utilizar o cursor 3D como pivot, o redimensionamento é feito tendo em conta o ponto de contacto e não, como habitualmente, o próprio centro do objecto.</p>
+
+<p>Neste caso, optámos por inserir mais frames na saída [entre o ponto de contacto (51) e o ponto de retorno à forma original (65)] do que na entrada [entre a última forma original intacta (45) e o ponto de contacto (51)].</p>
+		
+<img src="img/img26/7bola_saltitona3659cb72.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>9- Para obter uma visão mais completa do movimento efectuado pela bola, vamos activar os Motion Paths. Define os parâmetros que pretende e clique em Calculate Paths para ver uma linha descrevendo o movimento da nossa esfera.</p>	
+
+<img src="img/img26/8bola_saltitona42fb4f1.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>10- Na janela Dope Sheet, resolvemos experimentar diminuir o tempo de saída (tempo entre as frames 51 e 65). Seleccionámos com caixa (B) as keyframes (LocRotScale) aplicadas na 65 e na 101, as duas colunas de “diamantes” (são keyframes) da direita, e movemos (G) as mesmas para a esquerda, na direcção da keyframe do ponto de contacto (frame 51).</p>
+		
+<img src="img/img26/9bola_saltitonabff59f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>...alterando também os números das keyframes no nosso Motion Path.</p>
+
+<img src="img/img26/10bola_saltitona4a41df7c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>11- Como já deve ter reparado, a nossa animação tem um “Ease In” e “Ease Out” automático. Ou seja, acelera e desacelera progressivamente quando se aproxima e afasta de keyframes. </p>
+
+<p>Em muitos casos, esta é de facto a maneira mais correcta de construir animação, corresponde a outro princípio clássico da animação. No entanto, não faz muito sentido nem é realista ver a nossa esfera desacelerar quando se aproxima da keyframe final... </p>
+
+<p>Passe para a janela Graph Editor. Utilize o BMR para aproximar/afastar e o CTRL + BMR para ajustar a dimensão à janela, visualizando melhor as keyframes.</p>
+
+<p>O que vamos alterar é a interpolação entre os dois conjuntos finais de keyframes, os mesmos que modificámos no passo anterior. Na imagem abaixo, as keyframes já surgem seleccionadas porque estavam seleccionadas na Dope Sheet. Se observar com cuidado, é fácil reparar que entre as keyframes existe sempre uma linha curva que corresponde ao acelerar/desacelerar.</p>
+
+<img src="img/img26/11bola_saltitona7c51d504.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>12- No menu Key, submenu Interpolation Mode, seleccione o mode de interpolação Linear para substituir a curva entre os dois últimos conjuntos de keyframes por uma linha linear. </p>
+
+<img src="img/img26/12bola_saltitona785c2cf7.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>A janela Graph Editor, onde a animação está representada através de gráficos, pemite visualizar e editar as keyframes existentes numa animação. É uma ferramenta extremamente importante e sofisticada. Aqui ficam algumas notas para ajudar na exploração...</p>
+
+<h5>VISUALIZAR</h5>
+
+<p>a) Pode fazer Zoom (BMR / roda do rato), deslizar o conteúdo da janela (BMR e deslocar o rato), ajustar altura/largura do conteúdo (CTRL+BMR e deslocar o rato).</p>
+
+<p>b) Pode esconder ou mostrar canais (clique no ícone do olho que existe ao lado de cada canal ou tipo de keyframe).</p>
+
+<img src="img/img26/13bola_saltitona85c998.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h5>EDITAR</h5>
+
+<p>a) Pode ver/editar diversos tipos de keyframes (i.e. materiais, texturas, caminhos, etc.) para além dos relacionados com movimento/escala dos objectos. Para escolher o tipo de canais (ou linhas) de keyframes que pretende visualizar e editar, utilize a barra de ferramentas.</p>
+
+<img src="img/img26/14bola_saltitona1a0aacb0.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>b) Pode bloquear canais (clique no cadeado que existe ao lado de cada canal ou tipo de keyframe) para evitar alterações/edições não desejadas.</p>
+
+<p>c) Pode seleccionar apenas um canal (uma linha) e editar individualmente as keysframes (os pontos) com os atalhos habituais: tecla TAB para activar o Edit Mode, seleccionar com o BDR, G para mover, X (horizontal) e Y (vertical) para trancar o movimento aos eixos, etc. O H serve para modificar o tipo de manipulador do ponto (i.e. Vector, Free, etc.)</p>
+
+<p>d) Para criar pontos novos (novas keyframes) directamente no Graph Editor, clique em CTRL+BER no local da linha onde pretende inserir a nova keyframe.  Para apagar, seleccione a(s) keyframe(s) que pretende apagar e utilize o X.</p>
+		
+<p>e) Para seleccionar várias keyframes pode utilizar a caixa (B), seleccionar uma a uma com SHIFT pressionado.</p>
+
+<p>f) Pode utilizar a tecla N para esconder/mostrar uma barra de propriedades com funcionalidades muito úteis. Pode modificar o tipo de interpolação entre keyframes, posicionar com precisão total as keyframes, aplicar modifiers, etc. Um dos modifiers mais úteis é o Cycle, permite controlar a repetição de uma animação criando ciclos.</p>
+
+<h5>INTERPOLAÇÃO e EXTRAPOLAÇÃO</h5>
+
+<p>a) Interpolação é o cálculo das frames intermédias (frames entre as keyframes) necessárias para completar uma animação. O Blender apresenta 3 tipos de interpolação.</p>
+		
+<p>Constant: animação sem suavidade, “quadrada”, salto.</p>
+
+<p>Linear:  caminho mais curto entre os pontos, “recta”, velocidade constante.</p>
+
+<p>Bezier: animação mais “smooth”, “curva”, aceleração e desaceleração.</p>
+		
+<p>b) Extrapolação é o cálculo para além da última keyframe e antes da primeira. Permite transformar uma animação com algumas keyframes numa animação contínua, infinita.</p>
+
+
+
+		</div>
+		
+		 
+		
+		
+		
+		
+		
+		
+		
+
+ </div>
+
+     <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+
+</body>
+</html>

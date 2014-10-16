@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina"><small>Manipular o aspeto</small> Smooth/Flat <small>dos modelos</small></h1>
+
+
+
+
+      	<div class="page-header">
+				<h2>Shading Smooth/Flat</h2>
+      	</div>
+
+<p> 
+Na modelação poligonal, os objetos são construídos através de faces planas. O shading flat é o aspeto inicial.  
+</p>
+
+<img src="img/modelacao_smooth/flat.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>
+Pode utilizar as ferramentas Smooth/Flat em Object Mode (esquerda) e Edit Mode (direita), presentes na 
+barra de ferramentas (T), para alterar o aspeto como estas faces são renderizadas. Pode aplicar à 
+totalidade do objeto (clique em Smooth em Object Mode) ou apenas a algumas faces (em Edit Mode, 
+selecione as faces/edges/vértices e pressione o correspondente Smooth). Na realidade, a geometria do objeto não 
+sofre qualquer alteração. As faces irão sofrer uma alteração, uma tentativa de arredondamento ou suavização, e os reflexos 
+da luz irão ser diferentes.
+</p>
+
+	<div class="row">
+	
+<div class="col-xs-6">
+<img src="img/modelacao_smooth/3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+</div>
+<div class="col-xs-6">
+<img src="img/modelacao_smooth/4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+</div>
+</div>
+
+
+
+
+<p>
+Em baixo, foi aplicado o Smooth em Object Mode a cada um dos objetos.
+</p>
+<img src="img/modelacao_smooth/smooth.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Como é visível, nem sempre o resultado é o desejável...</p>
+<p>O problema está relacionado com a quantidade de geometria existente no objeto e com os ângulos de algumas arestas.</p>
+
+
+<p>O modifier Edge Split é uma solução pois permite controlar a partir de que ângulo é aplicado o Smooth. É muito comum 
+a sua utilização em combinação com o Smooth.</p>
+<img src="img/modelacao_smooth/smooth_edgesplit.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Outra solução é utilizar o modifier Subdivision Surface (subsurf). Este modifier irá subdivivir e suavizar cada uma das faces. 
+A geometria irá alterar-se e aumentar (passa a ter mais vértices/arestas/faces).</p>
+<img src="img/modelacao_smooth/smooth_subsurf.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>É claro que pode usar o modifier Subdivision Surface e não utilizar o Smooth Shading, Neste caso, repare que a geometria 
+altera-se mas as faces continuam planas.</p>
+<img src="img/modelacao_smooth/flat_subsurf.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+      	<div class="page-header">
+				<h2>Mark Sharp</h2>
+      	</div>
+
+<p>
+A opção Mark Sharp, disponível no menu Edges (Ctrl+E), permite excluir arestas do efeito Smooth. Esta opção não afeta a 
+geometria.
+</p>
+<img src="img/modelacao_smooth/2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+Repare no centro do objeto presente no meio.
+</p>
+<img src="img/modelacao_smooth/smooth_edgesplit_marksharp.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+      	<div class="page-header">
+				<h2>Suavizar a geometria</h2>
+      	</div>
+
+<p>Existem duas opções principais, ambas disponíveis no menu Specials (W).</p>
+<p>O Smooth identificado abaixo (Vertex Smooth) irá tentar alisar os ângulos dos vértices selecionados.</p>
+<p>A opção Subdivide Smooth irá subdividir as arestas selecionadas e arrendondar as mesmas.</p>
+<p>Em ambos os casos, a geometria é afetada.</p>
+<img src="img/modelacao_smooth/1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/modelacao_smooth/smooth_edgesplit_vertexsmooth.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+
+
+
+
+
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

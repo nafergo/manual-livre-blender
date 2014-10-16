@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<<<<<<< HEAD
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+
+      <div class="row">
+    <div class="titulopagina alert alert-danger fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+      <h4>Verifique se está tudo bem!</h4>
+      <p>1. Se está a utilizar o browser Chrome e não consegue ver o menu em cima, execute o programa com a flag <code>--allow-file-access-from-files</code>. 
+      E, claro está, pode sempre utilizar o <a href="https://www.mozilla.org/firefox/" target="_blank">Mozilla Firefox</a>!</p>
+      <p>2. Para ver os vídeos (existentes em diversas páginas) e aceder às hiperligações externas tem de ter ligação à Internet.</p>
+
+    </div>
+
+
+      <!-- Main jumbotron -->
+      <div class="jumbotron capa">
+        <div class="titulohomepage"><h1 class="">Manual Livre de Blender</h1></div>
+        <p><img src="img_homepage/blender-socket.png" class="img-responsive center-block" alt=""></p>
+      </div>
+      </div>
+
+      <div class="row">
+      <div class="page-header">
+        <h1>Bem-vindo(a)s!</h1>
+      </div>
+
+
+
+        
+        <h2>Blender <small>é um Software Livre desenvolvido em Open Source para criação de conteúdos 3D.</small></h2>
+
+        <p>É uma aplicação multiplataforma orientada para a criação nas áreas da animação e efeitos especiais (vfx), impressão 3D, videojogos e aplicações 3D interativas. Inclui ferramentas para modelação, animação, texturização, iluminação, rigging, simulação e partículas, renderização, edição de vídeo e composição. Adicionalmente, o Blender integra ainda um motor de jogos.</p>
+        <p>A <a href="http://wiki.blender.org/index.php/Doc:2.6/Manual/Introduction/History" target="_blank">história do Blender</a> remonta a <a href="http://code.blender.org/index.php/2013/12/how-blender-started-twenty-years-ago/" target="_blank">janeiro de 1994</a>, altura em que Ton Roosendaal, atual <em>chairman</em> da <a href="http://www.blender.org/foundation/" target="_blank">Blender Foundation</a>, iniciou o processo de programação da aplicação. Em outubro de 2002, com o apoio e suporte de uma entusiástica comunidade, o Blender deixou de ser software proprietário e evoluiu para <a href="http://en.wikipedia.org/wiki/Free_software" target="_blank">Software Livre</a>, adotando a licença <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank">GNU General Public License</a>.</p>
+        <h2>Manual Livre de Blender</h2>
+        <p>Este manual nasceu da necessidade de encontrar material gratuito e em língua portuguesa para apoio às aulas e à aprendizagem dos meus alunos. Nas suas primeiras versões, o manual era distribuído apenas em formato pdf e adotava uma organização mais tradicional.</p>
+        <p>Desde o início, por uma questão de princípio, foi adotada uma licença para a distribuição que permite a livre partilha (cópia e redistribuição) e adaptação ou modificação.</p>
+        <p>A presente versão, primeira a ser distribuída neste suporte, foi concebida e desenvolvida com as seguintes preocupações: 
+        <ul class="list-unstyled">
+        <li>> Orientar novos utilizadores na exploração do Blender, utilização do manual como percurso passo-a-passo.</li> 
+        <li>> Permitir a consulta rápida, utilização do manual como obra para referência ou <em>auxiliar de memória</em>. :)</li>
+        <li>> Integrar recursos em diversos formatos (vídeo, texto, binários, etc.).</li>
+        <li>> Facilitar a distribuição, atualização e modificação ou adaptação dos conteúdos.</li>
+        </ul>
+        
+        </p>
+        <p>Abaixo destas linhas encontrará diversas hiperligações que podem ajudar a encontrar portas de entrada para conhecer melhor o Blender, funcionalidades e potencial, e a sua comunidade.</p>
+        
+        
+        <p class="text-right"><em>Nelson A. F. Gonçalves (aka nafergo)</em></p>
+        <p class="text-right"><em>nafergo[AT]gmail[DOT]com</em></p>
+        <p class="text-right"><em>julho, 2014</em></p>
+        
+        </div>
+
+      
+
+  
+
+      <div class="row">
+      <div class="page-header">
+        <h1>Hiperligações</h1>
+      </div>
+
+        <div class="col-xs-4">
+            <div class="media">
+          <a class="pull-left" href="http://www.blender.org/" target="_blank">
+              <img class="media-object link-img img-rounded" src="img_homepage/blender-official.png" alt="PÃ¡gina oficial do Blender">
+          </a>
+            <div class="media-body">
+                <h4 class="media-heading">Página Oficial</h4>
+                    Página oficial do Blender. Constitui o principal ponto de partida.
+            </div>
+        </div>
+        
+         <div class="media">
+          <a class="pull-left" href="https://cloud.blender.org/" target="_blank">
+              <img class="media-object link-img img-rounded" src="img_homepage/blender-cloud.jpg" alt="Blender Cloud">
+          </a>
+            <div class="media-body">
+                <h4 class="media-heading">Blender Cloud</h4>
+                    Serviço comercial na <em>cloud</em> do Blender Institute.
+            </div>
+        </div>
+ 
+          <div class="media">
+          <a class="pull-left" href="http://www.blendernetwork.org/" target="_blank">
+              <img class="media-object link-img img-rounded" src="img_homepage/blender-network.jpg" alt="Blender Network">
+          </a>
+            <div class="media-body">
+                <h4 class="media-heading">Blender Network</h4>
+                    Diretório online e rede social de profissionais.
+            </div>
+        </div>      
+        
+       
+        </div><!-- /.col-sm-4 -->
+        <div class="col-xs-4">
+        
+        
+        <div class="media">
+          <a class="pull-left" href="http://builder.blender.org/download/" target="_blank">
+              <img class="media-object link-img img-rounded" src="img_homepage/blender-buildbot.jpg" alt="Blender buildbot">
+          </a>
+            <div class="media-body">
+                <h4 class="media-heading">Blender buildbot</h4>
+                    Sistema automático de compilação do Blender (atualizações diárias).
+            </div>
+        </div> 
+        
+        <div class="media">
+          <a class="pull-left" href="http://wiki.blender.org/" target="_blank">
+              <img class="media-object link-img img-rounded" src="img_homepage/blender-wiki.jpg" alt="Blender Wiki">
+          </a>
+            <div class="media-body">
+                <h4 class="media-heading">Blender Wiki</h4>
+                    Sistema oficial de documentação para utilizadores e <em>developers</em>.
+            </div>
+        </div>        
+
+        <div class="media">
+          <a class="pull-left" href="http://www.blender3d.org/e-shop/" target="_blank">
+              <img class="media-object link-img img-rounded" src="img_homepage/blender-store.jpg" alt="Blender e-Shop">
+          </a>
+            <div class="media-body">
+                <h4 class="media-heading">Blender e-Shop</h4>
+                    Loja online oficial do Blender Institute.
+            </div>
+        </div>        
+
+
+        </div><!-- /.col-sm-4 -->
+        <div class="col-xs-4">
+        <div class="media">
+          <a class="pull-left" href="http://www.blender.org/conference/" target="_blank">
+              <img class="media-object link-img img-rounded" src="img_homepage/blender-conference.jpg" alt="Blender Conference">
+          </a>
+            <div class="media-body">
+                <h4 class="media-heading">Blender Conference</h4>
+                    Página oficial da conferência anual da comunidade Blender.
+            </div>
+        </div>
+
+        <div class="media">
+          <a class="pull-left" href="https://developer.blender.org/" target="_blank">
+              <img class="media-object link-img img-rounded" src="img_homepage/blender-developer.jpg" alt="Plataforma de desenvolvimento">
+          </a>
+            <div class="media-body">
+                <h4 class="media-heading">Developers e bugs</h4>
+                    Plataforma de apoio ao trabalho dos <em>developers</em> e reporte de <em>bugs</em>.
+            </div>
+        </div> 
+
+        <div class="media">
+          <a class="pull-left" href="http://www.youtube.com/user/BlenderFoundation" target="_blank">
+              <img class="media-object link-img img-rounded" src="img_homepage/blender-youtubeBF.jpg" alt="Canal YouTube da Blender Foundation">
+          </a>
+            <div class="media-body">
+                <h4 class="media-heading">BF@YouTube</h4>
+                    Canal YouTube oficial da Blender Foundation.
+            </div>
+        </div>
+        
+                          
+        
+        </div><!-- /.col-sm-4 -->
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+        <h3>Outros úteis <small>da comunidade</small></h3>
+                <dl class="dl-horizontal">
+                	<dt>Blend Swap</dt><dd>Plataforma online para partilha de recursos (modelos, materiais, rigs, scripts, etc.). <a href="http://www.blendswap.com/" target="_blank" class="">>></a></dd>
+			<dt>Blender Domain</dt><dd>Wiki sobre o universo Blender (estúdios, filmes, etc.). <a href="http://www.blenderdomain.org" target="_blank" class="">>></a></dd>
+			<dt>Blender Market</dt><dd>Mercado online de recursos (modelos, materiais, rigs, scripts, etc.). <a href="http://cgcookiemarkets.com/blender/" target="_blank" class="">>></a></dd>
+                </dl>
+
+        </div>
+       </div>      
+
+
+
+      <div class="row">
+      <div class="page-header">
+        <h1>Notí­cias</h1>
+      </div>
+
+        <div class="col-xs-4">
+
+                <dl class="">
+                  <dt>Adventures in Blender <i class="fa fa-google-plus"></i></dt>  <dd>Notícias e outras informações diversas partilhadas através da rede social Google+. <a href="https://plus.google.com/+AdventuresInBlender/posts" target="_blank" class="">>></a></dd>
+                </dl>
+
+        </div><!-- /.col-sm-12 -->
+
+        <div class="col-xs-4">
+
+                <dl class="">
+						<dt>BlenderNation</dt>  <dd>Notícias diárias do Blender e comunidade em formato blog. <a href="http://www.blendernation.com/" target="_blank" class="">>></a><br/>Página republica notícias nas redes sociais<br/><a href="https://www.facebook.com/pages/BlenderNation/141077829285198" target="_blank" class="" rel="tooltip" data-placement="top" alt="Facebook" title="Facebook"><i class="fa fa-facebook"></i></a> <a href="https://plus.google.com/+BlendernationCom/posts" target="_blank" class="" rel="tooltip" data-placement="top" alt="Google+" title="Google+"><i class="fa fa-google-plus"></i></a> <a href="https://twitter.com/blendernation" target="_blank" class="" rel="tooltip" data-placement="top" alt="Twitter" title="Twitter"><i class="fa fa-twitter"></i></a></dd>
+
+                </dl>
+
+        </div><!-- /.col-sm-12 -->
+
+        <div class="col-xs-4">
+
+                <dl class="">
+			<dt>Blender Code</dt>  <dd>Blog dos <em>developers</em> do Blender. <a href="http://code.blender.org/" target="_blank" class="">>></a><dd>
+			<dt>@tonroosendaal <i class="fa fa-twitter"></i></dt>  <dd>Conta Twitter de Ton Roosendaal, <em>chairman</em> da Blender Foundation. <a href="https://twitter.com/tonroosendaal" target="_blank" class="">>></a></dd>												
+                </dl>
+
+        </div><!-- /.col-sm-12 -->
+
+
+      </div>
+
+
+
+
+      <div class="row">
+      <div class="page-header">
+        <h1>Projetos do Blender Institute</h1>
+      </div>
+
+
+        <div class="col-xs-12">
+        
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Projeto Gooseberry (em curso)</h3>
+            </div>
+            <div class="panel-body">
+                     <p class="text-center"><img src="img_homepage/gooseberry.jpg" class="img-rounded img-responsive center-block" alt="Projeto Gooseberry"></p>
+ 				<div class="row">
+              <dl class="dl-horizontal pull-left">
+                <dt>Realizador</dt>                  <dd>Mathieu Auvray</dd>
+                <dt>Tipo</dt>                  <dd>Animação 3D</dd>
+                <dt>Ano</dt>                  <dd>2015 (?)</dd>
+                  </dl>
+              </div>
+              <p><a href="http://gooseberry.blender.org/" target="_blank" class="pull-right btn btn-default btn-lg" role="button">Página oficial &raquo;</a></p>
+            </div>
+          </div>        
+        
+        </div>
+       
+        
+        <div class="col-xs-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Elephants Dream</h3>
+            </div>
+            <div class="panel-body">
+            <p class="text-center"><img src="img_homepage/elephantsdream.jpg" class="img-rounded img-responsive" alt=""></p>
+ 				<div class="row">
+              <dl class="dl-horizontal">
+                <dt>Realizador</dt>                  <dd>Bassam Kurdali</dd>
+                <dt>Tipo</dt>                  <dd>Animação 3D</dd>
+                <dt>Ano</dt>                  <dd>2006</dd>
+                  </dl>
+                </div>
+
+              <p><a href="https://www.youtube.com/watch?v=TLkA0RELQ1g" target="_blank" class="pull-right btn btn-default btn-sm" role="button">Ver filme &raquo;</a></p>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Sintel</h3>
+            </div>
+            <div class="panel-body">
+              <p class="text-center"><img src="img_homepage/sintel.jpg" class="img-rounded img-responsive" alt=""></p>
+               <div class="row">
+              <dl class="dl-horizontal">
+                <dt>Realizador</dt>                  <dd>Colin Levy</dd>
+                <dt>Tipo</dt>                  <dd>Animação 3D</dd>
+                <dt>Ano</dt>                  <dd>2010</dd>
+                  </dl>
+              </div>
+              <p><a href="https://www.youtube.com/watch?v=eRsGyueVLvQ" target="_blank" class="pull-right btn btn-default btn-sm" role="button">Ver filme &raquo;</a></p>
+            </div>
+          </div>
+        </div><!-- /.col-sm-4 -->
+        <div class="col-xs-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Big Buck Bunny</h3>
+            </div>
+            <div class="panel-body">
+            <p class="text-center"><img src="img_homepage/bbb.jpg" class="img-rounded img-responsive" alt=""></p>
+ 
+ 					<div class="row">
+              <dl class="dl-horizontal">
+                <dt>Realizador</dt>                  <dd>Sacha Goedegebure</dd>
+                <dt>Tipo</dt>                  <dd>Animação 3D</dd>
+                <dt>Ano</dt>                  <dd>2008</dd>
+                  </dl>
+ 					</div>
+              <p><a href="https://www.youtube.com/watch?v=YE7VzlLtp-4" target="_blank" class="pull-right btn btn-default btn-sm" role="button">Ver filme &raquo;</a></p>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Tears of Steel</h3>
+            </div>
+            <div class="panel-body">
+            <p class="text-center"><img src="img_homepage/tos.jpg" class="img-rounded img-responsive" alt=""></p>
+               <div class="row">
+              <dl class="dl-horizontal">
+                <dt>Realizador</dt>                  <dd>Ian Hubert</dd>
+                <dt>Tipo</dt>                  <dd>VFX</dd>
+                <dt>Ano</dt>                  <dd>2012</dd>
+                  </dl>
+              </div>
+              <p><a href="https://www.youtube.com/watch?v=R6MlUcmOul8" target="_blank" class="pull-right btn btn-default btn-sm" role="button">Ver filme &raquo;</a></p>
+            </div>
+          </div>
+        </div><!-- /.col-sm-4 -->
+        <div class="col-xs-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Yo Frankie!</h3>
+            </div>
+            <div class="panel-body">
+            <p class="text-center"><img src="img_homepage/yofrankie.jpg" class="img-rounded img-responsive" alt=""></p>
+               <div class="row">
+              <dl class="dl-horizontal pull-left">
+                <dt>Designer</dt>                  <dd>Christopher Plush</dd>
+                <dt>Tipo</dt>                  <dd>Videojogo</dd>
+                <dt>Ano</dt>                  <dd>2008</dd>
+                  </dl>
+              </div>
+              <p><a href="http://www.yofrankie.org/"  target="_blank" class="pull-right btn btn-default btn-sm" role="button">Página oficial &raquo;</a></p>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Caminandes: Gran Dillama</h3>
+            </div>
+            <div class="panel-body">
+            <p class="text-center"><img src="img_homepage/caminandes.jpg" class="img-rounded img-responsive" alt=""></p>
+               <div class="row">
+              <dl class="dl-horizontal pull-left">
+                <dt>Realizador</dt>                  <dd>Pablo Vazquez</dd>
+                <dt>Tipo</dt>                  <dd>Animação 3D</dd>
+                <dt>Ano</dt>                  <dd>2013</dd>
+                  </dl>
+              </div>
+              <p><a href="https://www.youtube.com/watch?v=Z4C82eyhwgU" target="_blank" class="pull-right btn btn-default btn-sm" role="button">Ver filme &raquo;</a></p>
+            </div>
+          </div>
+        </div><!-- /.col-sm-4 -->
+      </div>
+
+
+
+
+        </div>
+    </div>
+    </div> <!-- /container -->
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+=======
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Manual Livre Blender : Blender html manual (portuguese language only)">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Manual Livre Blender</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/nafergo/manual-livre-blender">View on GitHub</a>
+
+          <h1 id="project_title">Manual Livre Blender</h1>
+          <h2 id="project_tagline">Blender html manual (portuguese language only)</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/nafergo/manual-livre-blender/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/nafergo/manual-livre-blender/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+
+<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+
+<pre><code>$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+</code></pre>
+
+<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+
+<h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+
+<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+
+<h3>
+<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+
+<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+
+<h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+
+<h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Manual Livre Blender maintained by <a href="https://github.com/nafergo">nafergo</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+>>>>>>> 618bc5939ec6a1df561b94683c109447dd3e1fc9
+  </body>
+</html>

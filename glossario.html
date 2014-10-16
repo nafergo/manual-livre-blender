@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+
+<div class="container-fluid">
+	<div class="row">
+    
+   	<div class="col-xs-10 col-xs-offset-1">
+        
+		<h1 class="titulopagina"><small>Breve</small> Glossário <small>com alguns termos importante</small></h1>
+<small>Em construção...</small>
+
+
+
+<h3>Alpha Channel</h3>
+<p>Geralmente, nas imagens 2D, o canal Alfa armazena dados (entre 0 e 1) relativos à opacidade de cada pixel. Permite que uma imagem possa ser separada do seu fundo para uso em composição.
+</p>
+
+<h3>Ambient Light</h3>
+<p>Iluminação artificial que não parece vir de uma origem específica, ilumina todos os objectos de uma cena de forma igual, ilumina com uma intensidade constante de todos os ângulos, assegurando que até as superfícies sem iluminação direta são visíveis. Serve para simular a Global Illumination, define uma quantidade mínima de luz na cena evitando que objetos fiquem totalmente na escuridão.
+</p>
+
+<h3>Ambient Occlusion</h3>
+<p>É um cálculo sofisticado de raytracing que simula as sombras suaves da Global Illumination. Não existe AO no mundo real, é um truque de renderização (não tem qualquer relação com luzes) fisicamente não correto mas geralmente com bons resultados. É uma espécie de iluminação global indireta de cima para baixo. Cria a impressão de que os objetos presentes na cena são iluminados por uma luz suave e difusa (sem ponto de origem e direção). O cálculo é baseado nas formas, proximidade e orientação dos objetos e como estes bloqueiam (ocludem) a luz. Quanto mais próximo um objeto estiver dos seus vizinhos, mais luz é bloqueada e vice-versa.
+</p>
+
+<h3>Animatic</h3>
+<p>Animação algo grosseira utilizada pelos animadores para apresentar uma ideia sobre os tempos de uma sequência. É uma espécie de storyboard animado.
+</p>
+
+<h3>Beauty Pass</h3>
+<p>Quando renderiza vários "passes" (passagens), a Beauty Pass é aquela que apresenta mais informação sobre os objetos presentes na cena. Habitualmente, inclui a principal renderização "full-color" desses objetos (diffuse e colour) e não inclui reflexos, destaques (highlights, specular) e sombras, que são geralmente "passes" separadas.
+</p>
+
+<h3>Boom smash (no Blender)</h3>
+<p>Sistema de pré-visualização. É uma animação com renders da área de trabalho e não de render finais.
+</p>
+
+<h3>Bump Map</h3>
+<p>Imagem a preto-e-branco utilizada por um software 3D para simular pormenores tridimensionais na superfície de um objeto, afetam a superfície do objeto manipulando sombras e reflexos da luz. O efeito, a simulação de detalhes ou imperfeições na superfície, é só de renderização, não afeta a geometria do model (i.e. silhueta permanece igual).
+</p>
+
+
+<h3>Breakdowns</h3>
+<p>
+Termo pode ser utilizado em diferentes contextos, carregando diferentes significados. Na animação e VFX, é vulgarmente 
+utilizado para designar um documento que apresenta 
+a divisão dos processos e técnicas empregues numa produção em elementos e tarefas mais simples. São cada vez mais comuns os "breakdown videos", sobretudo nos 
+VFX, que mostram o modo pelo qual diferentes efeitos foram criados. Geralmente, estes vídeos mostram o resultado final e o 
+contributo das várias etapas ou tarefas.
+</p>
+
+
+<h3>CAD (Computer Aided Design)</h3>
+<p>Utilização de modelos de objetos para visualização ou teste como auxílio no processo de design. 
+Geralmente, os software CAD disponibilizam ferramentas de medição mais precisas e realistas do que os pacotes 3D comuns mas menos funcionalidades para materiais/texturas e animação.
+</p>
+
+<h3>Camera Mapping</h3>
+<p>Técnica de construção de geometria de acordo com tamanho e perspetiva de objetos apresentados numa imagem 2D e posterior mapeamento da imagem original aos objetos construídos. Isto permite movimentos de câmara limitados dando a ilusão de um ambiente 3D a partir de uma imagem 2D.
+</p>
+
+<h3>Camera Tracking</h3>
+<p>Também conhecido como "match moving", é o processo de extração do movimento da câmara a partir de uma filmagem live-action. Estes dados de movimento podem então ser importados para um software 3D e utilizados para animar a câmara virtual, permitindo uma melhor correspondência entre a filmagem original e o conteúdo renderizado. Permite a composição de imagem virtual em filmagens, criando a ilusão de que os objetos virtuais foram filmados.
+</p>
+
+
+<h3>CGI (Computer Generated Imagery)</h3>
+<p>
+Imagens geradas ou manipulados com auxílio de um computador
+</p>
+
+<h3>Clay Render (renderização de argila/barro)</h3>
+<p>Técnica de uso comum para apresentar modelos 3D que ainda não estão terminados ou 
+sem texturas/materiais.  É uma forma também eficaz de apresentar apenas a topologia e forma de um modelo 3D sem a 
+distração das texturas e materiais.  Neste renders, os objetos surgem todos apenas com um material, geralmente um 
+um cinza quente opaco (similar a argila/barro), e a imagem resulta monocromática.
+</p>
+
+
+<h3>Composição (Compositing)</h3>
+<p>O processo de combinar múltiplas imagens numa imagem única. Em filmes, é comum fazer um ator filmado ao vivo aparecer sobreposto a um fundo gerado por computador (chromakey). Nas renderizações 3D, é comum renderizar multi-pass (várias "passes") e depois utilizar a composição para controlar a aparência final da cena manipulando as "passes" individualmente. Existem dois worflows de composição: composição baseada em nós e composição baseada em camadas. Na composição baseada em nós o compósito é representado como um gráfico de árvore. 
+</p>
+
+<h3>Demo reel</h3>
+<p>
+A "demo reel", ou "show reel", é o equivalente a um portefólio para um artista na área da imagem com movimento. É uma ferramenta utilizada por artistas de diferentes especialidades (edição, efeitos especiais, animação, videojogos, etc.) para auto-promover as suas competências, talento e experiência. É comum a submissão da "demo reel" a possível empregadores ser acompanhada de um currículo. Quando inclui excertos de produções reais, é geralmente acompanhada de uma lista de créditos que permite descrever o envolvimento e tarefas específicas do artista em cada produção.
+</p>
+
+
+<h3>Displacement Map</h3>
+<p>Similar ao Bump Map (imagem a preto-e-branco) mas afeta a geometria do objeto.
+</p>
+
+<h3>DoF (Depth of Field)</h3>
+<p>A profundidade de campo (Depth of Field) é a distância entre os objetos mais próximos e mais distantes numa cena que aparecem com nitidez aceitável numa imagem. Apesar de uma lente apenas poder focar precisamente uma distância de cada vez, a redução na nitidez é gradual em ambos os sentidos. Aberturas maiores limitam a profundidade de campo; aberturas menores aumentam.
+</p>
+
+<h3>Environment Map</h3>
+<p>Imagem utilizada para fornecer um fundo (background) ou para projetar iluminação ou reflexos na superfície de um objeto.
+</p>
+
+<h3>Fall-off</h3>
+<p>O modo como a intensidade da luz diminui com a distância da sua fonte. 
+</p>
+
+
+<h3>F-Curve (Function Curve)</h3>
+<p>As F-Curves são apresentadas no Graph Editor do software 3D. São utilizadas durante o processo de animação tanto para representar como para controlar a maneira pela qual um determinado atributo de um objeto varia com o tempo.
+</p>
+
+<h3>Flythrough</h3>
+<p>Tipo de animação na qual a câmara se movimenta numa cena, em vez dos objetos se movimentarem diante da câmara estacionária. É muito utilizado em visualização arquitetónica.
+</p>
+
+<h3>Global Illumination (iluminação global)</h3>
+<p>Conjunto de técnicas de radiosidade e renderização raytracing. O seu objetivo é calcular todas as interações de luz possíveis entre as superfícies numa cena e, deste modo, obter uma imagem fotorealista. É utilizada em 3D para aumentar o realismo da iluminação, tem em conta a luz proveniente de origem distintas/específicas (iluminação direta) e a luz proveniente dos raios refletidos nas superfícies existentes na cena (iluminação indireta).
+</p>
+
+<h3>HDRI (High Dynamic Range Image)</h3>
+<p>Imagem 2D armazenada num formato de ficheiro que permite um elevado alcance dinâmico (tem mais dados entre o valor mais escuro e o mais claro de uma imagem). As imagens HDR são frequentemente utilizadas como Enviroment Map em técnicas de iluminação baseada em imagem para criar efeitos de iluminação subtis e realistas.
+</p>
+
+
+<h3>Image-Based Lighting (iluminação baseada em imagem)</h3>
+<p>Técnica na qual uma imagem fotográfica de referência é utilizada como um environment map para controlar a iluminação da superfície de um objeto 3D, criando efeitos de luz subtis e realistas.
+</p>
+
+<h3>Lens Flare</h3>
+<p>Padrão brilhante numa imagem causado pelo reflexo e refração da luz dentro da câmara. Embora estes efeitos sejam artefatos do processo fotográfico, é comum a sua criação artificial em 3D com o intuito de aumentar o realismo da imagem renderizada.
+</p>
+
+<h3>Lip Synching</h3>
+<p>Processo de fazer corresponder os movimentos faciais de uma personagem com uma fala durante a animação facial.
+</p>
+
+<h3>Making-of</h3>
+<p>
+Documentário de bastidores que apresenta o processo de produção de um filme ou programa de televisão.
+</p>
+
+
+ <h3>Matte painting</h3>
+<p>
+Imagens (pinturas, fotografias) que servem de fundos. 
+</p>
+
+
+<h3>Motion Blur</h3>
+<p>Artefato da cinematografia do mundo real. Quando o objeto filmado pela câmara se move muito rapidamente, a câmara não consegue gravar com precisão e, portanto, o objeto aparece desfocado. É comum a sua criação artificial em 3D com o intuito de aumentar o realismo da imagem renderizada.
+</p>
+
+<h3>Multi-pass rendering</h3>
+<p>Renderização separada de diferentes atributos (sombras, reflexos, etc.). As renderizações parciais podem depois ser combinadas na etapa de composição. Esta técnica pode ser utilizada para acelerar o processo de renderização ou para controlar melhor a aparência final.
+</p>
+
+<h3>Normal</h3>
+<p>Linha imaginária traçada a partir do centro de um polígono em ângulo reto com a superfície.
+</p>
+
+<h3>Procedural Texture</h3>
+<p>Mapa de textura que é gerado através de funções matemáticas.
+</p>
+
+<h3>Quad view</h3>
+<p>Método de apresentação de uma cena 3D na qual a cena é vista simultaneamente de cima (Top), lado (Side), frente (Front) e em perspetiva.
+</p>
+
+<h3>Radiosity</h3>
+<p>Técnica para renderização de cenas 3D que simula o modo como a luz ressalta (bounce) de uma superfície para outra dentro da cena. É mais preciso mas também exige mais recursos de processamento do que o raytracing.
+</p>
+
+<h3>Raytracing</h3>
+<p>Técnica para renderização de cenas 3D. O Raytracing traça o caminho de cada raio de luz a partir da sua origem até que saia da cena ou se torne demasiado fraco para ter qualquer efeito. Por vezes, o termo também é aplicado para o método inverso: traçar o caminho de todos os raios de luz a partir da câmara até à origem da luz.
+</p>
+
+<h3>Render farm</h3> 
+<p>Cluster de computadores criado para renderizar um projeto (geralmente, de animação ou vfx). Estes computadores podem renderizar várias frames em simultâneo ou renderizar partes de uma mesma frame (bucket rendering).
+</p>
+
+<h3>Rendering (Renderização)</h3>
+<p>Renderização significa processamento digital. Em 3D, descreve o processo de conversão de dados 3D numa imagem bidimensional, criação de uma imagem a partir de um modelo ou cena através de um software específico. O ficheiro 3D armazena dados sobre geometria, ponto de vista, perspetiva, iluminação, materiais, etc. O software de renderização interpreta esses dados e cria a sua tradução em 2D.
+</p>
+
+<h3>Rigging</h3>
+<p>Processo de construção de uma armadura (armature) para controlar/animar um objeto.
+</p>
+
+
+
+<h3>Shader</h3>
+<p>É um conjunto de instruções associado a um modelo 3D que informa o motor de renderização sobre o modo como a superfície do modelo 3D deve interagir com a iluminação (opacidade, brilho, etc.), a forma como a luz é dispersa por uma superfície. Se o modelo 3D é a geometria, o shader define a natureza da superfície (metal, cerâmica, madeira, plástico, etc.) e o seu aspecto visual. O Blender disponibiliza um variado conjunto de shaders pré-definidos que podem ser configurados e combinados entre si. Frequentemente, os Shaders são construídos com árvores de nós, com cada nó a controlar um aspecto específico do processo.
+</p>
+
+<h3>Shading</h3>
+<p>Processo matemático de cálculo como as superfícies de um modelo reagem à luz. Existem diversos algoritmos que podem ser utilizados. 
+</p>
+
+<h3>Specular Map</h3>
+<p>Imagem que armazena informação sobre intensidade do brilho gerado pela luz no material (especularidade).
+</p>
+
+<h3>Specularity (especularidade)</h3>
+<p>Propriedade da superfície de um objeto que determina a maneira pela qual os brilhos aparecem nessa superfície.
+</p>
+
+<h3>VFX</h3>
+<p>
+Abreviatura de Visual Effects, efeitos especiais.
+</p>
+
+<h3>Volumetrics</h3>
+<p>Luzes volumétricas são luzes cuja iluminação pode ser observada através de um volume de espaço, em vez de simplesmente incidir numa superfície. De forma semelhante, as texturas volumétricas são texturas aplicadas através num volume de espaço, em vez de uma superfície. É a técnica utilizada para adicionar efeitos de iluminação numa cena como raios/colunas de luz brilhando através do ambiente. O termo God Rays é também diversas vezes utilizado mas sobretudo quando a fonte de luz é o sol.
+</p>
+
+<h3>Z-depth</h3>
+<p>Distância de um ponto ou superfície específicos numa cena. A Z-depth é utilizada para calcular onde a luz projeta sombras e que superfícies são visíveis para a câmara durante a renderização ou que estão obscurecidas por uma geometria mais próxima
+</p>
+
+
+
+
+
+
+    </div>
+	</div>
+</div> <!-- /container -->
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>

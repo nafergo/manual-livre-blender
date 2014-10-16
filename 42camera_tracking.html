@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="tic" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+			<h1 class="titulopagina">Camera Motion Tracking</h1>
+
+
+<p>"Match moving" ou "motion tracking" é uma técnica de efeitos visuais (VFX) que permite a inserção de imagens geradas em computador numa filmagem vídeo (live-action) com a posição, escala, orientação e movimento corretos em relação aos objetos presentes na tomada de imagem. </p>
+
+<p>Desde 2012, o Blender disponibiliza funcionalidades de Camera Tracking. Ou seja, permite calcular o movimento da câmara que capturou a imagem vídeo original e aplicar o mesmo movimento à câmara virtual presente na 3D View. Deste modo, é possível renderizar objetos no Blender com uma câmara que apresenta  caraterísticas (posição, movimento, etc.) similares à da câmara da captura original.</p>
+
+<p>O resultado da composição da imagem vídeo original com a imagem renderizada com uma câmara que apresenta caraterísticas (posição, movimento, etc.) similares à da câmara da captura original é a criação da ilusão da inserção de imagens geradas em computador na filmagem vídeo.</p>
+
+<h2>1. Recomendações para filmagem</h2>
+
+<p>a) É necessário capturar mudança de perspetiva. Câmara parada, pan e tilt (imagens abaixo) ou movimento demasiado subtil são más opções.</p>
+
+<img src="img/img42/1camera_tracking127375d8.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img42/2camera_tracking70792146.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>b) É útil ter marcadores no terreno filmado.</p>
+
+<p>c) É util ter marcadores espalhados em profundidade (do primeiro plano ao plano de fundo) e em largura/altura.</p>
+
+<p>d) Não utilize estabilizador automático porque retira movimento à câmara, distorcendo a imagem.</p>
+
+<p>e) Evite o máximo de desfocagem. Tenha especial cuidado com a profundidade de campo e motion blur. Câmara em movimento com velocidade baixa do obturador (exposição longa) produz imagem com desfoque.</p>
+
+<p>f) Mantenha a distância focal (e não se esqueça de registar a distância focal utilizada).</p>
+
+<p>g) Evite movimentos bruscos e câmara muito instável.</p>
+
+<h2>2. Preparar a sequência</h2>
+
+<p>a) Selecione o seu ficheiro vídeo e recolha as seguintes informações: modelo da câmara (dimensão do sensor), distância focal, resolução e Frames Por Segundo (FPS).</p>
+
+<p>b) Embora seja possível fazer o tracking a partir de um ficheiro vídeo, recomenda-se a conversão para uma sequência de imagens. Recomenda-se a conversão para ficheiros do tipo TGA (Targa) para não perder informação (compressão). Utilize o Video Sequencer Editor do Blender para converter o seu ficheiro de vídeo para uma sequência de imagens. </p>
+
+<p>c) Nas preferências do Blender, aumente a memória disponível para poder ter mais frames armazenadas em cache e o processo ser mais regular.</p>
+
+<img src="img/img42/3camera_tracking61d7d29.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>De aqui em diante iremos utilizar o ficheiro MVI_1034.mov (disponivel em http://download.blender.org/ftp/incoming/libmv/sebastian/)</p>
+
+<p>Caraterísticas do ficheiro:</p>
+
+<p>> gravado com uma Canon 550D (sensor size: 22.3)</p>
+
+<p>> 35mm</p>
+
+<p>> 25 FPS</p>
+
+<p>> 1920x1088</p>
+
+<h2>3. Importar a sequência e adicionar marcadores</h2>
+
+<p>Iremos utilizar os primeiros 7 segundos do ficheiro MVI_1034.mov e a conversão já foi feita. Optámos por converter para TGA com resolução 1920x1080. Como o ficheiro foi gravado a 25 FPS, isto significa que vamos fazer tracking com 175 frames.</p>
+
+<p>Inicie o Blender. Certifique-se que está em Blender Render e altere a resolução para 1920x1080 a 100%. Nas preferências do Blender, aumente a memória disponível para 1024 (ou mais, se tiver bastante memória RAM disponível).</p>
+
+<p>Abra o Movie Clip Editor. Clique em Open e selecione a primeira frame. Altere a frame final para acertar com o número de frames que pretende utilizar. No nosso caso, vamos utilizar 175. </p>
+
+<p>Com o cursor do rato em cima da frame, faça ALT+A para carregar as frames em cache. A linha de cor violeta identifica a dimensão da sequência de frames sendo que o violeta mais claro indica as frames armazenadas em memória.</p>
+
+<img src="img/img42/4camera_tracking3ff3d503.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Certifique-se de que está na frame 1 e pressione o botão Add Marker and Move para adicionar um marcador. Coloque o marcador no ponto que pretende seguir (track). Escolha locais que se destacam claramente, com bom contraste e com cantos.</p>
+
+<p>Para mover um tracker, selecione-o e clique em G. Para mover com maior precisão, pressione o SHIFT enquanto desloca o tracker.</p>
+
+<p>Em cima, na coluna das propriedades, lado direito, tem uma janela que permite ver a área do pattern (quadrado menor que envolve a âncora, o ponto que marca o local para fazer tracking). Para aumentar o pattern, clique em S.</p>
+
+<p>O quadrado maior (ativado no painel de propriedades em Search) revela a área em que o algoritmo irá procurar o pattern. Se a filmagem tiver movimentos bruscos, poderá ser necessário aumentar a área de Search. Clique no triângulo, lado inferior direito, para aumentar/diminuir a área de Search.</p>
+
+<img src="img/img42/5camera_tracking19b43cc4.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Depois de colocar o seu tracker no local desejado, clique no botão para iniciar o tracking. Pode fazer tracking da sequência ou frame a frame e pode fazer tracking da frame em diante ou para trás.</p>
+
+<p>Se tudo correr na perfeição, o tracker irá até ao fim e pode recomeçar até ter 8 trackers (mínimo!) completos. Mas raramente acontece...</p>
+
+<p>Por vezes, o tracker perde o ponto a seguir. Quando isso acontece, a janela de preview fica em tom rosa escuro e o processo pára. Selecione o seu tracker, reposicione-o e volte a ativar o processo.</p>
+
+<img src="img/img42/6camera_tracking48675960.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Existem duas razões muito comuns para o tracker perder o ponto a seguir: demasiado blur ou movimento brusco fez com que a área de pattern saltasse para fora da área de Search. Neste último caso, poderá resolver a situação recomeçando o processo depois de aumentar a área de Search.</p>
+
+<img src="img/img42/7camera_tracking211096da.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Repita o processo até obter, no mínimo, 8 tracks completos. No final, avance e recue na timeline tentando ver se os trackers seguem o mesmo padrão de movimento e corrija se for caso disso.</p>
+
+<img src="img/img42/8camera_tracking49e9da98.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h2>4. Camara Data</h2>
+
+<p>Depois de concluído o processo anterior, é altura de introduzir os dados do dispositivo de captura.</p>
+
+<img src="img/img42/9camera_tracking46c2c55e.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>No nosso caso, o vídeo foi filmado com uma Canon 550D e 35mm.</p>
+
+<p>Caso o seu modelo não conste na lista do Blender, introduza os valores do sensor (especificações técnicas do dispositivo).</p>
+
+<h2>5. Solving Camera Motion</h2>
+
+<p>Selecione todos os trackers e clique em Camera Motion, no painel Solve.</p>
+
+<p>O algoritmo irá calcular o movimento da câmara e irá apresentar uma margem de erro que permite avaliar a exatidão do tracking. Na imagem abaixo o erro é de 0.6622. Se desejar, pode ativar a opção Names and Status (barra de propriedades) para identificar os trackers que têm maior erro. Caso seja necessário, corrija os “saltos” existentes e volte a fazer o Camera Motion. Acima de 1.0 é um tracking fraco, deverá ser refinado. No entanto, quanto menor for o erro melhor é o resultado final.</p>
+
+<img src="img/img42/10camera_tracking4d8da922.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Na barra à esquerda, a barra de ferramentas, escolha a opção Focus Length, K1, K2 em Refine para tentar baixar o erro tendo em conta a distorção da lente. Volte a clicar em Camera Motion para ver o novo erro. No nosso caso, o erro baixou ligeiramente para 0.6313.</p>
+
+<img src="img/img42/11camera_tracking2d107d98.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Como temos poucos trackers (8 é o mínimo...), provavelmente a distorção K2 não está a ajudar muito, podendo até introduzir algum erro.</p>
+
+<p>Clique em Clear Motion. Assegure-se que tem 35mm na lente e 0 no K1 e no K2.Selecione Focus Length, K1  (provavelmente o refinamento mais utilizado) e volte a clicar em Camera Motion. Desta feita obtemos um erro de 0.5663!</p>
+
+<img src="img/img42/12camera_tracking5a1eed46.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h2>6. Reconstruction</h2>
+
+<p>Divida a área de trabalho de modo a ter uma janela com o 3D View. Coloque-se em modo de visão de câmara na janela de 3D View.</p>
+
+<p>No Movie Clip Editor, ative o modo Reconstruction. Clique em Set as Background para o clip ser visível na câmara do 3D View. Clique em Setup Tracking Scene para criar uma cena (inclui configuração de nós).</p>
+
+<img src="img/img42/13camera_tracking422832e2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>No Movie Clip Editor, selecione 3 trackers que estejam no chão e clique em Floor. O Blender irá alinhar a grelha do 3D View com estes três trackers.</p>
+
+<p>Selecione o tracker que estiver mais central e clique em Origin. O Blender irá definir este tracker como o ponto de origem, onde os eixos X, Y e Z se cruzam na grelha do 3D View.</p>
+
+<p>Selecione outro tracker para definir o eixo X (pode fazer o mesmo para o Y).</p>
+
+<p>Finalmente, selecione dois trackers para definir a escala. A distância entre estes dois trackers irá ser equivalente a 1 Blender Unit (1 quadrado da grelha). </p>
+
+<img src="img/img42/14camera_tracking2ba81f9f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Nesta altura, através da câmara na janela 3D View já é possível colocar elementos e ver a sequência de imagens através do ALT+A. Contudo, como a imagem na janela de 3D View não pode ser distorcida (tendo em conta a Focal Length e os valores de K1), é possível que alguns trackers não surjam no local correto e pareçam deslizar. Na nossa cena não é muito óbvio porque não temos trackers próximos das bordas da imagem, onde a distorção é mais visível.</p>
+
+<p>A solução é introduzir um undistort na sequência de imagens. Na janela 3D View assegure-se que tem a opção Render Undistorted ativa. Se quiser também pode ativar a mesma opção no Movie Clip Editor para comparar. No entanto, como já não vamos utilizar esta janela, pode deixar a opção no Movie Clip Editor desativada.</p>
+
+<img src="img/img42/15camera_tracking18056fb2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>- Agora é uma questão de...</p>
+
+<p>- ajustar a cena que pretende criar;</p>
+
+<p>- trabalhar a iluminação;</p>
+
+<p>- trabalhar no editor de nós e...</p>
+
+<p>renderizar!</p>
+
+
+
+
+
+
+
+
+
+
+		</div>
+		
+		
+		
+		
+		
+		 
+		
+		
+		
+		
+		
+		
+		
+
+ </div>
+
+      <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

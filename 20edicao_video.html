@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nelson gonçalves" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+<h1 class="titulopagina"><small>Introdução à</small> Edição de vídeo <small>no Blender</small></h1>
+
+
+<p>A aplicação Blender inclui um editor com as funcionalidades essenciais necessárias à edição não-linear de vídeo.</p>
+
+<p>1- Active o modo de trabalho Video Editing. </p>
+
+<img src="img/img20/1Edicao_video46fe151c.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2- Adicione 2 clips de vídeo. Através do menu Add > Movie.</p>
+
+<img src="img/img20/2Edicao_video499d0dc2.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Adicione um bloco de cor preta através de Add > Effect Strip... > Color</p>
+
+<p>4- Para deslocar uma strip, seleccione com o BDR e clique em G. Quando desloca uma strip (G), surge a indicação do número de frame do início e final da strip. Desloque a strip Color para a frame 1. </p>
+
+<p>5- Coloque um dos clips na frame 15.</p>
+		
+<p>6- Coloque o cursor (barra verde) no segundo 2. Se clicar no BER e arrastar o rato tem maior controle e pode fazer scrubbing (arrastar o cursor na linha de tempo). Como temos 24 FPS, o segundo 2 corresponde à frame 48. Na imagem abaixo pode ver a indicação da frame, a linha de tempo e a informação em que segundo +frame (2 +00) se encontra o cursor.</p>		
+		
+<img src="img/img20/3Edicao_video33ff4f9d.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>7- Seleccione o segundo clip e clique em Shift+S para fazer snap e colocar o segundo clip no local indicado pelo cursor.</p>
+
+<p>8- Seleccione o bloco Color, depois prima Shift e seleccione o primeiro clip de vídeo. Adicione um efeito de tipo Cross (Add > Effect Strip). Irá surgir uma nova strip com a duração da sobreposição entre os 2 blocos seleccionados. Se fizer scrubbing irá ver que acabou de criar um “fade in” de preto para o clip de vídeo. Para aumentar a duração do “fade in” tem de aumentar o tempo de sobreposição. Se clicar em cima da seta do lado direito do bloco de Cor, pode depois deslocar (G) o final desse bloco aumentando a sobreposição e, consequentemente, aumentando o tempo de duração do “fade in”.</p>
+
+<p>9- Coloque o cursor no início do segundo clip de vídeo. No local indicado pela imagem acima.</p>
+
+<p>10- Seleccione o primeiro clip de vídeo e clique em K para criar um soft-cut. Coloque o cursor no final do segundo clip de vídeo, seleccione novamente o primeiro clip de vídeo e clique em K para criar um novo soft-cut. O primeiro clip de vídeo deverá estar dividido em 3 partes. Seleccione a segunda parte, aquela que tem o segundo clip de vído sobreposto, e apague-a (x).</p>
+
+<p>Se reparar bem, apesar de desaparecer a segunda parte, ficaram duas linhas muito suaves no seu lugar. Estas duas linhas correspondem aos dois soft-cuts. A diferença entre soft-cut (k) e hard-cut (Shift+K) reside no grau de destrutibilidade da sua edição. Se tivéssemos feito hard-cuts, o corte seria real e quando apagássemos a segunda parte esta teria desaparecido por completo. </p>
+		
+<p>Com os soft-cuts é possível repor o que foi cortado, a eliminação não é real. Se clicar nas setas da primeira e terceira partes pode mover as mesmas (G), tal como fez para o bloco de Cor, repondo frames que foram previamente cortadas. Ou seja, com soft-cuts pode remover parcelas sem ter de apagar por completo.</p>
+
+<p>11- Seleccione o segundo clip e adicione um efeito Glow. Se seleccionar a nova strip do efeito, no lado direito do ecrã surgem diversas propriedades que pode configurar.</p>
+
+<p>No painel de propriedades, lado direito das pistas de vídeo, tem acesso a diversos dados e informações importantes relativas a cada strip (i.e. canal/pista em que está posicionada a strip, duração, etc.).</p>
+
+<img src="img/img20/4Edicao_video5bd910e3.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Dependendo do tipo de strip (uma strip com um clip de vídeo é diferente de uma strip de efeito e as strips de efeitos são diferentes entre si) existem diferentes propriedades e possibilidades de configuração.</p>
+		
+<p>Na medida em que determinam o modo como o conteúdo das pistas sobrepostas interage entre si, são especialmente úteis as opções relativas ao “blend mode” e opacidade.</p>
+
+<p>No painel Filter surgem também outras opções úteis:</p>
+
+<img src="img/img20/5Edicao_video17693924.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Flip X e Y: a imagem da strip é invertida em X (espelhamento) ou Y.</p>
+
+<p>Backwards: a strip é invertida do final para o princípio.</p>
+
+<p>Saturation, multiply, Use Color Balance: permitem correcção de cor.</p>
+
+<p>Por fim, defina a framerate (frames por segundo) que pretende utilizar e a dimensão do output. Seleccione o formato para ficheiro de saída (i.e. AVI, OGG, etc.). Verifique se tem a opção Sequencer activada e clique em Animation para criar o ficheiro de vídeo.</p>
+
+<h4>Criar ficheiro vídeo através da sequenciação de imagens fixas (“frames”) </h4>
+
+<p>As funcionalidades de edição de vídeo do Blender permitem utilizar esta aplicação para gerar um ficheiro vídeo a partir de imagens fixas, sequenciando as “frames “. Ou seja, o Blender pode ser utilizado para criar um ficheiro vídeo a partir de imagens renderizadas, desenhadas ou capturadas isoladamente (por exemplo, imagens renderizadas em diferentes computadores de uma renderfarm ou capturadas com uma máquina fotográfica para criar animação de tipo stopmotion). </p>
+
+<p>1- Coloque as suas imagens numa pasta única e por ordem. Utilize os nomes para organizar as frames (exemplo: imagem1.png, imagem2.png, etc). Este passo não é obrigatório mas facilita imenso o trabalho! </p>
+
+<p>2- No Blender, active o modo de trabalho Video Editing. Utilize o menu Add e escolha a opção adicionar imagens. </p>
+
+<img src="img/img20/6Edicao_video5163953f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Navegue até á pasta onde tem armazenadas as imagens. Seleccione as imagens que pretende adicionar e clique em “Add Image Strip”. Pode seleccionar mais do que uma imagem e a tecla A permite seleccionar todo o conteúdo da pasta, permitindo seleccionar todas as imagens e adicionar as mesmas de uma só vez... </p>
+
+<p>4- Coloque o bloco com as imagens seleccionadas na pista vídeo. </p>
+
+<img src="img/img20/7Edicao_video74c71.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5- Defina a framerate (frames por segundo) que pretende utilizar e a dimensão do output. Seleccione o formato para ficheiro de saída (i.e. AVI, OGG, etc.). Verifique se tem a opção Sequencer activada e clique em Animation para criar o ficheiro de vídeo.</p>
+
+<h4>Sobreposição de conteúdo 3D</h4>
+
+<p>1- Crie uma cena utilizando a técnica apresentada no tutorial 16. Coloque um texto e anime o material (tutorial 9) do objecto de texto. No nosso caso, o título “A aranha” começa transparente, invisível (Alpha 0.000), torna-se visível (Alpha 1.000) e depois volta a ficar invisível. Nas frames 1 e 135, o objecto de texto está com Alpha 0.000. Na frame 135, as duas linhas animadas tabém estão com  Alpha 0.000</p>
+
+<p>Ou seja, criámos uma cena com 135 frames que começa com um ecrã a preto na frame 1. Irão surgir duas linhas animadas e depois, quando a animação das linhas terminar, surgem as letras do centro em fade-in (transição de Alpha 0 para Alpha 1). No fim, na frame 135, os três objectos estão em Alpha 0.</p>
+
+<img src="img/img20/8Edicao_video1f6a4a07.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2- Active a janela do Node Compositor. Crie uma sequência a seu gosto. Esta configuração de nós vai ser aplicada apenas aos objectos que existem na janela 3D View.</p>
+
+<img src="img/img20/9Edicao_video1b8916b1.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3- Certifique-se os seus valores de Start e End são 1 e 135, respectivamente.</p>
+
+<p>4- Adicione uma nova Scene, tipo Empty.</p>
+
+<img src="img/img20/10Edicao_video6d4728de.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5- Na nova Scene (se não mudar os nomes, a nova Scene deverá chamar-se Scene.001), active o modo de trabalho de Video Editing.</p>
+
+<p>6- Adicione um clip de vídeo (se preferir, pode usar uma imagem fixa). Adicione 2 Effect Strip do tipo Color e 2 Effect Strip do tipo Cross de forma a criar um fade-in no início (transição da 1ª Color para o clip de vídeo) e um fade-out no final (transição do clip de vídeo para a 2ª Color)· </p>
+
+<p>Ajuste os valores de Start e End. No nosso caso (ver imagem abaixo), temos 240 frames, 10 segundos, framerate 24 FPS. </p>
+
+<p>O clip de vídeo foi cortado (Shift+K) de forma a só ter 9 segundos.</p>
+
+<img src="img/img20/11Edicao_video5885e1c5.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>7- Coloque o cursor onde desejar na linha de tempo, faça Add > Scene e escolha a Scene. Irá surgir um novo bloco de cor verde com 135 frames. Este número de frames é aquele que definiu no Start e End da Scene inicial.</p>
+
+<p>8- Seleccione a Scene (bloco verde) e mude o Blend Mode para AlphaOver. A sua animação da Scene deverá agora surgir sobreposta ao clip de vídeo. Coloque o cursor (linha verde) onde deseja e faça um render (F12) para ver como irá ficar o resultado final, a janela de preview (em cima, lado direito) irá actualizar.</p>
+
+<img src="img/img20/12Edicao_video1f2a45cb.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>9-No nosso caso, o clip de vídeo está muito claro e não deixa ver correctamente a animação. Seleccionámos o clip de vídeo e utilizámos as funcionalidades de Color Balance para escurecer um pouco o clip de vídeo e permitir que se veja melhor a animação. Vá fqzendo novos renders (F12) para poder ir actualizando o resultado na janela de preview.</p>
+
+<img src="img/img20/13Edicao_video5961b21f.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>E agora é tempo de renderizar. Eis algumas frames da animação na sua versão final (10 segundos, 24 FPS):</p>
+
+<img src="img/img20/14Edicao_video3a8389cf.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img20/15Edicao_video63161374.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img20/16Edicao_video4a125ae1.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img20/17Edicao_video75b61990.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img20/18Edicao_video465d6f99.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img20/19Edicao_video1e66a4ae.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img20/20Edicao_video11c97282.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img20/21Edicao_video2ec4eedb.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img20/22Edicao_video5f8fc61b.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h4>Alguns Atalhos úteis:</h4>
+
+<p><strong>Shift+S:</strong> snap do clip seleccionado para o cursor</p>
+
+<p><strong>K:</strong> hard-cut do clip; <strong>Shitf+K:</strong> soft-cut do clip</p>
+
+<p><strong>H:</strong> esconder o clip seleccionado; <strong>Alt+H:</strong> mostrar clip seleccionado</p>
+
+<p><strong>Ctrl+G:</strong> criar metastrip; <strong>Alt+G:</strong> desfazer metastrip. <strong>Tab</strong> para editar metastrip.</p>
+
+<p><strong>Shift+L:</strong> trancar/proteger clip; <strong>Shift+Alt+L:</strong>  destrancar/desproteger clip</p>
+
+<h4>Últimas recomendações:</h4>
+
+<p>1. <strong>Memória RAM para trabalhar com o VSE:</strong> pode (e é recomendável) aumentar a quantidade de memória disponível para o Video Sequence Editor.</p>
+
+<img src="img/img20/23Edicao_video43861420.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2. <strong>Som:</strong> O VSE permite adicionar som e música ao seu projecto. </p>
+
+<p>Depois de adicionar um ficheiro de som tem acesso a um painel de propriedades próprio. Por exemplo, pode activar a opção “Draw Waveform” que permite ver a “forma da onda” do seu ficheiro e facilita as tarefas de sincronização entre imagem e áudio.</p>
+
+<p>Uma outra opção que deverá activar é a “Sync Mode”. Por pré-definição, o Blender tem a opção “No Sync” activada. Experimente os dois modos possíveis (AV-sync e Frame Dropping) para ver com qual consegue obter os melhores resultados.</p>
+
+<img src="img/img20/24Edicao_video57484690.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+		
+		
+		</div>
+		 
+		
+		
+		
+		
+		
+		
+		
+
+ </div>
+
+    <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>

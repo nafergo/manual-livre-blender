@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina"><small>Principais</small> Comandos e atalhos <small>do Blender</small></h1>
+      	
+      	<div class="page-header">
+				<h2>Lista dos principais comandos e atalhos</h2>
+      	</div>
+     
+     
+     <p>
+A lista abaixo apresentada identifica os atalhos mais utilizados e comuns. Deve ter em conta que
+ existem ainda outros atalhos e é possível reconfigurar ou criar novos atalhos.
+</p>
+<p> 
+ Os atalhos podem só funcionar ou funcionar de forma diferente em modos de trabalho ou editores diferentes. 
+ Por exemplo, se clicar no P em modo Object e em modo Edit obterá resultados diferentes. Ocorre uma situação similar se clicar no 
+ M com o cursor do rato em cima da janela 3D Viewport e na janela Timeline. Ou seja, um mesmo atalho pode produzir resultados diferentes 
+ consoante o editor (i.e. 3D Viewport, Editor de Nós, etc.) onde está ou o modo de trabalho (i.e. Object Mode, Pose Mode, etc.) que está a utilizar.     
+     </p>
+
+
+			<p>
+			<h3>GERAIS</h3>
+<ul>	
+	<li>Pesquisar função : Barra de Espaço</li>
+	<li>Barra de ferramentas (Toolbar) : T (na 3D View)</li>
+	<li>Propriedades : N (na 3D View)</li>
+	<li>Desfazer : Ctrl + Z </li>
+	<li>Refazer : Ctrl + Shift + Z </li>
+	<li>Duplicar : Shift + D </li>
+	<li>Duplicar linkado: Alt + D </li>
+	<li>Mover para outra camada (layer) : M </li>
+	<li>Esconder (Hide) : H </li>
+	<li>Revelar escondido : Alt + H </li>
+	<li>Criar parentesco (Child-Parent): Ctrl + P </li>
+	<li>Desfazer parentesco : Alt + P </li>
+	<li>Restabelecer Cursor 3D no centro : Shift + C </li>
+	<li>Atalho para menu de Snap : Shift + S </li>
+	<li>Adicionar a grupo : Ctrl + G</li>
+	<li>Guardar configurações/preferência no ficheiro Default : Ctrl + U</li>
+	<li>Aceder às preferências de utilizador: Ctrl + Alt + U</li>        		
+	
+</ul>
+
+			<h3>FICHEIROS</h3>
+<ul>
+	<li>Anexar (Append) ficheiro : Shift + F1 </li>
+	<li>Guardar ficheiro : Ctrl + S</li>
+</ul>
+
+			<h3>MANIPULAÇÃO</h3>
+<ul>
+	<li>Mover/translação: G </li>
+	<li>Rotação: R </li>
+	<li>Escala: S </li>
+	<li>Retirar/limpar operações de translação: Alt + G</li>
+	<li>Retirar/limpar operações de rotação: Alt + R</li>
+	<li>Retirar/limpar operações de escala: Alt + S</li>
+	<li>Movimentos precisos : [Pressionar] Shift</li> 
+	<li>Movimentos com incrementos constantes : [Pressionar] Ctrl</li> 
+	<li>Bloquear eixo : Botão do Meio do Rato ou pressionar X/Y/Z</li>
+</ul>
+
+			<h3>VISÃO</h3>
+<ul>
+	<li>Visão livre controlada pelo rato : Botão do Meio do Rato (BMR)</li>
+	<li>Zoom : Roda do Rato</li>
+	<li>Visão topo : Numpad 7 </li>
+	<li>Visão frente: Numpad 1 </li>
+	<li>Visão lado : Numpad 3 </li>
+	<li>Alternar perspetiva/ortogonal : Numpad 5 </li>
+	<li>Visão oposta (de baixo, trás e outro lado) : Ctrl + Numpad 1/3/7</li> 
+	<li>Visão câmara : Numpad 0 </li>
+	<li>Colocar câmara na visão atual : CTRL+ Alt + Numpad 0 </li>
+	<li>Zoom ao objeto : Numpad . </li>
+	<li>Visão lado : Numpad 3 </li>
+	<li>Visão local (só mostra o que estiver selecionado) : Numpad / </li>
+	<li>Modo Fullscreen : Alt + F11 </li>
+	<li>Alternar entre modo de visão sólido e em wireframe (arame):  Z </li>
+	<li>Alterna entre modo de visão sólido e textura: ALT + Z </li>
+	
+</ul>
+
+
+			<h3>SELECÇÃO</h3>
+<ul>
+	<li>Selecionar objeto : Botão Direito do Rato</li>
+	<li>Seleção múltipla : Shift + Botão Direito do Rato</li>
+	<li>Selecionar tudo e retirar seleção de tudo : A </li>
+	<li>Selecionar objeto atrás : Alt + Right Click </li>
+	<li>Selecionar ligado (Linked) : L </li>
+	<li>Selecionar tudo o que está ligado (Linked) : Ctrl + L </li>
+	<li>Seleção por caixa (Box) : B </li>
+	<li>Seleção por círculo (Circle) : C </li>
+	<li>Ferramenta de laço (Lasso) : Ctrl + Click </li>
+	<li>Inverter seleção : Ctrl + I</li>
+	<li>Aumenta/expande gradualmente a seleção: Ctrl + NUMPAD+</li>
+	<li>Diminui/reduz gradualmente a seleção: Ctrl + NUMPAD–</li>
+	<li>Seleciona Edge Loops: Alt + BDR (em GNU/Linux é Shift + Alt + BDR)</li>
+	<li>Seleciona Edge Rings: Ctrl + Alt + BDR</li>
+	
+</ul>
+
+			<h3>MODELAÇÃO</h3>
+<h4>Object Mode</h4>
+<ul>
+	<li>(Des)ligar Proportional Editing : O (letra ó)</li>
+	<li>Criar Seam : Ctrl + E </li>
+	<li>Espelhar objeto : Ctrl + M (e selecionar eixo para espelhar)</li>
+	 <li>Unir (une as geometrias) os objetos selecionados: Ctrl + J </li>
+ 	<li>Adicionar novo objeto : Shift + A</li> 
+	<li>Apagar objeto: X ou Delete</li>
+</ul>
+
+<h4>Edit Mode</h4>
+
+<ul>
+	<li>Adicionar (mesh, curve, etc.) dentro do mesmo objeto: Shift + A</li> 
+	<li>Apagar: X ou Delete</li>	
+	<li>Criar face : F </li>
+	<li>Preencher com faces : Alt+F </li>	
+	<li>Menu com várias operações especiais : W </li>
+	<li>Extrusão : E </li>
+	<li>Desligar vértices/arestas : V </li>
+	<li>Separar : P </li>
+	<li>Criar Loopcut : Ctrl + R </li>
+	<li>(Des)ligar Proportional Editing : O (letra ó)</li>
+	<li>Criar Seam : Ctrl + E </li>
+	<li>Unir vértices : Alt + M </li>
+	<li>Encolher/engordar : Alt + S </li>
+	<li>Faca/cortar (Knife) : K + Desenhar corte clicando no Botão Esquerdo do Rato</li>
+	<li>Preencher (Fill) : Alt + F </li>
+	<li>Embelezar geometria do preenchimento : Shift + Alt + F </li>
+</ul>
+
+
+
+			<h3>EDITORES E MODOS DE TRABALHO</h3>
+<ul>
+<li>Modo Edit/Object : TAB </li>
+	<li>Modo Vertex Paint : V </li>
+	<li>Modo Weight Paint : Ctrl + TAB </li>
+	<li>Alternar entre configurações das janelas de trabalho : Ctrl + Setas Esq./Dir.</li>
+	<li>Maximizar editor: Ctrl + Setas Cima (com seta baixo restaura)</li>
+</ul>
+
+			<h3>EDIÇÃO DE CURVAS (Curves )</h3>
+<ul>
+	<li>Fechar Path : Alt + C </li>
+	<li>Adicionar controlador/ponto : Ctrl + Clique </li>
+	<li>Subdividir : W </li>
+	<li>Inclinação (Tilt) : Ctrl + T </li>
+	<li>Limpar inclinação : Alt + T </li>
+	<li>Modificar controlador para Bezier : H </li>
+	<li>Modificar controlador para Vector : V </li>
+	<li>Reverter para controlador original : Shift + H </li>
+</ul>
+
+			<h3>RENDERIZAÇÃO</h3>
+<ul>
+	<li>Só renderizar área selecionada : Shift + B </li>
+	<li>Renderizar imagem: F12 </li>
+	<li>Renderizar animação : Ctrl + F12</li> 
+<li>Parar renderização : Esc </li>
+	<li>Guardar renderização : F3</li> 
+	<li>Mostrar última renderização : F11</li> 
+</ul>
+
+			<h3>SCULPTING</h3>
+<ul>
+	<li>Alterar dimensão do Brush : F </li>
+	<li>Alterar intensidade/força do Brush : Shift + F </li>
+</ul>
+
+
+			<h3>ANIMAÇÃO</h3>
+<ul>
+	<li>Reproduzir/Parar animação : Alt + A</li> 
+	<li>Reproduzir animação em sentido inverso : Alt + Shift + A </li>
+	<li>Frame seguinte : Seta direita</li>
+	<li>Frame prévia : Seta esquerda</li>
+	<li>Keyframe seguinte : Seta cima</li>
+	<li>Keyframe anterior : Seta baixo</li>
+	<li>Saltar para início : Shift + Seta esquerda</li>
+	<li>Saltar para final : Shift + Seta direita</li>
+	<li>Scroll nas frames : Alt + Roda do rato</li>
+	<li>Inserir Keyframe : I </li>
+	<li>Remover Keyframe : Alt + I</li> 
+</ul>	
+
+			<h3>LINHA DE TEMPO (Timeline)</h3>
+<ul>
+	<li>Definir Frame inicial (Start): S </li>
+	<li>Definir Frame final (End) : E </li>
+	<li>Mostrar todas as Frames : Home </li>
+	<li>Adicionar marcador : M </li>
+	<li>Mover marcador : Botão Direito do Rato e arrastar</li>
+	<li>Alternar entre Frames/Segundos : Ctrl + T</li>
+</ul>
+
+			<h3>EDITOR DE VÍDEO (Video Sequence Editor )</h3>
+<ul>
+	<li>Strip seguinte : Page Up </li>
+	<li>Strip prévia : Page Down </li>
+	<li>Selecionar Strip: Botão Direito do Rato</li>
+	<li>Selecionar múltiplas Strips: Shift + Botão Direito do Rato</li>
+	<li>Criar MetaStrip: M</li>
+	<li>Mover Strip: G</li>
+	<li>Dividir Strip (não-destrutivo): K</li>
+	<li>Dividir Strip (definitivo): Shift + K</li> 
+	<li>Trancar Strip : Shift + L </li>
+	<li>Destrancar Strip : Shift + Alt + L</li> 
+	<li>Copiar/Colar Strip : Ctrl + C , Ctrl + V</li> 
+	<li>Duplicar Strip : Shift + D</li>
+	<li>Separar imagens : Y </li>
+	<li>Colocar Strip na posição do Scrubber (linha verde) : Shift + S</li>
+</ul>
+
+			<h3>ARMADURAS</h3>
+<ul>
+	<li>Adicionar Bone: Shift + A</li>
+	<li>Adicionar Bone por extrusão : E / Ctrl + Clique</li>
+	<li>Alinhar Bones : Ctrl + Alt + A </li>
+	<li>Mover Bone para Layers : M </li>
+	<li>Ver Bone Layers : Shift + M </li>
+	<li>Alterar direção do Bone : Alt + F</li> 
+</ul>
+
+			<h3>EDITOR DE NÓS</h3>
+<ul>
+	<li>Adicionar nó : Shift + A </li>
+	<li>Cortar ligações (Links) : Ctrl + Botão Esquerdo do Rato</li>
+	<li>Abrir/fechar nó : H </li>
+	<li>Criar grupo : Ctrl + G </li>
+	<li>Desagrupar : Alt + G </li>
+	<li>Editar grupo : TAB </li>
+	<li>Deslocar janela: Botão do Meio do Rato</li>
+	<li>Mover fundo (backdrop): Alt + Botão do Meio do Rato</li>
+	<li>Zoom In ao fundo (backdrop): V </li>
+	<li>Zoom Out ao fundo (backdrop): Alt + V </li>
+	<li>Propriedades : N</li>
+</ul>
+
+			<h3>POSE MODE</h3>
+<ul>
+<li>Aplicar Pose : Ctrl + A </li>
+<li>Desfazer rotação : Alt + R </li>
+	<li>Desfazer localização : Alt + L </li>
+	<li>Desfazer escala : Alt + S </li>
+	<li>Copiar Pose : Ctrl + C </li>
+	<li>Colar Pose : Ctrl + V </li>
+<li>Adicionar IK (inverse kinematics): Shift + I </li>
+<li>Remover IK : Ctrl + Alt + I </li>
+<li>Adicionar Bone a grupo : Ctrl + G </li>
+<li>Relax Pose : Alt + E </li>
+</ul>		
+			
+			
+			
+			</p>
+ 
+ 
+       	
+            	<div class="page-header">
+				<h2>Criar novos atalhos</h2>
+      	</div>  	
+       	
+     <p>
+Na aba de Input das preferencias de utilizador é possível reconfigurar e criar novos atalhos, importar/exportar configurações, etc.  
+</p>
+
+ 			 <img src="img/introducao/interface/Screenshot-6.png" alt="..." class="img-responsive img-thumbnail center-block">         	
+       	
+       	
+       	
+       	
+       	<div class="page-header">
+				<h2>Teclados com atalhos</h2>
+      	</div>
+
+     		<p class="pull-right"><img src="img/introducao/keyboard-shortcuts.jpg" alt="..." class="img-responsive img-thumbnail"></p>
+
+<ul>
+<li>
+<a href="http://www.katsbits.com/tutorials/blender/useful-keyboard-shortcuts.php" target="_blank">Katsbits</a>
+</li>
+
+</ul>
+
+
+
+
+
+
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>
