@@ -43,7 +43,8 @@
 
 
 <p>1- Comece uma nova cena no Blender, limpe o cubo que surge automaticamente (X). Adicione um cubo à cena (ADD/MESH/CUBE).  </p>
-<p>2- O nosso dado vai ter arestas arredondadas. Uma forma rápida de obter esse efeito é aumentando a resolução do cubo e arredondaras arestas. selecione o cubo, passe para modo Edit (Tab), vá ao painel Mesh Tools (lado esquerdo da janela 3D View), clique 5 vezes em Subdivide e, depois, clique 5 vezes em Smooth Vertex. </p>
+<p>2- O nosso dado vai ter arestas arredondadas. Uma forma rápida de obter esse efeito é aumentando a resolução do cubo e arredondar as arestas. 
+Selecione o cubo, passe para modo Edit (Tab), vá ao painel Mesh Tools (lado esquerdo da janela 3D View), clique 5 vezes em Subdivide e, depois, clique 5 vezes em Smooth Vertex. </p>
 
 
 <img src="img/img2/1_ dado_html_m7a86e682.png" alt="..." class="img-responsive img-thumbnail center-block">
@@ -64,6 +65,15 @@
 <p>6- Mude para a visão frontal, em modo Edit utilize a seleção por caixa, corte a parte superior da esfera (apague vértices). A esfera deverá agora estar semelhante a esta... </p>
 
 <img src="img/img2/4_ dado_html_75109339.png" alt="..." class="img-responsive img-thumbnail center-block">		
+
+
+<p>Selecione todos os vértices do topo (ver imagem abaixo) da meia-laranja criada. Clique em Shift+S e escolha a opção Cursor To 
+Selected para o cursor 3D ser colocado no centro dos vértices selecionados. Depois, na barra de ferramentas (barra à esquerda da janela 
+3D View) clique no menu Set Origin e escolha a opção Origin to Cursor.</p>
+
+<img src="img/img2/centrar_origem.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
 
 <p>7- Com todos os vértices selecionados, clique novamente no botão “Smooth” (Shading) para Faces da aba Shading/UVs, no painel de ferramentas (Tools). </p>		
 
@@ -108,6 +118,13 @@ Vá ao menu Mesh, submenu Snap (atalho Shift+S) e clique na opção “Cursor to
 
 <p>Neste caso, já tinha 1 meia-laranja alinhada, dupliquei-a em visão de topo (ortogonal) para que o alinhamento
  em Z não se perca. Dupliquei 2 vezes porque estou a trabalhar o lado do dado que equivale ao número 3 (3 pontos). </p>
+ 
+ 
+ <p>DICA: quando estiver a mover/rodar a meia-laranja, mantenha a tecla CTRL pressionada para utilizar incrementos fixos. 
+ Facilita E MUITO a exatidão dos movimentos e rotações.</p>
+ 
+ <p>Duplique uma das meias-laranjas e posicione a mesma fora do cubo. Esta meia-laranja irá servir para criar os restantes 
+ pontos do dado.</p>
 
 <p>11- De seguida, vamos preencher o espaço que falta nos lados do dado. Primeiro, una as meshes do dado e das 
 meia-laranjas (selecione os objetos e clique em CTRL+J). Agora, já consegue ver e selecionar simultaneamente os vértices das meia-laranjas e do dado.</p>
@@ -143,19 +160,25 @@ simultaneamente os vértices das meia-laranjas e do dado), para separar, criando
 <p>Agora tem dois materiais atribuídos: Material ao corpo do dado e Material.001 aos pontos. Pode mudar os nomes dos materiais clicando na caixa de texto ao lado do sinal + que clicou previamente e escrevendo o nome desejado.</p>
 
 <p>Nos próximos pontos, apenas precisa de selecionar as faces dos pontos, escolher o material e clicar em Assign.</p>
+<p>SUGESTÃO: Em vez de utilizar o mesmo material em todos os pontos, crie outros materiais para criar um dado mais colorido.</p>		
 
 <p>16- A imagem renderizada deverá ser semelhante a esta... </p>
 
 <img src="img/img2/16_ dado_html_374352b1.png" alt="..." class="img-responsive img-thumbnail center-block">
 
-<p>17- E agora, conclua o seu dado!</p>
+<p>17- E agora, conclua o seu dado e crie uma composição!</p>
 
-<p>DICA: quando estiver a rodar a meia-laranja, mantenha a tecla CTRL pressionada para limitar a rotação com incrementos fixos... facilita E MUITO a exatidão da rotação.</p>
+<img src="img/img2/dados.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
-<p>SUGESTÃO: Em vez de utilizar o mesmo material em todos os pontos, crie outros materiais para criar um dado mais colorido.</p>		
+
+
+
+
+
 		
 		
-		
+<p><small>Exercício adaptado de <a href="http://www.blendernation.com/tutorials/blender-3d-beginner-tutorial-a-die/" target="_blank">A die</a>.</small>
+</p>		
 		
 		</div>
 		
