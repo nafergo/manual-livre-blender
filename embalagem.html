@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina"><small>Criar uma simples</small> Embalagem e expositor <small>e renderizar em Cycles</small></h1>
+      	
+  
+			<p>Neste exercício, vamos construir um expositor e embalagens que representam os cursos da  ESEV. As imagens utilizadas foram retiradas
+			da <a href="http://www.esev.ipv.pt/" target="_blank">página oficial da ESEV</a>.</p>
+  
+  <img src="img/embalagem/final.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+
+
+			<div class="page-header">
+        		<h2>Embalagem</h2>
+	      </div>
+
+
+1. Comece por adicionar um cilindro com 8 vértices, altura de 4 unidades e sem preenchimento no topo e base. 
+  <img src="img/embalagem/embalagem1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+2. Selecione a linha de vértices do topo. Coloque-se em visão de topo, modo ortogonal. Faça extrude (E) mas não mova o rato, clique no Enter. 
+Depois altere a escala (S), aumente ligeiramente como na imagem abaixo. 
+<img src="img/embalagem/embalagem2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+3. Coloque-se lado e faça um novo Extrude no eixo Z seguindo a imagem abaixo.
+<img src="img/embalagem/embalagem3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+4. Coloque-se em visão de topo, modo ortogonal. Faça extrude (E) mas não mova o rato, clique no Enter. 
+Depois altere a escala (S), aumente ligeiramente como na imagem abaixo.
+<img src="img/embalagem/embalagem4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+5. Faça um novo Extrude em Z mas desta feita desça os vértices obtendo a forma da imagem abaixo.
+<img src="img/embalagem/embalagem5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+6. Coloque-se em visão de topo, modo ortogonal. Faça extrude (E) mas não mova o rato, clique no Enter. 
+Depois altere a escala (S), clique em 0 para reduzir a dimensão a 0 e fechar o topo do objeto (vértices irão unir-se no centro.
+<img src="img/embalagem/embalagem6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+7. Selecione os vértices da base e repita o passo anterior para fechar a base do objeto.
+<img src="img/embalagem/embalagem7.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+8. Deverá obter uma forma similar à da imagem abaixo.
+<img src="img/embalagem/embalagem8.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+			<div class="page-header">
+        		<h2>Materiais</h2>
+	      </div>
+
+9. Crie um material para o objeto. No nosso caso, demos o nome embalagem. Crie um novo material (rotulo - evite utilizar acentos) e aplique-o apenas 
+às faces indicadas na imagem.
+<img src="img/embalagem/embalagem9.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+10. Selecione as arestas indicadas abaixo e utilize o atalho CTRL+E para criar as Seams (Mark Seams) para o UV Map.
+<img src="img/embalagem/embalagem10.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+11. Divida a área de trabalho abrindo uma janela do tipo UV/Image Editor. Selecione as faces do rótulo, clique em U e escolha Unwrap.
+<img src="img/embalagem/embalagem11.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+12. Na janela UV/Image Editor exporte o UV Layout.
+<img src="img/embalagem/embalagem12.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+13. Utilize um editor de imagem para construir os rótulos para os diversos cursos tendo por base o UV Layout exportado..
+<img src="img/embalagem/embalagem13.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+14. De volta ao Blender, na janela UV/Image Editor faça Open Image (Image) e selecione o rótulo criado. 
+
+
+  <img src="img/embalagem/uv1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+  
+15. Configure o material rótulo para inserir a sua imagem. O nó Image Texture permite aceder a um menu onde está disponível a imagem 
+inserida no passo anterior.  
+  <img src="img/embalagem/uv2.jpg" alt="..." class="img-responsive img-thumbnail center-block">  
+  
+  
+16. Configure o material embalagem. No nosso caso, foi utilizada a ferramenta de seleção de cores para escolher para o material 
+embalagem a mesma cor azul existente no rótulo.
+  <img src="img/embalagem/uv3.jpg" alt="..." class="img-responsive img-thumbnail center-block">  
+  
+17. Duplique a embalagem tantas vezes quantas as necessárias/desejadas para criar novas embalagens de curso.  
+  <img src="img/embalagem/uv4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+  
+18. As novas embalagens estão a utilizar o mesmo material da primeira embalagem. Separe os materiais (pode apagar e recriar os materiais ou 
+clicar no número existente à direita do nome do material que indica quantos objetos estão a partilhar o material - no nosso caso 
+esse número já não é visível porque os materiais já foram separados). Atribua nomes fáceis de identificar! Remova a imagem no rótulo e insira 
+a nova imagem através do Open.  
+  <img src="img/embalagem/uv5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+  
+19. Na configuração dos materiais, não se esqueça de trocar a imagem no nó Image Texture!  
+  <img src="img/embalagem/uv6.jpg" alt="..." class="img-responsive img-thumbnail center-block">      
+  
+      
+			<div class="page-header">
+        		<h2>Expositor</h2>
+	      </div>
+	          
+			<p>O expositor foi criado a partir de um cubo.</p>
+    
+  <img src="img/embalagem/expositor1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+  <img src="img/embalagem/expositor2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+    
+<p>Utilize a ferramente CTRL+R para criar Edge Loops para as prateleiras.</p>    
+    <img src="img/embalagem/expositor3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+  <img src="img/embalagem/expositor4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<p>Selecione os vértices e clique em F para criar uma face que irá servir de prateleira.</p>  
+  <img src="img/embalagem/expositor5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+  <img src="img/embalagem/expositor6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+  
+<p>Redimensione o expositor para este ser mais largo.</p>  
+  <img src="img/embalagem/expositor7.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+  
+<p>Redimensione as embalagens e coloque-as nas prateleiras.</p>  
+  <img src="img/embalagem/expositor8.jpg" alt="..." class="img-responsive img-thumbnail center-block">            
+  
+  
+  <img src="img/embalagem/final.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>
