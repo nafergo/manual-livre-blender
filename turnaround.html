@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nelson gonçalves" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina"><small>Criar uma animação</small> Turnaround</h1>
+      	
+      	<div class="page-header">
+				<h2>Com add-on Turnaround Camera</h2>
+      	</div>
+     
+<p>1. Descarregue o add-on <a href="https://github.com/Antonioya/blender/tree/master/turnaround_camera" target="_blank">Turnaround Camera</a>.     </p>
+     
+<p>2. Instale o add-on.</p>     
+            <img src="img/addons/animacao/turnaround1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+            <img src="img/addons/animacao/turnaround2.jpg" alt="..." class="img-responsive img-thumbnail center-block"> 
+
+<p>3. Se pretender utilizar novamente este add-on e não quer repetir os passos anteriores, não se esqueça de clicar em Save User Settings.</p>
+            <img src="img/addons/animacao/turnaround3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4. Selecione o objeto em torno do qual pretende criar a animação da câmara. Na aba Misc surge o painel com as opções de configuração do add-on.</p>
+
+<ul>
+<li><strong>Botão Turnaround:</strong> botão para criar animação. Se alterar os parâmetros de configuração tem de clicar novamente neste botão para atualizar a animação.</li>
+<li><strong>Use cursor position:</strong> Em vez do objeto selecionado, utiliza a posição do cursor 3D como pivot para a animação.</li>
+<li><strong>Camera:</strong> identifica a câmara que irá ser animada.</li>
+<li><strong>Start/End Frame:</strong> número das frames da animação, determina a frame em que se inicia e em que termina a animação.</li>
+<li><strong>X, Y e Z:</strong> número de rotações (revoluções) em torno de cada eixo. Por predefinição, a animação faz uma rotação completa em torno do eixo Z.</li>
+<li><strong>-X, -Y e -Z:</strong> inverte a direção da rotação.</li>
+<li><strong>Back and forward:</strong> cria uma animação com avanço-recuo. A câmara regressa à posição inicial.</li>
+<li><strong>Lens Effects:</strong> permite animar a distância focal com efeito Zoom </li>
+<li><strong>Create track constraint:</strong> cria um constraint para a câmara que fica disponível no painel de constraints para posterior configuração adicional.</li>
+</ul>
+
+            <img src="img/addons/animacao/turnaround4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+ 
+			<div class="page-header">
+        		<h2>Manualmente</h2>
+	      </div>
+    
+			<p>...</p>
+    
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>
