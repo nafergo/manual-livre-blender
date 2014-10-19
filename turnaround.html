@@ -5,7 +5,7 @@
 
 <meta name="description" content="Manual Livre de Blender" /> 
 <meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
-<meta name="author" content="nelson gonçalves" >
+<meta name="author" content="nafergo" >
 <meta charset="UTF-8">
 <title>Manual Livre de Blender</title>   
 <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -74,8 +74,66 @@
         		<h2>Manualmente</h2>
 	      </div>
     
-			<p>...</p>
-    
+<p>1. Comece por adicionar um Circle (Curve) que irá definir o percurso da câmara.</p>
+<img src="img/addons/animacao/turnaround5.jpg" alt="..." class="img-responsive img-thumbnail center-block">    
+
+
+<p>2. Redimensione o Circle (Curve) e depois faça CTRL+A para aplicar a escala (Apply Scale).</p>
+<img src="img/addons/animacao/turnaround6.jpg" alt="..." class="img-responsive img-thumbnail center-block">    
+
+<p>3. Em Edit Mode, pode subdividir o Circle e manipular o percurso.</p>
+<img src="img/addons/animacao/turnaround7.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4. Selecione a câmara e remova todas as rotações (ALT+R) e deslocações (ALT+G). A câmara irá para o centro da cena.</p>
+
+<img src="img/addons/animacao/turnaround8.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5. Selecione a câmara e adicione um Constraint do tipo Follow Path. Selecione o círculo como 
+Target e ative o Follow Curve. Reposicione a câmara se necessário (comece por fazer ALT+G) e rode a mesma 
+de modo a que esta esteja apontada para o objeto no centro. Clique no botão Animate Path para criar a animação.</p>
+
+<ul>
+<li><strong>Target:</strong> objeto que define o percurso.</li>
+<li><strong>Animate Path:</strong> botão que cria a animação.</li>
+<li><strong>Follow Curve:</strong> direção do objeto roda alinhada com o percurso. Se não estiver ativo, o objeto desloca-se mas está 
+sempre virado na mesma direção.</li>
+<li><strong>Curve Radius:</strong> escala do objeto é determinada pelo raio da curva utilizada.</li>
+<li><strong>Fixed Position:</strong> objeto permanece imóvel (fixo). Pode inserir keyframes nesta opção.</li>
+<li><strong>Offset:</strong> permite introduzir um Offset na posição do objetoiiiiiii.</li>
+<li><strong>Eixos:</strong> eixos que indicam a frente (Forward) e cima (Up).</li>
+<li><strong>Influence:</strong> grau de influência do constraint. 0 = não ter constraint. Pode inserir keyframes nesta opção.</li>
+</ul>
+
+
+<img src="img/addons/animacao/turnaround9.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/addons/animacao/turnaround10.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>6. A sua câmara deverá agora andar em torno do objeto central. Por predefinição, a animação tem 100 frames. Selecione o Circle e 
+nas opções Path Animation aumente o número de frames para a animação durar mais tempo.</p>
+<img src="img/addons/animacao/turnaround11.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>7. Nesta altura, o principal problema é que a câmara não está fixa no elemento central. Para resolvermos isso vamos adicionar 
+um novo constraint (Track To) através de atalho. Selecione a câmara, depois o objeto central, clique em 
+CTRL+T e escolha  Track To Constraint. Irá ser adicionado um novo constraint na câmara.</p>
+
+
+<p>Se preferir, pode fixar a câmara num Empty (em vez do objeto central). Esta possbilidade permite-lhe depois animar o ponto 
+para onde a câmara est
+a apontada.</p>
+<img src="img/addons/animacao/turnaround12.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/addons/animacao/turnaround13.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>DICA: Se não pretende manipular/configurar mais do que a duração da animação, em vez de adicionar o constraint Follow Path pode 
+simplesmente utilizar o atalho CTRL+P (primeiro seleciona a câmara de depois o objeto central) e escolher a opção Follow Path. Depois basta 
+introduzir o constraint Track To através de atalho (selecione a câmara, depois o objeto central e clique em CTRL+T) para controlar 
+o ponto onde a câmara está fixada. Ou seja, com dois atalhos (CTRL+P e CTRL+T) cria a animação Turnaroud.</p>
+
+<img src="img/addons/animacao/turnaround14.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
 
    	</div>
 	</div>
