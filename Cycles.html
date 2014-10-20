@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina">Cycles</h1>
+      	
+
+      	<div class="page-header">
+				<h2>Introdução</h2>
+      	</div>
+      	
+
+<p>Cycles é o nome de um novo motor de renderização do Blender. Disponível desde o Blender 2.61, o Cycles ainda está em desenvolvimento. No entanto, o elevado nível de maturação entretanto atingido permite já a sua utilização em produção.</p>
+
+<p>O Cycles situa-se entre um motor de renderização que visa um realismo total e um motor de renderização totalmente configurável e programável. Este motor sofisticado disponibiliza uma renderização baseada na física, permite uma enorme flexibilidade de configuração através de um sistema baseado em nós e suporta a programação em Open Shading Language1 (OSL).</p>
+
+<p>A renderização com GPU (Graphic Processing Unit) e o Rendered Viewport shading são duas das funcionalidades mais interessantes do Cycles. A primeira, disponível apenas para aqueles que possuem uma placa gráfica com GPU compatível, permite renderizar muito mais rapidamente do que no processo tradicional com CPU. A segunda, disponível para todos os utilizadores, permite pré-visualizar com bastante rigor, rapidez e realismo o render final na própria janela de 3D!</p>
+
+<p>No futuro, este novo motor de renderização deverá substituir o atual motor interno (Blender Render), comummente designado por Blender Internal (BI), como principal motor de renderização. No entanto, isto não significa o desaparecimento do Blender Internal.  Na realidade, pretende-se que os utilizadores de Blender tenham acesso “out-of-the-box” aos 2 sistemas de renderização, dado que estes são complementares e apresentam  vantagens e desvantagens, dependendo dos objetivos pretendidos.</p>
+
+<p>O BI é um “biased rasterization engine”. “Biased” significa que faz concessões ao realismo da imagem renderizada em favor da eficiência, rapidez. Os motores de renderização “biased” introduzem um “bias error”, geralmente sob a forma de blur, para reduzir os tempos de renderização. Maior controle na configuração (do que os motores “unbiased”) e maior rapidez são as duas principais vantagens associadas a este tipo de motor de renderização. “Rasterization” significa que o motor de renderização calcula os objetos que são visíveis para a câmara e não a simulação do comportamento da luz, a renderização resulta do mapeamento da geometria da cena para pixels, projeção dos objetos presentes na cena para uma imagem plana sem efeitos óticos avançados.</p>
+
+<p>O Cycles é um “unbiased, physically based, path tracing engine”. Isto significa que não é voluntariamente introduzido nenhum erro ou “bias” e que o Cycles calcula o caminho da luz (path of light) de forma tão realista e correta (do ponto de vista da física) quanto possível. Geralmente, os motores “unbiased” produzem renderizações com muito maior qualidade e realismo  do que os motores “biased”. No entanto, essa qualidade e correção traduz-se em perda de velocidade. </p>
+
+<p>Em síntese, os motores “biased”, como o Blender Internal, são orientados para a rapidez e permitem (assim como exigem!) maior configuração. Os motores “unbiased”, como o Cycles, são orientados para o maior realismo e exatidão da imagem renderizada.</p>
+
+<img src="img/img40/1cycles6f1b5196.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Para mais informações, sugere-se a consulta de http://wiki.blender.org/index.php/Doc:2.6/Manual/Render/Cycles</p>           	
+           	
+
+ <h3>Ativar o motor de renderização Cycles no Blender</h3>
+
+<p>Para ativar o motor Cycles, utilize o menu de Render Engines existente no topo da interface da aplicação.</p>
+
+<img src="img/img40/2cycles78b78114.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Se não tiver a opção disponível, verifique na janela de Addons se o Cycles Render Engine está ativado.</p>
+
+<img src="img/img40/3cycles1cd6a9aa.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+      	<div class="page-header">
+				<h2>Materiais</h2>
+      	</div>
+
+
+<p>O motor de renderização Cycles define os seus materiais através de uma função 
+matemática designada por BSDF (Bidirectional Scattering Distribution Function) que descreve o comportamento da luz 
+quando esta atinge uma superfície.</p>
+<p>Para configurar os materiais, é necessário ativar o sistema de nós (Use Nodes) e altamente recomendável utilizar a janela do
+ Editor de nós (Node Editor).</p>
+
+<img src="img/img40/8cycles336624b4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+      	<div class="page-header">
+				<h2>Noise e Fireflies (pirilampos)</h2>
+      	</div>
+
+<h3>Noise</h3>
+<p>Noise é a designação atribuída ao "granulado" gerado durante a síntese da imagem pelo Cycles. A forma mais simples de 
+reduzir o noise é aumentar os samples (Render Panel, opções de Sampling) da renderização. O noise é consequência do modo 
+de funcionamento deste renderizador, não pode ser eliminado mas pode ser reduzido.</p>
+
+<p>Para obter sugestões sobre como acelerar a renderização, consulte o texto <a href="render_tricks_no_cycles.html">Acelerar renderização (Cycles)</a>.</p>
+
+<h3>Fireflies</h3>      	
+<p>Os fireflies (pirilampos) são pixels brilhantes isolados que surgem nas imagens renderizadas com Cycles. São uma 
+consequência da utilização de fórmulas realistas da física para síntese de imagem e surgem por causa de erros ou falta de 
+exatidão dos algoritmos (instabilidade numérica).</p>  
+
+<p>Geralmente, não surgem em render simples ou rápidos e existem várias técnicas/soluções que podem ser implementadas.</p>
+
+
+<h4>Através da configuração do render</h4>
+
+<strong>"Clamp" (Render Panel, opções de Sampling)</strong>
+
+<p>Se não estiver a 0 (zero), impõe um valor máximo na intensidade com que cada sample de raio de luz contribui para cada pixel. 
+Normalmente, 1.0 corresponde a totalmente branco mas alguns pontos podem ainda ser mais brilhantes. Tente 3 antes de voltar a 
+renderizar e não utilize valores abaixo de 1 ou 2 porque elimina demasiado contraste.</p>
+
+ <strong>Desativar as Caustics (Render Panel, opções de Light Paths)</strong>
+ <p>Se a solução acima não funcionar, volte a colocar o Clamp a 0 e desative as opções de Caustics no painel Light Paths. As 
+ cáusticas são um efeito importante para uma iluminação realista mas nem sempre necessário. O efeito é sobretudo visível com 
+ vidro e água. </p>
+  
+  <strong>Filter Glossy</strong>
+<p>O "Filter Glossy" aplica deliberadamente um "blur" a alguns  reflexos de luz sacrificando alguma exatidão.</p> 
+  
+
+<h4>Através do Filtro Despeckle</h4>
+
+  <p>Através do compositor de nós (Node Editor) é possível utilizar o nó Despeckle (Filter) suavizando pontos que 
+  não se enquadram na imagem, pixels anómalos isolados. O filtro compara cada pixel com os 8 pixels vizinhos. 
+  O “Threshold” e "Neighbor" permitem definir o grau de "estranheza" aceitável para um pixel em relação aos seus vizinhos.</p>
+ 
+ 
+  <p>Experimente reduzir o “Threshold” de 0.5 para 1.</p>
+
+  
+  
+  
+        	<div class="page-header">
+				<h2>Diminuir o tempo de renderização</h2>
+      	</div>
+      	
+      	<p>Ver texto <a href="render_tricks_no_cycles.html">Acelerar renderização (Cycles)</a>.</p>
+      	    	
+
+      	<div class="page-header">
+				<h2>Funcionalidades úteis</h2>
+      	</div>
+
+
+<h3>GPU no Cycles</h3>
+
+<p>Para ativar a renderização por GPU, aceda às preferências do System e veja se tem disponível alguma opção no Compute Device. </p>
+
+<p>Presentemente, a renderização por GPU só está disponível para os utilizadores com placa gráfica da NVIDIA.</p>
+
+<img src="img/img40/4cycles5b86ae41.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Depois de ativar a opção CUDA, no painel de renderização passa a ter disponíveis as opções CPU e GPU em Device.</p>
+
+<img src="img/img40/5cycles71e4e700.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+
+
+<h3>Visualização em tempo real</h3>
+<p>Para visualizar o resultado em tempo real na janela de 3D View, 
+ative a nova opção Rendered existente no menu de Viewport shading.</p>
+
+<img src="img/img40/18cycles154190d2.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/19cycles7dbb4226.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<h3>Progressive Render</h3>
+<p>No painel Performance, disponível nas opções de renderização, 
+existe a opção Progressive Refine. Se ativar esta opção, em vez de a renderização ser feita por <i>tiles</i> (vão surgindo quadrados à medida que termina a renderizaçao) surge a
+imagem total e esta vai sendo refinada. Ou seja, em vez de renderizar até ao fim cada <i>tile</i>, renderiza a imagem total com 1 sample de cada vez. A grande vantagem é que pode 
+definir o número de samples para 5000 e depois parar quando considerar que já tem qualidade suficiente (sem ter de esperar até a última <i>tile</i> estar renderizada).</p>
+
+<img src="img/intros/renderizacao/progressive1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/intros/renderizacao/progressive2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/intros/renderizacao/progressive3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+      	
+    
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>
