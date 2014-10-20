@@ -5,7 +5,7 @@
 
 <meta name="description" content="Manual Livre de Blender" /> 
 <meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
-<meta name="author" content="nafergo" >
+<meta name="author" content="nelson gonçalves" >
 <meta charset="UTF-8">
 <title>Manual Livre de Blender</title>   
 <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -151,11 +151,84 @@ UV Layout</strong> é a imagem 2D que represente o modelo 3D.</p>
       	<p><strong>
 IOR</strong> (Index Of Refraction /  Índice de refração) é um conceito da ótica, é um valor que descreve
  a relação entre a velocidade da luz no vácuo e a velocidade com que a luz se propaga através de um determinado meio. Materiais diferentes 
- têm IORs diferentes. Vidro e/com líquidos são materiais onde este valor assume especial importância.</p>      	
-      	
+ têm IORs diferentes e isso significa uma interação diferente com a luz. Vidro e líquidos (materiais com transparência, que são atravessados pelos raios de luz) são
+  materiais onde este valor assume especial importância pois configurar o IOR significa controlar o grau em que o ambiente visível através do material surge distorcido.</p>      	
+
+
+	<div class="row">
+   	<div class="col-xs-6">
  		<p class="text-center"><img src="img/intros/materiais/Dibujo1-Model1.png" alt="..." class="img-responsive img-thumbnail center-block">
 <small>Imagem retirada de <a href="http://www.yafaray.org/documentation/userguide/material#Glass" target="_blank">YafaRay Materials Introduction</a>.</small>
 </p>      	     	
+   	
+   	</div>
+   	
+
+   	<div class="col-xs-6">
+  	
+   	<h4>Alguns materiais</h4>
+<table class="table">
+  <thead>
+  <tr>
+  <th>Material</th>
+  <th>IOR</th>
+  </tr>
+  
+  </thead>
+  
+  
+  <tbody>
+<tr><td>Água</td> <td>1.333</td>  </tr>
+
+<tr><td>Vidro</td> <td>1.5</td>  </tr>
+
+<tr><td>Cerveja</td> <td>1.345</td>  </tr>
+
+<tr><td>Bronze</td> <td>1.180</td>  </tr>
+
+<tr><td>Cobre</td> <td>1.1</td>  </tr>
+
+<tr><td>Cristal</td> <td>2</td>  </tr>
+
+<tr><td>Diamante</td> <td>2.418</td>  </tr>
+
+<tr><td>Ouro</td> <td>0.470</td>  </tr>
+
+<tr><td>Gelo</td> <td>1.31</td>  </tr>
+
+<tr><td>Ferro</td> <td>2.950</td>  </tr>
+
+<tr><td>Marfim</td> <td>1.54</td>  </tr>
+
+<tr><td>Chumbo</td> <td>2.01</td>  </tr>
+
+<tr><td>Leite</td> <td>1.35</td>  </tr>
+
+<tr><td>Óleo (vegetal)</td> <td>1.470</td>  </tr>
+
+<tr><td>Plástico</td> <td>1.46</td>  </tr>
+
+<tr><td>Vodka</td> <td>1.363</td>  </tr>
+  
+  </tbody>
+</table>
+   	<p>
+Mais valores disponíveis nesta <a href="http://en.wikipedia.org/wiki/List_of_refractive_indices">lista de IORs (Wikipedia)</a>.   	
+
+</p> 
+   	</div>
+   	
+
+  </div>
+
+
+      	
+
+
+
+
+
+
 
 
 
@@ -174,11 +247,13 @@ Quase todos os materiais refletem pelo menos alguma luz. Utilize sempre algum re
 </p>
 
 <p>
-<strong>Materiais condutores:</strong> materiais que conduzem eletricicidade (mais comuns os metais). Materiais condutores alteram cor especular (specular), tingindo. Utilize a mesma cor no Diffuse e Specular como ponto de partida (pode variar intensidade ou até a matiz, ligeiramente, mas mantenha matizes similares ou aproximadas). Ouro tem Diffuse e Specular com tons de amarelo, etc.
+<strong>Materiais condutores:</strong> materiais que conduzem eletricicidade (mais comuns os metais). Materiais condutores alteram cor especular (specular), tingindo-a.
+ <strong>Utilize a mesma cor no Diffuse e Specular</strong> como ponto de partida (pode variar intensidade ou até a matiz, ligeiramente, mas mantenha matizes similares ou aproximadas). Ouro tem Diffuse e Specular com tons de amarelo, etc.
 </p>
 
 <p>
-<strong>Materiais dielétricos (isolantes):</strong> não conduzem eletricidade (madeira, vidro, louça, plástico, borracha, tecidos, etc.). Estes materiais são neutros à luz e não afetam a cor do dos reflexos (Specular). Se a luz é branca, os reflexos (Specular) são brancos. Se a luz é amarela, os reflexos são amarelos, etc.
+<strong>Materiais dielétricos (isolantes):</strong> não conduzem eletricidade (madeira, vidro, louça, plástico, borracha, tecidos, etc.). Estes materiais são neutros à luz
+ e não afetam a cor do dos reflexos (Specular). <strong>Se a luz é branca, os reflexos (Specular) são brancos</strong>. Se a luz é amarela, os reflexos são amarelos, etc.
 </p>
 
 
