@@ -52,49 +52,9 @@ criação de uma imagem a partir de um modelo ou cena através de um software es
 				<h2>Blender Render, Cycles e Freestyle</h2>
       	</div>
       	
-      	<h3>Cycles</h3>
+
 
 <p>Cycles é o nome de um novo motor de renderização do Blender. Disponível desde o Blender 2.61, o Cycles ainda está em desenvolvimento. No entanto, o elevado nível de maturação entretanto atingido permite já a sua utilização em produção.</p>
-
-<p>O Cycles situa-se entre um motor de renderização que visa um realismo total e um motor de renderização totalmente configurável e programável. Este motor sofisticado disponibiliza uma renderização baseada na física, permite uma enorme flexibilidade de configuração através de um sistema baseado em nós e suporta a programação em Open Shading Language1 (OSL).</p>
-
-<p>A renderização com GPU (Graphic Processing Unit) e o Rendered Viewport shading são duas das funcionalidades mais interessantes do Cycles. A primeira, disponível apenas para aqueles que possuem uma placa gráfica com GPU compatível, permite renderizar muito mais rapidamente do que no processo tradicional com CPU. A segunda, disponível para todos os utilizadores, permite pré-visualizar com bastante rigor, rapidez e realismo o render final na própria janela de 3D!</p>
-
-<p>No futuro, este novo motor de renderização deverá substituir o atual motor interno (Blender Render), comummente designado por Blender Internal (BI), como principal motor de renderização. No entanto, isto não significa o desaparecimento do Blender Internal.  Na realidade, pretende-se que os utilizadores de Blender tenham acesso “out-of-the-box” aos 2 sistemas de renderização, dado que estes são complementares e apresentam  vantagens e desvantagens, dependendo dos objetivos pretendidos.</p>
-
-<p>O BI é um “biased rasterization engine”. “Biased” significa que faz concessões ao realismo da imagem renderizada em favor da eficiência, rapidez. Os motores de renderização “biased” introduzem um “bias error”, geralmente sob a forma de blur, para reduzir os tempos de renderização. Maior controle na configuração (do que os motores “unbiased”) e maior rapidez são as duas principais vantagens associadas a este tipo de motor de renderização. “Rasterization” significa que o motor de renderização calcula os objetos que são visíveis para a câmara e não a simulação do comportamento da luz, a renderização resulta do mapeamento da geometria da cena para pixels, projeção dos objetos presentes na cena para uma imagem plana sem efeitos óticos avançados.</p>
-
-<p>O Cycles é um “unbiased, physically based, path tracing engine”. Isto significa que não é voluntariamente introduzido nenhum erro ou “bias” e que o Cycles calcula o caminho da luz (path of light) de forma tão realista e correta (do ponto de vista da física) quanto possível. Geralmente, os motores “unbiased” produzem renderizações com muito maior qualidade e realismo  do que os motores “biased”. No entanto, essa qualidade e correção traduz-se em perda de velocidade. </p>
-
-<p>Em síntese, os motores “biased”, como o Blender Internal, são orientados para a rapidez e permitem (assim como exigem!) maior configuração. Os motores “unbiased”, como o Cycles, são orientados para o maior realismo e exatidão da imagem renderizada.</p>
-
-<img src="img/img40/1cycles6f1b5196.png" alt="..." class="img-responsive img-thumbnail center-block">
-
-<p>Para mais informações, sugere-se a consulta de http://wiki.blender.org/index.php/Doc:2.6/Manual/Render/Cycles</p>           	
-           	
-
- <h4>Ativar o motor de renderização Cycles no Blender</h4>
-
-<p>Para ativar o motor Cycles, utilize o menu de Render Engines existente no topo da interface da aplicação.</p>
-
-<img src="img/img40/2cycles78b78114.png" alt="..." class="img-responsive img-thumbnail center-block">
-
-<p>Se não tiver a opção disponível, verifique na janela de Addons se o Cycles Render Engine está ativado.</p>
-
-<img src="img/img40/3cycles1cd6a9aa.png" alt="..." class="img-responsive img-thumbnail center-block">
-
-
-<h4>Ativar GPU no Cycles</h4>
-<p>Para ativar a renderização por GPU, aceda às preferências do System e veja se tem disponível alguma opção no Compute Device. </p>
-
-<p>Presentemente, a renderização por GPU só está disponível para os utilizadores com placa gráfica da NVIDIA.</p>
-
-<img src="img/img40/4cycles5b86ae41.png" alt="..." class="img-responsive img-thumbnail center-block">
-
-<p>Depois de ativar a opção CUDA, no painel de renderização passa a ter disponíveis as opções CPU e GPU em Device.</p>
-
-<img src="img/img40/5cycles71e4e700.png" alt="..." class="img-responsive img-thumbnail center-block">
-     
 
 
       	<div class="page-header">
@@ -131,19 +91,6 @@ um projeto (geralmente, de animação ou vfx). Estes computadores podem renderiz
      
      
      
-     
-      	<p><strong>
-Boom smash</strong> (no Blender) é um sistema de pré-visualização. É uma animação com renders da área de trabalho e não de render finais.</p>
-
-
-     <div class="row">
-			   	<div class="col-xs-6 col-xs-offset-3">
-			<div class="well embed-responsive embed-responsive-16by9">
-<iframe src="http://player.vimeo.com/video/32593730" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-			</div>			   	
-			   	</div>
-
-</div>
 
 
       	<p><strong>
@@ -212,16 +159,6 @@ Ctrl + F11 ou a opção Play Rendered Animation (menu Render, disponível no top
 <h3>Boom Smash</h3>
 <p>Ver texto sobre <a href="boom_smash.html">Boom Smash</a>.</p>
 
-
-<h3>Progressive Render</h3>
-<p>No painel Performance, disponível nas opções de renderização, 
-existe a opção Progressive Refine. Se ativar esta opção, em vez de a renderização ser feita por <i>tiles</i> (vão surgindo quadrados à medida que termina a renderizaçao) surge a
-imagem total e esta vai sendo refinada. Ou seja, em vez de renderizar até ao fim cada <i>tile</i>, renderiza a imagem total com 1 sample de cada vez. A grande vantagem é que pode 
-definir o número de samples para 5000 e depois parar quando considerar que já tem qualidade suficiente (sem ter de esperar até a última <i>tile</i> estar renderizada).</p>
-
-<img src="img/intros/renderizacao/progressive1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
-<img src="img/intros/renderizacao/progressive2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
-<img src="img/intros/renderizacao/progressive3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 
       	<div class="page-header">

@@ -2,9 +2,23 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	}
 
+
+@media screen and (max-width: 1124px)
+    {
+    .navbar-inverse .navbar-nav > li > a {
+    	font-size: 12px;}
+    }
+
+
+
 footer {
 	margin-top: 100px;
 	}
+
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #aaa;}
+
 
 .center-block {
   display: block;

@@ -44,9 +44,11 @@
 <p>1. Renderizar com GPU. Geralmente, renderizar em GPU é mais rápido do que em CPU.</p>
 
 
-<p>2. Ativar "No Caustics" (Render Panel, opções de Light Paths): para obter menos noise quando utiliza shaders de tipo Glossy/Glass. Pode afetar gravemente as sombras de vidro...</p>
+<p>2. Desativar as opções "Caustics" (Render Panel, opções de Light Paths): para obter 
+menos noise quando utiliza shaders de tipo Glossy/Glass. Mais informações e soluções no texto <a href="Cycles.html">Cycles</a>.</p>
 
-<p>3. Utilize o "Filter Glossy" (Render Panel, opções de Light Paths): permite fazer blur aos reflexos do glossy. Reduz exatidão/correção mas pode reduzir  o noise.</p>
+<p>3. Utilize o "Filter Glossy" (Render Panel, opções de Light Paths): permite fazer blur 
+aos reflexos do glossy. Reduz exatidão/correção mas pode reduzir  o noise. Mais informações e soluções no texto <a href="Cycles.html">Cycles</a>.</p>
 
 <p>4. Modificar Tile Size (Render Panel, opções de Performance): de acordo com alguns testes, aparentemente os melhores Tile Sizes são 256x256 para GPU e  16x16 CPU. No entanto, isto pode variar com complexidade das cenas e caraterísticas do computador. Utilize sempre múltiplos de 2.</p>
 
@@ -112,7 +114,8 @@ imagem da esquerda usou Bounces: 3 (min) e 12 (max).</p>
 
 <img src="img/img40/74cycles4073e2d4.png" alt="..." class="img-responsive img-thumbnail center-block">
 
-<p>7. Utilizar "Clamp"  (Render Panel, opções de Performance): para eliminar os fireflies (pirilampos / pixels brilhantes). Não utilize valores abaixo de 1 ou 2 porque elimina demasiado contraste.</p>
+<p>7. Utilizar "Clamp"  (Render Panel, opções de Sampling): para eliminar os fireflies (pirilampos / pixels brilhantes) sem aumentar as samples (e demorando mais tempo). 
+Não utilize valores abaixo de 1 ou 2 porque elimina demasiado contraste. Mais informações e soluções no texto <a href="Cycles.html">Cycles</a>.</p>
 
 <p>8. Utilize Shader Colors sem valores 1.0 ou perto disso. Tente não ultrapassar o 0.8 e tornar as luzes mais brilhantes.</p>
 
@@ -127,6 +130,10 @@ imagem da esquerda usou Bounces: 3 (min) e 12 (max).</p>
 <img src="img/img40/76cycles63ce3164.png" alt="..." class="img-responsive img-thumbnail center-block">
 
 
+<p>12. O Progressive Render não acelera a renderização mas pode permitir poupar bastante tempo ao evitar renderizar até ao fim a imagem. 
+Mais detalhes no texto <a href="Cycles.html">Cycles</a>.                     
+</p>
+
 
 		</div>
 		
@@ -135,12 +142,7 @@ imagem da esquerda usou Bounces: 3 (min) e 12 (max).</p>
 				</div>
 		
 		
-		 
-		
-		
-		
-		
-		
+
 		
 		
 
