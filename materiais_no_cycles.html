@@ -5,7 +5,7 @@
 
 <meta name="description" content="Manual Livre de Blender" /> 
 <meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
-<meta name="author" content="nafergo" >
+<meta name="author" content="nelson gonçalves" >
 <meta charset="UTF-8">
 <title>Manual Livre de Blender</title>   
 <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -98,12 +98,12 @@
 
 <p>Selecione a câmara. Na janela de opções da câmara, defina qual o objeto que pretende focar (no nosso exemplo, escolhemos o Cube) e altere o valor de Aperture para configurar a Profundidade de Campo.</p>
 
-<img src="img/img40/20cycles34991498.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/20cycles34991498.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 <img src="img/img40/21cycles1840593c.png" alt="..." class="img-responsive img-thumbnail center-block">
 
 <p>Na janela de opções de World, adicione um Environment Texture e escolha uma imagem HDR para iluminar a sua cena. No nosso caso, fizemos download de uma imagem de Paul Debevec disponível em:  http://ict.debevec.org/~debevec/Probes/stpeters_probe.hdr </p>
 
-<img src="img/img40/22cycles74178733.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/22cycles74178733.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 <img src="img/img40/23cyclesbe8c578.png" alt="..." class="img-responsive img-thumbnail center-block">
 
 <p>O noise (grão) da imagem revela que são necessárias mais Samples. Se desejar, pode aumentar o número de Samples do Preview.</p>
@@ -186,7 +186,7 @@ Aumente as Samples de Render e pode renderizar! </p>
 <p>Na imagem abaixo, temos uma esfera com um material Diffuse. Está a ser utilizada uma imagem HDR (high dynamic range) no Background para iluminação. Repare que a esfera está a ser iluminada com uma luz que vem do lado direito e com a direção correta tendo em conta a posição do sol na imagem.</p>
 
 <img src="img/img40/27cyclesf0ca69.png" alt="..." class="img-responsive img-thumbnail center-block">
-<img src="img/img40/28cycles22e68751.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/28cycles22e68751.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 <p>Na imagem abaixo, introduzimos um nó de textura Voronoi e ligámos o mesmo à opção Displacement. Não foi manipulada a malha da esfera. A esfera continua a ser exatamente a mesma, a geometria não foi alterada. A textura Voronoi está a ser utilizada para modificar o aspeto da esfera.</p>
 
@@ -213,16 +213,16 @@ Aumente as Samples de Render e pode renderizar! </p>
 <p>Na configuração de nós é possível ver que estamos a utilizar uma Image Texture (UV Coordinates) para a Surface e mantivemos a Voronoi Texture multiplicada por 20 no Displacement.</p>
 
 <img src="img/img40/37cycles7722aba4.png" alt="..." class="img-responsive img-thumbnail center-block">
-<img src="img/img40/38cycles1597f0dd.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/38cycles1597f0dd.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 <p>No conjunto abaixo, foi retirado o Displacement. O plano apenas tem a textura de imagem.</p>
 
-<img src="img/img40/39cycles6dace6ad.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/39cycles6dace6ad.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 <p>No conjunto abaixo estamos a utilizar a mesma imagem para o Surface e para o Displacement. No entanto, nem sempre os resultados são os melhores.</p>
 
 <img src="img/img40/40cycles9f0ada5.png" alt="..." class="img-responsive img-thumbnail center-block">
-<img src="img/img40/41cycles1c43a0a4.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/41cycles1c43a0a4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 <p>No conjunto abaixo, estamos a utilizar duas imagens. A imagem das telhas com cor para a Surface e a correspondente textura de bump map para o Displacement.</p>
 
@@ -231,7 +231,7 @@ Aumente as Samples de Render e pode renderizar! </p>
 <p>A imagem de Bump Map está a ser convertida para BW (black & white) antes de ligar ao nó Multiply. Este passo não é sempre necessário mas, muitas vezes, evita problemas nos Shaders mais complexos que utilizam imagens RGB. Neste caso, como a imagem de Bump Map já é BW, não seria necessário, mas também não cria problemas e é um bom hábito.</p>
 
 <img src="img/img40/43cycles1bf338fc.png" alt="..." class="img-responsive img-thumbnail center-block">
-<img src="img/img40/44cycles8a67faf.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/44cycles8a67faf.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 
 <h3>Bump map - opção 2 (resultados mais corretos)</h3>
@@ -250,7 +250,7 @@ Na imagem abaixo, o Bump com a textura Voronoi só afeta os quadrados do primeir
 <img src="img/img40/49cycles1090fb1f.png" alt="..." class="img-responsive img-thumbnail center-block">
 <p>Se o nó Bump estiver conectado a ambos os Diffuses permite controlar a aplicação da textura voronoi (Voronoi Texture) a todo o cubo porque afeta todos os materiais.</p>
 
-<img src="img/img40/47cycles62894b31.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img40/47cycles62894b31.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 
 <p>Na configuração abaixo utilizámos a textura Checker para criar um relevo na esfera.</p>
