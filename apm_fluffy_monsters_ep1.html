@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina">APM Fluffy Monsters - Episódio 1</h1>
+			<h1><small>Olhos, piscar os olhos, Dynamic Effects no Graph Editor e Lattices</small></h1>
+      	
+
+     
+     
+     
+     
+       <div class="row">
+			   	<div class="col-xs-6 col-xs-offset-3">
+			   				   	<h4>APM Fluffy Monsters - Episódio 1</h4>
+			<div class="well embed-responsive embed-responsive-16by9">
+			<iframe width="640" height="360" src="http://www.youtube.com/embed/n-b_8F9J5HA" frameborder="0" allowfullscreen></iframe>
+			</div>	   	
+			   	</div>
+			   	</div>     
+
+      	<div class="page-header">
+				<h2>Olhos</h2>
+      	</div>
+     
+
+      	<div class="page-header">
+				<h2>Piscar os olhos</h2>
+      	</div>
+      	
+      	<h3>Quando piscar os olhos?</h3>
+      	
+      	<p>De acordo com a ciência, o ser humano normal pisca os olhos 15-20 vezes por minuto (a cada 3-4 segundos). Isso não significa que a sua personagem deve piscar estas vezes todas!!! Utilize 
+      	o piscar de olhos quando a personagem mover a cabeça, quando estiver a pensar em algo e quando estiver a olhar fixamente durante algum tempo.</p>
+
+
+	<h3>E como piscar?</h3>
+	
+	<h4>Piscadela normal</h4>
+	<p>2-1-3 = 2 frames para fechar, 1 frame fechado e 3 para abrir. Leva mais tempo a abrir do que a fechar.</p>
+
+	<h4>Piscadela rápida</h4>
+	<p>2-3 = 2 frames para fechar e 3 para abrir.</p>
+	
+	<h4>Muito rápida</h4>
+	<p>1-2:  frame para fechar e 2 para abrir. Não fecha totalmente. Conhece a expressão "fazer olhinhos"? Imagine várias piscadelas muito rápidas...</p>
+
+	<h4>Piscadela longa</h4>
+	<p>3-3-4: 3 frames para fechar, 3 frame fechado e 4 para abrir</p>
+
+
+
+
+
+      	<div class="page-header">
+				<h2>Dynamic Effects no Graph Editor</h2>
+      	</div>
+
+
+      	<div class="page-header">
+				<h2>Lattices</h2>
+      	</div>
+
+    
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>
