@@ -57,7 +57,14 @@
 				<h2>Olhos</h2>
       	</div>
 
+<p>Os olhos das personagens foram criados utilizando métodos diferentes: com textura de imagem e com materiais procedimentais. </p>
 
+
+<p>Os olhos verdes foram criados com uma textura de imagem. É basicamente uma esfera com uma ligeira saliência num dos lados (criada com Proportional Edit).</p>
+
+<p>Foi feito um Unwrap depois de criado um Seam (veja o círculo vermelho na imagem abaixo) para mapear corretamente a textura à esfera.</p>
+
+<p>Como os olhos têm brilho e reflexo, o material final mistura Diffuse com Glossy. O Mix Shader controla a quantidade de Diffuse e de Glossy.</p>
 
 <img src="img/apm_fluffy_friends/ep1/olho_verde.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
@@ -65,6 +72,9 @@
 
 <p>Para facilitar a criação de texturas de olhos similares mas com cores diferentes, descarregue o <a href="img/apm_fluffy_friends/ep1/olho_template.xcf">template do olho</a> para GIMP.
 
+
+<p>Os olhos azuis foram criados sem qualquer imagem, apenas com materiais. A esfera (similar à do olho verde) tem três materiais: sclera, iris e pupil. Estes materiais 
+correspondem à Esclera (branco do olho), íris e pupila. Em todos os materiais foram utilizados shaders Glossy para criar o brilho/reflexo.</p>
 
 <img src="img/apm_fluffy_friends/ep1/olho_azul_sclera.jpg" alt="..." class="img-responsive img-thumbnail center-block">
      
@@ -88,6 +98,9 @@
       	o piscar de olhos quando a personagem mover a cabeça, quando estiver a pensar em algo e quando estiver a olhar fixamente durante algum tempo.</p>
 
 
+
+
+
 	<h3>E como piscar?</h3>
 	
 	<h4>Piscadela normal</h4>
@@ -104,20 +117,47 @@
 
 
 
+      	<h3>Como piscar os olhos?</h3>
+      	
+      	<p>Existem várias possibilidades com graus de dificuldade e sofisticação diferentes. Obviamente, o piscar de olhos também depende da geometria existente. Cada um dos olhos 
+      	dos nossos monstros é composto por 4 objetos: base, olho, pálpebra superior e pálpebra inferior. O piscar de olhos é criado pela rotação das pálpebras superior e inferior.</p>
+      	
+      	<p>A base do olho é uma meia esfera com Extrudes para criar um braço que liga ao corpo do monstro. Foi utilizado o modifier Solidify para dar alguma espessura. Esta base está 
+      	aparentada ao corpo.</p>
+      	
+      	<p>As pálpebras são meias esferas que estão aparentadas à base e que que rodam sobre si mesmas. Para facilitar a rotação, a Origin das pálpebras está alinhada com a Origin do 
+      	olho. Na realidade, as pálpebras foram criadas a partir de um duplicado do olho com um Scale muito suave que foi depois dividido em duas partes.</p>
+      	
+      	<p>Os olhos estão aparentados à base.</p>
+
+
+
+<img src="img/apm_fluffy_friends/ep1/olho1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<img src="img/apm_fluffy_friends/ep1/olho2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
 
 
       	<div class="page-header">
 				<h2>Dynamic Effects no Graph Editor</h2>
       	</div>
 
-
+<p>Em primeiro lugar, foi criada a animação do peso com 2 keyframes de Location: posição inicial (peso está fora do enquadramento) e posição final (peso já caiu e está em repouso).</p>
 
 <img src="img/apm_fluffy_friends/ep1/bounce1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 <img src="img/apm_fluffy_friends/ep1/bounce2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
+
+
+<p>No Graph Editor, por pré-definição, temos o peso animado com uma interpolação Bezier. Isto significa que o peso acelera no início e desacelera no final. Esta 
+acelaração e desaceleração é bastante irrealista e nós pretendemos que no final o peso ressalte quando bater no chão.</p>
 <img src="img/apm_fluffy_friends/ep1/bounce3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
+
+<p>Com as duas keyframes de Location em Z selecionadas, foi ativada a opção Bounce (Dynamic Effects) para criar um ressalto. Depois escolhemos Ease Out porque pretendemos que 
+o ressalto surja no final, surja antes da última keyframe. Se necessário ou desejar, pode manipular as keyframes ou inserir novas keyframes para melhorar o efeito.</p>
 <img src="img/apm_fluffy_friends/ep1/bounce4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 <img src="img/apm_fluffy_friends/ep1/bounce5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
