@@ -17,11 +17,15 @@ footer {
 
 
 .navbar-inverse {
-	background-color: 2d2d2d;
+	background-color: #2d2d2d;
 	}
 
 .navbar-inverse .navbar-nav > li > a {
-    color: #e0e0e0;}
+    color: #aaa;}
+   
+.navbar-inverse a.navbar-brand {
+	color: #aaa;
+	}
 
 
 //imagens usam isto
