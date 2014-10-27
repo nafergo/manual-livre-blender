@@ -63,7 +63,7 @@
 
 <img src="img/apm_fluffy_friends/ep1/olho_template.png" alt="..." class="img-responsive img-thumbnail center-block">
 
-<a href="img/apm_fluffy_friends/ep1/olho_template.xcf">ll</a>
+<p>Para facilitar a criação de texturas de olhos similares mas com cores diferentes, descarregue o <a href="img/apm_fluffy_friends/ep1/olho_template.xcf">template do olho</a> para GIMP.
 
 
 <img src="img/apm_fluffy_friends/ep1/olho_azul_sclera.jpg" alt="..." class="img-responsive img-thumbnail center-block">
@@ -71,6 +71,10 @@
 <img src="img/apm_fluffy_friends/ep1/olho_azul_iris.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 <img src="img/apm_fluffy_friends/ep1/olho_azul_pupil.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Consulte o texto <a href="6uv_mapping.html">UV Mapping de uma lata</a> e <a href="materiais_no_cycles.html">Materiais no Cycles</a> para obter mais informação sobre UV e materiais.</p>
+
+
 
 
 
@@ -118,19 +122,37 @@
 
 <img src="img/apm_fluffy_friends/ep1/bounce5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
+
+
+
+<p>Consulte o texto <a href="26bola_saltitona.html">Bola saltitona</a> para obter mais informação sobre animação.</p>
+
+
       	<div class="page-header">
 				<h2>Lattices</h2>
       	</div>
 
+<p>1. Em primeiro lugar foi adicionada uma Lattice com várias subdivisões.</p>
 <img src="img/apm_fluffy_friends/ep1/lattice0.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
+<p>2. Depois foi adicionado o modifier Lattice a todos os objetos que irão ser deformados (vários objetos do olhos).</p>
 <img src="img/apm_fluffy_friends/ep1/lattice01.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
+<p>3. Finalmente, foi manipulada a Lattice (em Edit Mode) para criar o efeito.</p> 
 
+<p>Importa referir que o corpo do "olhos azuis", o monstro esmagado, é animado com keyframes de Scale. Ou seja, foi 
+inserida uma keyframe de Scale no corpo do monstro com olhos azuis durante cada frame da animação do peso. Deste modo, a animação de Scale do corpo do monstro está de acordo com 
+o posicionamento do peso.</p>
+
+<p>Depois de feita a animação do corpo, na última keyframe, foi manipulada a forma 
+da Lattice para obtermos a posição final. Por fim, foi animada a Lattice (com keyframes de Location) para acompanhar o peso. Ou seja, foi inserida uma keyframe de Location na 
+Lattice durante cada frame da animação do peso.</p>
 <img src="img/apm_fluffy_friends/ep1/lattice1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
 
 <img src="img/apm_fluffy_friends/ep1/lattice2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
+<p>Consulte o texto <a href="34modifiers.html">Modifiers</a> para obter mais informação sobre Lattices.</p>
     
 
    	</div>
