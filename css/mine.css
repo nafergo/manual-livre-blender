@@ -17,14 +17,17 @@ footer {
 
 
 .navbar-inverse {
-	background-color: #2d2d2d;
+	background-color: #3d4045;
 	}
 
 .navbar-inverse .navbar-nav > li > a {
-    color: #aaa;}
+    color: #b5b9bf;}
+
+.navbar-inverse .navbar-nav > li.open a.dropdown-toggle{
+    background-color: #292b2e}
    
 .navbar-inverse a.navbar-brand {
-	color: #aaa;
+	color: #b5b9bf;
 	}
 
 
