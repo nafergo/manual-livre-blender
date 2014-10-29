@@ -1,0 +1,20 @@
+.checklist {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.checklist a{
+  margin: 0 0 0 10px;
+  font-weight: normal;
+}
+
+.checklist li[data-checked="true"] {
+  background-color: #aaeeaa;
+  color: #117711;
+}
+
+.checklist li input {
+  float: left;
+}
+
