@@ -5,7 +5,7 @@
 
 <meta name="description" content="Manual Livre de Blender" /> 
 <meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
-<meta name="author" content="nafergo" >
+<meta name="author" content="openlab" >
 <meta charset="UTF-8">
 <title>Manual Livre de Blender</title>   
 <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -182,7 +182,7 @@ imagem de textura original com UV map (fizemos Unwrap). O resultado é a imagem 
 <li>AMARELO = Normal texture map (imagem com sufixo _n) liga a nó Normal Map que, por sua vez, conecta ao Normal dos shaders Diffuse e Glossy. Importa referir que, para obter 
 resultados mais corretos, deverá escolher a opção Non-Color Data no nó de imagem com o Normal texture map. O Stregth no nó 
 Normal Map controla a intensidade do efeito.</li>
-<li>AZUL = Specular texture map (imagem com sufixo _n) liga a um nó MixRGB (Color) que, por sua vez, conecta ao Fac do Mix Shader. Esta imagem 
+<li>AZUL = Specular texture map (imagem com sufixo _s) liga a um nó MixRGB (Color) que, por sua vez, conecta ao Fac do Mix Shader. Esta imagem 
 controla a mistura entre Diffuse e Glossy. Ou seja, controla onde o plano tem mais brilhos. A utilização do MixRGB (Color) permite mais 
 controle sobre a intensidade dos brilhos. No shader Glossy podemos definir a cor dos brilhos e o Roughness determina 
 a (im)perfeição do brilho/reflexo (i.e um espelho tem Rougness 0.0).
