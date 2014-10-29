@@ -20,6 +20,11 @@
 <!-- custom css -->
 <link rel="stylesheet" href="css/mine.css" media="all" />	
 
+
+  <link rel="stylesheet" href="checklist/css/styles.css"/>
+
+  
+  
 </head>
 
 
@@ -44,6 +49,7 @@
         coluna central e, após terminar esta, finaliza com a coluna mais à direita.</small></h4>
         <h4><small>Os itens em cor cinza estão por fazer ou por concluir. Foram incluídos porque está prevista a 
         sua conclusão num futuro próximo.</small></h4>        
+        <h4><small>As caixas de verificação permitem ir controlando os textos que já acedeu ou concluiu. Esta informação é armazenada localmente, no seu browser.</small></h4>        
 
 
 
@@ -55,7 +61,7 @@
       </div>
          <div class="row" id="demo">     
         <div class="col-xs-4">      
-        <ul class="list-group">
+        <ul class="list-group checklist">
 			<li class="list-group-item percurso0"><a href="intro_animacao3d.html">Introdução à  animação 3D</a></li>
           <li class="list-group-item percurso0"><a href="intro_animacao3d_historia.html">História da Animação</a></li>          
           <li class="list-group-item percurso0"><a href="12_principios_da_animacao.html">12 princípios da animação</a></li>
@@ -71,7 +77,7 @@
 </div>
 
         <div class="col-xs-4">      
-        <ul class="list-group">
+        <ul class="list-group checklist">
 
 
           <li class="list-group-item percurso0"><a href="historia_blender.html">História do Blender</a></li>
@@ -91,7 +97,7 @@
 
 
         <div class="col-xs-4">      
-        <ul class="list-group">
+        <ul class="list-group checklist">
           <li class="list-group-item percurso0"><a href="intro_modelacao.html">Introdução à modelação</a></li>
           <li class="list-group-item percurso0"><a href="intro_materiais.html">Introdução aos materiais</a></li>
           <li class="list-group-item percurso0"><a href="intro_iluminacao.html">Introdução à iluminação</a></li>
@@ -138,7 +144,7 @@ document.write(li.length);
       </div>
          <div class="row" >     
         <div class="col-xs-4">      
-        <ul class="list-group">
+        <ul class="list-group checklist">
 <li class="list-group-item percurso1"><a href="1coracao.html">Coração cheio de amor...</a></li>          
 <li class="list-group-item percurso1"><a href="2dado.html">Lançando os dados</a></li>
 <li class="list-group-item percurso1"><a href="intro_modelacao.html">Introdução à modelação</a></li>          
@@ -175,9 +181,7 @@ document.write(li.length);
 </div>
 
         <div class="col-xs-4">      
-        <ul class="list-group">
-        
-
+        <ul class="list-group checklist">
 
 <li class="list-group-item percurso1"><a href="materiais_nodes_cycles.html">Algumas configurações de nós úteis</a></li>
 <li class="list-group-item percurso1"><a href="texture_painting.html">Texture painting</a></li>
@@ -215,7 +219,7 @@ document.write(li.length);
 
 
         <div class="col-xs-4">      
-        <ul class="list-group">
+        <ul class="list-group checklist">
 <li class="list-group-item percurso1"><a href="23rigidbodies.html">Rigid Bodies</a></li>
 <li class="list-group-item percurso1"><a href="25softbodies.html">Soft Bodies</a></li>
 <li class="list-group-item percurso1"><a href="explode.html">Explode</a></li>
@@ -275,7 +279,7 @@ document.write(li.length);
       </div>
          <div class="row">     
         <div class="col-xs-4">      
-        <ul class="list-group">
+        <ul class="list-group checklist">
 <li class="list-group-item percurso2"><a href="2dado.html">Lançando os dados</a></li>
 <li class="list-group-item percurso2"><a href="12texto.html">Textos</a></li>                
 <li class="list-group-item percurso2"><a href="28modelacao_linhas.html">Modelação com linhas</a></li>  
@@ -287,13 +291,13 @@ document.write(li.length);
 <li class="list-group-item percurso2"><a href="lowpoly_modeling.html">Estilo Low Poly</a></li> 
 <li class="list-group-item percurso2"><a href="embalagem.html">Embalagem e expositor</a></li>          
 <li class="list-group-item percurso2"><a href="insanebump.html">InsaneBump + Cycles</a></li> 
-<li class="list-group-item percurso2"><a href="fundo_render.html">Fundo para Renderização</a></li>  
         
          </ul>
 </div>
 
         <div class="col-xs-4">      
-        <ul class="list-group">
+        <ul class="list-group ">
+<li class="list-group-item percurso2"><a href="fundo_render.html">Fundo para Renderização</a></li>          
 <li class="list-group-item percurso2"><a href="materiais_nodes_cycles.html">Algumas configurações de nós úteis</a></li>
 <li class="list-group-item percurso2"><a href="35camara.html">Configurações básicas da câmara</a></li>
 <li class="list-group-item percurso2"><a href="render_tricks_no_cycles.html">Acelerar renderização no Cycles</a></li>
@@ -303,14 +307,15 @@ document.write(li.length);
 <li class="list-group-item percurso2"><a href="intro_composicao.html">Introdução à composição</a></li>
 <li class="list-group-item percurso2"><a href="render_layers.html">Render Layers</a></li>
 <li class="list-group-item percurso2"><a href="turnaround.html">Turnarounds</a></li>         
-<li class="list-group-item percurso2"><a href="kinetic_typography.html">Kinetic Typography</a></li>                                         
+<li class="list-group-item percurso2"><a href="kinetic_typography.html">Kinetic Typography</a></li>     
+<li class="list-group-item percurso2"><a href="bake_sounds.html">Bake sounds to F-Curves</a></li>                                    
          </ul>
 </div>
 
 
         <div class="col-xs-4">      
-        <ul class="list-group">
-<li class="list-group-item percurso2"><a href="bake_sounds.html">Bake sounds to F-Curves</a></li>
+        <ul class="list-group checklist">
+
 <li class="list-group-item percurso2"><a href="render_wireframes.html">Renderização de wireframe</a></li>
 <li class="list-group-item percurso2"><a href="quick_operators.html">Quick Operators</a></li>
 <li class="list-group-item percurso2"><a href="renderpasses_ao.html">Ambient Occlusion (AO)</a></li>          
@@ -350,7 +355,7 @@ document.write(li.length);
       </div>
          <div class="row">     
         <div class="col-xs-4">      
-        <ul class="list-group">
+        <ul class="list-group checklist">
 <li class="list-group-item percurso3"><a href="35camara.html">Configurações básicas da câmara</a></li>
 <li class="list-group-item percurso3"><a href="intro_renderizacao.html">Introdução à renderização no Blender</a></li>
 <li class="list-group-item percurso3"><a href="Cycles.html">Cycles</a></li>  
@@ -365,15 +370,15 @@ document.write(li.length);
 <li class="list-group-item percurso3"><a href="21render_stereo.html">Render stereo</a></li>
 <li class="list-group-item percurso3"><a href="quick_operators.html">Quick Operators</a></li>
 <li class="list-group-item percurso3"><a href="bake_sounds.html">Bake sounds to F-Curves</a></li>
-<li class="list-group-item percurso3"><a href="23rigidbodies.html">Rigid Bodies</a></li>
+
         
          </ul>
 </div>
 
         <div class="col-xs-4">      
-        <ul class="list-group">
+        <ul class="list-group checklist">
 
-
+<li class="list-group-item percurso3"><a href="23rigidbodies.html">Rigid Bodies</a></li>
 <li class="list-group-item percurso3"><a href="25softbodies.html">Soft Bodies</a></li>
 <li class="list-group-item percurso3"><a href="explode.html">Explode</a></li>
 <li class="list-group-item percurso3"><a href="intro_simulacao.html">Introdução à simulação</a></li>
@@ -394,10 +399,10 @@ document.write(li.length);
 
 
         <div class="col-xs-4">      
-        <ul class="list-group">
-<li class="list-group-item percurso3"><a href="renderpasses_material_id.html">Material ID</a></li>                
-<li class="list-group-item percurso3"><a href="renderpasses_mist.html">Mist</a></li>
-<li class="list-group-item percurso3"><a href="renderpasses_vector_speed.html">Vector</a></li>  
+        <ul class="list-group checklist">
+<li class="list-group-item percurso3"> <a href="renderpasses_material_id.html"> Material ID</a></li>                
+<li class="list-group-item percurso3"> <a href="renderpasses_mist.html"> Mist</a></li>
+<li class="list-group-item percurso3"> <a href="renderpasses_vector_speed.html">Vector</a></li>  
 <li class="list-group-item percurso3"><a href="renderpasses_shadow.html">Shadow</a></li>
 <li class="list-group-item percurso3"><a href="renderpasses_z.html">Z</a></li>
 <li class="list-group-item percurso3"><a href="20edicao_video.html">Edição de vídeo</a></li>
@@ -452,7 +457,10 @@ document.write(li.length);
     <!-- Latest compiled and minified JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-
+  <script type="text/javascript" src="checklist/lib/underscore.js"></script>
+  <script type="text/javascript" src="checklist/lib/backbone.js"></script>
+  <script type="text/javascript" src="checklist/lib/backbone.localStorage.js"></script>
+  <script type="text/javascript" src="checklist/js/checklist.js"></script>
 
 
         <script type="text/javascript">
@@ -494,6 +502,10 @@ document.write(li.length);
 			});
 		});
 	</script>
+
+  <script type="text/javascript">
+    Checklist.init();
+  </script>
 
 
     
