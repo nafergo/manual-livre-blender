@@ -9,7 +9,11 @@ body {
     	font-size: 12px;}
     }
 
-
+@media screen and (max-width: 1024px)
+    {
+    .navbar-inverse .navbar-nav > li > a {
+    	font-size: 10px;}
+    }
 
 footer {
 	margin-top: 100px;
