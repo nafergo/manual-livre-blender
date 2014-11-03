@@ -19,4 +19,4 @@ Manual Livre de Blender (Blender Libre Manual) is licensed under the CC-BY-SA 4.
 
 
 =======
->>>>>>> 618bc5939ec6a1df561b94683c109447dd3e1fc9
+
