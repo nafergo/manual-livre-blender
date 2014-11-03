@@ -3,17 +3,48 @@ body {
 	}
 
 
-@media screen and (max-width: 1133px)
+@media screen and (max-width: 1134px)
     {
     .navbar-inverse .navbar-nav > li > a {
     	font-size: 12px;}
+    .dropdown-menu li {
+    	font-size: 12px;}
+		    	
     }
 
-@media screen and (max-width: 1024px)
+@media screen and (max-width : 1019px)
+    {
+    .navbar-inverse .navbar-nav > li > a {
+    	font-size: 11px;}
+    .dropdown-menu li {
+    	font-size: 11px;}    	
+    }
+    
+@media screen and (max-width : 976px)
     {
     .navbar-inverse .navbar-nav > li > a {
     	font-size: 10px;}
+    .dropdown-menu li {
+    	font-size: 11px;}    	
     }
+
+
+@media screen and (max-width : 939px)
+    {
+    .navbar-inverse .navbar-nav > li > a {
+    	font-size: 9px;}
+    .dropdown-menu li {
+    	font-size: 10px;}    	
+    }
+    
+
+@media screen and (max-width : 871px)
+    {
+    .navbar-inverse .navbar-nav > li > a {
+    	font-size: 8px;}
+    .dropdown-menu li {font-size: 9px;}
+    }
+
 
 footer {
 	margin-top: 100px;
