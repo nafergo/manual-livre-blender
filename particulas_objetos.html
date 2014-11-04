@@ -38,20 +38,79 @@
    	<div class="col-xs-10 col-xs-offset-1">
 			<h1 class="titulopagina"><small>renderizar</small> Partículas como objetos</h1>
       	
+
+<p>O sistema de partículas do Blender permite criar diferentes tipos de efeitos estáticos e animados. Uma das suas funcionalidades mais interessantes é a capacidade de renderizar objetos no 
+lugar de partículas. Em baixo, apresentamos alguns exemplos.</p>      	
+      	
       	<div class="page-header">
-				<h2>Algumas palavras de introdução</h2>
+				<h2>Flocos de neve</h2>
       	</div>
  
  
- <img src="img/tracking/t4_final.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+ <h3>Criar o floco de neve</h3>
+ 
+ <p>O primeiro passo é criar o objeto que pretendemos utilizar. Neste caso, vamos criar um floco de neve a partir do design abaixo disponibilizado.</p>
+ <img src="img/particulas_objetos/Snowflake_simply.png" alt="..." class="img-responsive img-thumbnail center-block">
+<p class="text-center"><small>Snowflake (simply) de rones. Disponível em <a href="https://openclipart.org/detail/123817/snowflake-simply-by-rones" target="_blank">Openclipart.org</a>
+.</small></p>
+
+<p>O floco foi criado a partir de um plano.</p>
+
+<img src="img/particulas_objetos/1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<img src="img/particulas_objetos/2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<img src="img/particulas_objetos/3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<img src="img/particulas_objetos/4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<img src="img/particulas_objetos/5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 
+ <h3>A chuva de flocos de neve</h3>
+
+<p>Crie um plano e coloque-o acima da câmara (por pré-definição, as partículas vão cair por causa da 
+gravidade), fora do enquadramento.</p>
+<img src="img/particulas_objetos/6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/particulas_objetos/7.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Adicione um sistema de partículas ao plano. Se fizer ALT+A, irá ver as partículas a cair do plano.</p>
+<img src="img/particulas_objetos/8.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Configure o sistema de partículas de acordo com a imagem.</p>
 
 
+<p>Na imagem abaixo, o primeiro painel (Emission) está fechado porque foram utilizadas as configurações pré-definidas. Pode alterar estes parâmetros a seu gosto:</p>
+
+<ul>
+
+<li>Amount: nº total de partículas</li>
+
+<li>Start/End: Frame em que começa/acaba emissão de partículas.</li>
+
+<li>Lifetime: tempo de vida das partículas, tempo que levam a desaparecer.</li>
+
+<li>Random: grau de variância no tempo de vida.</li>
+
+<li>Verts/Faces/Volume: de onde são emitidas as partículas.</li>
+
+<li>Random/Even Distribution: emissão com ordem aleatória e com distribuição equitativa.</li>
 
 
+</ul>
 
 
+<p>O primeiro Random dá variação aleatória à velocidade inicial.</p>
+<p>A ativação da rotação faz com que as partículas possam rodar e o Random dá um valor aleatório à 
+orientação das partículas.</p>
+<p>Podemos configurar a dimensão de cada partícula (Size 1 = dimensão real do objeto) e atribuir um valor aleatório à 
+dimensão para criar maior diversidade de dimensões.</p>
+<p>A última opção (Object) é onde definimos que pretendemos renderizar um objeto específico.</p>
+<img src="img/particulas_objetos/9.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/particulas_objetos/10.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Depois de atribuirmos uma cor aleatória a cada floco (ver configuração em <a href="materiais_nodes_cycles.html">Algumas configurações de nós úteis</a>)...</p>
+<img src="img/particulas_objetos/final.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 
 
