@@ -5,7 +5,7 @@
 
 <meta name="description" content="Manual Livre de Blender" /> 
 <meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
-<meta name="author" content="nelson gonçalves" >
+<meta name="author" content="nafergo" >
 <meta charset="UTF-8">
 <title>Manual Livre de Blender</title>   
 <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -40,52 +40,21 @@
 			<h1 class="titulopagina">Camera Motion Tracking</h1>
 
 
-<p>"Match moving" ou "motion tracking" é uma técnica de efeitos visuais (VFX) que permite a inserção de imagens geradas em computador numa filmagem vídeo (live-action) com a posição, escala, orientação e movimento corretos em relação aos objetos presentes na tomada de imagem. </p>
 
-<p>Desde 2012, o Blender disponibiliza funcionalidades de Camera Tracking. Ou seja, permite calcular o movimento da câmara que capturou a imagem vídeo original e aplicar o mesmo movimento à câmara virtual presente na 3D View. Deste modo, é possível renderizar objetos no Blender com uma câmara que apresenta  caraterísticas (posição, movimento, etc.) similares à da câmara da captura original.</p>
+      <div class="page-header">
+        <h2>Introdução</h2>       
+         
+      </div>
 
-<p>O resultado da composição da imagem vídeo original com a imagem renderizada com uma câmara que apresenta caraterísticas (posição, movimento, etc.) similares à da câmara da captura original é a criação da ilusão da inserção de imagens geradas em computador na filmagem vídeo.</p>
+<p>Se ainda não leu, por favor comece pelo texto <a href="preparacao_camera_tracking.html">Recomendações e Introdução</a>.</p>
+<p>Neste texto vamos utilizar o ficheiro camera_tracking2.mp4 (dados e ficheiro disponibilizados no texto <a href="preparacao_camera_tracking.html">Recomendações e Introdução</a>).</p>
+                                   
 
-<h2>1. Recomendações para filmagem</h2>
-
-<p>a) É necessário capturar mudança de perspetiva. Câmara parada, pan e tilt (imagens abaixo) ou movimento demasiado subtil são más opções.</p>
-
-<img src="img/img42/1camera_tracking127375d8.png" alt="..." class="img-responsive img-thumbnail center-block">
-<img src="img/img42/2camera_tracking70792146.png" alt="..." class="img-responsive img-thumbnail center-block">
-
-<p>b) É útil ter marcadores no terreno filmado.</p>
-
-<p>c) É util ter marcadores espalhados em profundidade (do primeiro plano ao plano de fundo) e em largura/altura.</p>
-
-<p>d) Não utilize estabilizador automático porque retira movimento à câmara, distorcendo a imagem.</p>
-
-<p>e) Evite o máximo de desfocagem. Tenha especial cuidado com a profundidade de campo e motion blur. Câmara em movimento com velocidade baixa do obturador (exposição longa) produz imagem com desfoque.</p>
-
-<p>f) Mantenha a distância focal (e não se esqueça de registar a distância focal utilizada).</p>
-
-<p>g) Evite movimentos bruscos e câmara muito instável.</p>
-
-<h2>2. Preparar a sequência</h2>
-
-<p>a) Selecione o seu ficheiro vídeo e recolha as seguintes informações: modelo da câmara (dimensão do sensor), distância focal, resolução e Frames Por Segundo (FPS).</p>
-
-<p>b) Embora seja possível fazer o tracking a partir de um ficheiro vídeo, recomenda-se a conversão para uma sequência de imagens. Recomenda-se a conversão para ficheiros do tipo TGA (Targa) para não perder informação (compressão). Utilize o Video Sequencer Editor do Blender para converter o seu ficheiro de vídeo para uma sequência de imagens. </p>
-
-<p>c) Nas preferências do Blender, aumente a memória disponível para poder ter mais frames armazenadas em cache e o processo ser mais regular.</p>
-
-<img src="img/img42/3camera_tracking61d7d29.png" alt="..." class="img-responsive img-thumbnail center-block">
-
-<p>De aqui em diante iremos utilizar o ficheiro MVI_1034.mov (disponivel em http://download.blender.org/ftp/incoming/libmv/sebastian/)</p>
-
-<p>Caraterísticas do ficheiro:</p>
-
-<p>> gravado com uma Canon 550D (sensor size: 22.3)</p>
-
-<p>> 35mm</p>
-
-<p>> 25 FPS</p>
-
-<p>> 1920x1088</p>
+      <div class="page-header">
+        <h2>Exercício</h2>       
+         
+      </div>
+      
 
 <h2>3. Importar a sequência e adicionar marcadores</h2>
 
@@ -197,19 +166,7 @@
 
 
 		</div>
-		
-		
-		
-		
-		
-		 
-		
-		
-		
-		
-		
-		
-		
+		</div>		
 
  </div>
 

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+<div class="container-fluid">
+<div class="row">
+		
+   	<div class="col-xs-10 col-xs-offset-1">
+    
+			<h1 class="titulopagina">Camera Motion Tracking</h1>
+
+
+<p>"Match moving" ou "motion tracking" é uma técnica de efeitos visuais (VFX) que permite a inserção de imagens geradas em computador numa filmagem vídeo (live-action) com a posição, escala, orientação e movimento corretos em relação aos objetos presentes na tomada de imagem. </p>
+
+<p>Desde 2012, o Blender disponibiliza funcionalidades de Camera Tracking. Ou seja, permite calcular o movimento da câmara que capturou a imagem vídeo original e aplicar o mesmo movimento à câmara virtual presente na 3D View. Deste modo, é possível renderizar objetos no Blender com uma câmara que apresenta  caraterísticas (posição, movimento, etc.) similares à da câmara da captura original.</p>
+
+<p>O resultado da composição da imagem vídeo original com a imagem renderizada com uma câmara que apresenta caraterísticas (posição, movimento, etc.) similares à da câmara da captura original é a criação da ilusão da inserção de imagens geradas em computador na filmagem vídeo.</p>
+
+
+      <div class="page-header">
+        <h2>Recomendações para filmagem <small>destinada a tracking.</small></h2>       
+         
+      </div>
+
+
+
+<dl>
+  <dt>Capturar mudança de perspetiva</dt>
+  <dd>É necessário que a filmagem capture mudança de perspetiva sobre a área onde se pretende fazer tracking. Câmara parada, pan e tilt (imagens abaixo) ou movimento demasiado subtil são más opções.</dd>
+</dl>
+
+<img src="img/img42/Pan1.gif" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img42/Tilt1.gif" alt="..." class="img-responsive img-thumbnail center-block">
+
+            		<p class="text-center"><small>Imagens retiradas Moura, G. (junho, 2014). <a href="http://www.elementsofcinema.com/cinematography/camera-movement/" target="_blank">Camera Moves</a>. <em>Elements of Cinema</em>.</small></p>
+
+<dl>
+  <dt>Utilizar marcadores</dt>
+  <dd>É útil filmar marcadores. Estes devem ser colocados na área filmada e criam ótimos pontos para posteriormente fazer tracking.</dd>
+</dl>
+
+
+<img src="files/Marker_thumb.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+            		<p class="text-center">
+            		<small>Marcador <a href="http://mango.blender.org/development/weekly-april-27/" target="_blank">utilizado no filme Tears of Steal</a> (Blender Foundation, 2012). Clique 
+            		<a href="files/Marker.png"  target="_blank" download>aqui</a> para descarregar versão para impressão.</small></p>
+
+
+<dl>
+  <dt>Espalhar marcadores</dt>
+  <dd>É util ter marcadores espalhados em profundidade (do primeiro plano ao plano de fundo) e em largura/altura.</dd>
+  
+  <dt>Evite estabilização automática</dt>
+  <dd>Não utilize estabilizador automático da lente. Esta irá mexer-se (ajustar-se) durante a filmagem e distorce a imagem. Durante o tracking, os marcadores irão deslizar ou exibir 
+  um comportamento estranho.</dd>
+  
+  <dt>Evite desfocar e velocidade baixa do obturador</dt>
+  <dd>Evite o máximo de desfocagem. Tenha especial cuidado com a profundidade de campo e motion blur. Câmara em movimento com velocidade baixa do obturador (exposição longa) produz imagem com desfoque. O 
+  desfoque dificulta o tracking.</dd>
+  
+  <dt>Mantenha a distância focal</dt>
+  <dd>Mantenha a distância focal durante a filmagem. Não se esqueça de registar a distância focal utilizada!</dd>
+  
+  <dt>Evite instabilidade e brusquidão na filmagem</dt>
+  <dd>Evite movimentos bruscos e câmara muito instável porque estas dificultam o tracking.</dd>
+
+</dl>
+
+
+
+      <div class="page-header">
+        <h2>Preparar a sequência <small>destinada a tracking.</small></h2>       
+         
+      </div>
+
+
+<p>Os procedimentos iniciais preparatórios para fazer tracking com 1, 4 ou mais pontos, são sempre similares.</p>
+
+
+
+
+
+<dl>
+  
+  <dt>Recolha os metadados</dt>
+  <dd>Selecione o ficheiro vídeo que vai utilizar e, sempre que possível, para facilitar o processo, 
+  recolha as seguintes informações: modelo da câmara (dimensão do sensor), distância focal, resolução e 
+  Frames Por Segundo (FPS). Estes dados são sobretudo importantes para um tracking completo. O tracking de 1 e 4 pontos pode ser 
+  feito sem estes dados.</dd>
+  
+  <dt>Converta vídeo para sequência de TGAs</dt>
+  <dd>Embora seja possível fazer o tracking a partir de um ficheiro vídeo, recomenda-se a conversão para uma sequência de imagens. 
+  Recomenda-se a conversão para ficheiros do tipo TGA (Targa) para não perder informação (compressão). 
+  Utilize o Video Sequencer Editor do Blender para converter o seu ficheiro de vídeo para uma sequência de imagens.</dd>
+  
+  <dt>Aumente a memória cache disponível para a tarefa</dt>
+  <dd>Nas preferências do Blender, aumente a memória disponível para poder ter mais frames armazenadas em cache e o processo ser mais regular.</dd>
+  
+
+</dl>
+
+<img src="img/img42/3camera_tracking61d7d29.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+      <div class="page-header">
+        <h2>Ficheiros para apoio às tarefas de tracking e treino</h2>       
+         
+      </div>
+
+<p>Nos textos seguintes iremos utilizar os ficheiros disponibilizados abaixo. Todos os ficheiros foram gravados por 
+<a href="http://www.blendernetwork.org/sebastian-koenig" target="_blank">Sebastian Koenig</a> e os 3 primeiros fazem parte do DVD 
+<a href="http://www.blender3d.org/e-shop/product_info_n.php?products_id=147" target="_blank">Track, Match Blend</a>.</p>
+
+
+
+<table class="table table-striped">
+  
+   <thead>
+  <tr>
+     <th>Nome</th>
+     <th>Câmara</th>
+     <th>Lente</th>
+     <th>FPS</th>
+     <th>Resolução</th>                    
+     <th>Download</th>     
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+      <td>1ponto.mp4</td>
+      <td>n/d mas não é necessário</td>
+      <td>n/d mas não é necessário</td>
+      <td>25 FPS</td>
+      <td>1920x1080</td>
+      <td><a href="files/videos/1ponto.mp4" download>link</a></td>      
+  </tr>  
+  <tr>
+     <td>4pontos.mp4</td>
+      <td>n/d mas não é necessário</td>
+      <td>n/d mas não é necessário</td>
+      <td>25 FPS</td>
+      <td>1920x1080</td>     
+      <td><a href="files/videos/4pontos.mp4" download>link</a></td>
+  </tr>
+  <tr>
+      <td>camera_tracking.mp4</td>
+      <td>Canon 550D (sensor size: 22.3)</td>
+      <td>18mm</td>
+      <td>29.97 FPS</td>
+      <td>1920x1080</td>      
+      <td><a href="files/videos/camera_tracking.mp4" download>link</a></td>
+  </tr>
+  
+<tr>
+      <td>camera_tracking2.mp4</td>
+      <td>Canon 550D (sensor size: 22.3)</td>
+      <td>35mm</td>
+      <td>25 FPS</td>
+      <td>1920x1080</td>      
+      <td><a href="files/videos/camera_tracking2.mp4" download>link</a></td>
+  </tr>  
+  
+  </tbody> 
+  
+  
+  
+</table>
+
+
+
+
+		</div>
+		
+			</div>		
+		
+
+ </div>
+
+      <!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+
+
+
+</body>
+</html>
