@@ -5,7 +5,7 @@
 
 <meta name="description" content="Manual Livre de Blender" /> 
 <meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
-<meta name="author" content="nafergo" >
+<meta name="author" content="nelson gonçalves" >
 <meta charset="UTF-8">
 <title>Manual Livre de Blender</title>   
 <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -122,9 +122,9 @@ dimensão para criar maior diversidade de dimensões.</p>
  
  <h3>Criar as árvores</h3>
 
-<p>Começamos por criar duas árvores diferentes. Repare que a origem das árvores está centrada na base. Este passo é importante 
-para a nossa floresta. Iremos usar um plano para gerar as árvores e estas vão ter a sia origem alinhada com o plano. Se 
-a origem não estiver na base e estiver no centro da geometria, uma parte do tronco irá ficar abaixo do plano.</p>
+<p>Começámos por criar duas árvores diferentes. Repare que a origem das árvores está centrada na base. Este passo é importante 
+para a correta disposição da nossa floresta. Iremos usar um plano para gerar as árvores e estas vão ter a respetiva origem alinhada com o plano. Se 
+a origem não estiver na base, uma parte da árvore irá ficar abaixo do plano.</p>
 <img src="img/particulas_objetos/arvores1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 <p>Atribua materiais diferentes às árvores para ser mais fácil distinguir posteriormente.</p>
@@ -136,6 +136,58 @@ a origem não estiver na base e estiver no centro da geometria, uma parte do tro
 
  <h3>Gerar a floresta</h3>
 
+<p>Crie um plano para servir de gerados de partículas. É neste plano que irão surgir as árvores.</p>
+<img src="img/particulas_objetos/arvores4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Adicione um sistema de partículas ao plano.</p>
+<ol>
+<li>Number: número de partículas = número de árvores</li>
+<li>Start/End: início e final da emissão de partículas. Como queremos que todas as árvores surjam desde o 
+início, colocámos 1 em ambos os campos.</li>
+<li>Lifetime: não foi alterado porque a cena é estática. Define tempo de vida de cada partícula (existe 
+durante 50 frames e depois 
+desaparece). Se estiver numa cena com várias frames é melhor aumentar este valor.</li>
+<li>Rotation: para orientar/rodar as partículas. "None" significa que irá ser utilizada a rotação 
+original.</li>
+<li>Physics: não é necessário associar as partículas a sistema de física. Size define dimensão das partículas e Random 
+Size introduz valor aleatório (introduz diversidade na dimensão)</li>
+<li>Render: Group é o grupo de objetos que irá ser utilizado nas partículas. A opção Pick Random faz com seja 
+escolhido aleatoriamente um dos objetos do Group para cada partícula.</li>
+</ol>
+<img src="img/particulas_objetos/arvores5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Deverá ter algo similar à imagem abaixo.</p>
+<img src="img/particulas_objetos/arvores6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Para controlar diretamente a distribuição das árvores no plano, existem 2 métodos principais: 
+através de Vertex Group ou de textura.</p>
+<p>Subdivida o plano para criar vários vértices.</p>
+<img src="img/particulas_objetos/arvores7.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Selecione um conjunto de vértices e associe os mesmos a um Vertex Group.</p>
+<img src="img/particulas_objetos/arvores8.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Nas configurações do sistema de partículas (painel Vertex Group) pode agora utilizar esse grupo para definir a 
+densidade das partículas.</p>
+<img src="img/particulas_objetos/arvores9.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Se desejar, pode até pintar diretamente a distribuição das árvores através de Weight Paint.</p>
+<img src="img/particulas_objetos/arvores10.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Outra possibilidade é o controlo da densidade (ou outras opções) através de texturas no sistema de partículas. 
+Recomenda-se vivamente que utilize uma imagem B/W e que o seu mapeamento seja feito com coordenadas UV.</p>
+<img src="img/particulas_objetos/arvores11.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>No painel de texturas pode depois atribuir a esta textura a capacidade de influenciar a densidade (ou outras 
+opções) das partículas.</p>
+<img src="img/particulas_objetos/arvores12.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Na imagem abaixo foram utilizadas 2 texturas: uma com cor e a outra B/W.  A versão B/W foi mapeada por UV e 
+utilizada para manipular a distribuição das partículas. A versão com cor utilizou o mesmo UV e foi 
+aplicada à superfície do plano.</p>
+<img src="img/particulas_objetos/arvores13.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 
    	</div>
