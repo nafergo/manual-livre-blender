@@ -3,47 +3,42 @@ body {
 	}
  
 
-@media screen and (max-width: 1134px)
-    {
-    .navbar-inverse .navbar-nav > li > a {
-    	font-size: 12px;}
-    .dropdown-menu li {
-    	font-size: 12px;}
-		    	
-    }
+ 
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.navbar-inverse .navbar-nav > li > a {
+    	font-size: 0.5em;}
+   .dropdown-menu li {
+    	font-size: 0.65em;}
+   .logotipo {width: 35px;} 
+ }
 
-@media screen and (max-width : 1019px)
-    {
-    .navbar-inverse .navbar-nav > li > a {
-    	font-size: 11px;}
-    .dropdown-menu li {
-    	font-size: 11px;}    	
-    }
-    
-@media screen and (max-width : 976px)
-    {
-    .navbar-inverse .navbar-nav > li > a {
-    	font-size: 10px;}
-    .dropdown-menu li {
-    	font-size: 11px;}    	
-    }
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 857px) {
+	.navbar-inverse .navbar-nav > li > a {
+    	font-size: 0.65em;}
+   .dropdown-menu li {
+    	font-size: 0.65em;}
+   .logotipo {width: 35px;} 
+ }
 
-
-@media screen and (max-width : 939px)
-    {
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
     .navbar-inverse .navbar-nav > li > a {
-    	font-size: 9px;}
+    	font-size: 0.75em;}
     .dropdown-menu li {
-    	font-size: 10px;}    	
-    }
-    
+    	font-size: 0.75em;}
+    .logotipo {width: 65px;} 
+ }
 
-@media screen and (max-width : 871px)
-    {
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
     .navbar-inverse .navbar-nav > li > a {
-    	font-size: 8px;}
-    .dropdown-menu li {font-size: 9px;}
-    }
+    	font-size: 1em;}
+    .dropdown-menu li {
+    	font-size: 1em;}
+    .logotipo {width: 100%;} 
+ }
 
 
 footer {
@@ -52,6 +47,7 @@ footer {
 
 
 .navbar-inverse {
+	border-radius: 0px;
 	background-color: #383a3d;
 	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
