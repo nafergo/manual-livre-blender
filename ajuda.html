@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nelson gonçalves" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1 class="titulopagina">Ajuda</h1>
+      	
+      	<div class="page-header">
+				<h2>Sobre o manual</h2>
+      	</div>
+
+
+<h3>Não tenho menu?!?</h3>
+      <p>Se está a utilizar o manual em modo offline com o browser Chrome e não consegue ver o menu em cima, execute o programa com a flag <code>--allow-file-access-from-files</code>. 
+      E, claro está, pode sempre utilizar o <a href="https://www.mozilla.org/firefox/" target="_blank">Mozilla Firefox</a>!</p>
+
+<h3>Não consigo ver os vídeos!</h3>
+      <p>Para ver os vídeos (existentes em diversas páginas) e aceder às hiperligações externas tem de ter ligação à Internet.</p>
+
+<h3>Como é que devo utilizar este manual?</h3>
+      <p>Para quem está a iniciar a aprendizagem do Blender, sugere-se fortemente a consulta da página onde são definidos vários 
+        <a href="percursos_de_aprendizagem.html">percursos de aprendizagem</a>.</p>
+
+<h3>Onde está o código e informação sobre autores e direitos de autor?</h3>
+      <p>No rodapé de todas as páginas encontra informação sobre o código, ficha técnica e licença.</p>
+
+
+
+      	<div class="page-header">
+				<h2>Sobre o Blender</h2>
+      	</div>
+
+<h3>BlenderArtists</h3>
+<p>O <a href="http://blenderartists.org/forum/" target="_blank">BlenderArtists</a> é o maior fórum do comunidade Blender.</p>
+
+<h3>Blender Stack Exchange</h3>
+<p>O <a href="http://blender.stackexchange.com/" target="_blank">Blender Stack Exchange</a> é uma plataforma Q&A (Questions & Answers) sobre o Blender. Constitui um repositório bastante 
+completo de questões/dúvidas e respetivas respostas ou soluções.</p>
+
+
+<h3>Blender Wiki</h3>
+<p> A <a href="http://wiki.blender.org/" target="_blank">Blender Wiki</a> é o sistema oficial de documentação para utilizadores e <em>developers</em>. Inclui um manual de grande 
+utilidade.</p>
+
+                    
+        
+        
+
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>
