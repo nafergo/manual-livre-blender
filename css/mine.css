@@ -52,6 +52,25 @@ body {
  }
 
 
+
+#link_ajuda {
+	position:absolute;
+	margin-top: 5em;
+	margin-left: 1em;
+}
+
+#link_ajuda a {
+	text-decoration:none;
+	color:#ccc;
+	font-size: 1.5em;
+}
+
+#link_ajuda a:hover {
+	color:#333;
+}
+
+
+
 footer {
 	margin-top: 100px;
 	}
