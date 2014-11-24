@@ -46,121 +46,155 @@
          
       </div>
 
-<p>Se ainda não leu, por favor comece pelo texto <a href="preparacao_camera_tracking.html">Recomendações e Introdução</a>. Neste texto vamos utilizar o ficheiro camera_tracking2.mp4 (dados e ficheiro disponibilizados nesse texto) e é fortemente recomendado que aumente a memória RAM disponível
+<p>Se ainda não leu, por favor comece pelo texto <a href="preparacao_camera_tracking.html">Recomendações e 
+Introdução</a>. Neste texto vamos utilizar o ficheiro camera_tracking2.mp4 (dados e ficheiro disponibilizados 
+nesse texto) e é fortemente recomendado que aumente a memória RAM disponível
  para tarefas de tracking e edição de vídeo (explicação no mesmo texto).</p>
+
+      <div class="page-header">
+        <h2>Início</h2>       
+         
+      </div>
+
+<p>O primeiro passo foi a conversão do vídeo para uma sequência de imagens. No nosso caso, foram 
+utilizadas 175 frames (7 segundos), desde a frame 1 até à 175, convertidas para 
+Targa para não perder qualidade com compressão.</p>
+
+<p>O segundo passo foi a importação da sequência de imagens para o Movie Clip Editor.</p>
+
+<p>Acertámos as configurações de renderização de acordo com os ficheiros de imagem e 
+vídeo original (25 FPS, 1920x1080) e definimos a timeline para 175 frames (Start no 1 e End no 175) 
+pois vamos trabalhar com 175 frames.</p>
+
+<p>Com o rato na janela principal, clicámos em P para fazer prefetch (transferir imagens para 
+a memória cache). Pode obter o mesmo efeito através do Play Animation (Alt+A).</p>
+
+<p>Com o rato na janela principal, clicámos em F para aumentar automaticamente a imagem até que esta
+ ocupe toda a área disponível no Movie Clip Editor.</p>
+
+
+
       <div class="page-header">
         <h2>Exercício</h2>       
          
       </div>
       
 
-<h2>3. Importar a sequência e adicionar marcadores</h2>
+<h3>Marcadores</h3>
 
-<p>Iremos utilizar os primeiros 7 segundos do ficheiro MVI_1034.mov e a conversão já foi feita. Optámos por converter para TGA com resolução 1920x1080. Como o ficheiro foi gravado a 25 FPS, isto significa que vamos fazer tracking com 175 frames.</p>
+<p>Com a sequência na memória, faça <em>scrubbing</em> (deslocar o Time Cursor - a linha verde - na Timeline) para 
+ver pontos que estão sempre visíveis no enquadramento.</p>
 
-<p>Inicie o Blender. Certifique-se que está em Blender Render e altere a resolução para 1920x1080 a 100%. Nas preferências do Blender, aumente a memória disponível para 1024 (ou mais, se tiver bastante memória RAM disponível).</p>
+<p>Certifique-se de que está na frame 1 ou na primeira frame da sequência. Pressione o 
+botão Add (painel Marker) e clique na imagem gpara adicionar um marcador (atalho é CTRL+BER). Coloque o marcador no
+ ponto que pretende seguir (track). Escolha locais que se destacam claramente, com bom contraste.</p>
 
-<p>Abra o Movie Clip Editor. Clique em Open e selecione a primeira frame. Altere a frame final para acertar com o número de frames que pretende utilizar. No nosso caso, vamos utilizar 175. </p>
 
-<p>Com o cursor do rato em cima da frame, faça ALT+A para carregar as frames em cache. A linha de cor violeta identifica a dimensão da sequência de frames sendo que o violeta mais claro indica as frames armazenadas em memória.</p>
+<p>No Tracking Settings, se desejar, pode altera o Motion Model para Affine. Apesar de aumentar a morosidade, 
+este modo permite fazer track à mudança de perspetiva, deforma o marker, obtendo maior precisão. No exemplo abaixo não 
+foi utilizado este Motion Model.</p>
 
-<img src="img/img42/4camera_tracking3ff3d503.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<p>Para mover um marker, selecione-o e clique em G. Para mover com maior precisão, pressione o SHIFT 
+enquanto desloca o marker.</p>
 
-<p>Certifique-se de que está na frame 1 e pressione o botão Add Marker and Move para adicionar um marcador. Coloque o marcador no ponto que pretende seguir (track). Escolha locais que se destacam claramente, com bom contraste e com cantos.</p>
+<p>Na coluna das propriedades, lado direito, tem uma janela que permite ativar a visualização da área do 
+pattern (quadrado menor que envolve a âncora, o ponto que marca o local para fazer tracking) e de Search.
+Pode aumentar as áreas com S ou inserindo os valores na barra de ferramentas (lado esquerdo), secção 
+Tracking Settings.</p>
 
-<p>Para mover um tracker, selecione-o e clique em G. Para mover com maior precisão, pressione o SHIFT enquanto desloca o tracker.</p>
+<p>Ative o tracking (CTRL+T). Corrija a posição (ou dimensão, se necessário) do marker sempre que este se perder. 
+Caso seja necessário, ugtilize o Esc para interromper o tracking.</p>
 
-<p>Em cima, na coluna das propriedades, lado direito, tem uma janela que permite ver a área do pattern (quadrado menor que envolve a âncora, o ponto que marca o local para fazer tracking). Para aumentar o pattern, clique em S.</p>
+<p>Repita o processo até obter 8 marcadores (mínimo necessário!). Neste caso, foram utilizados os pontos na mesa. 
+De um modo geral, dever+a tentar espalhar os markers de modo a que estes 
+cubram toda a frame. Mais markers com bom tracking = maior qualidade e precisão.</p>
 
-<p>O quadrado maior (ativado no painel de propriedades em Search) revela a área em que o algoritmo irá procurar o pattern. Se a filmagem tiver movimentos bruscos, poderá ser necessário aumentar a área de Search. Clique no triângulo, lado inferior direito, para aumentar/diminuir a área de Search.</p>
 
-<img src="img/img42/5camera_tracking19b43cc4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
-<p>Depois de colocar o seu tracker no local desejado, clique no botão para iniciar o tracking. Pode fazer tracking da sequência ou frame a frame e pode fazer tracking da frame em diante ou para trás.</p>
+<img src="img/img42/1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
-<p>Se tudo correr na perfeição, o tracker irá até ao fim e pode recomeçar até ter 8 trackers (mínimo!) completos. Mas raramente acontece...</p>
 
-<p>Por vezes, o tracker perde o ponto a seguir. Quando isso acontece, a janela de preview fica em tom rosa escuro e o processo pára. Selecione o seu tracker, reposicione-o e volte a ativar o processo.</p>
+ <h3>Solve Camera Motion</h3>
+<p>Depois de ter 8 trackers feitos, é altura de inserir os dados da câmara e definir as keyframes para o 
+cálculo do movimento. As keyframes definem dois momentos na sequência que incluem mudança de perspectiva. Estas 
+configurações podem ser inseridas manualmente mas também pode deixar o Blender tentar descobrir as melhores 
+configurações. Neste exercício iremos utilizar o método automático.</p>
+ 
+ <p>Na aba Solve, ative a caixa Keyframe e, no Refine, escolha Focus Length, K1. Deste modo, durante o Solve (
+ cálculo do movimento da câmara), o Blender irá tentar escolher as melhores keyframes e descobrir a distância 
+ focal com que foi capturada a imagem (K1 procura resolver a distorção provocada pela lente).</p>
+ 
 
-<img src="img/img42/6camera_tracking48675960.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+ 
+ <p>Coloque-se na frame 1, selecione todos os trackers e clique em Solve Camera Motion. 
+ Aguarde pelo cálculo e verifique o valor do Solve Error. 
+ O algoritmo irá calcular o movimento da câmara e irá apresentar uma margem de erro que 
+permite avaliar a exatidão do tracking. No nosso caso, deu 0.4713. Acima de 1.0 é um tracking fraco, deverá ser sempre menos de 1. No entanto, quanto menor o erro, melhor é o 
+resultado final. Recomenda-se tentar sempre menos de 0.5, o que é bom!
+ </p>
 
-<p>Existem duas razões muito comuns para o tracker perder o ponto a seguir: demasiado blur ou movimento brusco fez com que a área de pattern saltasse para fora da área de Search. Neste último caso, poderá resolver a situação recomeçando o processo depois de aumentar a área de Search.</p>
+<img src="img/img42/2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
-<img src="img/img42/7camera_tracking211096da.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+ 
+<p>Se desejar, pode ativar a opção Info (Marker Display na barra de propriedades) para identificar os trackers que 
+têm maior erro.</p>
+<img src="img/img42/80.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
-<p>Repita o processo até obter, no mínimo, 8 tracks completos. No final, avance e recue na timeline tentando ver se os trackers seguem o mesmo padrão de movimento e corrija se for caso disso.</p>
+<p>A janela Graph permite ainda ver o percurso dos markers. As linhas vermelhas descrevem movimento em X, as 
+linhas verdes descrevem movimento em Y. Verifique se alguma linha "salta" em demasia e corrija. Caso corrija “saltos” existentes, volte a fazer o Solve Camera Motion. 
+ </p>
+<img src="img/img42/81.jpg" alt="..." class="img-responsive img-thumbnail center-block"> 
 
-<img src="img/img42/8camera_tracking49e9da98.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
-<h2>4. Camara Data</h2>
 
-<p>Depois de concluído o processo anterior, é altura de introduzir os dados do dispositivo de captura.</p>
+ 
+ <p>Pode ser útil introduzir valores da lente e câmara (painel propriedades). 
+ Caso o seu modelo não conste na lista do Blender, introduza os valores do sensor 
+ (especificações técnicas do dispositivo).</p>
+ 
+<p>
+No entanto, antes de fazer novo Solve Camera Motion, faça Clear Solution (menu Track). Neste exemplo (com este vídeo), se 
+quiser experimentar introduzir os valores da câmara, assegure-se que tem 35mm na lente, 
+câmara Canon APS-C e 0 no K1 da Lens Distortion. Na aba Solve, ative a caixa Keyframe e, no Refine, escolha Focus Length, K1.</p>
 
-<img src="img/img42/9camera_tracking46c2c55e.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img42/3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
-<p>No nosso caso, o vídeo foi filmado com uma Canon 550D e 35mm.</p>
 
-<p>Caso o seu modelo não conste na lista do Blender, introduza os valores do sensor (especificações técnicas do dispositivo).</p>
 
-<h2>5. Solving Camera Motion</h2>
+<h3>Reconstruction</h3>
 
-<p>Selecione todos os trackers e clique em Camera Motion, no painel Solve.</p>
+<p>Divida a área de trabalho de modo a ter uma janela com o 3D View. 
+Coloque-se em modo de visão de câmara na janela de 3D View.</p>
 
-<p>O algoritmo irá calcular o movimento da câmara e irá apresentar uma margem de erro que permite avaliar a exatidão do tracking. Na imagem abaixo o erro é de 0.6622. Se desejar, pode ativar a opção Names and Status (barra de propriedades) para identificar os trackers que têm maior erro. Caso seja necessário, corrija os “saltos” existentes e volte a fazer o Camera Motion. Acima de 1.0 é um tracking fraco, deverá ser refinado. No entanto, quanto menor for o erro melhor é o resultado final.</p>
+<p>No Movie Clip Editor, clique em Set as Background para o clip ser visível na câmara do 3D View. 
+Clique em Setup Tracking Scene para criar uma cena (inclui configuração de nós) pronta a renderizar.</p>
 
-<img src="img/img42/10camera_tracking4d8da922.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/img42/90.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
-<p>Na barra à esquerda, a barra de ferramentas, escolha a opção Focus Length, K1, K2 em Refine para tentar baixar o erro tendo em conta a distorção da lente. Volte a clicar em Camera Motion para ver o novo erro. No nosso caso, o erro baixou ligeiramente para 0.6313.</p>
+<p>No Movie Clip Editor, selecione 3 trackers que estejam no chão e clique em Floor. 
+O Blender irá alinhar a grelha do 3D View com estes três trackers.</p>
 
-<img src="img/img42/11camera_tracking2d107d98.jpg" alt="..." class="img-responsive img-thumbnail center-block">
-
-<p>Como temos poucos trackers (8 é o mínimo...), provavelmente a distorção K2 não está a ajudar muito, podendo até introduzir algum erro.</p>
-
-<p>Clique em Clear Motion. Assegure-se que tem 35mm na lente e 0 no K1 e no K2.Selecione Focus Length, K1  (provavelmente o refinamento mais utilizado) e volte a clicar em Camera Motion. Desta feita obtemos um erro de 0.5663!</p>
-
-<img src="img/img42/12camera_tracking5a1eed46.jpg" alt="..." class="img-responsive img-thumbnail center-block">
-
-<h2>6. Reconstruction</h2>
-
-<p>Divida a área de trabalho de modo a ter uma janela com o 3D View. Coloque-se em modo de visão de câmara na janela de 3D View.</p>
-
-<p>No Movie Clip Editor, ative o modo Reconstruction. Clique em Set as Background para o clip ser visível na câmara do 3D View. Clique em Setup Tracking Scene para criar uma cena (inclui configuração de nós).</p>
-
-<img src="img/img42/13camera_tracking422832e2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
-
-<p>No Movie Clip Editor, selecione 3 trackers que estejam no chão e clique em Floor. O Blender irá alinhar a grelha do 3D View com estes três trackers.</p>
-
-<p>Selecione o tracker que estiver mais central e clique em Origin. O Blender irá definir este tracker como o ponto de origem, onde os eixos X, Y e Z se cruzam na grelha do 3D View.</p>
+<p>Selecione o tracker que estiver mais central e clique em Origin. 
+O Blender irá definir este tracker como o ponto de origem, onde os eixos X, Y e Z se cruzam na grelha do 3D View.</p>
 
 <p>Selecione outro tracker para definir o eixo X (pode fazer o mesmo para o Y).</p>
 
-<p>Finalmente, selecione dois trackers para definir a escala. A distância entre estes dois trackers irá ser equivalente a 1 Blender Unit (1 quadrado da grelha). </p>
+<p>Finalmente, selecione dois trackers para definir a escala. A distância entre estes dois trackers 
+irá ser equivalente a 1 Blender Unit (1 quadrado da grelha). </p>
 
-<img src="img/img42/14camera_tracking2ba81f9f.jpg" alt="..." class="img-responsive img-thumbnail center-block">
-
-<p>Nesta altura, através da câmara na janela 3D View já é possível colocar elementos e ver a sequência de imagens através do ALT+A. Contudo, como a imagem na janela de 3D View não pode ser distorcida (tendo em conta a Focal Length e os valores de K1), é possível que alguns trackers não surjam no local correto e pareçam deslizar. Na nossa cena não é muito óbvio porque não temos trackers próximos das bordas da imagem, onde a distorção é mais visível.</p>
-
-<p>A solução é introduzir um undistort na sequência de imagens. Na janela 3D View assegure-se que tem a opção Render Undistorted ativa. Se quiser também pode ativar a mesma opção no Movie Clip Editor para comparar. No entanto, como já não vamos utilizar esta janela, pode deixar a opção no Movie Clip Editor desativada.</p>
-
-<img src="img/img42/15camera_tracking18056fb2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
-
-<p>- Agora é uma questão de...</p>
-
-<p>- ajustar a cena que pretende criar;</p>
-
-<p>- trabalhar a iluminação;</p>
-
-<p>- trabalhar no editor de nós e...</p>
-
-<p>renderizar!</p>
+<img src="img/img42/91.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 
+<p>Nesta altura, através da câmara na janela 3D View já é possível colocar 
+elementos e ver a sequência de imagens através do ALT+A. 
+</p>
 
 
+<img src="img/img42/100.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 
-
-
+<p>Agora é uma questão de ajustar a cena que pretende criar, trabalhar a iluminação e materiais, trabalhar no editor de nós
+ e renderizar.</p>
 
 
 		</div>
