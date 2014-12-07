@@ -95,7 +95,7 @@ footer {
 	}
 
 
-//imagens usam isto
+/*imagens usam isto*/
 .center-block {
   display: block;
   margin-left: auto;
@@ -107,18 +107,19 @@ footer {
 	}
 	
 	.capa {
-	margin-top: 100px;
+
 }
 
-//primeira pagina usa isto
+/*primeira pagina usa isto*/
 
 .titulohomepage {
-	margin-bottom: 20px;
+
 	text-align: center;
+	color:#000;
+	text-shadow: -5px 5px 5px rgba(0,0,0, 0.3);
 }
 
 .titulopagina {
-	margin-top: 50px;
 	margin-bottom: 50px;
 }
 
@@ -127,7 +128,7 @@ footer {
 	height: 64px;
 }
 
-// fix horizontal scroll
+/* fix horizontal scroll*/
 
 .row {
   margin-left: 0px;
