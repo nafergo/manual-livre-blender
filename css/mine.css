@@ -7,6 +7,28 @@ body {
 
  
 /* Small devices (tablets, 768px and up) */
+
+
+@media (max-width: 767px) {
+.navbar-inverse .navbar-nav .open .dropdown-menu {
+	background-color: #FFF;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li {
+	background-color: #FFF;
+	color: #333;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a{
+	color: #333;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover{
+background-color: #F5F5F5;
+	color: #333;
+}
+}
+
 @media (min-width: 768px) {
 	.navbar-inverse .navbar-nav > li > a {
     	font-size: 0.5em;}
@@ -78,21 +100,25 @@ footer {
 
 .navbar-inverse {
 	border-radius: 0px;
-	background-color: #383a3d;
-	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+	background-color: #5085b3;
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,22,0.75);
+	-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,22,0.75);
+	box-shadow: 0px 2px 5px 0px rgba(0,0,22,0.75);
 	}
+
+
 
 .navbar-inverse .navbar-nav > li > a {
-    color: #b5b9bf;}
+    color: #fff;}
 
 .navbar-inverse .navbar-nav > li.open a.dropdown-toggle{
-    background-color: #292b2e}
+    background-color: #719fc6;}
    
 .navbar-inverse a.navbar-brand {
-	color: #b5b9bf;
+	color: #fff;
 	}
+
+
 
 
 /*imagens usam isto*/
