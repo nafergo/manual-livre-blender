@@ -97,9 +97,17 @@ footer {
 	margin-top: 100px;
 	}
 
+.navbar {
+	-webkit-border-radius: 0em;
+	-moz-border-radius: 0em;
+	border-radius: 0em;
+}
 
 .navbar-inverse {
-	border-radius: 0px;
+	-webkit-border-radius: 0em;
+	-moz-border-radius: 0em;
+	border-radius: 0em;
+	border-color: #5085b3;	
 	background-color: #5085b3;
 	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,22,0.75);
 	-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,22,0.75);
