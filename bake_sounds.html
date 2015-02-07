@@ -38,7 +38,7 @@
 			<h1 class="titulopagina">Bake Sound to F-Curves <small>para criar animação a partir de som</small></h1>
       	
       	<div class="page-header">
-				<h2>Bake Sound to F-Curves</h2>
+				<h2>Animar material</h2>
       	</div>
      
 
@@ -57,10 +57,84 @@ Por exemplo, se pretende que o som sirva para mudar o material de um objeto: atr
  o seu objeto vai modificar apenas o valor de Red ou da escala no eixo X. Se pretende utilizar o som para influenciar mais curvas, pode repetir
   o processo ou seleciona previamente as várias curvas que pretende utilizar.</p>
 
-<img src="img/img41/2algumas_dicashtml228166d0.png" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/bake_sound/2algumas_dicashtml228166d0.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 
+      	<div class="page-header">
+				<h2>Animar Scaling</h2>
+      	</div>
+     
+<p>1. Vamos utilizar o cubo inicial e controlar o seu redimensionamento através do som</p>
+<img src="img/bake_sound/1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>2. Selecione os 4 vértices da base do cubo. Pressione Shift+S para abrir menu Snap e escolha Cursor To Selected para o cursor 3D colocar-se no 
+centro dos 4 vértices.</p>
+<img src="img/bake_sound/2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>3. Em Object Mode, escolha agora a opção Origin To 3D Cursor para a origem do cubo ser colocada no centro da sua base. Deste modo, quando redimensionarmos o cubo em Z, 
+este vai apenas aumentar numa direção. </p>
+<img src="img/bake_sound/3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>4. Introduza uma keyframe de Scaling para criar um canal no Graph Editor.</p>
+<img src="img/bake_sound/4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>5. No Graph Editor, escolha o canal de Scaling em Z. Nós apenas pretendemos que o cubo aumente a sua altura (estique) de acordo com o som. Depois, no menu Key, selecione a 
+opção Bake Sound To F-Curves.</p>
+<img src="img/bake_sound/5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>6. Navegue até ao ficheiro de som que pretende utilizar, selecione o ficheiro e pressione o botão Bake Sound To F-Curves.</p>
+<img src="img/bake_sound/6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>7. A curva azul corresponde ao canal de Scaling em Z. As ondas correspondem à wavesound do ficheiro de som.</p>
+<img src="img/bake_sound/7.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>8. Para terminar, utilizamos dois arrays no cubo para criar uma visualização tipo equalizador :)</p>
+<img src="img/bake_sound/8.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<img src="img/bake_sound/bake.gif" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+      	<div class="page-header">
+				<h2>Unbake</h2>
+      	</div>
+
+<p>Originalmente, as curvas criadas deste modo não são editáveis. No entanto, é possível fazer unbake através de scripting. 
+O script abaixo (disponível <a href="http://blenderartists.org/forum/showthread.php?221387-resample-baked-f-curve">aqui</a>) transforma a curva numa action,
+criando keyframes que podems ser depois manipuladas.</p>
+
+<p>1. Selecione a curva em que pretende fazer unbake.</p>
+
+<p>2. Abra uma nova janela do tipo Text Editor. Faça New para criar um novo bloco de texto.</p>
+
+<p>3. Copie e cole o texto abaixo nessa janela.</p>     
+
+
+<pre>
+#####################################
+# unbake ¿? f-curve to a new action #
+#####################################
+
+import bpy
+obj = bpy.context.object
+
+for c in obj.animation_data.action.fcurves:
+    if c.sampled_points and c.select:
+        obj.animation_data.action = bpy.data.actions.new(name='Lot_of_Keys')
+        fcu = obj.animation_data.action.fcurves.new(data_path=c.data_path, index=c.array_index)
+        sam = c.sampled_points
+        fcu.keyframe_points.add(len(sam))
+        for i in range(len(sam)):
+            w = fcu.keyframe_points[i]
+            w.co = w.handle_left = w.handle_right = sam[i].co
+
+
+</pre>
     
+<p>4. No menu Text, escolha a opção Run Script. Ou então clique no botão direito do rato e escolha a mesma opção. Ou então utilize o atalho ALT+P.</p>
+
+<p>5. A curva deverá ter sido substituída por uma linha de keyframes.</p>
+
+
 
    	</div>
 	</div>
