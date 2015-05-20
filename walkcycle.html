@@ -36,34 +36,153 @@
 <div class="container-fluid">
 	<div class="row">
    	<div class="col-xs-10 col-xs-offset-1">
-			<h1><small>Anatomia de um</small>	Walkcycle</h1>
+			<h1><small>Anatomia de um</small> Walk cycle</h1>
       	
       	<div class="page-header">
 				<h2>Definição</h2>
       	</div>
-     
+     <p>No contexto da animação, walk cycle (ciclo de caminhada) é o nome atribuído a uma sequência de frames ou desenhos que representam uma personagem a andar/caminhar quando exibidos 
+     em ciclo (em loop).</p>
      
 
       	<div class="page-header">
-				<h2>Componentes de um Walkcycle</h2>
+				<h2>Componentes de um Walk cycle</h2>
       	</div>
       	
-     
-        	<h3>Generalista</h3>
+     <p>Seguindo a tradição do desenho animado, o walk cycle pode ser descrito através da utilização de 4 poses distintas (keyframes):</p>
+<ol>
+<li><strong>contact</strong></li>
+<li><strong>down</strong> (também designada por recoil)</li>
+<li><strong>passing</strong></li>
+<li><strong>up</strong> (também designada por high point)</li>
+</ol>
+ 
+ <p>Estas 4 poses são repetidas em modo invertido para criar um ciclo completo (duas pernas). No exemplo abaixo, o ciclo completo (duas pernas) é criado com 8 poses (4 poses + 4 poses invertidas), a 9ª 
+pose é igual à 1ª.</p> 
 
-			<p>kkkk</p>
+<p>Isto não significa que o walk cycle seja construído apenas com 4 ou 8 frames! Na realidade, existem frames intermédias (in-betweens) que podem ser desenhadas, animadas manualmente ou animadas 
+automaticamente prolo computador através de interpolação (tweening). No exemplo abaixo, o ciclo completo (duas pernas) é criado com 24 frames, a 25ª frame é igual à 1ª frame.</p>
+
+<p>O walk cycle não é criado apenas com a ilusão do movimento das pernas. Na realidade, para além do movimento das pernas, um walk cycle convincente necessita de 
+animação no restante corpo (tronco, cabeça, braços, etc.) e especial cuidado com os tempos. No exemplo abaixo, atente nos arcos criados com o movimento pendular do corpo.</p>
+
+         
+<p class="text-center">
+<img src="img/walkcycle/richard_williams.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem publicada em Williams, R. (2009). The Animator's Survival Kit, Expanded Edition: A Manual of Methods, Principles and Formulas for Classical, Computer, Games, Stop Motion and Internet Animators. Londres: Faber and Faber.</small>
+</p>
+     
+
+<p>Sacrificando qualidade e realismo (mas ganhando rapidez e simplicidade de processos), é possível simplificar o walk cycle. 
+No exemplo abaixo, são utilizadas 2 poses (contact e passing). O ciclo completo (duas pernas) é criado com 4 poses (2 poses + 2 poses invertidas), a 5ª 
+pose é igual à 1ª.</p>
+<p class="text-center">
+<img src="img/walkcycle/Walk-cycle-poses.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/walkcycle/Breakdown_of_Walk_Cycle.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/walkcycle/4-frame-walk-cycle.gif" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagens de Ajaykarat, publicadas em <a href="http://en.wikipedia.org/wiki/Walk_cycle" target="_blank">Walk cycle@Wikipedia</a></small>
+</p>
+
+
+
+     
+     
+        	<h3>Recomendações para a construção de um Walk Cycle</h3>
+
+			
+			<p>1. Geralmente, o processo de criação de um walk cycle inicia-se com a criação das 4 poses principais: contact, down (recoil), passing e up (high point).</p>
+
+
+
+<dl>
+  <dt>Contact</dt>
+  <dd>É a primeira pose, constitui o princípio e o final de cada passo/passada. Peso divido entre as pernas. 
+  É o momento em que a perna está mais esticada (mas tente evitar o totalmente esticada e direita! introduza um 
+  joelho ligeiramente dobrado) e o pé entra em contato com o solo.</dd>
+  
+  <dt>Down (recoil)</dt>
+  <dd>O peso da personagem desloca-se e passa a ser  suportado pelo pé em contato com o solo. O caminhante vem abaixo, desce. É a posição mais baixa no ciclo.</dd>
+
+
+  <dt>Passing</dt>
+  <dd>É a pose em que as pernas passam uma pela outra. A personagem está em trajetória ascendente, o peso está todo na perna/pé de suporte (em contato com o solo) enquanto a outra perna/pé está no ar.</dd>
+
+
+  <dt>Up (high point)</dt>
+  <dd>Ponto mais alto do ciclo. O calcanhar do pé de suporte já está no ar e a outra perna/pé prepara-se para atacar o solo. Peso da personagem puxa à frente.</dd>
+  
+</dl>
+
+<p>2. Após definir as primeiras 4 poses, repita o processo, invertendo as pernas, para obter o ciclo completo.</p>
+
+<p>3. Tenha em atenção o movimento vertical (Cima-Baixo), os arcos da passada, a onda. É comum abordar o movimento vertical das ancas/quadris da personagem como se fosse
+ uma bola saltitante, tentando 
+replicar as acelerações/desacelerações.</p>
+
+<p>4. Refinar a deslocação lateral do peso, ter em atenção o movimento lateral das ancas/quadris. Durante a caminhada, o peso da personagem desloca-se lateralmente.</p>
+
+<p>5. Introduzir rotação no peito. Ninguém caminha mantendo o peito totalmente plano. Esta animação prolonga-se até aos braços. Pense numa cadeia de movimentos que se inicia no peito, continua (propaga-se) 
+pelos ombros, braços, mãos, dedos. Na pose de Contact, o braço que fica à frente do corpo é o do lado da perna que está atrás.</p>
+ 
  
 			<div class="page-header">
-        		<h2>Imagens <small>de referência</small></h2>
+        		<h2>Outras imagens <small>de referência</small></h2>
 	      </div>
     
-			<p>sss</p>
-    <img src="img/cutout/1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 
-<p>http://blog.digitaltutors.com/12-steps-walk-cycle-animation/</p>
-<p>http://www.angryanimator.com/word/2010/11/26/tutorial-2-walk-cycle/</p>
+<p class="text-center">
+   <img src="img/walkcycle/walk_2_legs(side).gif" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem publicada em Blair, P. (1994). Cartoon Animation. Walter Foster Publishing.</small>
+</p>
+     
+     
+<p class="text-center">
+            <img src="img/walkcycle/walk_4_legs(side).gif" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem publicada em Blair, P. (1994). Cartoon Animation. Walter Foster Publishing.</small>
+</p>
+     
+     
+<p class="text-center">
+<img src="img/walkcycle/walk_(front).gif" alt="..." class="img-responsive img-thumbnail center-block">
+<small>Imagem publicada em Blair, P. (1994). Cartoon Animation. Walter Foster Publishing.</small>
+</p>
+               
 
+    
+                
+
+    
+    
+          	<div class="page-header">
+				<h2>Material adicional recomendado</h2>
+      	</div>
+
+
+<p>Altamente recomendado:<a href="http://www.biomotionlab.ca/Demos/webgl_walker/webgl_walker.php" target="_blank">Simulador online de walk cycles</a>
+</p>    
+
+
+<p><a href="http://en.wikipedia.org/wiki/Walk_cycle" target="_blank">Walk cycle @Wikipedia</a>
+</p>    
+
+
+<p><a href="http://walk-cycle-depot.blogspot.jp" target="_blank">Exemplos de walk cycles</a>
+</p>    
+      	
+<p>
+<a href="http://www.3dtotal.com/index_tutorial_detailed.php?catDisplay=1&id=1430#.TxB2KPM9ulQ" target="_blank">A Simple Method for creating Walk Cycles</a>
+</p>    
+<p>
+<a href="http://www.rubberbug.com/walking.htm" target="_blank">Anatomy of a Walk</a>
+</p>  
+<p>
+<a href="http://blog.digitaltutors.com/12-steps-walk-cycle-animation/" target="_blank">12 Steps to a Great Walk Cycle Animation</a>
+</p>
+<p>
+<a href="http://www.angryanimator.com/word/2010/11/26/tutorial-2-walk-cycle/" target="_blank">tutorial-2 : walk cycle</a>
+</p>
+    
 
    	</div>
 	</div>
