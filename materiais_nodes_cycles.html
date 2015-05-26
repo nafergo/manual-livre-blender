@@ -44,6 +44,10 @@
   					<li><a href="#wireframe">Wireframe</a></li>
   					<li><a href="#shaders_vertex_paint">Misturar shaders com Vertex Paint</a></li>
   					<li><a href="#two_colors_plane">Plano com 2 cores diferentes</a></li>
+  					<li><a href="#holograma">Efeito holograma</a></li>  					
+  					<li><a href="#pointiness">Pointiness / saliências</a></li>
+  					<li><a href="#sky_clouds">Céu e nuvens</a></li>
+  					<li><a href="#transparente">Transparência num eixo</a></li>
 					</ul>				
 
 			
@@ -136,6 +140,69 @@ pré-definido. </p>
 <p>Com shaders Emission esta opção é particularmente útil, permitindo emitir cores diferentes nos dois lados do plano ou emitir só de um lado (o outro tem um shader Transparent).</p>
 
 <img src="img/misturar_materiais/plano_2_materiais.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+      	<div class="page-header" id="holograma">
+				<h2>Efeito holograma</h2>
+      	</div>
+
+<p>O nó Layer Weight controla a mistura dos shaders de Emission e Transparent.</p>
+
+
+<img src="img/nodes_cycles_materials/hologram1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+
+
+      	<div class="page-header" id="pointiness">
+				<h2>Pointiness / saliências</h2>
+      	</div>
+
+<p>A opção Pointiness do nó Geometry permite identificar o grau de agudez/saliência. O ColorRamp permite manipular a mistura.</p>
+
+<img src="img/nodes_cycles_materials/pointiness.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/nodes_cycles_materials/pointiness2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+
+
+    	<div class="page-header" id="sky_clouds">
+				<h2>Céu e nuvens</h2>
+      	</div>
+
+<p>Céu é uma Sky Texture e as nuvens são criadas com Noise Texture.</p>
+<p>RGB Curves em conjunto com a Strength permite controlar a quantidade e a intensidade da luz.</p>
+
+<p>Os nós à esquerda do Sky Texture permitem controlar o mapeamento do fundo (rodar, moverr, scale, etc). Foi utilizado para fazer surgir o sol à direita.</p>
+<img src="img/nodes_cycles_materials/sky_clouds.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+
+
+    	<div class="page-header" id="transparente">
+				<h2>Transparência num eixo</h2>
+      	</div>
+
+<p>Na imagem abaixo, a mistura com a transparência ocorre apenas num eixo. A mistura é controlada com ColorRamp. A diferença entre as duas imagens (transição para transparência) é criada pela 
+interpolação utilizada no ColorRamp: na primeira imagem utilizamos Constant; na segunda imagem usamos Ease. E a posição (Pos) dos pontos de controle pode ser animada criando um efeito animado!</p>
+
+<img src="img/nodes_cycles_materials/transparente.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/nodes_cycles_materials/transparente1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>No exemplo abaixo, é o chão que tem o material com transparência. Ao fundo, o material vai ficando transparente e deixa passar o céu criando um efeito algo similar ao Mist.</p>
+<img src="img/nodes_cycles_materials/transparente2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/nodes_cycles_materials/transparente3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
 
 
    	</div>
