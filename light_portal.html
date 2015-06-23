@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
+<meta name="author" content="nafergo" >
+<meta charset="UTF-8">
+<title>Manual Livre de Blender</title>   
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<!-- custom css -->
+<link rel="stylesheet" href="css/mine.css" media="all" />	
+
+</head>
+
+
+<body>
+<div id="topo"></div>
+
+<!-- início do menu -->
+
+	<div data-include="menu.html"></div>
+
+<!-- fim do menu -->
+
+
+<div class="container-fluid">
+	<div class="row">
+   	<div class="col-xs-10 col-xs-offset-1">
+			<h1>Light Portal</h1>
+      	
+<dl class="dl-horizontal">
+  <dt>Versão</dt>
+  <dd>2.75</dd>
+  
+<dt>Renderizador</dt>
+  <dd>Cycles</dd>  
+</dl>
+
+      	<div class="page-header">
+				<h2>Introdução</h2>
+      	</div>
+     
+			<p>Portals são objetos colocados dentro de cenas interiores para ajudar o motor de renderização a encontrar a origem da luz. A sua função é indicar a 
+			localização de aberturas (i.e. janelas ou portas abertas) por onde entra luz permitindo poupar no esforço do renderizador. Por outras palavras, permite renderizar 
+			mais rápido! </p>
+			<p>No Cycles, os Light Portals só funcionam com a luz do "enviroment", não funcionam com as luzes tipo Sun, Spot, etc.</p>
+ 
+ 
+			<div class="page-header">
+        		<h2>Exercício</h2>
+	      </div>
+    
+			<p>Os Light Portals são muito fáceis de utilizar. Basta adicionar uma luz do tipo Area,  ativar a opção Portal e colocar a mesma no local da abertura.</p>
+			
+			<p>Pode utilizar mais do que um Portal. Pode utilizar várias luzes mas o Portal só vai utilizar a iluminação do tipo "enviroment".</p>
+			
+			<p>A cena abaixo é um paralelepípedo com uma janela e vários objetos. A câmara está dentro do paralelepípedo, existe uma luz do tipo Sun do lado de fora e apontada à janela. 
+			É utilizada a luz do World e AO.</p>
+			
+			<p>O Light Portal está colocado fora do paralelepípedo e cobre a área da janela. Permite identificar a janela como fonte de luz para a cena.</p>
+    <img src="img/iluminacao/light_portal/0.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>Se utilizar um Light Portal, a renderização demora mais tempo (compare a 1ª com a 3ª imagens). Contudo, precisa de menos samples para renderizar a cena (compare a 1ª com a 2ª imagem).</p>
+<img src="img/iluminacao/light_portal/1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/iluminacao/light_portal/2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/iluminacao/light_portal/3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>No exemplo abaixo, só é utilizada a luz do World. Não é utilizado AO nem qualquer outra fonte de luz.</p>
+
+<img src="img/iluminacao/light_portal/11.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/iluminacao/light_portal/12.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<img src="img/iluminacao/light_portal/13.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+   	</div>
+	</div>
+</div> <!-- /container -->
+
+
+
+<!-- início do footer -->
+
+	<div data-include="footer.html"></div>
+
+<!-- fim do footer -->
+    
+    
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/jquery.scrollTo.min.js"></script>
+    	<script src="js/jquery.localScroll.min.js"></script>
+    	<script src="js/csi.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("[rel=tooltip]").tooltip();
+            });
+        </script>
+
+
+
+
+	<script type="text/javascript">
+		jQuery(function( $ ){
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
+			
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y';
+			
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$.localScroll({
+				target: 'body', // could be a selector or a jQuery object too.
+				queue:true,
+				duration:1000,
+				hash:true,
+				onBefore:function( e, anchor, $target ){
+					// The 'this' is the settings object, can be modified
+				},
+				onAfter:function( anchor, settings ){
+					// The 'this' contains the scrolled element (#content)
+				}
+			});
+		});
+	</script>
+
+
+    
+  </body>
+</html>
