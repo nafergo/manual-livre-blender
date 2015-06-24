@@ -39,6 +39,21 @@
 			<h1 class="titulopagina">Baking Normal Maps</h1>
       	
 
+<dl class="dl-horizontal">
+  <dt>Versão</dt>
+  <dd>>= 2.75</dd>
+  
+<dt>Renderizador</dt>
+  <dd>Todos</dd>  
+</dl>	
+     
+          	<div class="page-header">
+				<h2>Introdução</h2>
+      	</div>
+     
+	 
+     
+     
      
 <p>
 Os Normal Maps são um dos "truques" mais utilizados em 3D. Permitem introduzir detalhe e variação sem necessitar
@@ -55,10 +70,17 @@ da direita tem 31.488 faces.
 
 <img src="img/baking_normals/baking_normals1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
-<p>Vamos utilizar o Blender Internal Render para criar o Normal Map e depois vamos aplicá-lo em Cycles. Assegure-se que está 
-em Blender Internal Render.</p>
 
-<p>Comece por criar 2 versões do seu modelo: a versão High Poly (com os detalhes e a partir da 
+			<div class="page-header">
+        		<h2>Exercício</h2>
+	      </div>
+
+<p>Neste exemplo, vamos utilizar o Blender Internal Render para criar o Normal Map e depois vamos aplicá-lo em Cycles. Para criar o Normal Map em Cycles, 
+procedimentos são similares.</p>
+
+<p>1. Assegure-se que está em Blender Internal Render.</p>
+
+<p>2. Comece por criar 2 versões do seu modelo: a versão High Poly (com os detalhes e a partir da 
 qual irá criar a o Normal Map) e a versão Low Poly (onde irá aplicar o Normal Map).</p>
 
 <p>A nossa Suzanne Low Poly é simplesmente a Suzanne original com um Subdivision Surface com 2 níveis e Shading: Smooth.</p>
@@ -73,22 +95,20 @@ todas as faces, pressionar W e escolher Subdivide; Aplicar um Shading: Smooth.</
 <img src="img/baking_normals/baking_normals6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 
-<p>
-Os dois modelos têm de estar exatamente no mesmo local (há quem coloque os dois modelos em 2 layers diferentes para 
+<p>3. Os dois modelos têm de estar exatamente no mesmo local (há quem coloque os dois modelos em 2 layers diferentes para 
 poder ter os dois modelos "separados" mas no mesmo local). No nosso caso, selecionámos o modelo Low Poly, pressionámos Shift+S e 
 escolhemos Cursor To Selected. Depois, selecionámos o High Poly, pressionámos Shift+S e e escolhemos Selected To Cursor. Agora, as duas
  versões estão sobrepostas.
 </p>
 
-<p>
-Crie um UV Layout na versão Low Poly. Selecionámos a versão Low Poly e, em Edit Mode, pressionámos U e escolhemos Smart UV Projet. Dividimos 
+<p>4. Crie um UV Layout na versão Low Poly. Selecionámos a versão Low Poly e, em Edit Mode, pressionámos U e escolhemos Smart UV Projet. Dividimos 
 a área de trabalho e criámos uma nova imagem. 
 </p>
 
-<p>No passo seguinte, a ordem de seleção dos modelos é importante! Selecione primeiro a versão High Poly e depois a versão 
+<p>5. No passo seguinte, a ordem de seleção dos modelos é importante! Selecione primeiro a versão High Poly e depois a versão 
 Low Poly. Passe para Edit Mode. Deverá estar a ver o UV Layout criado para a versão Low Poly.</p>
 
-<p>No painel Render, localize a secção Bake e configure de acordo com a imagem.</p>
+<p>6. No painel Render, localize a secção Bake e configure de acordo com a imagem.</p>
 <img src="img/baking_normals/baking_normals3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 <p>O Bake Mode é Normals porque pretendemos criar um Normal Map. Ative a opção Selected To Active para criar o Normal Map a partir
@@ -99,12 +119,12 @@ Low Poly. Passe para Edit Mode. Deverá estar a ver o UV Layout criado para a ve
   (ver <a href="erros_comuns.html">Erros Comuns</a>). Depois de recalcular os Normals, faça Bake.
     </p>
     
-    <p>Grave a imagem "azul" criada.</p>
+    <p>7. Grave a imagem "azul" criada.</p>
 
 <img src="img/baking_normals/baking_normals5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
 
-<p>Em Cycles, configure o material aplicado na versão Low Poly de acordo com a imagem abaixo. Repare que no nó 
+<p>8. Em Cycles, configure o material aplicado na versão Low Poly de acordo com a imagem abaixo. Repare que no nó 
 Image Texture escolhemos a imagem criada (a imagem azul que constitui o Normal Map) e foi 
 ativada a opção Non-Color Data (não quer que esta imagem influencie a cor...). No nó Normal Map esolhemos o 
 UV Layout criado anteriormente. Neste nós pode utilizar a opção Strength para controlar a intensidade do efeito criado pelo Normal Map.</p>
