@@ -3,11 +3,11 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-<meta name="description" content="Manual Livre de Blender" /> 
+<meta name="description" content="Manual Livre de Blender" />
 <meta name="keywords" content="Blender, Free Software, Libre Software, Open Source, Free Culture, Animation, 3D, Animação, Illustration, Ilustração, Education, Educação, Software Livre, VFX, Efeitos especiais, Visual Effects, CGI, 3D printing, impressão 3D">
 <meta name="author" content="nafergo" >
 <meta charset="UTF-8">
-<title>Manual Livre de Blender</title>   
+<title>Manual Livre de Blender</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
 
@@ -18,7 +18,7 @@
 
 
 <!-- custom css -->
-<link rel="stylesheet" href="css/mine.css" media="all" />	
+<link rel="stylesheet" href="css/mine.css" media="all" />
 
 </head>
 
@@ -36,7 +36,7 @@
 	<div class="row">
    	<div class="col-xs-10 col-xs-offset-1">
 			<h1 class="titulopagina">Erros e problemas comuns <small>no Blender</small></h1>
-      	
+
       	<div class="page-header">
 				<h2>"Normals" inconsistentes</h2>
       	</div>
@@ -44,7 +44,7 @@
 
 <p>
 Em 3D, o vetor normal é aquele que faz 90 graus, ou seja, é perpendicular, a uma dada superfície. Por outras palavras, em 3D, um plano não
- é igual dos dois lados, só tem uma face (onde surge o Normal). Tipicamente, num modelo 3D as faces têm os Normals a apontar para fora. 
+ é igual dos dois lados, só tem uma face (onde surge o Normal). Tipicamente, num modelo 3D as faces têm os Normals a apontar para fora.
 
 </p>
 
@@ -61,35 +61,35 @@ propriedades (N), procure o painel Mesh Display e ative a caixa Face em Normals.
 Passará a ver linhas azuis que apontam a direção das faces (veja o cubo em baixo).
 
 			</p>
- 
- 
+
+
  <img src="img/introducao/erros/normals_inconsistentes.jpg" alt="..." class="img-responsive img-thumbnail center-block">
- 
- 
+
+
 <h3>Solução</h3>
- 
+
 <p>Selecione todos os vértices, arestas e faces (utilize a tecla A) e clique
 em CTRL+N. Escolher “Recalculate Normals Outside”.
-[Atenção: em modo Object, a opção CTRL+N é para criar um novo ficheiro!] 
+[Atenção: em modo Object, a opção CTRL+N é para criar um novo ficheiro!]
  </p>
- 
+
 			<div class="page-header">
         		<h2>Duplicados ou sobreposição <small>de faces, arestas e vértices</small></h2>
 	      </div>
-    
+
        <h3>Problema</h3>
 			<p>
 			Acontece com alguma frequência ter faces ou vértices sobrepostos. Estas
 praticamente só são visíveis aquando da renderização (geralmente, aparecem áreas a negro ou sombreadas...). Isto pode acontecer porque duplicou um objeto ou vértice ou
 face ou aresta inadvertidamente...
-			</p> 
-			
+			</p>
+
 			 <img src="img/introducao/erros/sobreposicao1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 			 <img src="img/introducao/erros/sobreposicao2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
-			
+
 			<p>Em cima, vemos dois cubos sobrepostos na janela 3D View (lado esquerdo) e
 o que acontece quando se faz um render com os 2 cubos sobrepostos.</p>
-    
+
     <h3>Solução</h3>
 			<p>
 			Selecione
@@ -98,12 +98,12 @@ Remove Doubles. Também pode utilizar o botão Remove Doubles no menu Tools
 (painel do lado esquerdo na janela 3D View) e, neste caso, pode até definir o limite de
 tolerância (Merge Threshold) para ser considerado “double”.
 			</p>
-    
+
 
 			<div class="page-header">
         		<h2>Faces internas</h2>
 	      </div>
-    
+
        <h3>Problema</h3>
 			<p>
 			Geralmente, a mesh deverá ser oca. Não devem existir faces “internas”,
@@ -112,19 +112,56 @@ desnecessárias, criando compartimentos
 um esforço suplementar totalmente inútil
 (não vão ser vistas...) na altura da
 renderização, podem alterar o aspeto das
-superfícies afetadas. 
-			</p> 
-			
+superfícies afetadas.
+			</p>
+
 			 <img src="img/introducao/erros/facesinternas.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
-	    
+
     <h3>Solução</h3>
 			<p>
 			Selecione
 as faces desnecessárias/internas e apague-as.
 			</p>
-			
-			
+
+
+			<div class="page-header">
+        		<h2>Repor configuração original</h2>
+	      </div>
+
+       <h3>Problema</h3>
+			<p>Quando o problema é "Não sei o que fiz ou o que aconteceu, só quero que Blender se comporte como das
+				primeiras vezes que abri a aplicação!!!" a melhor solução é repor os valores de origem, ou valores
+				de fábrica.	</p>
+
+    <h3>Solução</h3>
+			<p>No menu File, escolha "Load Factory Settings".			</p>
+     <div class="row">
+			   	<div class="col-xs-6 col-xs-offset-3">
+			<div class="well embed-responsive embed-responsive-16by9">
+			<iframe width="640" height="360" src="http://www.youtube.com/embed/2s1hMYKdFZs" frameborder="0" allowfullscreen></iframe>
+			</div>
+			   	</div>
+			   	</div>
+					<p>No entanto, é importante tentar perceber o que aconteceu para não voltar cair na mesma armadilha :)</p>
+
+
+					<div class="page-header">
+		        		<h2>"Crashou?!?"" ou "Encerrei a aplicação sem querer!!!"</h2>
+			      </div>
+
+		       <h3>Problema</h3>
+					<p>Quando o p valores de origem, ou valores
+						de fábrica.	</p>
+
+		    <h3>Solução</h3>
+					<p>No menu File, escolha "Load Factory Settings".			</p>
+							<p>No entanto, é importante tentar perceber o que aconteceu para não voltar cair na mesma armadilha :)</p>
+
+
+
+
+
    	</div>
 	</div>
 </div> <!-- /container -->
@@ -137,8 +174,8 @@ as faces desnecessárias/internas e apague-as.
 	<div data-include="footer.html"></div>
 
 <!-- fim do footer -->
-    
-    
+
+
      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -168,11 +205,11 @@ as faces desnecessárias/internas e apague-as.
 			 * @see http://flesler.demos.com/jquery/scrollTo/
 			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
 			 */
-			
+
 			// The default axis is 'y', but in this demo, I want to scroll both
 			// You can modify any default like this
 			$.localScroll.defaults.axis = 'y';
-			
+
 			/**
 			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
 			 * also affect the >> and << links. I want every link in the page to scroll.
@@ -193,6 +230,6 @@ as faces desnecessárias/internas e apague-as.
 	</script>
 
 
-    
+
   </body>
 </html>
