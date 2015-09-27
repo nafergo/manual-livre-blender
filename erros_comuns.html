@@ -147,21 +147,41 @@ as faces desnecessárias/internas e apague-as.
 
 
 					<div class="page-header">
-		        		<h2>"Crashou?!?"" ou "Encerrei a aplicação sem querer!!!"</h2>
+		        		<h2>Como posso recuperar o meu trabalho?</h2>
 			      </div>
 
+		       <h3>Problemas</h3>
+					<p><strong>"Crashou?!?"</strong> O Blender encerrou sem aviso... "crashou". Como posso recuperar o meu trabalho?</p>
+					<p><strong>"Encerrei a aplicação sem querer!!!"</strong> Fechei o Blender mas não gravei... Como posso recuperar o meu trabalho?</p>
+															
+
+		    <h3>Solução 1</h3>
+
+<p>Em caso de "crash", tentar recuperar uma gravação automática através do menu File > Recover Auto Save  é provavelmente a melhor opção. 
+O Blender grava automaticamente cópias de segurança mas esta opção só é ativada depois de gravar pela primeira vez o ficheiro. </p>
+
+			 <img src="img/introducao/erros/recover.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+			 
+<p>Recomendação: comece sempre por iniciar a sua sessão de trabalho com uma gravação.</p>
+<p>Recomendação: pode configurar o número de gravações e a periodicidade (de quanto em quanto tempo são gravadas novas cópias de segurança) nas preferências do utilizador (aba File).</p>
+
+
+		    <h3>Solução 2</h3>
+
+<p>Sempre que encerra a aplicação é gravada uma cópia chamada quit.blend. Para aceder a esta cópia, utilize o Recover Last Session. </p>
+
+			 <img src="img/introducao/erros/last.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
 		       <h3>Problema</h3>
-					<p>Quando o p valores de origem, ou valores
-						de fábrica.	</p>
+					<p><strong>"Gravei em cima de um ficheiro existente!!!"</strong> Sem querer, acabei por gravar em cima de outro ficheiro... Como posso recuperar o meu trabalho?</p>
 
-		    <h3>Solução</h3>
-					<p>No menu File, escolha "Load Factory Settings".			</p>
-							<p>No entanto, é importante tentar perceber o que aconteceu para não voltar cair na mesma armadilha :)</p>
+		    <h3>Solução </h3>
 
+<p>Sempre que grava um ficheiro, o Blender inicia a gravação de cópias automáticas. Procure os ficheiros com extensão .blend1 ou .blend2 (gravações automáticas), renomeie os mesmos para .blend, abra-os 
+no Blender e verifique o seu conteúdo. Se não quiser renomear, pode utilizar o File Browser do Blender mas não se esqueça de ativar o filtro para poder visualizar os ficheiros com as extensões de backup.</p>
 
-
-
-
+			 <img src="img/introducao/erros/filter.jpg" alt="..." class="img-responsive img-thumbnail center-block">
    	</div>
 	</div>
 </div> <!-- /container -->
