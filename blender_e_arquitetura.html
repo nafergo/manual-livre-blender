@@ -36,21 +36,121 @@
 <div class="container-fluid">
 	<div class="row">
    	<div class="col-xs-10 col-xs-offset-1">
-			<h1 class="titulopagina"><small>Um</small> Início rápido <small>no Blender</small></h1>
-      	
+			<h1 class="titulopagina">Visualização de arquitetura <small>com Blender</small></h1>
+      	<p><small>O presente texto foi escrito em colaboração com a artista 3D Joana Soares. Todas as imagens são da sua autoria.</small></p>
       	<div class="page-header">
-				<h2>Sequências</h2>
+				<h2>Introdução</h2>
       	</div>
-     
-        	<h3>Generalista</h3>
 
-			<p>kkkk</p>
+<p>No Blender, o melhor motor de renderização para visualização de arquitetura é o Cycles.</p>
+
+<p>Nesta área de criação, é sempre desejável seguir medidas reais. Sugere-se que utilize o sistema métrico.</p>
+<img src="img/arch/0.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Existem alguns Addons no Blender que não estão inicialmente ativos mas que são bastante úteis: Import Images as Planes, Edit Linked Library, Measure Panel, etc. Na imagem abaixo é possível ver alguma 
+da informação que o Measure Panel fornece.</p>
+
+<img src="img/arch/00.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+        	<h3>Iluminação Realista</h3>
+
+<p>Para a criação de uma boa iluminação, no contexto de renderização fotorrealista de interiores e exteriores, é sempre bom ponto de partida tentar 
+simular as condições do mundo real, tentando desta forma recriar condições de iluminação mais credíveis e familiares para o público.</p> 
+	
+	<p>Neste contexto, importa destacar a iluminação global (Global Illumination, GI) enquanto ferramenta extremamente útil para obter uma iluminação realista. A GI 
+	é um conjunto de técnicas utilizado em 3D para calcular todas as interações de luz possíveis entre as superfícies numa cena, 
+	tendo em conta a luz proveniente de origens distintas/específicas (iluminação direta) e a luz proveniente dos raios refletidos nas superfícies existentes na cena (iluminação indireta).
+	A GI	simula a interação da luz no mundo real, através da distribuição uniforme de diferentes valores de cor e de luz, 
+	sendo que os raios de luz interagem com os objetos com os quais entram em contato, refletindo a luz de forma diferente e criando sombras de acordo.</p>
+
+
+
+
+     	<div class="page-header">
+				<h2>Iluminação exterior</h2>
+      	</div>
+
+<p>Geralmente, as cenas exteriores são bastante simples de iluminar pois é comum não precisarem de muitas fontes de iluminação. 
+Normalmente, uma cena exterior precisa apenas de um sol e da luz proveniente do céu. Utiliza-se a iluminação global, com uma textura de imagem para influenciar a iluminação geral da cena (recomenda-se uma HDRI), e, posteriormente, 
+adiciona-se uma luz do tipo sol para complementar a iluminação e estabelecer a direção da luz e das sombras.</p> 
+
+<h3>Exemplo 1</h3>
+
+<img src="img/arch/1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Para a iluminação da cena apresentada acima, comecei por inserir a iluminação global. No painel World, inseri uma "Environment Texture" e ajustei a respetiva intensidade (Strength) tendo em 
+conta o nível de iluminação que procurava. Após alguns testes, o valor 3.5 revelou-se o mais indicado.</p> 
+
+
+
+<img src="img/arch/2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Em baixo, é apresentada uma amostra da imagem utilizada como "Environment Texture". </p>
+<img src="img/arch/3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+
+<p>A segunda etapa foi o adicionar de um sol à cena. Posicionei-o da forma que considerei mais interessante, tentando obter sombras e uma iluminação mais apelativa. 
+Posteriormente, alterei ligeiramente  a cor do sol para obter uma tonalidade mais quente na imagem final. Finalmente, ajustei a força da luz alterando a "Strengh"para 7.0.</p>
+
+
+<img src="img/arch/4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>
+Na minha opinião, o processo de iluminação de uma cena é algo intuitivo. Podemos seguir estes princípios de iluminação para uma cena exterior mas não existe uma fórmula exata para obter os resultados desejados. 
+A melhor forma de obter a iluminação que procura é através da observação e experimentação. Nesse sentido, após definido o layout e implementada a iluminação base da cena, é sempre útil pré-visualizar 
+em "render view" e ajustar os valores das intensidades e cores.</p>
+
+
+     	<div class="page-header">
+				<h2>Iluminação interior</h2>
+      	</div>
+
+
+<h3>Exemplo 1</h3> 
+<img src="img/arch/5.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Neste exemplo, optei por usar a iluminação exterior com fonte de iluminação principal para a cena.</p> 
+
+<p>Nesse sentido, utilizei novamente uma "Environment Texture" (desta vez utilizei uma HDRI) e ajustei novamente a intensidade  (Strength) da luz. 
+Após alguns testes, o valor  50 pareceu-me o mais indicado para o tipo de iluminação que procurava.</p>
  
-			<div class="page-header">
-        		<h2>Imagens <small>de referência</small></h2>
-	      </div>
-    
-			<p>sss</p>
+
+<img src="img/arch/6.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Em baixo, é apresentada uma amostra da imagem utilizada como "Environment Texture". </p>
+<img src="img/arch/3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p> 
+Para a iluminação artificial do candeeiro no canto, utilizei uma esfera no interior do candeeiro para simular a iluminação de uma lâmpada. 
+Usei um material (shader) do tipo Emission e alterei a sua intensidade (Strength) para 9  de forma a obter o impacto desejado. Escolhi um tom alaranjado forte para melhor simular o aspeto de uma lâmpada amarela.</p> 
+
+<img src="img/arch/7.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Paralelamente, adicionei ainda uma luz tipo Point, com intensidade de 40, para expandir a iluminação na direcção desejada.</p>
+
+<img src="img/arch/8.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<h3>Exemplo 2</h3> 
+
+<img src="img/arch/9.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<p>
+No exemplo acima, a iluminação é também primordialmente exterior. No entanto, neste exemplo, não uso nenhuma
+ "Environment Texture". A iluminação é realizada através de planos com material Emission posicionados em pontos diferentes.</p>
+
+<img src="img/arch/10.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Para a iluminação proveniente das janelas grandes à direita, utilizei um plano inclinado na direção do solo, de forma a 
+simular a direção dos raios solares. O plano tem um material Emission com 50 de Strength.</p>
+
+<img src="img/arch/11.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Para a janela existente no fundo do corredor, utilizei novamente um plano e posicionei-o no local onde estaria o vidro da janela. 
+Este plano tem material Emission com 10 de Strength 10 e alterei ligeiramente a cor do material de modo a aquecer um pouco a luz.</p>
+
+<img src="img/arch/12.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+<p>Para terminar, adicionei uma luz do tipo Spot para recriar a iluminação de um foco de luz artificial.</p>
     
 
    	</div>
