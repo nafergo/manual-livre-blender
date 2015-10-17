@@ -33,11 +33,21 @@
 <!-- fim do menu -->
 
 <div class="container-fluid">
-<div class="row">
-		
+	<div class="row">
    	<div class="col-xs-10 col-xs-offset-1">
-    
-<h1 class="titulopagina">UV Mapping <small>de uma lata de sopa famosa</small></h1>
+			<h1>UV Mapping <small>de uma lata de sopa famosa</small></h1>
+
+
+      	
+<dl class="dl-horizontal">
+  <dt>Versão</dt>
+  <dd>>= 2.75</dd>
+  
+<dt>Renderizador</dt>
+  <dd>Internal</dd>  
+</dl>
+
+
 
 <p>Descarregue aqui <a href="files/6.zip" target="_blank">ficheiros de apoio a este texto</a></p>
 
@@ -46,11 +56,13 @@
 
 <p>Neste processo de “embrulhar” modelos 3D em imagens 2D, U e V são os nomes das 2 coordenadas utilizadas como eixos para a imagem 2D ( X, Y e Z já são utilizados no modelo).</p>
 
-<p>1- Comece por criar uma cena limpa de objectos. Clique em “Delete” (ou X) para apagar o cubo.</p>
+<p>1- Comece por criar uma cena limpa de objetos. Clique em “Delete” (ou X) para apagar o cubo.</p>
 
-<p>2- Assegure-se que está no modo de visão de topo (NUMPAD 7). Adicione um cilindro.</p>
+<p>2- Assegure-se que está no modo de visão de topo (NUMPAD 7). Adicione um cilindro com um Cap Fill Type do tipo Triangle Fan. Depois de adicionar o cilindro, ainda com este selecionado, atente na barra 
+de ferramentas (à esquerda) onde estão visíveis as propriedades do cilindro e o Cap Fill Type (preenchimento nas extremidades) é uma das propriedades. </p>
 
-<p>3- Em modo Object, seleccione o cilindro e clique na sequência seguinte: S (activar o Size para modificar o tamanho), em Z (bloquear o redimensionamento ao eixo Z) e digite 1.5 (valor que permite aumentar o modelo em 50%).</p>
+<p>3- Em modo Object, seleccione o cilindro e clique na sequência seguinte: S (activar o Size para modificar o tamanho), em
+ Z (bloquear o redimensionamento ao eixo Z) e digite 1.5 (valor que permite aumentar o modelo em 50%).</p>
 
 <img src="img/img6/1UVmapping68d75357.png" alt="..." class="img-responsive img-thumbnail center-block">
 
@@ -58,6 +70,9 @@
 
 <img src="img/img6/2UVmapping43479adc.png" alt="..." class="img-responsive img-thumbnail center-block">
 <img src="img/img6/3UVmapping42b805ac.png" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>Atenção: se o seu cilindro não tiver um aspeto similar ao da imagem acima (com um ponto no centro do topo/base do cilindro e área preenchida com triângulos), releia o passo 2 
+para adicionar um cilindro com um Cap Fill Type do tipo Triangle Fan.</p>
 
 <p>5- As arestas seleccionadas vão servir como linha de corte para desembrulhar o modelo 3D.  Clique em CTRL+E e escolha a opção Mark Seam. As arestas seleccionadas passam a estar assinalado com uma cor laranja. Em vez de desembrulhar as faces com uma lógica própria, a aplicação vai desembrulhar o modelo obedecendo às nossas linhas de corte. Se quiser desfazer a linha de “corte”, clique em CTRL+E e escolha a opção Clear Seam.</p>
 
@@ -117,7 +132,7 @@ A Island Margin define o afastamento entre as ilhas compostas pela malha.</li>
 
 <img src="img/img6/11UVmapping65d784f2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 
-<p>12- Se voltar à janela 3D View, irá ver a imagem “mapeada” no objecto 3D. No nosso caso, a lata parece estar de cabeça para baixo :) isso pode resolver-se rodando as faces na janela UV/Image Editor ou rodando a “lata” na janela 3D View.</p>
+<p>12- Se voltar à janela 3D View, irá ver a imagem “mapeada” no objeto 3D. No nosso caso, a lata parece estar de cabeça para baixo :) isso pode resolver-se rodando as faces na janela UV/Image Editor ou rodando a “lata” na janela 3D View.</p>
 
 <p>O topo da “lata” surge a negro porque não foi editado, na imagem 2D não existe nada na área que corresponde ao topo e à base da “lata” (os círculos).</p>
 
@@ -135,7 +150,7 @@ A Island Margin define o afastamento entre as ilhas compostas pela malha.</li>
 
 <img src="img/img6/14UVmapping18e4f6e5.png" alt="..." class="img-responsive img-thumbnail center-block">
 
-<p>15- Apesar da imagem já surgir na janela 3D View, se renderizar apenas irá ver o modelo 3D sem texturas ou imagem. O “mapeamento” está feito mas é necessário aplicar um material e, depois, uma imagem-textura ao objecto.</p>
+<p>15- Apesar da imagem já surgir na janela 3D View, se renderizar apenas irá ver o modelo 3D sem texturas ou imagem. O “mapeamento” está feito mas é necessário aplicar um material e, depois, uma imagem-textura ao objeto.</p>
 
 <p>Seleccione a lata. Vá ao painel Material, adicione uma slot de materiais e depois adicione um novo material.</p>
 
@@ -155,9 +170,9 @@ A Island Margin define o afastamento entre as ilhas compostas pela malha.</li>
 
 <img src="img/img6/17UVmapping13f6bce.png" alt="..." class="img-responsive img-thumbnail center-block">
 
-<p>17- Se renderizar (F12), a imagem PNG já deverá surgir a “embrulhar” o objecto 3D.</p>
+<p>17- Se renderizar (F12), a imagem PNG já deverá surgir a “embrulhar” o objeto 3D.</p>
 
-<p>18- Na janela 3D View, seleccione o objecto. Em Edit Mode, seleccione apenas as faces laterais da lata (onde está aplicado o rótulo) e clique em Smooth (botão no painel de Ferramentas/Tools) para suavizar as faces eliminando as arestas visíveis em cima.</p>
+<p>18- Na janela 3D View, seleccione o objeto. Em Edit Mode, seleccione apenas as faces laterais da lata (onde está aplicado o rótulo) e clique em Smooth (botão no painel de Ferramentas/Tools) para suavizar as faces eliminando as arestas visíveis em cima.</p>
 
 <p>Volte a renderizar para ver a diferença.</p>
 
@@ -180,7 +195,7 @@ A Island Margin define o afastamento entre as ilhas compostas pela malha.</li>
 		
 		
 		
-
+ </div>
  </div>
 
       <!-- início do footer -->
