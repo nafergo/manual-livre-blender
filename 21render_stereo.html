@@ -37,80 +37,86 @@
 		
    	<div class="col-xs-10 col-xs-offset-1">
     
-<h1 class="titulopagina">Renderização em Stereo</h1>
+<h1>Renderização em Stereo</h1>
+
+	
 
 
-<h2>Instalar o Add-On (python script)</h2>
+   
 
-<p>1- Faça <a href="http://www.noeol.de/s3d/" target="_blank">download do python script mais atualizado</a> para uma pasta. Na altura em que este tutorial foi escrito, o script chamava-se BstereoOffAxisCamera_0_5_5.</p>
+<dl class="dl-horizontal">
+  <dt>Versão</dt>
+  <dd>>= 2.75</dd>
+  
+<dt>Renderizador</dt>
+  <dd>Cycles</dd>  
+</dl>
 
-<p>2- Inicie o Blender. Vá ao menu File e active a janela de configuração User Preferences.</p>
 
-<img src="img/img21/1render_stereo5e8e060d.png" alt="..." class="img-responsive img-thumbnail center-block">
 
-<p>3- Na janela User Preferences, vá ao painel Add-Ons e clique em Install Add-On.</p>
 
-<img src="img/img21/2render_stereo4580daf6.png" alt="..." class="img-responsive img-thumbnail center-block">
+   	<div class="page-header">
+				<h2>Esfera em estereoscopia</h2>
+      	</div>
 
-<p>4- Navegue até à pasta onde gravou o script, seleccione o script e clique em Install Add-On.</p>
+<p>No momento em que escrevemos este texto, a funcionalidade que permite renderizar uma esfera em stereo (panorama com estereoscopia)
+ ainda não está disponível no Blender oficial. É 
+previsível a sua integração a breve trecho mas enquanto não está disponível poderá utilizar as versões compiladas pelo programador responsável 
+pela funcionalidade.</p>
 
-<img src="img/img21/3render_stereo7d1efab2.png" alt="..." class="img-responsive img-thumbnail center-block">
+	<ul>
+	<li><a href="http://www.dalaifelinto.com/ftp/builds/multiview-spherical-stereo-win64_latest.zip" target="_blank">Windows</a></li>
+	<li><a href="http://www.dalaifelinto.com/ftp/builds/multiview-spherical-stereo-OSX-10.6-x86_64_latest.zip" target="_blank">OSX</a></li>
+	<li><a href="http://www.dalaifelinto.com/ftp/builds/multiview-spherical-stereo-linux-glibc211-x86_64_latest.tar.bz2" target="_blank">Linux</a></li>
+	</ul>
 
-<p>5- Nos scripts relativos à “Camera”, encontrará agora um novo script. Clique na caixa para activar o script. Se fechar a janela User Preferences, o script foca activo nesta sessão. Se clicar em Save As Default, o script ficará activo das próximas vezes que iniciar esta versão do Blender.</p>
+<p>As instruções abaixo apresentadas permitem renderizar um panorama com estereoscopia para ser visto através do sistema Oculus Rift ou com um 
+dispositivo Android com equipamento de realidade virtual (Cardboard, Durovis Dive, etc.). As instruções podem ser adaptadas a seu gosto mas 
+deverão ser seguidas com rigor caso pretenda utilizar o serviço 
+<a href="http://vrais.io/tutorial" target="_blank">VRAIS</a> ou o projeto <a href="http://vrais.io/tutorial" target="_blank">OpenLab ESEV Cardboarder</a>.</p>
+
+
+
+<p>1-Comece por definir a resolução da imagem final. Na realidade, o desejável é que a imagem final seja composta pela combinação de duas imagens com 4096x2048.</p>
+<img src="img/renderizacao/stereo/0.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>No entanto, não é necessário estar sempre a renderizar com uma resolução tão elevada. Na imagem abaixo é apresentada uma resolução de 2048x1024. Quando 
+quiser renderizar a imagem final, basta configurar a percentagem para 200%.</p>
+<img src="img/renderizacao/stereo/1.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>2- Na aba Render Layers, ative a opção Views e mantenha a configuração apresentada. Compare com a imagem abaixo para 
+verificar as configurações.</p>
+<img src="img/renderizacao/stereo/2.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
+<p>3- Nas opções da câmara, escolha uma lente Panoramic do tipo Equirectangular.</p>
+<p>No painel Stereoscopy, escolha a opção Off-Axis e o Pivot Center. Ative a opção Spherical Stereo (se 
+não tiver esta opção, isso significq que não está a usar uma das versões disponibilizadas).</p>
+<img src="img/renderizacao/stereo/3.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+<p>A Convergence Plane Distance (é representado na janela 3D View por um plano com transparência) é a distância para o ponto no espaço onde os olhos do 
+espetador irão convergir. Normalmente, é boa opção definir a Convergence Plane Distance para o principal 
+ponto de interesse da sua cena.</p>
+
+<p>A Interocular Distance é a distância entre os dois olhos.</p>
+
+<p>4- Renderize.</p>
+
+<p>5- Depois de renderizar, o Blender vai armazenar as duas imagens na sua memória. Quando estiver a gravar a imagem, não se esqueça de escolher a 
+opção Top-Bottom. Pode gravar em qualuqer formato mas o serviço 
+<a href="http://vrais.io/tutorial" target="_blank">VRAIS</a> e o projeto <a href="http://vrais.io/tutorial" target="_blank">OpenLab ESEV Cardboarder</a> só aceitam JPEG.</p>
+
+<img src="img/renderizacao/stereo/4.jpg" alt="..." class="img-responsive img-thumbnail center-block">
+
+
 		
-<img src="img/img21/4render_stereo0e2a86.png" alt="..." class="img-responsive img-thumbnail center-block">
+   	<div class="page-header">
+				<h2>Animação em estereoscopia</h2>
+      	</div>
 
 
-<h2>Criar uma cena</h2>
-
-<p>6- Na janela 3D View, duplique duas vezes o cubo inicial e crie uma  fila de cubos.</p>
-
-<img src="img/img21/5render_stereo63c67907.png" alt="..." class="img-responsive img-thumbnail center-block">
-
-<p>7- Insira um Circle (Add > Curve > Circle). Insira um Empty e coloque-o ligeiramente acima do cubo do meio. Crie um parentesco (Ctrl+P) entre a câmara e o círculo mas escolha a opção Follow Path. Crie um Track (Ctrl+T)  entre a câmara e o Empty mas escolha a opção Track To Constraint.</p>
-
-<p>Não se esqueça de alterar o nº de frames do círculo (Path Animation) para 250.</p>
-
-<p>Se estiver tudo bem, quando fizer Alt+A, a câmara deverá demorar 250 frames a percorrer o círculo e estará sempre apontada ao cubo do meio.</p>
-
-<img src="img/img21/6render_stereo2e9f7a60.png" alt="..." class="img-responsive img-thumbnail center-block">
-
-<p>8- Mude a lâmpada já existente na cena para tipo Sun. Insira um plano abaixo dos cubos que cubra toda a área abrangida pelo círculo. Aplique um material ao plano. Mude o valor Diffuse (a cor) do material dos cubos.</p>
-
-<img src="img/img21/7render_stereo604a7e87.png" alt="..." class="img-responsive img-thumbnail center-block">
-
-<h2>Criar render anáglifo (vermelho / ciano)</h2>
-
-<p>9- Seleccione a câmara, vá ao painel Object Data da câmara. Se o script estiver instalado e activo, deverá surgir um novo painel com o nome Stereo Camera. Clique no botão Set Stereo Camera.</p>
-
-<img src="img/img21/8render_stereo1e5c3e54.png" alt="..." class="img-responsive img-thumbnail center-block">
-
-<p>10- O novo plano que surgiu na janela 3D View identifica a janela stereo: o que estiver entre o plano e a câmara irá surgir saliente, fora do display; o que estiver atrás do plano irá surgir “dentro” do display. O plano é controlado através do valor Focal Distance. Altere o valor e clique novamente em Set Stereo Camera até o plano estar localizado em cima do cubo do meio.</p>
-
-<img src="img/img21/9render_stereo2e70ca5b.png" alt="..." class="img-responsive img-thumbnail center-block">
-
-<p>11- Crie uma nova cena do tipo Link Objects e renomeie a nova cena para “esq” (sem “”).</p>
-
-<img src="img/img21/10render_stereo2c95c355.png" alt="..." class="img-responsive img-thumbnail center-block">
-
-<p>12- Quando clicou em Set Stereo Camera, o script criou 2 novas câmaras. As suas cenas têm 3 câmaras, a original e duas criadas pelos script que correspondem à visão do olho esquerdo e direito. Na cena “esq”, seleccione a câmara da esquerda e defina a mesma como Set Active Object as Camera.</p>
-
-<img src="img/img21/11render_stereo380e8aa6.png" alt="..." class="img-responsive img-thumbnail center-block">
-
-<p>13- Repita os dois passos anteriores mas agora atribua o nome “dir”, seleccione a câmara da direita e defina a mesma como  Set Active Object as Camera. No final deverá ter 3 cenas: Scene (se activar a visão de câmara deverá ver através da câmara do meio, a original), esq (se activar a visão de câmara deverá ver através da câmara da esquerda) e dir (se activar a visão de câmara deverá ver através da câmara da direita).</p>
-
-<p>14- Volte à Scene. Active a janela Node Editor e utilize a configuração de nós abaixo apresentada.</p>
-
-<img src="img/img21/12render_stereo6309f2de.png" alt="..." class="img-responsive img-thumbnail center-block">
-
-<p>15- Agora é só renderizar a sua animação e colocar os óculo vermelho/ciano.</p>
-
-<p>Sugestão:</p>
-
-<p>Crie uma cena em que a câmara está estacionária e mova os objectos na direcção da câmara, ultrapassando esta e saindo do enquadramento (vão para trás da câmara).</p>
-
-
-
+		<p>Soon</p>
 		
 		</div>
 		 
@@ -122,7 +128,7 @@
 		
 		
 
- </div>
+ </div> </div>
 
     <!-- início do footer -->
 
