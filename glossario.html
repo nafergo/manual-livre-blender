@@ -102,7 +102,6 @@ Uma armadura pode ser definida como um conjunto hierárquico de ossos (bones) in
 </p>
 
 
-
 <h3>Beauty Pass</h3>
 <p>Quando renderiza vários "passes" (passagens), a Beauty Pass é aquela que apresenta mais informação sobre os objetos presentes na cena. Habitualmente, inclui a principal renderização "full-color" desses objetos (diffuse e colour) e não inclui reflexos, destaques (highlights, specular) e sombras, que são geralmente "passes" separadas.
 </p>
@@ -140,8 +139,13 @@ contributo das várias etapas ou tarefas.
 
 
 <h3>Bump Map</h3>
-<p>Imagem a preto-e-branco utilizada por um software 3D para simular pormenores tridimensionais na superfície de um objeto, afetam a superfície do objeto manipulando sombras e reflexos da luz. O efeito, a simulação de detalhes ou imperfeições na superfície, é só de renderização, não afeta a geometria do model (i.e. silhueta permanece igual).
+<p>Imagem a preto-e-branco utilizada por um software 3D para simular pormenores tridimensionais (relevos) na superfície de um objeto, afetam 
+a superfície do objeto manipulando sombras e reflexos da luz. O efeito, a simulação de detalhes ou imperfeições na superfície, é só de 
+renderização, não afeta a geometria do model (i.e. silhueta permanece igual). 
 </p>
+<p>Bump maps só têm informação de altura armazenada em valores entre branco e preto. Normal maps utilizam valores RGB para também armazenar informaçao da orientação dos normals. A informação 
+armazenada em RGB (canais red, green e blue) corresponde à orientação X, Y e Z da superfície. Geralmente, normal map tem mais informação, mais detalhe, do que um bump map.</p>
+
 
 
 <h3>CAD (Computer Aided Design)</h3>
@@ -416,8 +420,15 @@ Imagens (pinturas, fotografias) que servem de fundos.
 
 
 <h3>Normal</h3>
-<p>Linha imaginária traçada a partir do centro de um polígono em ângulo reto com a superfície.
+<p>Linha imaginária traçada a partir do centro de um polígono em ângulo reto com a superfície. Estas linhas permitem ao motor de renderização determinar a frente da superfície, a sua 
+orientação (para que lado está a apontar), e a sua traseira. </p>
+
+<h3>Normal map</h3>
+<p>Um normal map permite criar a ilusão de maior detalhe sem necessidade de utilização de um enorme número de vértices. É similar ao bump map (v. bump map), ambos criam a ilusão de detalhe sem necessidade de geometria adicional. 
 </p>
+<p>Bump maps só têm informação de altura armazenada em valores entre branco e preto. Normal maps utilizam valores RGB para também armazenar informaçao da orientação dos normals. A informação 
+armazenada em RGB (canais red, green e blue) corresponde à orientação X, Y e Z da superfície. Geralmente, normal map tem mais informação, mais detalhe, do que um bump map.</p>
+
 
 <h3>Onion skinning [Casca de Cebola]</h3>
 <p>Funcionalidade disponível em várias aplicações de animação que permite visualizar várias frames sobrepostas.
@@ -497,11 +508,16 @@ superfície para outra dentro da cena. A iluminação que chega a uma superfíci
 </p>
 
 <h3>Shader</h3>
-<p>É um conjunto de instruções associado a um modelo 3D que informa o motor de renderização sobre o modo como a superfície do modelo 3D deve interagir com a iluminação (opacidade, brilho, etc.), a forma como a luz é dispersa por uma superfície. Se o modelo 3D é a geometria, o shader define a natureza da superfície (metal, cerâmica, madeira, plástico, etc.) e o seu aspecto visual. O Blender disponibiliza um variado conjunto de shaders pré-definidos que podem ser configurados e combinados entre si. Frequentemente, os Shaders são construídos com árvores de nós, com cada nó a controlar um aspecto específico do processo.
+<p>É um conjunto de instruções associado a um modelo 3D que informa o motor de renderização sobre o modo como a superfície do 
+modelo 3D deve interagir com a iluminação (opacidade, brilho, etc.), a forma como a luz é dispersa por uma superfície, como a luz é refletida, absorvida, translucidez, etc. 
+Se o modelo 3D é a geometria, o shader define a natureza da superfície (metal, cerâmica, madeira, plástico, etc.) e o seu aspeto visual. 
+O Blender disponibiliza um variado conjunto de shaders pré-definidos que podem ser configurados e combinados entre si. Frequentemente, os 
+Shaders são construídos com árvores de nós, com cada nó a controlar um aspecto específico do processo.
 </p>
 
 <h3>Shading</h3>
-<p>Processo matemático de cálculo como as superfícies de um modelo reagem à luz. Existem diversos algoritmos que podem ser utilizados. 
+<p>Processo matemático de cálculo como as superfícies de um modelo reagem à luz. Existem diversos algoritmos que podem ser utilizados. Por vezes, a designação é atribuída ao 
+processo de criação e/ou aplicação de shaders.
 </p>
 
 <h3>Shot</h3>
@@ -523,8 +539,12 @@ Ver Doubles.
 </p>
 
 <h3>Specularity [Especularidade]</h3>
-<p>Propriedade da superfície de um objeto que determina a maneira pela qual os brilhos aparecem nessa superfície.
+<p>Propriedade da superfície de um objeto que determina a maneira pela qual os brilhos aparecem nessa superfície, define o modo como uma superfície reflete a luz. 
+É uma propriedade importante para definir a natureza do material (por exemplo: um metal brilhante tem elevada especularidade mas cartão não).
 </p>
+
+
+
 
 <h3>Stop motion</h3>
 <p>
@@ -539,6 +559,14 @@ Ver Doubles.
 <h3>Straight ahead</h3>
 <p>
 </p>
+
+
+<h3>Texture mapping</h3>
+<p>Método inventado por Edwin Catmull na primeira metade da 
+década de 70. É um processo de adicionar cor ou textura (imagem bitmap ou raster) a um modelo 3D
+ através da projeção de imagens. Um <strong>texture map</strong> (mapa de textura) é aplicado (mapped, mapeado) à superfície de um modelo 3D. 
+ Estas projeções podem ser configuradas para afetar a cor e/ou especularidade (brilho gerado pela luz no material), reflexos, transparência, etc.
+As texturas necessitam de coordenadas (mapping coordinates) para determinar como irão ser aplicadas num objeto. O mapping especifica o modo como as texturas irão “embrulhar” o objeto.</p> 
 
 
 <h3>Timeline [Linha de tempo]</h3>
@@ -574,6 +602,13 @@ que permite ver o objeto de interesse de diferentes perspetivas.
 <p>
 Ver Doubles.
 </p>
+
+
+<h3>UV mapping</h3>
+<p>Processo de texture mapping, uma forma de atribuir pixels
+ de uma imagem 2D à superfície de um modelo 3D. As letras "U" e "V" representam os dois eixos da textura 2D e são utilizados
+  porque o "X", "Y" e "Z" já estão a ser utilizados para os eixos do modelo 3D. Um UV map é basicamente uma projeção bidimensional (2D) de um modelo 3D ou de parte de um 
+  modelo 3D.</p>
 
 
 <h3>Vector</h3>

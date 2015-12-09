@@ -53,8 +53,9 @@
       	</div>
 
       	<p><strong>
-Texturing</strong> (texturização) é o processo de criação das superfícies (surfaces) e cores dos modelos para definir a sua aparência, o seu aspeto visual. Se a 
-forma de um objeto resulta da sua geometria, material que define o seu aspeto resulta da utilização de shaders e texturas. Utilizamos texturas como inputs de shaders, definindo atributos como cor, reflexos, brilho, transparência, etc.</p>
+Texturing</strong> (texturização) designa a utilização de texturas no processo de criação do aspeto das superfícies (surfaces) dos modelos, utilização de 
+texturas para definir a aparência, o aspeto visual. O aspeto de um objeto é definido pela sua geometria e pelo material que configura a sua 
+superfície. Neste contexto, podemos utilizar texturas nos shaders definindo atributos como cor, reflexos, brilho, transparência, etc.</p>
 
  		<p class="text-center"><img src="img/intros/materiais/1421_tid_image_01.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 <small>Imagem de Pedro Toledo publicada em <a href="http://www.3dtotal.com/index_tutorial_detailed.php?id=1421&catDisplay=1&roPos=1&page=3#.U-KCuD_S5hE" target="_blank">Brief Consideration About Materials</a>.</small>
@@ -70,6 +71,7 @@ década de 70. É um processo de adicionar cor ou textura (imagem bitmap ou rast
  através da projeção de imagens. Um <strong>texture map</strong> (mapa de textura) é aplicado (mapped, mapeado) à superfície de um modelo 3D. 
  Estas projeções podem ser configuradas para afetar a cor e/ou especularidade (brilho gerado pela luz no material), reflexos, transparência, etc.
 As texturas necessitam de coordenadas (mapping coordinates) para determinar como irão ser aplicadas num objeto. O mapping especifica o modo como as texturas irão “embrulhar” o objeto.</p> 
+
 
  		<p class="text-center"><img src="img/intros/materiais/Manual-Textures-Layers.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 <small>Imagem de Roger Wickes publicada na <a href="http://wiki.blender.org/index.php/File:Manual-Textures-Layers.jpg" target="_blank">Blender Wiki</a>.</small>
@@ -91,7 +93,10 @@ Existem vários tipos de texture maps:</p>
 <small>Imagem de Pedro Toledo publicada em <a href="http://www.3dtotal.com/index_tutorial_detailed.php?id=1421&catDisplay=1&roPos=1&page=3#.U-KCuD_S5hE" target="_blank">Brief Consideration About Materials</a>.</small>
 </p>
 
-<li><strong>Bump map:</strong> Imagem a preto-e-branco utilizada por um software 3D para simular pormenores tridimensionais na superfície de um objeto, afetam a superfície do objeto manipulando sombras e reflexos da luz. O efeito, a simulação de detalhes ou imperfeições na superfície, é só de renderização, não afeta a geometria do model (i.e. silhueta permanece igual).</li>
+<li><strong>Bump map:</strong> Imagem a preto-e-branco utilizada por um software 3D para simular pormenores tridimensionais na superfície de um objeto, 
+afetam a superfície do objeto manipulando sombras e reflexos da luz. O efeito, a simulação de detalhes ou imperfeições na superfície, é só de renderização, 
+não afeta a geometria do model (i.e. silhueta permanece igual).</li>
+
 
 
  		<p class="text-center"><img src="img/intros/materiais/400px-Bump-map-demo-full.png" alt="..." class="img-responsive img-thumbnail center-block">
@@ -128,8 +133,8 @@ Shader</strong> é um conjunto de instruções associado a um modelo 3D que info
       	<p><strong>
 UV Mapping</strong> é um processo de texture mapping, uma forma de atribuir pixels
  de uma imagem 2D à superfície de um modelo 3D. As letras "U" e "V" representam os dois eixos da textura 2D e são utilizados
-  porque o "X", "Y" e "Z" já estão a ser utilizados para os eixos do modelo 3D.</p>
-
+  porque o "X", "Y" e "Z" já estão a ser utilizados para os eixos do modelo 3D. Um UV map é basicamente uma projeção bidimensional (2D) de um modelo 3D ou de parte de um 
+  modelo 3D.</p>
 
  		<p class="text-center"><img src="img/intros/materiais/UVMapping.jpg" alt="..." class="img-responsive img-thumbnail center-block">
 <small>Imagem de Tschmits publicada na <a href="http://en.wikipedia.org/wiki/UV_mapping#mediaviewer/File:UVMapping.png" target="_blank">Wikipedia</a>.</small>
